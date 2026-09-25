@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./WebProductDetails.css";
+import "./WebProductdetails.css";
 
 interface WebProduct {
   id: string;
