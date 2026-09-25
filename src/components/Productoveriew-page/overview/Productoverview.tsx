@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ProductOverview.css";
+import "./Productoverview.css";
 
 const ProductOverview: React.FC = () => {
   return (
