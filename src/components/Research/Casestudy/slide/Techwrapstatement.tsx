@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./TechWrapStatement.css";
+import "./Techwrapstatement.css";
 
 const statement =
   "Every day, TechWrap helps businesses, startups, and developers turn ambitious ideas into powerful digital experiences through modern technology.";
