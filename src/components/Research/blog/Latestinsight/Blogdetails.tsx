@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { insights } from "./blogData";
-import "./BlogDetails.css";
+import "./Blogdetails.css";
 
 const BlogDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
