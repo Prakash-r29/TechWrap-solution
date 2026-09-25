@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import "./DeveloperHero.css";
+import "./Developerhero.css";
 
 const technologies = [
   {
