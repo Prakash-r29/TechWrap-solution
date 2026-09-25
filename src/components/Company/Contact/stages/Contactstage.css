@@ -1,0 +1,1304 @@
+:root {
+  --next-blue: #1677ff;
+  --next-blue-dark: #0c5bd7;
+  --next-navy: #10213d;
+  --next-text: #263a55;
+  --next-muted: #71849f;
+  --next-border: #d9e5f3;
+  --next-bg: #f7faff;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.what-next-section {
+  position: relative;
+
+  padding: 120px 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(22, 119, 255, 0.10),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7faff 52%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.what-next-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  background-image:
+    linear-gradient(
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.next-particle {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--next-blue);
+
+  box-shadow:
+    0 0 18px
+    rgba(22, 119, 255, 0.8);
+
+  opacity: 0.65;
+}
+
+
+.particle-a {
+  top: 22%;
+  left: 7%;
+
+  animation:
+    floatParticleA 7s ease-in-out infinite;
+}
+
+
+.particle-b {
+  top: 34%;
+  right: 9%;
+
+  animation:
+    floatParticleB 8s ease-in-out infinite;
+}
+
+
+.particle-c {
+  bottom: 17%;
+  left: 19%;
+
+  animation:
+    floatParticleC 9s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.what-next-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1220px, 100%);
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.what-next-header {
+  max-width: 850px;
+
+  margin: 0 auto 75px;
+
+  text-align: center;
+
+  animation:
+    fadeNextUp 0.8s ease both;
+}
+
+
+.next-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  padding: 9px 17px;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.18);
+
+  border-radius: 999px;
+
+  color: #557397;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+}
+
+
+.next-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--next-blue);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(22, 119, 255, 0.08),
+    0 0 18px
+    rgba(22, 119, 255, 0.7);
+
+  animation:
+    nextPulse 2s infinite;
+}
+
+
+.what-next-header h2 {
+  margin: 0;
+
+  color: var(--next-navy);
+
+  font-size:
+    clamp(46px, 6vw, 72px);
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 850;
+}
+
+
+.what-next-header h2 span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4776ed,
+      #1677ff
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation:
+    nextGradient 5s linear infinite;
+}
+
+
+.what-next-header p {
+  max-width: 720px;
+
+  margin: 26px auto 0;
+
+  color: var(--next-muted);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.next-process {
+  position: relative;
+
+  padding-top: 20px;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.process-track {
+  position: absolute;
+
+  top: 48px;
+  left: 12.5%;
+  right: 12.5%;
+
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    #dce8f5;
+
+  overflow: visible;
+}
+
+
+.process-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4e7bf1
+    );
+
+  box-shadow:
+    0 0 14px
+    rgba(22, 119, 255, 0.35);
+
+  transition:
+    width 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   TRAVELING PARTICLE
+========================================================= */
+
+.traveling-particle {
+  position: absolute;
+
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    left 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 5;
+}
+
+
+.traveling-particle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -12px;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.16);
+
+  border-radius: 50%;
+
+  animation:
+    travelPulse 1.7s ease-out infinite;
+}
+
+
+.traveling-particle::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -25px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 119, 255, 0.17),
+      transparent 68%
+    );
+
+  animation:
+    travelGlow 1.7s ease-in-out infinite;
+}
+
+
+.traveling-particle span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: white;
+
+  border:
+    3px solid
+    var(--next-blue);
+
+  box-shadow:
+    0 0 20px
+    rgba(22, 119, 255, 0.9);
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.next-steps {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+
+.next-step {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  min-height: 320px;
+
+  padding: 0 14px 25px;
+
+  border: none;
+
+  text-align: left;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.step-number {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 28px;
+
+  border:
+    2px solid
+    #d5e2f1;
+
+  border-radius: 50%;
+
+  color: #6c82a0;
+
+  background: white;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 22px
+    rgba(27, 65, 108, 0.08);
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.number-glow {
+  position: absolute;
+
+  inset: -7px;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.2);
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  transform: scale(0.8);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.next-step:hover .step-number {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(22, 119, 255, 0.5);
+
+  color: var(--next-blue);
+
+  box-shadow:
+    0 13px 30px
+    rgba(22, 119, 255, 0.16);
+}
+
+
+.next-step:hover .number-glow,
+.next-step.active .number-glow {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+.next-step.active .step-number {
+  color: white;
+
+  border-color:
+    var(--next-blue);
+
+  background:
+    linear-gradient(
+      135deg,
+      #1677ff,
+      #4d73ef
+    );
+
+  box-shadow:
+    0 0 0 7px
+    rgba(22, 119, 255, 0.08),
+    0 14px 35px
+    rgba(22, 119, 255, 0.28);
+}
+
+
+/* =========================================================
+   STEP TITLE
+========================================================= */
+
+.step-title {
+  margin-bottom: 14px;
+
+  color: #536d8f;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.next-step.active .step-title,
+.next-step:hover .step-title {
+  color: var(--next-blue);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.step-description {
+  max-width: 245px;
+
+  color: var(--next-muted);
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.next-step.active .step-description {
+  color: #526b8b;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+========================================================= */
+
+.step-technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 18px;
+}
+
+
+.tech-tag {
+  padding: 5px 9px;
+
+  border:
+    1px solid
+    #dce7f3;
+
+  border-radius: 7px;
+
+  color: #7286a1;
+
+  background: #f8fbff;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.next-step:hover .tech-tag,
+.next-step.active .tech-tag {
+  border-color:
+    rgba(22, 119, 255, 0.18);
+
+  color:
+    var(--next-blue);
+
+  background:
+    rgba(22, 119, 255, 0.05);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.step-arrow {
+  position: absolute;
+
+  right: 10px;
+  bottom: 25px;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border:
+    1px solid
+    #d9e5f2;
+
+  border-radius: 50%;
+
+  color: #8295ad;
+
+  background: white;
+
+  font-size: 18px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.next-step:hover .step-arrow,
+.next-step.active .step-arrow {
+  color: white;
+
+  border-color:
+    var(--next-blue);
+
+  background:
+    var(--next-blue);
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   ACTIVE STAGE
+========================================================= */
+
+.active-stage {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 35px;
+
+  margin-top: 35px;
+
+  padding: 27px 30px;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.14);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(244, 249, 255, 0.95)
+    );
+
+  box-shadow:
+    0 20px 55px
+    rgba(25, 67, 115, 0.07);
+
+  animation:
+    activeStageIn 0.5s ease both;
+}
+
+
+.active-stage-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.active-label {
+  align-self: flex-start;
+
+  color: var(--next-blue);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.active-stage-number {
+  color:
+    rgba(22, 119, 255, 0.14);
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+
+.active-stage h3 {
+  margin: 0 0 5px;
+
+  color: var(--next-navy);
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+
+.active-stage p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--next-muted);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   ACTIVE STACK
+========================================================= */
+
+.active-stack {
+  min-width: 330px;
+}
+
+
+.active-stack > span {
+  display: block;
+
+  margin-bottom: 11px;
+
+  color: #8295ad;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.active-stack-items {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.active-stack-items span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  color: #58718f;
+
+  background: white;
+
+  border:
+    1px solid
+    #dce7f3;
+
+  font-size: 11px;
+
+  font-weight: 750;
+}
+
+
+.active-stack-items i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--next-blue);
+
+  box-shadow:
+    0 0 7px
+    rgba(22, 119, 255, 0.6);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.next-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  margin-top: 35px;
+
+  color: #7a8da6;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.bottom-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--next-blue);
+
+  box-shadow:
+    0 0 12px
+    rgba(22, 119, 255, 0.7);
+
+  animation:
+    nextPulse 2s infinite;
+}
+
+
+.bottom-arrow {
+  color:
+    var(--next-blue);
+
+  font-size: 18px;
+
+  animation:
+    arrowFloat 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeNextUp {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes nextGradient {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+
+@keyframes nextPulse {
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+
+    opacity: 0.55;
+  }
+}
+
+
+@keyframes travelPulse {
+  0% {
+    transform: scale(0.7);
+
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.8);
+
+    opacity: 0;
+  }
+}
+
+
+@keyframes travelGlow {
+  0%,
+  100% {
+    transform: scale(0.8);
+
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.15);
+
+    opacity: 0.9;
+  }
+}
+
+
+@keyframes floatParticleA {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(70px, 45px);
+  }
+}
+
+
+@keyframes floatParticleB {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-60px, -35px);
+  }
+}
+
+
+@keyframes floatParticleC {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(50px, -40px);
+  }
+}
+
+
+@keyframes activeStageIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes arrowFloat {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+  }
+
+  50% {
+    transform:
+      translateX(5px);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .what-next-section {
+    padding:
+      95px 20px;
+  }
+
+  .next-steps {
+    gap: 12px;
+  }
+
+  .step-description {
+    font-size: 14px;
+  }
+
+  .active-stage {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .active-stack {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .what-next-section {
+    padding:
+      75px 16px;
+  }
+
+  .what-next-header {
+    margin-bottom: 45px;
+  }
+
+  .what-next-header h2 {
+    font-size: 43px;
+  }
+
+  .what-next-header p {
+    font-size: 16px;
+  }
+
+
+  .process-track {
+    display: none;
+  }
+
+
+  .next-steps {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+
+  .next-step {
+    min-height: auto;
+
+    padding:
+      20px 20px 22px 82px;
+
+    border:
+      1px solid
+      #e0e9f4;
+
+    border-radius: 17px;
+
+    background:
+      rgba(255, 255, 255, 0.9);
+  }
+
+
+  .step-number {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    width: 47px;
+    height: 47px;
+
+    margin: 0;
+
+    font-size: 13px;
+  }
+
+
+  .step-title {
+    margin-bottom: 9px;
+  }
+
+
+  .step-description {
+    max-width: none;
+
+    font-size: 14px;
+  }
+
+
+  .step-arrow {
+    right: 18px;
+
+    bottom: 20px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .step-technologies {
+    padding-right: 40px;
+  }
+
+
+  .active-stage {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 17px;
+  }
+
+
+  .active-stage-left {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+
+  .active-label {
+    display: none;
+  }
+
+
+  .active-stage-number {
+    font-size: 34px;
+  }
+
+
+  .active-stage h3 {
+    font-size: 20px;
+  }
+
+
+  .active-stage p {
+    font-size: 13px;
+  }
+
+
+  .next-bottom {
+    text-align: center;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .what-next-header h2 {
+    font-size: 37px;
+  }
+
+
+  .next-step {
+    padding-left: 74px;
+  }
+
+
+  .step-number {
+    left: 16px;
+  }
+
+
+  .active-stack-items span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

@@ -1,0 +1,1114 @@
+/* =========================================================
+   TECHWRAP — AGENCY DELIVERY PROCESS
+   LIGHT SAAS / ENGINEERING DESIGN
+   ========================================================= */
+
+.delivery-process {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  padding: 120px 0 130px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(59, 130, 246, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 70%,
+      rgba(96, 165, 250, 0.08),
+      transparent 28%
+    ),
+    #ffffff;
+
+  color: #17243d;
+}
+
+
+/* =========================================================
+   SUBTLE GRID BACKGROUND
+   ========================================================= */
+
+.delivery-process::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(30, 64, 175, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(30, 64, 175, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.25)
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SOFT BLUE CENTER GLOW
+   ========================================================= */
+
+.delivery-process::after {
+  content: "";
+
+  position: absolute;
+
+  top: 80px;
+  left: 50%;
+
+  width: 750px;
+  height: 400px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(59, 130, 246, 0.09),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.process-container {
+  position: relative;
+  z-index: 5;
+
+  width: min(1400px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.process-heading {
+  max-width: 1000px;
+
+  margin: 0 auto 100px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TOP PILL
+   ========================================================= */
+
+.process-heading span {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 18px;
+
+  border: 1px solid #cbdcf5;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 4px 20px rgba(30, 64, 175, 0.05);
+
+  color: #607492;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* Blue dot inside pill */
+
+.process-heading span::before {
+  content: "";
+
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 8px rgba(59, 130, 246, 0.6),
+    0 0 16px rgba(59, 130, 246, 0.3);
+
+  animation: headingDot 2s ease-in-out infinite;
+}
+
+
+@keyframes headingDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.process-heading h2 {
+  max-width: 1000px;
+
+  margin: 35px auto 22px;
+
+  color: #17243d;
+
+  font-size: clamp(42px, 6vw, 78px);
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+}
+
+
+/* Blue gradient second visual line
+   Works when using <br> + span inside h2 */
+
+.process-heading h2 strong {
+  display: inline-block;
+
+  background: linear-gradient(
+    100deg,
+    #2484f4,
+    #4f46e5
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.process-heading p {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  color: #7186a5;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 22px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   TIMELINE LINE
+   ========================================================= */
+
+.timeline-line {
+  position: absolute;
+
+  top: 72px;
+  left: 5%;
+
+  width: 90%;
+  height: 2px;
+
+  background: #dce7f5;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   BLUE PROGRESS LINE
+   ========================================================= */
+
+.timeline-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 100%;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #2f80ed,
+    #3b82f6,
+    #6366f1
+  );
+
+  box-shadow:
+    0 0 8px rgba(59, 130, 246, 0.35),
+    0 0 20px rgba(59, 130, 246, 0.2);
+
+  animation: processLine 8s linear infinite;
+}
+
+
+@keyframes processLine {
+  0% {
+    width: 0%;
+  }
+
+  75% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOVING BLUE PARTICLE
+   ========================================================= */
+
+.timeline-particle {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 11px;
+  height: 11px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #1683ff;
+
+  z-index: 10;
+
+  box-shadow:
+    0 0 7px #1683ff,
+    0 0 16px rgba(22, 131, 255, 0.9),
+    0 0 35px rgba(22, 131, 255, 0.55);
+
+  animation: particleMove 8s linear infinite;
+}
+
+
+/* Particle glow */
+
+.timeline-particle::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 28px;
+  height: 28px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(37, 99, 235, 0.25);
+
+  animation: particlePulse 1.5s ease-out infinite;
+}
+
+
+.timeline-particle::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 45px;
+  height: 45px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(37, 99, 235, 0.12);
+
+  animation: particlePulse 1.5s ease-out infinite 0.4s;
+}
+
+
+@keyframes particleMove {
+  0% {
+    left: 0%;
+  }
+
+  75% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+
+@keyframes particlePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   PROCESS STEP
+   ========================================================= */
+
+.process-step {
+  position: relative;
+
+  z-index: 3;
+
+  text-align: center;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.step-number {
+  margin-bottom: 25px;
+
+  color: #9aabc2;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
+.step-dot {
+  position: relative;
+
+  width: 28px;
+  height: 28px;
+
+  margin: 0 auto 32px;
+
+  border: 2px solid #c9d8eb;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(30, 64, 175, 0.08);
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* Inner dot */
+
+.step-dot::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #9db2ce;
+
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   ACTIVE NODE ANIMATIONS
+   ========================================================= */
+
+.process-step:nth-child(2) .step-dot {
+  animation: nodeOne 8s infinite;
+}
+
+.process-step:nth-child(3) .step-dot {
+  animation: nodeTwo 8s infinite;
+}
+
+.process-step:nth-child(4) .step-dot {
+  animation: nodeThree 8s infinite;
+}
+
+.process-step:nth-child(5) .step-dot {
+  animation: nodeFour 8s infinite;
+}
+
+.process-step:nth-child(6) .step-dot {
+  animation: nodeFive 8s infinite;
+}
+
+.process-step:nth-child(7) .step-dot {
+  animation: nodeSix 8s infinite;
+}
+
+
+@keyframes nodeOne {
+  0%,
+  8% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 22px rgba(59, 130, 246, 0.35);
+    transform: scale(1.12);
+  }
+
+  15%,
+  100% {
+    border-color: #c9d8eb;
+    box-shadow:
+      0 2px 8px rgba(30, 64, 175, 0.08);
+    transform: scale(1);
+  }
+}
+
+
+@keyframes nodeTwo {
+  0%,
+  15% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+
+  22%,
+  30% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 22px rgba(59, 130, 246, 0.35);
+    transform: scale(1.12);
+  }
+
+  37%,
+  100% {
+    border-color: #c9d8eb;
+    box-shadow:
+      0 2px 8px rgba(30, 64, 175, 0.08);
+    transform: scale(1);
+  }
+}
+
+
+@keyframes nodeThree {
+  0%,
+  30% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+
+  37%,
+  45% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 22px rgba(59, 130, 246, 0.35);
+    transform: scale(1.12);
+  }
+
+  52%,
+  100% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes nodeFour {
+  0%,
+  45% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+
+  52%,
+  60% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 22px rgba(59, 130, 246, 0.35);
+    transform: scale(1.12);
+  }
+
+  67%,
+  100% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes nodeFive {
+  0%,
+  60% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+
+  67%,
+  75% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 22px rgba(59, 130, 246, 0.35);
+    transform: scale(1.12);
+  }
+
+  82%,
+  100% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes nodeSix {
+  0%,
+  75% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+
+  82%,
+  94% {
+    border-color: #3b82f6;
+    box-shadow:
+      0 0 0 6px rgba(59, 130, 246, 0.08),
+      0 0 25px rgba(59, 130, 246, 0.4);
+    transform: scale(1.12);
+  }
+
+  100% {
+    border-color: #c9d8eb;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   STEP CONTENT
+   ========================================================= */
+
+.step-content {
+  padding: 0 8px;
+}
+
+
+/* Small category */
+
+.step-content > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #397ff0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* Title */
+
+.step-content h3 {
+  margin: 0 0 11px;
+
+  color: #1c2b45;
+
+  font-size: 21px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Description */
+
+.step-content p {
+  min-height: 52px;
+
+  margin: 0 0 17px;
+
+  color: #7185a2;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNOLOGY BADGE
+   ========================================================= */
+
+.step-content small {
+  display: inline-block;
+
+  padding: 7px 11px;
+
+  border: 1px solid #dce6f3;
+
+  border-radius: 20px;
+
+  background: rgba(247, 250, 255, 0.9);
+
+  color: #70839e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 2px 8px rgba(30, 64, 175, 0.04);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.process-step:hover {
+  transform: translateY(-8px);
+}
+
+
+.process-step:hover .step-number {
+  color: #347ef0;
+
+  transform: translateY(-2px);
+}
+
+
+.process-step:hover .step-dot {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 6px rgba(59, 130, 246, 0.07),
+    0 0 22px rgba(59, 130, 246, 0.25);
+
+  transform: scale(1.12);
+}
+
+
+.process-step:hover .step-dot::after {
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.65);
+}
+
+
+.process-step:hover .step-content h3 {
+  color: #2777e8;
+
+  transform: translateY(-2px);
+}
+
+
+.process-step:hover .step-content small {
+  border-color: #b9d3f7;
+
+  background: #f0f6ff;
+
+  color: #347ef0;
+
+  box-shadow:
+    0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .delivery-process {
+    padding: 100px 0;
+  }
+
+  .process-heading h2 {
+    font-size: clamp(40px, 6vw, 65px);
+
+    letter-spacing: -3px;
+  }
+
+  .timeline {
+    gap: 10px;
+  }
+
+  .step-content h3 {
+    font-size: 18px;
+  }
+
+  .step-content p {
+    font-size: 12px;
+  }
+
+  .step-content small {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .delivery-process {
+    padding: 85px 0 100px;
+  }
+
+  .process-heading {
+    margin-bottom: 65px;
+  }
+
+  .process-heading span {
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+
+    padding: 9px 14px;
+  }
+
+  .process-heading h2 {
+    margin-top: 28px;
+
+    font-size: 42px;
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+  }
+
+  .process-heading p {
+    font-size: 15px;
+  }
+
+
+  /* Vertical timeline */
+
+  .timeline {
+    display: block;
+
+    padding-left: 45px;
+  }
+
+
+  .timeline-line {
+    top: 0;
+    left: 59px;
+
+    width: 2px;
+    height: 100%;
+  }
+
+
+  .timeline-progress {
+    width: 100%;
+    height: 0;
+
+    animation:
+      processLineMobile 8s linear infinite;
+  }
+
+
+  .timeline-particle {
+    top: 0;
+    left: 50%;
+
+    animation:
+      particleMoveMobile 8s linear infinite;
+  }
+
+
+  /* Process item */
+
+  .process-step {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    min-height: 190px;
+
+    text-align: left;
+  }
+
+
+  .step-number {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 0;
+
+    text-align: center;
+  }
+
+
+  .step-dot {
+    grid-column: 1;
+    grid-row: 2;
+
+    margin: 0 auto;
+  }
+
+
+  .step-content {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    padding-left: 22px;
+  }
+
+
+  .step-content p {
+    min-height: auto;
+
+    max-width: 400px;
+  }
+
+
+  .process-step:hover {
+    transform: translateX(5px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE ANIMATION
+   ========================================================= */
+
+@keyframes processLineMobile {
+
+  0% {
+    height: 0%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+
+@keyframes particleMoveMobile {
+
+  0% {
+    top: 0%;
+  }
+
+  75% {
+    top: 100%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .delivery-process {
+    padding: 70px 0 80px;
+  }
+
+  .process-container {
+    width: 90%;
+  }
+
+  .process-heading h2 {
+    font-size: 36px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .process-heading p {
+    font-size: 14px;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-line {
+    left: 44px;
+  }
+
+  .process-step {
+    grid-template-columns: 38px 1fr;
+
+    min-height: 180px;
+  }
+
+  .step-content {
+    padding-left: 18px;
+  }
+
+  .step-content h3 {
+    font-size: 18px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+  }
+
+  .step-content small {
+    padding: 6px 9px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .timeline-progress,
+  .timeline-particle,
+  .step-dot,
+  .timeline-particle::before,
+  .timeline-particle::after,
+  .process-heading span::before {
+    animation: none !important;
+  }
+
+  .timeline-progress {
+    width: 100%;
+  }
+
+  .timeline-particle {
+    left: 100%;
+  }
+}

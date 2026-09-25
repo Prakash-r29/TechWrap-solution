@@ -1,0 +1,3459 @@
+ /* =========================================================
+   TECHWRAP NAVBAR 
+   LARGE FLOATING CARD 
+========================================================= */ 
+ 
+.tw-navbar-area { 
+  position: relative; 
+ 
+  width: 100%; 
+ 
+  min-height: 205px; 
+ 
+  padding: 10px 16px 0; 
+ 
+  z-index: 1000; 
+ 
+  box-sizing: border-box; 
+ 
+  pointer-events: none; 
+} 
+ 
+ 
+/* ========================================================= 
+   LARGE CARD 
+========================================================= */ 
+ 
+.tw-navbar-card { 
+  position: relative; 
+ 
+  width: 100%; 
+ 
+  max-width: 1900px; 
+ 
+  height: 600px; 
+ 
+  margin: 0 auto; 
+ 
+  overflow: visible; 
+ 
+  border-radius: 28px; 
+ 
+  background: 
+    linear-gradient( 
+      135deg, 
+      rgba(4, 15, 30, 0.97), 
+      rgba(8, 26, 47, 0.94) 
+    ); 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.16); 
+ 
+  box-shadow: 
+    0 30px 80px rgba(3, 15, 31, 0.28), 
+    0 8px 30px rgba(3, 15, 31, 0.18), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.14); 
+ 
+  pointer-events: auto; 
+ 
+  isolation: isolate; 
+} 
+ 
+ 
+/* ========================================================= 
+   VIDEO 
+========================================================= */ 
+ 
+.tw-navbar-video-layer { 
+  position: absolute; 
+ 
+  inset: 0; 
+ 
+  overflow: hidden; 
+ 
+  border-radius: inherit; 
+ 
+  z-index: -3; 
+} 
+ 
+ 
+.tw-navbar-video { 
+  width: 100%; 
+  height: 100%; 
+ 
+  object-fit: cover; 
+ 
+  opacity: 0.45; 
+ 
+  filter: 
+    brightness(0.55) 
+    contrast(1.1) 
+    saturate(0.9); 
+ 
+  transform: scale(1.05); 
+ 
+  animation: 
+    twVideoZoom 16s 
+    ease-in-out 
+    infinite 
+    alternate; 
+} 
+ 
+ 
+@keyframes twVideoZoom { 
+ 
+  from { 
+    transform: scale(1.04); 
+  } 
+ 
+  to { 
+    transform: scale(1.11); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   VIDEO OVERLAY 
+========================================================= */ 
+ 
+.tw-navbar-video-overlay { 
+  position: absolute; 
+ 
+  inset: 0; 
+ 
+  z-index: 1; 
+ 
+  pointer-events: none; 
+} 
+ 
+ 
+/* ========================================================= 
+   TECHNOLOGY GRID 
+========================================================= */ 
+ 
+.tw-grid-overlay { 
+  position: absolute; 
+ 
+  inset: 0; 
+ 
+  border-radius: inherit; 
+ 
+  z-index: -1; 
+ 
+  opacity: 0.16; 
+ 
+  background-image: 
+    linear-gradient( 
+      rgba(100, 180, 255, 0.16) 1px, 
+      transparent 1px 
+    ), 
+    linear-gradient( 
+      90deg, 
+      rgba(100, 180, 255, 0.16) 1px, 
+      transparent 1px 
+    ); 
+ 
+  background-size: 
+    42px 42px; 
+ 
+  mask-image: 
+    linear-gradient( 
+      to bottom, 
+      black, 
+      transparent 90% 
+    ); 
+ 
+  animation: 
+    twGridMove 18s 
+    linear 
+    infinite; 
+} 
+ 
+ 
+@keyframes twGridMove { 
+ 
+  from { 
+    background-position: 
+      0 0, 
+      0 0; 
+  } 
+ 
+  to { 
+    background-position: 
+      42px 42px, 
+      42px 42px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   GLOW EFFECTS 
+========================================================= */ 
+ 
+.tw-glow { 
+  position: absolute; 
+ 
+  width: 280px; 
+  height: 280px; 
+ 
+  border-radius: 50%; 
+ 
+  filter: blur(70px); 
+ 
+  opacity: 0.16; 
+ 
+  pointer-events: none; 
+ 
+  z-index: -1; 
+} 
+ 
+ 
+.tw-glow-one { 
+  top: -160px; 
+  left: 22%; 
+ 
+  background: #2563eb; 
+ 
+  animation: 
+    twGlowMove 7s 
+    ease-in-out 
+    infinite 
+    alternate; 
+} 
+ 
+ 
+.tw-glow-two { 
+  right: 5%; 
+  bottom: -190px; 
+ 
+  background: #7c3aed; 
+ 
+  animation: 
+    twGlowMove 9s 
+    ease-in-out 
+    infinite 
+    alternate-reverse; 
+} 
+ 
+ 
+@keyframes twGlowMove { 
+ 
+  from { 
+    transform: 
+      translate(0, 0); 
+  } 
+ 
+  to { 
+    transform: 
+      translate(35px, 20px); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   DECORATIVE LINES 
+========================================================= */ 
+ 
+.tw-tech-line { 
+  position: absolute; 
+ 
+  height: 1px; 
+ 
+  background: 
+    linear-gradient( 
+      90deg, 
+      transparent, 
+      rgba(78, 161, 255, 0.7), 
+      transparent 
+    ); 
+ 
+  opacity: 0.35; 
+ 
+  z-index: -1; 
+ 
+  pointer-events: none; 
+} 
+ 
+ 
+.tw-line-one { 
+  width: 260px; 
+ 
+  right: 8%; 
+ 
+  top: 18px; 
+ 
+  animation: 
+    twLineMove 5s 
+    ease-in-out 
+    infinite; 
+} 
+ 
+ 
+.tw-line-two { 
+  width: 180px; 
+ 
+  left: 32%; 
+ 
+  bottom: 25px; 
+ 
+  animation: 
+    twLineMove 7s 
+    ease-in-out 
+    infinite 
+    reverse; 
+} 
+ 
+ 
+@keyframes twLineMove { 
+ 
+  0%, 
+  100% { 
+    opacity: 0.15; 
+ 
+    transform: 
+      translateX(0); 
+  } 
+ 
+  50% { 
+    opacity: 0.5; 
+ 
+    transform: 
+      translateX(30px); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   NAVBAR 
+========================================================= */ 
+ 
+.tw-navbar { 
+  position: relative; 
+ 
+  height: 100px; 
+ 
+  display: grid; 
+ 
+  grid-template-columns: 
+    minmax(190px, 1fr) 
+    auto 
+    minmax(310px, 1fr); 
+ 
+  align-items: center; 
+ 
+  gap: 25px; 
+ 
+  padding: 
+    22px 26px; 
+ 
+  box-sizing: border-box; 
+ 
+  z-index: 20; 
+} 
+ 
+ 
+/* ========================================================= 
+   LEFT 
+========================================================= */ 
+ 
+.tw-navbar-left { 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  min-width: 0; 
+} 
+ 
+ 
+.tw-brand { 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  gap: 13px; 
+ 
+  color: #ffffff; 
+ 
+  text-decoration: none; 
+ 
+  white-space: nowrap; 
+ 
+  transition: 
+    transform 0.3s ease; 
+} 
+ 
+ 
+.tw-brand:hover { 
+  color: #ffffff; 
+ 
+  transform: 
+    translateY(-2px); 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGO 
+========================================================= */ 
+ 
+.tw-logo-box { 
+  position: relative; 
+ 
+  width: 57px; 
+  height: 57px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  border-radius: 17px; 
+ 
+  background: 
+    linear-gradient( 
+      145deg, 
+      #ffffff, 
+      #dce9f8 
+    ); 
+ 
+  color: #0b1c33; 
+ 
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.22), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9); 
+ 
+  overflow: hidden; 
+} 
+ 
+ 
+.tw-logo-letter { 
+  position: relative; 
+ 
+  font-family: 
+    Arial, 
+    sans-serif; 
+ 
+  font-size: 29px; 
+ 
+  font-weight: 800; 
+ 
+  line-height: 1; 
+ 
+  z-index: 2; 
+} 
+ 
+ 
+.tw-logo-corner { 
+  position: absolute; 
+ 
+  width: 18px; 
+  height: 18px; 
+ 
+  top: 7px; 
+  right: 7px; 
+ 
+  border-top: 
+    3px solid #4b8dff; 
+ 
+  border-right: 
+    3px solid #4b8dff; 
+ 
+  border-radius: 3px; 
+} 
+ 
+ 
+/* ========================================================= 
+   BRAND NAME 
+========================================================= */ 
+ 
+.tw-brand-name { 
+  font-size: 1.65rem; 
+ 
+  font-weight: 750; 
+ 
+  letter-spacing: -0.04em; 
+} 
+ 
+ 
+/* ========================================================= 
+   CENTER NAVIGATION PILL 
+========================================================= */ 
+ 
+.tw-navbar-center { 
+  position: relative; 
+ 
+  display: flex; 
+ 
+  justify-content: center; 
+ 
+  align-items: center; 
+} 
+ 
+ 
+.tw-navigation-pill { 
+  position: relative; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  gap: 4px; 
+ 
+  min-height: 62px; 
+ 
+  padding: 7px; 
+ 
+  border-radius: 24px; 
+ 
+  background: 
+    linear-gradient( 
+      135deg, 
+      rgba(255, 255, 255, 0.82), 
+      rgba(224, 233, 244, 0.70) 
+    ); 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.38); 
+ 
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.12), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6); 
+ 
+  backdrop-filter: 
+    blur(18px); 
+ 
+  -webkit-backdrop-filter: 
+    blur(18px); 
+ 
+  white-space: nowrap; 
+} 
+ 
+ 
+/* ========================================================= 
+   NAV ITEM 
+========================================================= */ 
+ 
+.tw-nav-item { 
+  position: static; 
+ 
+  height: 48px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+} 
+ 
+ 
+.tw-nav-link { 
+  position: relative; 
+ 
+  height: 48px; 
+ 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  gap: 7px; 
+ 
+  padding: 
+    0 17px; 
+ 
+  border-radius: 17px; 
+ 
+  color: #17243b; 
+ 
+  font-size: 0.95rem; 
+ 
+  font-weight: 650; 
+ 
+  text-decoration: none; 
+ 
+  transition: 
+    color 0.25s ease, 
+    background 0.25s ease, 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-nav-link:hover, 
+.tw-nav-item.active > .tw-nav-link { 
+  color: #125ee8; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.62); 
+ 
+  transform: 
+    translateY(-1px); 
+} 
+ 
+ 
+.tw-arrow { 
+  font-size: 16px; 
+ 
+  line-height: 1; 
+ 
+  transition: 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-nav-item.active .tw-arrow { 
+  transform: 
+    rotate(180deg); 
+} 
+ 
+ 
+/* ========================================================= 
+   CONTACT 
+========================================================= */ 
+ 
+.tw-contact-link { 
+  padding-left: 19px; 
+  padding-right: 19px; 
+} 
+ 
+ 
+/* ========================================================= 
+   RIGHT SECTION 
+========================================================= */ 
+ 
+.tw-navbar-right { 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: flex-end; 
+ 
+  gap: 12px; 
+ 
+  min-width: 0; 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE 
+========================================================= */ 
+ 
+.tw-language-wrapper { 
+  position: relative; 
+ 
+  z-index: 200; 
+} 
+ 
+ 
+.tw-language-button { 
+  height: 50px; 
+ 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  padding: 
+    0 14px; 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.20); 
+ 
+  border-radius: 15px; 
+ 
+  background: 
+    rgba(5, 19, 35, 0.72); 
+ 
+  color: #ffffff; 
+ 
+  font-size: 0.88rem; 
+ 
+  font-weight: 700; 
+ 
+  cursor: pointer; 
+ 
+  backdrop-filter: 
+    blur(14px); 
+ 
+  -webkit-backdrop-filter: 
+    blur(14px); 
+ 
+  transition: 
+    all 0.25s ease; 
+} 
+ 
+ 
+.tw-language-button:hover, 
+.tw-language-button.open { 
+  border-color: 
+    rgba(91, 155, 255, 0.65); 
+ 
+  background: 
+    rgba(19, 52, 91, 0.86); 
+ 
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.18), 
+    0 0 0 3px rgba(55, 125, 255, 0.08); 
+} 
+ 
+ 
+.tw-globe { 
+  width: 21px; 
+  height: 21px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  border-radius: 50%; 
+ 
+  color: #4cb8ff; 
+ 
+  font-size: 17px; 
+} 
+ 
+ 
+.tw-language-chevron { 
+  font-size: 13px; 
+ 
+  transition: 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-language-button.open 
+.tw-language-chevron { 
+  transform: 
+    rotate(180deg); 
+} 
+ 
+ 
+/* ========================================================= 
+   SIGN UP 
+========================================================= */ 
+ 
+.tw-signup-button { 
+  height: 50px; 
+ 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  padding: 
+    0 20px; 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.20); 
+ 
+  border-radius: 15px; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.07); 
+ 
+  color: #ffffff; 
+ 
+  font-size: 0.9rem; 
+ 
+  font-weight: 700; 
+ 
+  text-decoration: none; 
+ 
+  backdrop-filter: 
+    blur(12px); 
+ 
+  transition: 
+    all 0.25s ease; 
+} 
+ 
+ 
+.tw-signup-button:hover { 
+  color: #ffffff; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.14); 
+ 
+  border-color: 
+    rgba(255, 255, 255, 0.38); 
+ 
+  transform: 
+    translateY(-2px); 
+} 
+ 
+ 
+/* ========================================================= 
+   LOGIN 
+========================================================= */ 
+ 
+.tw-login-button { 
+  height: 50px; 
+ 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  gap: 12px; 
+ 
+  padding: 
+    0 20px; 
+ 
+  border-radius: 15px; 
+ 
+  background: 
+    linear-gradient( 
+      135deg, 
+      #347df4, 
+      #2563eb 
+    ); 
+ 
+  color: #ffffff; 
+ 
+  font-size: 0.9rem; 
+ 
+  font-weight: 750; 
+ 
+  text-decoration: none; 
+ 
+  box-shadow: 
+    0 10px 25px rgba(37, 99, 235, 0.32); 
+ 
+  transition: 
+    transform 0.25s ease, 
+    box-shadow 0.25s ease; 
+} 
+ 
+ 
+.tw-login-button:hover { 
+  color: #ffffff; 
+ 
+  transform: 
+    translateY(-2px); 
+ 
+  box-shadow: 
+    0 15px 32px rgba(37, 99, 235, 0.45); 
+} 
+ 
+ 
+.tw-login-arrow { 
+  font-size: 18px; 
+ 
+  transition: 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-login-button:hover 
+.tw-login-arrow { 
+  transform: 
+    translateX(4px); 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA MENU 
+========================================================= */ 
+ 
+.tw-mega-menu { 
+  position: absolute; 
+ 
+  top: 100%; 
+ 
+  left: 50%; 
+ 
+  width: 
+    min( 
+      1080px, 
+      calc(100vw - 60px) 
+    ); 
+ 
+  transform: 
+    translateX(-50%); 
+ 
+  margin-top: 12px; 
+ 
+  padding: 0; 
+ 
+  border-radius: 24px; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.97); 
+ 
+  border: 
+    1px solid rgba(15, 23, 42, 0.09); 
+ 
+  box-shadow: 
+    0 35px 80px rgba(15, 23, 42, 0.22), 
+    0 10px 35px rgba(15, 23, 42, 0.10); 
+ 
+  overflow: hidden; 
+ 
+  animation: 
+    twMegaEnter 0.28s 
+    cubic-bezier( 
+      0.2, 
+      0.8, 
+      0.2, 
+      1 
+    ); 
+ 
+  z-index: 5000; 
+ 
+  color: #111827; 
+} 
+ 
+ 
+@keyframes twMegaEnter { 
+ 
+  from { 
+    opacity: 0; 
+ 
+    transform: 
+      translateX(-50%) 
+      translateY(-12px) 
+      scale(0.98); 
+  } 
+ 
+  to { 
+    opacity: 1; 
+ 
+    transform: 
+      translateX(-50%) 
+      translateY(0) 
+      scale(1); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA INNER 
+========================================================= */ 
+ 
+.tw-mega-inner { 
+  display: grid; 
+ 
+  grid-template-columns: 
+    minmax(0, 1.35fr) 
+    minmax(340px, 1fr); 
+ 
+  min-height: 390px; 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA COLUMNS 
+========================================================= */ 
+ 
+.tw-mega-columns { 
+  display: grid; 
+ 
+  grid-template-columns: 
+    1fr 1fr; 
+ 
+  gap: 30px; 
+ 
+  padding: 34px; 
+ 
+  min-width: 0; 
+ 
+  box-sizing: border-box; 
+} 
+ 
+ 
+.tw-mega-column { 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  gap: 8px; 
+ 
+  min-width: 0; 
+} 
+ 
+ 
+.tw-mega-label { 
+  margin-bottom: 12px; 
+ 
+  color: #64748b; 
+ 
+  font-size: 0.68rem; 
+ 
+  font-weight: 800; 
+ 
+  letter-spacing: 0.12em; 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA LINK 
+========================================================= */ 
+ 
+.tw-mega-link { 
+  display: flex; 
+ 
+  align-items: flex-start; 
+ 
+  gap: 13px; 
+ 
+  padding: 13px; 
+ 
+  border-radius: 13px; 
+ 
+  color: #0f172a; 
+ 
+  text-decoration: none; 
+ 
+  transition: 
+    background 0.25s ease, 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-mega-link:hover { 
+  color: #0f172a; 
+ 
+  background: 
+    #f1f6fc; 
+ 
+  transform: 
+    translateX(4px); 
+} 
+ 
+ 
+.tw-mega-icon { 
+  width: 28px; 
+  height: 28px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  flex-shrink: 0; 
+ 
+  border-radius: 8px; 
+ 
+  background: 
+    #edf4ff; 
+ 
+  color: 
+    #2563eb; 
+ 
+  font-size: 15px; 
+ 
+  transition: 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-mega-link:hover 
+.tw-mega-icon { 
+  transform: 
+    translateX(3px); 
+} 
+ 
+ 
+.tw-mega-link-content { 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  gap: 4px; 
+ 
+  min-width: 0; 
+} 
+ 
+ 
+.tw-mega-link strong { 
+  color: #172033; 
+ 
+  font-size: 0.92rem; 
+ 
+  font-weight: 700; 
+} 
+ 
+ 
+.tw-mega-link small { 
+  max-width: 260px; 
+ 
+  color: #718096; 
+ 
+  font-size: 0.77rem; 
+ 
+  line-height: 1.5; 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA MENU FEATURE IMAGE CARD 
+========================================================= */ 
+ 
+.tw-mega-feature { 
+  position: relative; 
+ 
+  width: 100%; 
+ 
+  min-width: 0; 
+ 
+  min-height: 390px; 
+ 
+  display: flex; 
+ 
+  align-items: stretch; 
+ 
+  justify-content: stretch; 
+ 
+  overflow: hidden; 
+ 
+  border-left: 
+    1px solid rgba( 
+      15, 
+      23, 
+      42, 
+      0.06 
+    ); 
+ 
+  background: 
+    #172033; 
+ 
+  color: #ffffff; 
+ 
+  box-sizing: border-box; 
+ 
+  isolation: isolate; 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE IMAGE 
+========================================================= */ 
+ 
+.tw-feature-media { 
+  position: absolute; 
+ 
+  inset: 0; 
+ 
+  width: 100%; 
+  height: 100%; 
+ 
+  overflow: hidden; 
+ 
+  z-index: 0; 
+ 
+  background: 
+    #172033; 
+} 
+ 
+ 
+.tw-feature-media img { 
+  display: block; 
+ 
+  width: 100%; 
+  height: 100%; 
+ 
+  object-fit: cover; 
+ 
+  object-position: center; 
+ 
+  transform: 
+    scale(1.01); 
+ 
+  transition: 
+    transform 0.7s 
+    cubic-bezier( 
+      0.2, 
+      0.8, 
+      0.2, 
+      1 
+    ); 
+} 
+ 
+ 
+/* ========================================================= 
+   IMAGE HOVER 
+========================================================= */ 
+ 
+.tw-mega-feature:hover 
+.tw-feature-media img { 
+  transform: 
+    scale(1.07); 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE IMAGE OVERLAY 
+========================================================= */ 
+ 
+.tw-feature-media-overlay { 
+  position: absolute; 
+ 
+  inset: 0; 
+ 
+  background: 
+    linear-gradient( 
+      180deg, 
+      rgba(5, 15, 30, 0.04) 0%, 
+      rgba(5, 15, 30, 0.08) 25%, 
+      rgba(5, 15, 30, 0.30) 48%, 
+      rgba(5, 15, 30, 0.82) 78%, 
+      rgba(5, 15, 30, 0.96) 100% 
+    ); 
+ 
+  z-index: 1; 
+ 
+  pointer-events: none; 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE CONTENT 
+========================================================= */ 
+ 
+.tw-feature-content { 
+  position: relative; 
+ 
+  z-index: 3; 
+ 
+  width: 100%; 
+ 
+  min-height: 390px; 
+ 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  justify-content: flex-end; 
+ 
+  align-items: flex-start; 
+ 
+  padding: 
+    30px; 
+ 
+  box-sizing: border-box; 
+ 
+  color: #ffffff; 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE LABEL 
+========================================================= */ 
+ 
+.tw-feature-label { 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  margin: 
+    0 0 9px; 
+ 
+  color: 
+    rgba(255, 255, 255, 0.88); 
+ 
+  font-size: 0.67rem; 
+ 
+  font-weight: 800; 
+ 
+  line-height: 1.2; 
+ 
+  letter-spacing: 0.13em; 
+ 
+  text-transform: uppercase; 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE TITLE 
+========================================================= */ 
+ 
+.tw-mega-feature h3 { 
+  width: 100%; 
+ 
+  max-width: 390px; 
+ 
+  margin: 
+    0 0 11px; 
+ 
+  color: #ffffff; 
+ 
+  font-size: 
+    clamp( 
+      1.45rem, 
+      2vw, 
+      1.95rem 
+    ); 
+ 
+  font-weight: 750; 
+ 
+  line-height: 1.12; 
+ 
+  letter-spacing: -0.035em; 
+ 
+  text-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.28); 
+ 
+  overflow-wrap: break-word; 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE DESCRIPTION 
+========================================================= */ 
+ 
+.tw-mega-feature p { 
+  width: 100%; 
+ 
+  max-width: 390px; 
+ 
+  margin: 
+    0 0 17px; 
+ 
+  color: 
+    rgba(255, 255, 255, 0.82); 
+ 
+  font-size: 0.78rem; 
+ 
+  font-weight: 450; 
+ 
+  line-height: 1.55; 
+ 
+  text-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.28); 
+} 
+ 
+ 
+/* ========================================================= 
+   FEATURE LINK 
+========================================================= */ 
+ 
+.tw-feature-link { 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  gap: 5px; 
+ 
+  width: fit-content; 
+ 
+  color: #ffffff; 
+ 
+  font-size: 0.78rem; 
+ 
+  font-weight: 750; 
+ 
+  line-height: 1.2; 
+ 
+  text-decoration: none; 
+ 
+  transition: 
+    opacity 0.25s ease, 
+    transform 0.25s ease; 
+} 
+ 
+ 
+.tw-feature-link:hover { 
+  color: #ffffff; 
+ 
+  opacity: 0.82; 
+ 
+  transform: 
+    translateX(4px); 
+} 
+ 
+ 
+/* ========================================================= 
+   REMOVE OLD ORBIT / DECORATIVE FEATURE EFFECT 
+========================================================= */ 
+ 
+.tw-mega-feature::before { 
+  display: none !important; 
+ 
+  content: none; 
+} 
+ 
+ 
+/* ========================================================= 
+   BOTTOM CARD CONTENT 
+========================================================= */ 
+ 
+.tw-card-bottom { 
+  position: absolute; 
+ 
+  left: 28px; 
+  right: 28px; 
+  bottom: 15px; 
+ 
+  height: 47px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: space-between; 
+ 
+  gap: 20px; 
+ 
+  padding: 
+    0 18px; 
+ 
+  border-top: 
+    1px solid rgba(255, 255, 255, 0.10); 
+ 
+  color: #9eb0c7; 
+ 
+  z-index: 5; 
+} 
+ 
+ 
+.tw-status { 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  font-size: 0.62rem; 
+ 
+  font-weight: 700; 
+ 
+  letter-spacing: 0.10em; 
+} 
+ 
+ 
+.tw-status-dot { 
+  width: 7px; 
+  height: 7px; 
+ 
+  border-radius: 50%; 
+ 
+  background: 
+    #39d98a; 
+ 
+  box-shadow: 
+    0 0 12px 
+    rgba(57, 217, 138, 0.8); 
+ 
+  animation: 
+    twStatusPulse 2s 
+    infinite; 
+} 
+ 
+ 
+@keyframes twStatusPulse { 
+ 
+  0%, 
+  100% { 
+    opacity: 1; 
+ 
+    transform: 
+      scale(1); 
+  } 
+ 
+  50% { 
+    opacity: 0.5; 
+ 
+    transform: 
+      scale(0.75); 
+  } 
+ 
+} 
+ 
+ 
+.tw-card-message { 
+  color: #ffffff; 
+ 
+  font-size: 0.82rem; 
+ 
+  font-weight: 650; 
+ 
+  letter-spacing: 0.02em; 
+} 
+ 
+ 
+.tw-card-tech-stack { 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  overflow: hidden; 
+} 
+ 
+ 
+.tw-card-tech-stack span { 
+  padding: 
+    5px 9px; 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.10); 
+ 
+  border-radius: 8px; 
+ 
+  color: #9fb2c9; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.035); 
+ 
+  font-size: 0.61rem; 
+ 
+  white-space: nowrap; 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE PANEL 
+========================================================= */ 
+ 
+.tw-language-panel { 
+  position: absolute; 
+ 
+  top: 
+    calc(100% + 12px); 
+ 
+  right: 0; 
+ 
+  width: 390px; 
+ 
+  max-width: 
+    calc(100vw - 30px); 
+ 
+  overflow: hidden; 
+ 
+  border: 
+    1px solid rgba(15, 23, 42, 0.08); 
+ 
+  border-radius: 20px; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.98); 
+ 
+  box-shadow: 
+    0 30px 70px 
+    rgba(15, 23, 42, 0.22); 
+ 
+  backdrop-filter: 
+    blur(25px); 
+ 
+  -webkit-backdrop-filter: 
+    blur(25px); 
+ 
+  animation: 
+    twLanguageIn 0.22s ease; 
+ 
+  z-index: 7000; 
+} 
+ 
+ 
+@keyframes twLanguageIn { 
+ 
+  from { 
+    opacity: 0; 
+ 
+    transform: 
+      translateY(-8px) 
+      scale(0.97); 
+  } 
+ 
+  to { 
+    opacity: 1; 
+ 
+    transform: 
+      translateY(0) 
+      scale(1); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE HEADER 
+========================================================= */ 
+ 
+.tw-language-panel-header { 
+  display: flex; 
+ 
+  justify-content: space-between; 
+ 
+  align-items: flex-start; 
+ 
+  padding: 
+    18px; 
+ 
+  border-bottom: 
+    1px solid #edf0f4; 
+} 
+ 
+ 
+.tw-language-panel-header div { 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  gap: 4px; 
+} 
+ 
+ 
+.tw-language-panel-header strong { 
+  color: #111827; 
+ 
+  font-size: 0.88rem; 
+} 
+ 
+ 
+.tw-language-panel-header span { 
+  color: #8994a5; 
+ 
+  font-size: 0.68rem; 
+} 
+ 
+ 
+.tw-language-panel-header button { 
+  width: 30px; 
+  height: 30px; 
+ 
+  border: 0; 
+ 
+  border-radius: 8px; 
+ 
+  background: 
+    #f3f6fa; 
+ 
+  color: #667085; 
+ 
+  font-size: 18px; 
+ 
+  cursor: pointer; 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE SEARCH 
+========================================================= */ 
+ 
+.tw-language-search { 
+  height: 42px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  margin: 14px; 
+ 
+  padding: 
+    0 12px; 
+ 
+  border: 
+    1px solid #e4e8ef; 
+ 
+  border-radius: 11px; 
+ 
+  background: 
+    #f8fafc; 
+} 
+ 
+ 
+.tw-language-search span { 
+  font-size: 18px; 
+ 
+  color: #8994a5; 
+} 
+ 
+ 
+.tw-language-search input { 
+  width: 100%; 
+ 
+  border: 0; 
+ 
+  outline: 0; 
+ 
+  background: transparent; 
+ 
+  color: #172033; 
+ 
+  font-size: 0.78rem; 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE LIST 
+========================================================= */ 
+ 
+.tw-language-list { 
+  display: grid; 
+ 
+  grid-template-columns: 
+    1fr 1fr; 
+ 
+  gap: 5px; 
+ 
+  max-height: 300px; 
+ 
+  padding: 
+    0 12px 12px; 
+ 
+  overflow-y: auto; 
+} 
+ 
+ 
+.tw-language-option { 
+  min-height: 54px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  padding: 
+    7px 8px; 
+ 
+  border: 
+    1px solid transparent; 
+ 
+  border-radius: 10px; 
+ 
+  background: transparent; 
+ 
+  text-align: left; 
+ 
+  cursor: pointer; 
+ 
+  transition: 
+    all 0.2s ease; 
+} 
+ 
+ 
+.tw-language-option:hover { 
+  background: 
+    #f4f7fb; 
+ 
+  transform: 
+    translateX(2px); 
+} 
+ 
+ 
+.tw-language-option.selected { 
+  background: 
+    rgba(37, 99, 235, 0.07); 
+ 
+  border-color: 
+    rgba(37, 99, 235, 0.12); 
+} 
+ 
+ 
+.tw-language-flag { 
+  width: 30px; 
+  height: 30px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  flex-shrink: 0; 
+ 
+  border-radius: 8px; 
+ 
+  background: 
+    #ffffff; 
+ 
+  box-shadow: 
+    0 2px 8px 
+    rgba(15, 23, 42, 0.07); 
+} 
+ 
+ 
+.tw-language-info { 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  min-width: 0; 
+} 
+ 
+ 
+.tw-language-info strong { 
+  color: #1a2435; 
+ 
+  font-size: 0.7rem; 
+ 
+  white-space: nowrap; 
+ 
+  overflow: hidden; 
+ 
+  text-overflow: ellipsis; 
+} 
+ 
+ 
+.tw-language-info small { 
+  margin-top: 2px; 
+ 
+  color: #8b95a5; 
+ 
+  font-size: 0.61rem; 
+ 
+  white-space: nowrap; 
+ 
+  overflow: hidden; 
+ 
+  text-overflow: ellipsis; 
+} 
+ 
+ 
+.tw-check { 
+  margin-left: auto; 
+ 
+  width: 20px; 
+  height: 20px; 
+ 
+  display: flex; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  flex-shrink: 0; 
+ 
+  border-radius: 50%; 
+ 
+  background: 
+    #2563eb; 
+ 
+  color: white; 
+ 
+  font-size: 11px; 
+ 
+  font-weight: 800; 
+} 
+ 
+ 
+/* ========================================================= 
+   LANGUAGE EMPTY 
+========================================================= */ 
+ 
+.tw-language-empty { 
+  grid-column: 1 / -1; 
+ 
+  padding: 
+    20px; 
+ 
+  color: #718096; 
+ 
+  font-size: 0.78rem; 
+ 
+  text-align: center; 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE TOGGLE 
+========================================================= */ 
+ 
+.tw-mobile-toggle { 
+  display: none; 
+ 
+  width: 48px; 
+  height: 48px; 
+ 
+  flex-direction: column; 
+ 
+  align-items: center; 
+  justify-content: center; 
+ 
+  gap: 5px; 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.18); 
+ 
+  border-radius: 13px; 
+ 
+  background: 
+    rgba(255, 255, 255, 0.07); 
+ 
+  cursor: pointer; 
+} 
+ 
+ 
+.tw-mobile-toggle span { 
+  width: 20px; 
+  height: 2px; 
+ 
+  border-radius: 3px; 
+ 
+  background: 
+    #ffffff; 
+ 
+  transition: 
+    all 0.25s ease; 
+} 
+ 
+ 
+.tw-mobile-toggle.open 
+span:nth-child(1) { 
+  transform: 
+    translateY(7px) 
+    rotate(45deg); 
+} 
+ 
+ 
+.tw-mobile-toggle.open 
+span:nth-child(2) { 
+  opacity: 0; 
+} 
+ 
+ 
+.tw-mobile-toggle.open 
+span:nth-child(3) { 
+  transform: 
+    translateY(-7px) 
+    rotate(-45deg); 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE MENU 
+========================================================= */ 
+ 
+.tw-mobile-menu { 
+  position: absolute; 
+ 
+  top: 100px; 
+ 
+  left: 18px; 
+  right: 18px; 
+ 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  gap: 5px; 
+ 
+  padding: 14px; 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.12); 
+ 
+  border-radius: 18px; 
+ 
+  background: 
+    rgba(5, 18, 34, 0.97); 
+ 
+  box-shadow: 
+    0 25px 50px 
+    rgba(0, 0, 0, 0.3); 
+ 
+  backdrop-filter: 
+    blur(20px); 
+ 
+  z-index: 6000; 
+ 
+  animation: 
+    twMobileIn 0.25s ease; 
+} 
+ 
+ 
+@keyframes twMobileIn { 
+ 
+  from { 
+    opacity: 0; 
+ 
+    transform: 
+      translateY(-8px); 
+  } 
+ 
+  to { 
+    opacity: 1; 
+ 
+    transform: 
+      translateY(0); 
+  } 
+ 
+} 
+ 
+ 
+.tw-mobile-menu a { 
+  padding: 
+    14px; 
+ 
+  border-radius: 10px; 
+ 
+  color: #ffffff; 
+ 
+  font-size: 0.9rem; 
+ 
+  font-weight: 600; 
+ 
+  text-decoration: none; 
+ 
+  transition: 
+    background 0.2s ease; 
+} 
+ 
+ 
+.tw-mobile-menu a:hover { 
+  background: 
+    rgba(255, 255, 255, 0.08); 
+} 
+ 
+ 
+/* ========================================================= 
+   TABLET 
+========================================================= */ 
+ 
+@media (max-width: 1300px) { 
+ 
+  .tw-navbar { 
+    grid-template-columns: 
+      minmax(170px, 1fr) 
+      auto 
+      minmax(280px, 1fr); 
+ 
+    gap: 15px; 
+ 
+    padding-left: 20px; 
+    padding-right: 20px; 
+  } 
+ 
+ 
+  .tw-brand-name { 
+    font-size: 1.45rem; 
+  } 
+ 
+ 
+  .tw-logo-box { 
+    width: 52px; 
+    height: 52px; 
+  } 
+ 
+ 
+  .tw-nav-link { 
+    padding-left: 12px; 
+    padding-right: 12px; 
+  } 
+ 
+ 
+  .tw-language-button, 
+  .tw-signup-button, 
+  .tw-login-button { 
+    padding-left: 13px; 
+    padding-right: 13px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   SMALL DESKTOP 
+========================================================= */ 
+ 
+@media (max-width: 1100px) { 
+ 
+  .tw-navbar-card { 
+    height: 165px; 
+  } 
+ 
+ 
+  .tw-navbar { 
+    grid-template-columns: 
+      auto 
+      1fr 
+      auto; 
+  } 
+ 
+ 
+  .tw-navigation-pill { 
+    gap: 0; 
+  } 
+ 
+ 
+  .tw-nav-link { 
+    padding-left: 9px; 
+    padding-right: 9px; 
+ 
+    font-size: 0.82rem; 
+  } 
+ 
+ 
+  .tw-navbar-right { 
+    gap: 6px; 
+  } 
+ 
+ 
+  .tw-signup-button, 
+  .tw-language-button, 
+  .tw-login-button { 
+    height: 46px; 
+ 
+    font-size: 0.78rem; 
+  } 
+ 
+ 
+  .tw-card-tech-stack { 
+    display: none; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE 
+========================================================= */ 
+ 
+@media (max-width: 991px) { 
+ 
+  .tw-navbar-area { 
+    min-height: 105px; 
+ 
+    padding: 
+      10px 10px 0; 
+  } 
+ 
+ 
+  .tw-navbar-card { 
+    height: auto; 
+ 
+    min-height: 88px; 
+ 
+    border-radius: 22px; 
+  } 
+ 
+ 
+  .tw-navbar { 
+    height: 88px; 
+ 
+    display: flex; 
+ 
+    justify-content: space-between; 
+ 
+    padding: 
+      14px 16px; 
+  } 
+ 
+ 
+  .tw-navbar-center { 
+    display: none; 
+  } 
+ 
+ 
+  .tw-navbar-right { 
+    margin-left: auto; 
+  } 
+ 
+ 
+  .tw-signup-button, 
+  .tw-login-button { 
+    display: none; 
+  } 
+ 
+ 
+  .tw-mobile-toggle { 
+    display: flex; 
+  } 
+ 
+ 
+  .tw-card-bottom { 
+    display: none; 
+  } 
+ 
+ 
+  .tw-logo-box { 
+    width: 48px; 
+    height: 48px; 
+ 
+    border-radius: 14px; 
+  } 
+ 
+ 
+  .tw-logo-letter { 
+    font-size: 24px; 
+  } 
+ 
+ 
+  .tw-brand-name { 
+    font-size: 1.35rem; 
+  } 
+ 
+ 
+  .tw-language-button { 
+    height: 46px; 
+  } 
+ 
+ 
+  .tw-language-panel { 
+    position: fixed; 
+ 
+    top: 100px; 
+ 
+    left: 15px; 
+    right: 15px; 
+ 
+    width: auto; 
+ 
+    max-width: none; 
+  } 
+ 
+ 
+  /* ===================================================== 
+     HOME HERO CONTENT — MOBILE 
+  ===================================================== */ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content { 
+    top: 125px; 
+ 
+    width: 
+      min( 
+        620px, 
+        calc(100% - 36px) 
+      ); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content h1 { 
+    font-size: 
+      clamp( 
+        2.05rem, 
+        6vw, 
+        3.2rem 
+      ); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content p { 
+    font-size: 0.9rem; 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-points { 
+    margin-top: 18px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE SMALL 
+========================================================= */ 
+ 
+@media (max-width: 520px) { 
+ 
+  .tw-navbar-area { 
+    padding-left: 7px; 
+    padding-right: 7px; 
+  } 
+ 
+ 
+  .tw-navbar-card { 
+    border-radius: 18px; 
+  } 
+ 
+ 
+  .tw-navbar { 
+    padding: 
+      12px; 
+  } 
+ 
+ 
+  .tw-brand { 
+    gap: 9px; 
+  } 
+ 
+ 
+  .tw-brand-name { 
+    font-size: 1.15rem; 
+  } 
+ 
+ 
+  .tw-logo-box { 
+    width: 44px; 
+    height: 44px; 
+  } 
+ 
+ 
+  .tw-language-button { 
+    width: 45px; 
+ 
+    padding: 0; 
+ 
+    justify-content: center; 
+  } 
+ 
+ 
+  .tw-language-button 
+  > span:nth-child(2), 
+  .tw-language-chevron { 
+    display: none; 
+  } 
+ 
+ 
+  .tw-mobile-toggle { 
+    width: 44px; 
+    height: 44px; 
+  } 
+ 
+ 
+  /* ===================================================== 
+     HOME HERO 
+  ===================================================== */ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content { 
+    top: 112px; 
+ 
+    width: 
+      calc(100% - 28px); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-eyebrow { 
+    font-size: 0.58rem; 
+ 
+    letter-spacing: 
+      0.10em; 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content h1 { 
+    margin-top: 14px; 
+ 
+    font-size: 
+      clamp( 
+        1.85rem, 
+        9vw, 
+        2.55rem 
+      ); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content p { 
+    font-size: 0.78rem; 
+ 
+    line-height: 1.55; 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-points span { 
+    font-size: 0.58rem; 
+ 
+    padding: 
+      5px 9px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   VERY SMALL MOBILE 
+========================================================= */ 
+ 
+@media (max-width: 380px) { 
+ 
+  .tw-brand-name { 
+    font-size: 1.05rem; 
+  } 
+ 
+ 
+  .tw-logo-box { 
+    width: 41px; 
+    height: 41px; 
+  } 
+ 
+ 
+  .tw-language-panel { 
+    top: 95px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   ACCESSIBILITY 
+========================================================= */ 
+ 
+.tw-nav-link:focus-visible, 
+.tw-language-button:focus-visible, 
+.tw-signup-button:focus-visible, 
+.tw-login-button:focus-visible, 
+.tw-mobile-toggle:focus-visible, 
+.tw-mega-link:focus-visible, 
+.tw-feature-link:focus-visible { 
+  outline: 
+    2px solid #60a5fa; 
+ 
+  outline-offset: 3px; 
+} 
+ 
+ 
+/* ========================================================= 
+   REDUCED MOTION 
+========================================================= */ 
+ 
+@media (prefers-reduced-motion: reduce) { 
+ 
+  .tw-navbar-video, 
+  .tw-grid-overlay, 
+  .tw-glow, 
+  .tw-tech-line, 
+  .tw-status-dot { 
+    animation: none; 
+  } 
+ 
+ 
+  .tw-mega-menu, 
+  .tw-language-panel, 
+  .tw-mobile-menu { 
+    animation: none; 
+  } 
+ 
+ 
+  .tw-mega-feature:hover 
+  .tw-feature-media img { 
+    transform: none; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   ROUTE-AWARE NAVBAR 
+   HOME = LARGE VIDEO CARD 
+   INTERNAL PAGES = COMPACT NAVBAR ONLY 
+========================================================= */ 
+ 
+.tw-navbar-area.tw-inner-navbar { 
+  min-height: 0; 
+ 
+  height: auto; 
+ 
+  padding: 
+    10px 16px 0; 
+} 
+ 
+ 
+/* ========================================================= 
+   COMPACT INTERNAL PAGE CARD
+   INTERNAL PAGES = LINEAR GRADIENT
+========================================================= */ 
+ 
+.tw-navbar-card.tw-inner-card { 
+  height: auto; 
+ 
+  min-height: 84px; 
+ 
+  width: 100%; 
+ 
+  margin: 0 auto; 
+ 
+  border-radius: 20px; 
+ 
+  overflow: visible; 
+ 
+  background: 
+    linear-gradient(
+  to right,
+  #4667a8,
+  #006fae,
+  #006fae,
+  #4667a8
+); 
+ 
+  border: 
+    1px solid rgba(255, 255, 255, 0.12); 
+ 
+  box-shadow: 
+    0 18px 45px 
+    rgba(3, 15, 31, 0.18), 
+ 
+    0 5px 18px 
+    rgba(15, 60, 110, 0.10), 
+ 
+    inset 0 1px 0 
+    rgba(255, 255, 255, 0.08); 
+} 
+ 
+ 
+/* ========================================================= 
+   HIDE HOME VISUALS ON INTERNAL PAGES 
+========================================================= */ 
+ 
+.tw-inner-card 
+.tw-navbar-video-layer, 
+.tw-inner-card 
+.tw-grid-overlay, 
+.tw-inner-card 
+.tw-glow, 
+.tw-inner-card 
+.tw-tech-line, 
+.tw-inner-card 
+.tw-card-bottom { 
+  display: none !important; 
+} 
+ 
+ 
+.tw-navbar-card.tw-inner-card 
+.tw-navbar { 
+  height: 84px; 
+} 
+ 
+ 
+/* ========================================================= 
+   INTERNAL NAVBAR CONTENT 
+========================================================= */ 
+ 
+.tw-inner-card 
+.tw-navbar { 
+  padding: 
+    14px 22px; 
+ 
+  grid-template-columns: 
+    minmax(190px, 1fr) 
+    auto 
+    minmax(300px, 1fr); 
+} 
+ 
+ 
+.tw-inner-card 
+.tw-navigation-pill { 
+  background: 
+    linear-gradient( 
+      135deg, 
+      rgba(255, 255, 255, 0.94), 
+      rgba(229, 237, 247, 0.88) 
+    ); 
+ 
+  box-shadow: 
+    0 10px 28px 
+    rgba(0, 0, 0, 0.10), 
+ 
+    inset 0 1px 0 
+    rgba(255, 255, 255, 0.8); 
+} 
+ 
+ 
+.tw-inner-card 
+.tw-nav-item { 
+  position: static; 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA MENU — MEDIUM DESKTOP 
+========================================================= */ 
+ 
+@media (max-width: 1200px) { 
+ 
+  .tw-inner-card 
+  .tw-navbar { 
+    grid-template-columns: 
+      minmax(160px, 1fr) 
+      auto 
+      minmax(270px, 1fr); 
+  } 
+ 
+ 
+  .tw-mega-menu { 
+    width: 
+      min( 
+        1000px, 
+        calc(100vw - 32px) 
+      ); 
+  } 
+ 
+ 
+  .tw-mega-inner { 
+    grid-template-columns: 
+      minmax(0, 1.25fr) 
+      minmax(300px, 0.95fr); 
+ 
+    min-height: 360px; 
+  } 
+ 
+ 
+  .tw-mega-feature { 
+    min-height: 360px; 
+  } 
+ 
+ 
+  .tw-feature-content { 
+    min-height: 360px; 
+ 
+    padding: 
+      26px; 
+  } 
+ 
+ 
+  .tw-mega-feature h3 { 
+    font-size: 1.55rem; 
+ 
+    max-width: 340px; 
+  } 
+ 
+ 
+  .tw-mega-feature p { 
+    max-width: 330px; 
+ 
+    font-size: 0.75rem; 
+  } 
+ 
+ 
+  /* ===================================================== 
+     HOME HERO 
+  ===================================================== */ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content { 
+    top: 142px; 
+ 
+    width: 
+      min( 
+        680px, 
+        calc(100% - 42px) 
+      ); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   TABLET MEGA MENU 
+========================================================= */ 
+ 
+@media (max-width: 991px) { 
+ 
+  .tw-navbar-area.tw-inner-navbar { 
+    min-height: 0; 
+ 
+    padding: 
+      8px 10px 0; 
+  } 
+ 
+ 
+  .tw-navbar-card.tw-inner-card { 
+    min-height: 76px; 
+ 
+    border-radius: 18px; 
+  } 
+ 
+ 
+  /* 
+   * Mega menu is normally disabled below 992px 
+   * because openMenu() only activates hover 
+   * above this breakpoint. 
+   */ 
+ 
+  .tw-inner-card 
+  .tw-mega-menu { 
+    left: 50%; 
+ 
+    width: 
+      calc(100vw - 20px); 
+ 
+    max-width: 
+      calc(100vw - 20px); 
+  } 
+ 
+ 
+  .tw-inner-card 
+  .tw-mega-inner { 
+    grid-template-columns: 1fr; 
+ 
+    min-height: auto; 
+  } 
+ 
+ 
+  .tw-inner-card 
+  .tw-mega-feature { 
+    min-height: 350px; 
+ 
+    border-left: 0; 
+ 
+    border-top: 
+      1px solid 
+      rgba( 
+        15, 
+        23, 
+        42, 
+        0.06 
+      ); 
+  } 
+ 
+ 
+  .tw-inner-card 
+  .tw-feature-content { 
+    min-height: 350px; 
+ 
+    padding: 
+      28px 30px; 
+  } 
+ 
+ 
+  .tw-inner-card 
+  .tw-mega-feature h3 { 
+    max-width: 600px; 
+ 
+    font-size: 1.75rem; 
+  } 
+ 
+ 
+  .tw-inner-card 
+  .tw-mega-feature p { 
+    max-width: 600px; 
+ 
+    font-size: 0.82rem; 
+  } 
+ 
+ 
+  /* ===================================================== 
+     HOME HERO 
+  ===================================================== */ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content h1 { 
+    font-size: 
+      clamp( 
+        2.05rem, 
+        6vw, 
+        3.2rem 
+      ); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   HOME CARD — PRESERVE 600PX HERO 
+========================================================= */ 
+ 
+.tw-navbar-area.tw-home-navbar { 
+  min-height: 205px; 
+} 
+ 
+ 
+.tw-navbar-card.tw-home-card { 
+  height: 600px; 
+} 
+ 
+ 
+/* ========================================================= 
+   HOME CARD CENTER VALUE MESSAGE 
+========================================================= */ 
+ 
+.tw-home-card 
+.tw-home-hero-content { 
+  position: absolute; 
+ 
+  top: 150px; 
+ 
+  left: 50%; 
+ 
+  width: 
+    min( 
+      760px, 
+      calc(100% - 48px) 
+    ); 
+ 
+  transform: 
+    translateX(-50%); 
+ 
+  z-index: 5; 
+ 
+  display: flex; 
+ 
+  flex-direction: column; 
+ 
+  align-items: center; 
+ 
+  text-align: center; 
+ 
+  pointer-events: none; 
+} 
+ 
+ 
+.tw-home-card 
+.tw-home-hero-eyebrow { 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  min-height: 28px; 
+ 
+  padding: 
+    6px 13px; 
+ 
+  border: 
+    1px solid 
+    rgba( 
+      121, 
+      185, 
+      255, 
+      0.28 
+    ); 
+ 
+  border-radius: 999px; 
+ 
+  background: 
+    rgba( 
+      20, 
+      62, 
+      105, 
+      0.30 
+    ); 
+ 
+  color: 
+    #9ecbff; 
+ 
+  font-size: 0.68rem; 
+ 
+  font-weight: 800; 
+ 
+  letter-spacing: 
+    0.14em; 
+ 
+  text-transform: uppercase; 
+ 
+  box-shadow: 
+    0 8px 25px 
+    rgba(0, 0, 0, 0.12); 
+ 
+  backdrop-filter: 
+    blur(10px); 
+ 
+  -webkit-backdrop-filter: 
+    blur(10px); 
+} 
+ 
+ 
+.tw-home-card 
+.tw-home-hero-content h1 { 
+  margin: 
+    18px 0 14px; 
+ 
+  max-width: 760px; 
+ 
+  color: #ffffff; 
+ 
+  font-size: 
+    clamp( 
+      2.45rem, 
+      4.2vw, 
+      4.25rem 
+    ); 
+ 
+  font-weight: 780; 
+ 
+  line-height: 1.02; 
+ 
+  letter-spacing: 
+    -0.055em; 
+ 
+  text-shadow: 
+    0 12px 35px 
+    rgba(0, 0, 0, 0.32); 
+} 
+ 
+ 
+.tw-home-card 
+.tw-home-hero-content p { 
+  max-width: 640px; 
+ 
+  margin: 0; 
+ 
+  color: 
+    rgba( 
+      218, 
+      232, 
+      247, 
+      0.88 
+    ); 
+ 
+  font-size: 
+    clamp( 
+      0.92rem, 
+      1.35vw, 
+      1.08rem 
+    ); 
+ 
+  font-weight: 450; 
+ 
+  line-height: 1.7; 
+ 
+  text-shadow: 
+    0 6px 20px 
+    rgba(0, 0, 0, 0.30); 
+} 
+ 
+ 
+.tw-home-card 
+.tw-home-hero-points { 
+  display: flex; 
+ 
+  align-items: center; 
+ 
+  justify-content: center; 
+ 
+  flex-wrap: wrap; 
+ 
+  gap: 8px; 
+ 
+  margin-top: 24px; 
+} 
+ 
+ 
+.tw-home-card 
+.tw-home-hero-points span { 
+  display: inline-flex; 
+ 
+  align-items: center; 
+ 
+  min-height: 31px; 
+ 
+  padding: 
+    6px 12px; 
+ 
+  border: 
+    1px solid 
+    rgba(255, 255, 255, 0.13); 
+ 
+  border-radius: 999px; 
+ 
+  background: 
+    rgba(4, 19, 37, 0.42); 
+ 
+  color: 
+    #c9d9eb; 
+ 
+  font-size: 0.68rem; 
+ 
+  font-weight: 700; 
+ 
+  letter-spacing: 0.04em; 
+ 
+  backdrop-filter: 
+    blur(10px); 
+ 
+  -webkit-backdrop-filter: 
+    blur(10px); 
+} 
+ 
+ 
+/* ========================================================= 
+   MEGA MENU — FEATURE IMAGE RESPONSIVE 
+========================================================= */ 
+ 
+@media (max-width: 1200px) { 
+ 
+  .tw-mega-feature { 
+    min-height: 360px; 
+  } 
+ 
+ 
+  .tw-feature-content { 
+    min-height: 360px; 
+ 
+    padding: 
+      26px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   MOBILE FEATURE IMAGE 
+========================================================= */ 
+ 
+@media (max-width: 520px) { 
+ 
+  .tw-mega-feature { 
+    min-height: 300px; 
+  } 
+ 
+ 
+  .tw-feature-content { 
+    min-height: 300px; 
+ 
+    padding: 
+      24px; 
+  } 
+ 
+ 
+  .tw-feature-label { 
+    margin-bottom: 8px; 
+ 
+    font-size: 0.60rem; 
+  } 
+ 
+ 
+  .tw-mega-feature h3 { 
+    max-width: 100%; 
+ 
+    margin-bottom: 9px; 
+ 
+    font-size: 1.45rem; 
+ 
+    line-height: 1.15; 
+  } 
+ 
+ 
+  .tw-mega-feature p { 
+    max-width: 100%; 
+ 
+    margin-bottom: 15px; 
+ 
+    font-size: 0.76rem; 
+ 
+    line-height: 1.5; 
+  } 
+ 
+ 
+  .tw-feature-link { 
+    font-size: 0.75rem; 
+  } 
+ 
+ 
+  /* ===================================================== 
+     HOME CARD 
+  ===================================================== */ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content { 
+    top: 112px; 
+ 
+    width: 
+      calc(100% - 28px); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-eyebrow { 
+    font-size: 0.58rem; 
+ 
+    letter-spacing: 
+      0.10em; 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content h1 { 
+    margin-top: 14px; 
+ 
+    font-size: 
+      clamp( 
+        1.85rem, 
+        9vw, 
+        2.55rem 
+      ); 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-content p { 
+    font-size: 0.78rem; 
+ 
+    line-height: 1.55; 
+  } 
+ 
+ 
+  .tw-home-card 
+  .tw-home-hero-points span { 
+    font-size: 0.58rem; 
+ 
+    padding: 
+      5px 9px; 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   VERY SMALL FEATURE CARD 
+========================================================= */ 
+ 
+@media (max-width: 380px) { 
+ 
+  .tw-mega-feature { 
+    min-height: 280px; 
+  } 
+ 
+ 
+  .tw-feature-content { 
+    min-height: 280px; 
+ 
+    padding: 
+      20px; 
+  } 
+ 
+ 
+  .tw-mega-feature h3 { 
+    font-size: 1.3rem; 
+  } 
+ 
+ 
+  .tw-mega-feature p { 
+    font-size: 0.72rem; 
+  } 
+ 
+ 
+  .tw-brand-name { 
+    font-size: 1.05rem; 
+  } 
+ 
+ 
+  .tw-logo-box { 
+    width: 41px; 
+    height: 41px; 
+  } 
+ 
+ 
+  .tw-language-panel { 
+    top: 95px; 
+  } 
+ 
+ 
+  .tw-home-hero-points h5{ 
+    color: white; 
+  } 
+} 
+ 
+ 
+/* ========================================================= 
+   TECHWRAP — MOBILE NAVIGATION / ACCORDION 
+   Desktop navbar + desktop mega menu remain unchanged. 
+========================================================= */ 
+ 
+@media (max-width: 991px) { 
+ 
+  .tw-mobile-menu { 
+    top: 88px; 
+    left: 12px; 
+    right: 12px; 
+ 
+    display: flex; 
+    flex-direction: column; 
+    gap: 3px; 
+ 
+    max-height: calc(100vh - 110px); 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+ 
+    padding: 10px; 
+ 
+    border: 
+      1px solid rgba(255, 255, 255, 0.13); 
+ 
+    border-radius: 18px; 
+ 
+    background: 
+      rgba(5, 18, 34, 0.98); 
+ 
+    box-shadow: 
+      0 25px 55px rgba(0, 0, 0, 0.38), 
+      inset 0 1px 0 rgba(255, 255, 255, 0.06); 
+ 
+    backdrop-filter: blur(22px); 
+    -webkit-backdrop-filter: blur(22px); 
+ 
+    scrollbar-width: thin; 
+    scrollbar-color: 
+      rgba(255, 255, 255, 0.20) 
+      transparent; 
+  } 
+ 
+ 
+  .tw-mobile-menu::-webkit-scrollbar { 
+    width: 4px; 
+  } 
+ 
+ 
+  .tw-mobile-menu::-webkit-scrollbar-thumb { 
+    border-radius: 999px; 
+    background: rgba(255, 255, 255, 0.20); 
+  } 
+ 
+ 
+  .tw-mobile-menu-group { 
+    width: 100%; 
+  } 
+ 
+ 
+  .tw-mobile-menu-trigger { 
+    width: 100%; 
+    min-height: 50px; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+ 
+    padding: 0 14px; 
+ 
+    border: 0; 
+    border-radius: 11px; 
+ 
+    background: transparent; 
+ 
+    color: #ffffff; 
+ 
+    font-family: inherit; 
+    font-size: 0.92rem; 
+    font-weight: 650; 
+ 
+    text-align: left; 
+    cursor: pointer; 
+ 
+    transition: 
+      background 0.2s ease, 
+      color 0.2s ease; 
+  } 
+ 
+ 
+  .tw-mobile-menu-trigger:hover, 
+  .tw-mobile-menu-trigger.open { 
+    background: rgba(255, 255, 255, 0.08); 
+    color: #ffffff; 
+  } 
+ 
+ 
+  .tw-mobile-menu-plus { 
+    width: 25px; 
+    height: 25px; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+ 
+    flex-shrink: 0; 
+ 
+    border: 
+      1px solid rgba(255, 255, 255, 0.16); 
+ 
+    border-radius: 7px; 
+ 
+    background: rgba(255, 255, 255, 0.06); 
+ 
+    color: #dbeafe; 
+ 
+    font-size: 1.05rem; 
+    font-weight: 500; 
+    line-height: 1; 
+  } 
+ 
+ 
+  .tw-mobile-submenu { 
+    display: flex; 
+    flex-direction: column; 
+ 
+    margin: 0 5px 5px; 
+    padding: 4px 0; 
+ 
+    border-left: 
+      1px solid rgba(96, 165, 250, 0.25); 
+ 
+    background: 
+      rgba(255, 255, 255, 0.025); 
+ 
+    animation: 
+      twMobileSubmenuIn 0.20s ease; 
+  } 
+ 
+ 
+  @keyframes twMobileSubmenuIn { 
+    from { 
+      opacity: 0; 
+      transform: translateY(-4px); 
+    } 
+ 
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+  } 
+ 
+ 
+  .tw-mobile-submenu a { 
+    min-height: 40px; 
+ 
+    display: flex; 
+    align-items: center; 
+ 
+    margin: 1px 0; 
+    padding: 0 14px 0 18px; 
+ 
+    border-radius: 8px; 
+ 
+    color: #b9c9dc; 
+ 
+    font-size: 0.82rem; 
+    font-weight: 550; 
+ 
+    text-decoration: none; 
+ 
+    transition: 
+      color 0.2s ease, 
+      background 0.2s ease, 
+      padding-left 0.2s ease; 
+  } 
+ 
+ 
+  .tw-mobile-submenu a:hover { 
+    padding-left: 22px; 
+ 
+    background: rgba(255, 255, 255, 0.07); 
+    color: #ffffff; 
+  } 
+ 
+ 
+  .tw-mobile-contact { 
+    min-height: 50px; 
+ 
+    display: flex; 
+    align-items: center; 
+ 
+    padding: 0 14px; 
+ 
+    border-radius: 11px; 
+ 
+    color: #ffffff !important; 
+ 
+    font-size: 0.92rem !important; 
+    font-weight: 650 !important; 
+ 
+    text-decoration: none; 
+ 
+    transition: 
+      background 0.2s ease, 
+      color 0.2s ease; 
+  } 
+ 
+ 
+  .tw-mobile-contact:hover { 
+    background: rgba(255, 255, 255, 0.08); 
+    color: #ffffff !important; 
+  } 
+ 
+ 
+  .tw-mobile-auth { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px; 
+ 
+    margin-top: 8px; 
+    padding-top: 10px; 
+ 
+    border-top: 
+      1px solid rgba(255, 255, 255, 0.10); 
+  } 
+ 
+ 
+  .tw-mobile-auth a { 
+    min-height: 46px; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+ 
+    padding: 0 10px; 
+ 
+    border-radius: 11px; 
+ 
+    font-size: 0.84rem !important; 
+    font-weight: 700 !important; 
+ 
+    text-decoration: none; 
+  } 
+ 
+ 
+  .tw-mobile-signup { 
+    border: 
+      1px solid rgba(255, 255, 255, 0.18); 
+ 
+    background: rgba(255, 255, 255, 0.07); 
+    color: #ffffff !important; 
+  } 
+ 
+ 
+  .tw-mobile-signup:hover { 
+    background: rgba(255, 255, 255, 0.13); 
+    color: #ffffff !important; 
+  } 
+ 
+ 
+  .tw-mobile-login { 
+    border: 
+      1px solid rgba(59, 130, 246, 0.35); 
+ 
+    background: 
+      linear-gradient( 
+        135deg, 
+        #347df4, 
+        #2563eb 
+      ); 
+ 
+    color: #ffffff !important; 
+ 
+    box-shadow: 
+      0 8px 20px rgba(37, 99, 235, 0.25); 
+  } 
+ 
+ 
+  .tw-mobile-login:hover { 
+    color: #ffffff !important; 
+    transform: translateY(-1px); 
+  } 
+ 
+} 
+ 
+ 
+/* ========================================================= 
+   VERY SMALL MOBILE — 360PX FRIENDLY 
+========================================================= */ 
+ 
+@media (max-width: 380px) { 
+ 
+  .tw-mobile-menu { 
+    left: 9px; 
+    right: 9px; 
+    padding: 8px; 
+  } 
+ 
+ 
+  .tw-mobile-menu-trigger, 
+  .tw-mobile-contact { 
+    min-height: 47px; 
+  } 
+ 
+ 
+  .tw-mobile-menu-trigger { 
+    padding-left: 12px; 
+    padding-right: 12px; 
+  } 
+ 
+ 
+  .tw-mobile-submenu a { 
+    min-height: 38px; 
+    font-size: 0.78rem; 
+  } 
+ 
+ 
+  .tw-mobile-auth a { 
+    min-height: 44px; 
+  } 
+ 
+}

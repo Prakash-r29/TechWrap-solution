@@ -1,0 +1,1542 @@
+/* =========================================================
+   TECHWRAP — TESTIMONIALS / INSIDE TECHWRAP
+   Premium visual treatment
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.tw-testi {
+  position: relative;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 8% 28%,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 88% 65%,
+      rgba(6, 182, 212, 0.08),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7faff 52%,
+      #eef6ff 100%
+    );
+}
+
+
+/* =========================================================
+   TECHWRAP GRID BACKGROUND
+========================================================= */
+
+.tw-testi::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.055) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    52px 52px;
+
+  opacity: 0.62;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 72%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.tw-testi::after {
+  content: "";
+
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  right: -220px;
+  top: 12%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.10),
+      rgba(6, 182, 212, 0.045) 42%,
+      transparent 72%
+    );
+
+  filter:
+    blur(30px);
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    twTestiAmbient
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes twTestiAmbient {
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(0.92);
+
+    opacity:
+      0.72;
+  }
+
+  to {
+    transform:
+      translate3d(
+        -22px,
+        18px,
+        0
+      )
+      scale(1.08);
+
+    opacity:
+      1;
+  }
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.tw-testi__head {
+  position: relative;
+
+  text-align: center;
+
+  max-width:
+    720px;
+
+  margin:
+    0 auto
+    3.4rem;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.tw-testi__head .tw-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  color:
+    #2563eb;
+
+  font-size:
+    0.76rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+}
+
+.tw-testi__head .tw-eyebrow::before {
+  content: "";
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 0 5px
+      rgba(37, 99, 235, 0.065),
+
+    0 0 15px
+      rgba(6, 182, 212, 0.28);
+
+  animation:
+    twTestiEyebrowPulse
+    2.6s
+    ease-in-out
+    infinite;
+}
+
+@keyframes twTestiEyebrowPulse {
+  0%,
+  100% {
+    transform:
+      scale(0.88);
+
+    opacity:
+      0.7;
+  }
+
+  50% {
+    transform:
+      scale(1.12);
+
+    opacity:
+      1;
+  }
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.tw-testi__head h2 {
+  position: relative;
+
+  display:
+    block;
+
+  margin:
+    0.7rem auto
+    0;
+
+  color:
+    var(
+      --tw-navy,
+      #0b1833
+    );
+
+  font-family:
+    var(
+      --tw-font-display,
+      inherit
+    );
+
+  font-size:
+    clamp(
+      2.2rem,
+      4.2vw,
+      3.7rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.05em;
+
+  text-wrap:
+    balance;
+}
+
+
+/* =========================================================
+   HEADING ACCENT
+========================================================= */
+
+.tw-testi__head h2::after {
+  content: "";
+
+  display:
+    block;
+
+  width:
+    68px;
+
+  height:
+    3px;
+
+  margin:
+    1rem auto
+    0;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4,
+      transparent
+    );
+
+  opacity:
+    0.72;
+
+  transform-origin:
+    center;
+
+  animation:
+    twTestiHeadingLine
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes twTestiHeadingLine {
+  0%,
+  100% {
+    transform:
+      scaleX(0.7);
+
+    opacity:
+      0.45;
+  }
+
+  50% {
+    transform:
+      scaleX(1);
+
+    opacity:
+      0.9;
+  }
+}
+
+
+/* =========================================================
+   OPTIONAL INTRO
+========================================================= */
+
+.tw-testi__intro {
+  max-width:
+    680px;
+
+  margin:
+    1rem auto
+    0;
+
+  color:
+    #64748b;
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.72;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.tw-testi__slider {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   VIEWPORT
+========================================================= */
+
+.tw-testi__viewport {
+  position: relative;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    28px;
+
+  border:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.18
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  box-shadow:
+    0 30px 80px
+      rgba(
+        15,
+        23,
+        42,
+        0.10
+      ),
+
+    0 8px 30px
+      rgba(
+        37,
+        99,
+        235,
+        0.045
+      ),
+
+    inset 0 1px 0
+      rgba(
+        255,
+        255,
+        255,
+        0.96
+      );
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+    transform
+    0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    box-shadow
+    0.55s
+    ease,
+
+    border-color
+    0.4s
+    ease;
+}
+
+
+/* =========================================================
+   VIEWPORT HOVER
+========================================================= */
+
+.tw-testi__viewport:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      37,
+      99,
+      235,
+      0.16
+    );
+
+  box-shadow:
+    0 38px 95px
+      rgba(
+        15,
+        23,
+        42,
+        0.13
+      ),
+
+    0 12px 35px
+      rgba(
+        37,
+        99,
+        235,
+        0.07
+      ),
+
+    inset 0 1px 0
+      rgba(
+        255,
+        255,
+        255,
+        1
+      );
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.tw-testi__track {
+  display:
+    flex;
+
+  transition:
+    transform
+    var(--tw-dur-slow)
+    var(--tw-ease);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-testi__track {
+    transition:
+      none;
+  }
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.tw-testi__slide {
+  position: relative;
+
+  flex:
+    0 0 100%;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.08fr
+    0.92fr;
+
+  gap:
+    0;
+
+  min-height:
+    440px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+}
+
+
+/* =========================================================
+   VIDEO SIDE
+========================================================= */
+
+.tw-testi__video-wrap {
+  position: relative;
+
+  overflow:
+    hidden;
+
+  min-height:
+    100%;
+
+  background:
+    #08162f;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.tw-testi__video-wrap video {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  min-height:
+    440px;
+
+  object-fit:
+    cover;
+
+  transform:
+    scale(1.002);
+
+  filter:
+    saturate(0.96)
+    contrast(1.03);
+
+  transition:
+    transform
+    0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    filter
+    0.7s
+    ease;
+}
+
+
+/* =========================================================
+   VIDEO HOVER
+========================================================= */
+
+.tw-testi__viewport:hover
+.tw-testi__video-wrap video {
+  transform:
+    scale(1.025);
+
+  filter:
+    saturate(1)
+    contrast(1.045);
+}
+
+
+/* =========================================================
+   CINEMATIC VIDEO OVERLAY
+========================================================= */
+
+.tw-testi__video-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        4,
+        12,
+        29,
+        0.05
+      ) 0%,
+
+      rgba(
+        4,
+        12,
+        29,
+        0
+      ) 65%,
+
+      rgba(
+        4,
+        12,
+        29,
+        0.10
+      ) 100%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(
+        5,
+        15,
+        35,
+        0.02
+      ),
+      rgba(
+        5,
+        15,
+        35,
+        0.18
+      )
+    );
+
+  z-index:
+    2;
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   BLUE VIDEO LIGHT
+========================================================= */
+
+.tw-testi__video-wrap::after {
+  content: "";
+
+  position: absolute;
+
+  width:
+    280px;
+
+  height:
+    280px;
+
+  right:
+    -120px;
+
+  bottom:
+    -130px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        37,
+        99,
+        235,
+        0.22
+      ),
+      transparent
+      70%
+    );
+
+  filter:
+    blur(16px);
+
+  z-index:
+    2;
+
+  pointer-events:
+    none;
+
+  animation:
+    twTestiVideoGlow
+    7s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes twTestiVideoGlow {
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(0.86);
+
+    opacity:
+      0.55;
+  }
+
+  to {
+    transform:
+      translate3d(
+        -18px,
+        -12px,
+        0
+      )
+      scale(1.08);
+
+    opacity:
+      0.95;
+  }
+}
+
+
+/* =========================================================
+   META / RIGHT CONTENT
+========================================================= */
+
+.tw-testi__meta {
+  position: relative;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  padding:
+    clamp(
+      2rem,
+      4vw,
+      3.4rem
+    );
+
+  overflow:
+    hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fcfdff 55%,
+      #f5faff 100%
+    );
+
+  border-left:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.12
+    );
+}
+
+
+/* =========================================================
+   META AMBIENT LIGHT
+========================================================= */
+
+.tw-testi__meta::before {
+  content: "";
+
+  position: absolute;
+
+  width:
+    250px;
+
+  height:
+    250px;
+
+  right:
+    -115px;
+
+  top:
+    -100px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        37,
+        99,
+        235,
+        0.075
+      ),
+      transparent
+      70%
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   META TOP ACCENT
+========================================================= */
+
+.tw-testi__meta::after {
+  content: "";
+
+  position: absolute;
+
+  left:
+    0;
+
+  top:
+    14%;
+
+  width:
+    3px;
+
+  height:
+    72px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #06b6d4,
+      #2563eb
+    );
+
+  box-shadow:
+    0 0 12px
+      rgba(
+        37,
+        99,
+        235,
+        0.14
+      );
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.tw-testi__label {
+  position: relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  align-self:
+    flex-start;
+
+  margin-bottom:
+    0.9rem;
+
+  padding:
+    0.38rem
+    0.72rem;
+
+  border:
+    1px solid
+    rgba(
+      37,
+      99,
+      235,
+      0.10
+    );
+
+  border-radius:
+    999px;
+
+  color:
+    #2563eb;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.045
+    );
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.05em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.tw-testi__quote {
+  position: relative;
+
+  z-index:
+    2;
+
+  max-width:
+    620px;
+
+  margin:
+    0 0
+    1.65rem;
+
+  font-family:
+    var(
+      --tw-font-display,
+      inherit
+    );
+
+  font-size:
+    clamp(
+      1.2rem,
+      2vw,
+      1.58rem
+    );
+
+  font-weight:
+    650;
+
+  color:
+    var(
+      --tw-navy,
+      #0b1833
+    );
+
+  line-height:
+    1.45;
+
+  letter-spacing:
+    -0.018em;
+}
+
+
+/* =========================================================
+   QUOTE MARK
+========================================================= */
+
+.tw-testi__quote::first-letter {
+  color:
+    #2563eb;
+}
+
+
+/* =========================================================
+   PERSON
+========================================================= */
+
+.tw-testi__person {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    0.22rem;
+}
+
+.tw-testi__person strong {
+  display:
+    block;
+
+  color:
+    #10203d;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    750;
+}
+
+.tw-testi__person span {
+  display:
+    block;
+
+  color:
+    #71839a;
+
+  font-size:
+    0.84rem;
+
+  line-height:
+    1.45;
+}
+
+
+/* =========================================================
+   SIDE NAVIGATION
+   KEPT HIDDEN
+========================================================= */
+
+.tw-testi__nav {
+  display:
+    none !important;
+}
+
+
+/* =========================================================
+   DOT NAVIGATION
+========================================================= */
+
+.tw-testi__dots {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.48rem;
+
+  margin-top:
+    1.35rem;
+}
+
+
+/* =========================================================
+   DOT
+========================================================= */
+
+.tw-testi__dot {
+  position:
+    relative;
+
+  width:
+    8px;
+
+  height:
+    8px;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  border-radius:
+    999px;
+
+  background:
+    #cbd5e1;
+
+  cursor:
+    pointer;
+
+  transition:
+    width
+    0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    background
+    0.35s
+    ease,
+
+    box-shadow
+    0.35s
+    ease,
+
+    transform
+    0.35s
+    ease;
+}
+
+
+/* =========================================================
+   DOT HOVER
+========================================================= */
+
+.tw-testi__dot:hover {
+  transform:
+    scale(1.2);
+
+  background:
+    #94a3b8;
+}
+
+
+/* =========================================================
+   ACTIVE DOT
+========================================================= */
+
+.tw-testi__dot.is-active {
+  width:
+    28px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 4px 12px
+      rgba(
+        37,
+        99,
+        235,
+        0.22
+      );
+}
+
+
+/* =========================================================
+   ACTIVE DOT SHINE
+========================================================= */
+
+.tw-testi__dot.is-active::after {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    1px
+    3px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.5
+      ),
+      transparent
+    );
+
+  opacity:
+    0.55;
+
+  animation:
+    twTestiDotShine
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes twTestiDotShine {
+  0%,
+  100% {
+    transform:
+      translateX(-8px);
+
+    opacity:
+      0;
+  }
+
+  45% {
+    opacity:
+      0.6;
+  }
+
+  70% {
+    transform:
+      translateX(8px);
+
+    opacity:
+      0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .tw-testi__slide {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    min-height:
+      400px;
+  }
+
+  .tw-testi__video-wrap video {
+    min-height:
+      400px;
+  }
+
+  .tw-testi__meta {
+    padding:
+      2rem;
+  }
+
+  .tw-testi__quote {
+    font-size:
+      1.16rem;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE / STACK
+========================================================= */
+
+@media (max-width: 860px) {
+  .tw-testi__head {
+    margin-bottom:
+      2.2rem;
+  }
+
+  .tw-testi__slide {
+    grid-template-columns:
+      1fr;
+
+    min-height:
+      auto;
+  }
+
+  .tw-testi__video-wrap {
+    aspect-ratio:
+      16 / 10;
+
+    min-height:
+      auto;
+  }
+
+  .tw-testi__video-wrap video {
+    min-height:
+      auto;
+
+    aspect-ratio:
+      16 / 10;
+  }
+
+  .tw-testi__meta {
+    min-height:
+      280px;
+
+    padding:
+      1.75rem;
+  }
+
+  .tw-testi__meta::after {
+    top:
+      16%;
+
+    height:
+      60px;
+  }
+
+  .tw-testi__quote {
+    font-size:
+      1.13rem;
+
+    line-height:
+      1.5;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+  .tw-testi::before {
+    background-size:
+      42px 42px;
+
+    opacity:
+      0.42;
+  }
+
+  .tw-testi__head {
+    max-width:
+      100%;
+
+    margin-bottom:
+      2rem;
+  }
+
+  .tw-testi__head h2 {
+    font-size:
+      2.35rem;
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  .tw-testi__intro {
+    font-size:
+      0.9rem;
+
+    line-height:
+      1.68;
+  }
+
+  .tw-testi__viewport {
+    border-radius:
+      21px;
+  }
+
+  .tw-testi__video-wrap video {
+    min-height:
+      230px;
+  }
+
+  .tw-testi__meta {
+    min-height:
+      255px;
+
+    padding:
+      1.45rem;
+  }
+
+  .tw-testi__label {
+    font-size:
+      0.58rem;
+  }
+
+  .tw-testi__quote {
+    font-size:
+      1rem;
+
+    line-height:
+      1.5;
+
+    margin-bottom:
+      1.25rem;
+  }
+
+  .tw-testi__person strong {
+    font-size:
+      0.9rem;
+  }
+
+  .tw-testi__person span {
+    font-size:
+      0.78rem;
+  }
+
+  .tw-testi__dots {
+    margin-top:
+      1.05rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .tw-testi__head h2 {
+    font-size:
+      2.05rem;
+  }
+
+  .tw-testi__intro {
+    font-size:
+      0.86rem;
+  }
+
+  .tw-testi__viewport {
+    border-radius:
+      18px;
+  }
+
+  .tw-testi__video-wrap video {
+    min-height:
+      205px;
+  }
+
+  .tw-testi__meta {
+    min-height:
+      235px;
+
+    padding:
+      1.25rem;
+  }
+
+  .tw-testi__quote {
+    font-size:
+      0.94rem;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-testi::after,
+  .tw-testi__head .tw-eyebrow::before,
+  .tw-testi__head h2::after,
+  .tw-testi__video-wrap::after,
+  .tw-testi__dot.is-active::after {
+    animation:
+      none !important;
+  }
+
+  .tw-testi__viewport:hover {
+    transform:
+      none;
+  }
+
+  .tw-testi__viewport:hover
+  .tw-testi__video-wrap video {
+    transform:
+      none;
+  }
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.tw-testi__viewport,
+.tw-testi__video-wrap video,
+.tw-testi__dot,
+.tw-testi__head .tw-eyebrow::before {
+  will-change:
+    transform;
+}

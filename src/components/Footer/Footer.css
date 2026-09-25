@@ -1,0 +1,625 @@
+/* =========================================================
+   TECHWRAP — PREMIUM FOOTER
+   Clean SaaS / Agency UX
+========================================================= */
+
+.tw-footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(37, 99, 235, 0.045),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 80%,
+      rgba(99, 102, 241, 0.04),
+      transparent 30%
+    ),
+    #ffffff;
+
+  border-top: 1px solid var(--tw-line);
+
+  padding: 4.5rem 0 0;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.tw-footer__glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.28;
+  z-index: -1;
+  animation: twFooterGlow 8s ease-in-out infinite alternate;
+}
+
+.tw-footer__glow--one {
+  width: 220px;
+  height: 220px;
+  top: -130px;
+  left: 15%;
+  background: rgba(37, 99, 235, 0.09);
+}
+
+.tw-footer__glow--two {
+  width: 260px;
+  height: 260px;
+  right: 4%;
+  bottom: -190px;
+  background: rgba(99, 102, 241, 0.08);
+  animation-delay: 2s;
+}
+
+@keyframes twFooterGlow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(0, -15px, 0) scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.tw-footer__grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 1.45fr)
+    repeat(4, minmax(130px, 1fr));
+
+  gap: 2.5rem;
+
+  margin-bottom: 3.5rem;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.tw-footer__brand {
+  padding-right: 2rem;
+
+  animation: twFooterBrandIn 0.75s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes twFooterBrandIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.tw-footer__logo {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 1rem;
+
+  color: var(--tw-navy);
+
+  font-family: var(--tw-font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  letter-spacing: -0.035em;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.tw-footer__logo strong {
+  color: var(--tw-blue);
+  font-weight: 800;
+}
+
+.tw-footer__logo:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
+
+.tw-footer__description {
+  max-width: 310px;
+
+  margin: 0 0 1.4rem;
+
+  color: var(--tw-muted);
+
+  font-size: 0.94rem;
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   BRAND CTA
+========================================================= */
+
+.tw-footer__brand-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  color: var(--tw-navy);
+
+  font-size: 0.86rem;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    gap 0.3s ease;
+}
+
+.tw-footer__brand-cta:hover {
+  color: var(--tw-blue);
+  gap: 0.8rem;
+}
+
+.tw-footer__brand-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid var(--tw-line);
+  border-radius: 50%;
+
+  font-size: 0.85rem;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tw-footer__brand-cta:hover
+.tw-footer__brand-arrow {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: rgba(37, 99, 235, 0.07);
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.tw-footer__col {
+  animation:
+    twFooterColumnIn 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes twFooterColumnIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   COLUMN TITLE
+========================================================= */
+
+.tw-footer__col h6 {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  margin: 0 0 1.25rem;
+
+  color: var(--tw-navy);
+
+  font-family: var(--tw-font-display);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.tw-footer__col h6::after {
+  content: "";
+
+  width: 4px;
+  height: 4px;
+
+  margin-left: 7px;
+
+  border-radius: 50%;
+
+  background: var(--tw-blue);
+
+  opacity: 0.8;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.tw-footer__col:hover h6::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.tw-footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 0.12rem;
+}
+
+.tw-footer__link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 190px;
+
+  padding: 0.34rem 0;
+
+  color: var(--tw-muted);
+
+  font-size: 0.92rem;
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tw-footer__link::before {
+  content: "";
+
+  position: absolute;
+
+  left: -10px;
+  top: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: var(--tw-blue);
+
+  opacity: 0;
+
+  transform: translateY(-50%) scale(0);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tw-footer__link:hover {
+  color: var(--tw-blue);
+  transform: translateX(5px);
+}
+
+.tw-footer__link:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+
+/* =========================================================
+   LINK ARROW
+========================================================= */
+
+.tw-footer__link-arrow {
+  margin-left: 0.6rem;
+
+  color: var(--tw-blue);
+
+  font-size: 0.8rem;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tw-footer__link:hover
+.tw-footer__link-arrow {
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.tw-footer__bottom {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  padding: 1.35rem 0 1.5rem;
+
+  border-top: 1px solid var(--tw-line);
+
+  color: var(--tw-muted-2);
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.tw-footer__copyright {
+  transition: color 0.25s ease;
+  text-align: center;
+}
+
+.tw-footer__copyright:hover {
+  color: var(--tw-muted);
+  text-align: center;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.tw-footer__tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.tw-footer__tagline:hover {
+  color: var(--tw-muted);
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.tw-footer__status-dot {
+  position: relative;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--tw-blue);
+}
+
+.tw-footer__status-dot::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border: 1px solid rgba(37, 99, 235, 0.35);
+
+  border-radius: 50%;
+
+  animation: twFooterPulse 2s ease-out infinite;
+}
+
+@keyframes twFooterPulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.7);
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .tw-footer {
+    padding-top: 3.8rem;
+  }
+
+  .tw-footer__grid {
+    grid-template-columns:
+      minmax(220px, 1.4fr)
+      repeat(2, 1fr);
+
+    row-gap: 3rem;
+  }
+
+  .tw-footer__brand {
+    grid-column: 1 / -1;
+
+    padding-right: 0;
+  }
+
+  .tw-footer__description {
+    max-width: 430px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .tw-footer {
+    padding-top: 3.2rem;
+  }
+
+  .tw-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 2.4rem 1.5rem;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .tw-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .tw-footer__description {
+    max-width: 340px;
+  }
+
+  .tw-footer__col h6 {
+    margin-bottom: 0.9rem;
+  }
+
+  .tw-footer__link {
+    max-width: 170px;
+    font-size: 0.88rem;
+  }
+
+  .tw-footer__link-arrow {
+    display: none;
+  }
+
+  .tw-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding-top: 1.2rem;
+    padding-bottom: 1.3rem;
+
+    gap: 0.65rem;
+  }
+
+  .tw-footer__tagline {
+    order: -1;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .tw-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tw-footer__brand {
+    grid-column: auto;
+  }
+
+  .tw-footer__col {
+    width: 100%;
+  }
+
+  .tw-footer__link {
+    max-width: 220px;
+  }
+
+  .tw-footer__bottom {
+    font-size: 0.76rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-footer *,
+  .tw-footer *::before,
+  .tw-footer *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

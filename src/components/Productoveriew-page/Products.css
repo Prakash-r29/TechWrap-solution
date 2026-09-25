@@ -1,0 +1,160 @@
+.product-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.product-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.product-glow-1 {
+  background: #2563eb;
+  top: -200px;
+  left: -200px;
+}
+
+.product-glow-2 {
+  background: #60a5fa;
+  bottom: -200px;
+  right: -200px;
+}
+
+
+/* HEADER */
+
+.product-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: auto;
+}
+
+.product-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.product-heading h2 {
+  margin-bottom: 20px;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.product-heading h2 span {
+  color: #2563eb;
+}
+
+.product-heading p {
+  max-width: 650px;
+  margin: auto;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* NAVIGATION */
+
+.product-navigation {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+
+  width: fit-content;
+  margin: 50px auto;
+
+  padding: 6px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.08);
+
+  backdrop-filter: blur(15px);
+}
+
+.product-nav {
+  border: none;
+  background: transparent;
+
+  padding: 13px 25px;
+
+  border-radius: 10px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.product-nav span {
+  margin-right: 8px;
+}
+
+.product-nav:hover {
+  color: #2563eb;
+}
+
+.product-nav.active {
+  color: white;
+  background: #2563eb;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* PAGE CONTAINER */
+
+.product-page-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+
+  .product-section {
+    padding: 80px 0;
+  }
+
+  .product-navigation {
+    width: 100%;
+  }
+
+  .product-nav {
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+
+  .product-nav span {
+    display: none;
+  }
+
+}

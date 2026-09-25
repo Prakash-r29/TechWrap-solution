@@ -1,0 +1,126 @@
+.clients-section{
+    background:#ffffff;
+    margin-top:0;
+}
+
+.logo-slider{
+
+    width:100%;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.logo-slider::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:180px;
+    height:100%;
+    background:linear-gradient(to right,#f6f5f3,transparent);
+    z-index:2;
+
+}
+
+.logo-slider::after{
+
+    content:"";
+    position:absolute;
+    right:0;
+    top:0;
+    width:180px;
+    height:100%;
+    background:linear-gradient(to left,#f6f5f3,transparent);
+    z-index:2;
+
+}
+
+.logo-track{
+
+    display:flex;
+    gap:24px;
+    width:max-content;
+    animation:slide 30s linear infinite;
+
+}
+
+.logo-slider:hover .logo-track{
+
+    animation-play-state:paused;
+
+}
+
+.logo-card{
+
+    height:120px;
+
+    background:white;
+
+    border-radius:24px;
+
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    padding:30px;
+
+}
+
+.logo-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.logo-card img{
+
+    max-width:140px;
+    max-height:55px;
+    object-fit:contain;
+
+}
+
+@keyframes slide{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.logo-card{
+
+    height:90px;
+    padding:20px;
+
+}
+
+.logo-card img{
+
+    max-width:90px;
+
+}
+
+}

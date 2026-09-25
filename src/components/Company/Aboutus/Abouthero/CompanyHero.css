@@ -1,0 +1,922 @@
+/* =========================================================
+   TECHWRAP ABOUT HERO
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+  height: 100vh;
+  max-height: 900px;
+  overflow: hidden;
+
+  background: #07101f;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   IMAGE SLIDER
+   ========================================================= */
+
+.about-hero-slider {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  width: 300%;
+  height: 100%;
+
+  transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+
+  will-change: transform;
+}
+
+
+.about-hero-slide {
+  position: relative;
+
+  flex: 0 0 33.333333%;
+  width: 33.333333%;
+  height: 100%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+
+  transition:
+    transform 7s ease,
+    filter 1s ease;
+}
+
+
+/* Slight zoom on active image */
+
+.about-hero-slide.active {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.about-hero-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 13, 27, 0.82) 0%,
+      rgba(5, 15, 31, 0.68) 30%,
+      rgba(7, 17, 33, 0.30) 65%,
+      rgba(7, 17, 33, 0.18) 100%
+    );
+}
+
+
+/* =========================================================
+   MAIN DARK OVERLAY
+   ========================================================= */
+
+.about-hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 11, 25, 0.62) 0%,
+      rgba(3, 11, 25, 0.35) 45%,
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 10, 22, 0.25),
+      transparent 35%,
+      rgba(3, 10, 22, 0.55)
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(900px, 90%);
+  height: 100%;
+
+  margin-left: clamp(30px, 7vw, 110px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 20px;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.about-hero-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 11px;
+
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  animation: heroEyebrowIn 0.8s ease both;
+}
+
+
+.about-hero-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 0 5px rgba(22, 119, 255, 0.12),
+    0 0 20px rgba(22, 119, 255, 0.8);
+
+  animation: heroDotPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes heroEyebrowIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes heroDotPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(22, 119, 255, 0.12),
+      0 0 15px rgba(22, 119, 255, 0.5);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px rgba(22, 119, 255, 0.05),
+      0 0 28px rgba(22, 119, 255, 0.9);
+  }
+}
+
+
+/* =========================================================
+   CONTENT SLIDER
+   ========================================================= */
+
+.about-hero-content-slider {
+  position: relative;
+
+  margin-top: 28px;
+
+  width: min(850px, 100%);
+
+  min-height: 500px;
+}
+
+
+.about-hero-content-item {
+  width: 100%;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  animation: contentEnter 0.9s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    both;
+}
+
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.about-hero-content-item h1 {
+  max-width: 850px;
+
+  margin: 0 0 25px;
+
+  font-size: clamp(48px, 6.5vw, 92px);
+
+  line-height: 0.96;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+
+  color: #ffffff;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.22);
+
+  animation: headingReveal 0.9s
+    0.08s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    both;
+}
+
+
+@keyframes headingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.about-hero-content-item p {
+  max-width: 760px;
+
+  margin: 0 0 28px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: clamp(17px, 1.6vw, 22px);
+
+  line-height: 1.7;
+
+  font-weight: 450;
+
+  animation: descriptionReveal 0.8s
+    0.2s
+    ease
+    both;
+}
+
+
+@keyframes descriptionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.about-hero-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  animation: tagsReveal 0.8s
+    0.32s
+    ease
+    both;
+}
+
+
+@keyframes tagsReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.about-hero-tags span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.about-hero-tags span:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(22, 119, 255, 0.8);
+
+  background: rgba(22, 119, 255, 0.18);
+
+  box-shadow:
+    0 10px 30px rgba(22, 119, 255, 0.18);
+}
+
+
+/* =========================================================
+   CONNECT WITH US BUTTON
+   ========================================================= */
+
+.about-hero-actions {
+  margin-top: 34px;
+
+  animation:
+    connectButtonReveal
+    0.8s
+    0.45s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    both;
+}
+
+
+@keyframes connectButtonReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.about-connect-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  min-width: 190px;
+
+  min-height: 56px;
+
+  padding: 0 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1677ff,
+      #386ff0
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 15px 35px rgba(22, 119, 255, 0.3);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Moving shine */
+
+.about-connect-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+
+.about-connect-btn:hover::before {
+  left: 130%;
+}
+
+
+.about-connect-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 45px rgba(22, 119, 255, 0.42);
+}
+
+
+.about-connect-btn:active {
+  transform: translateY(-1px);
+}
+
+
+.about-connect-arrow {
+  font-size: 20px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.about-connect-btn:hover .about-connect-arrow {
+  transform: translateX(6px);
+}
+
+
+/* =========================================================
+   BOTTOM PROGRESS INDICATORS
+   ========================================================= */
+
+.about-hero-progress {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+
+  bottom: 28px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 13px 17px;
+
+  border-radius: 100px;
+
+  background: rgba(4, 13, 27, 0.45);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* Individual indicator */
+
+.about-progress-item {
+  position: relative;
+
+  width: 40px;
+
+  height: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    width 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* Progress inner element */
+
+.about-progress-item span {
+  position: absolute;
+
+  inset: 0;
+
+  width: 0;
+
+  border-radius: inherit;
+
+  background: #ffffff;
+
+  transition: width 0.1s linear;
+}
+
+
+/* Active slide */
+
+.about-progress-item.active {
+  width: 92px;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+
+/*
+   The active white bar slowly fills,
+   giving the same visual language as
+   the reference image.
+*/
+
+.about-progress-item.active span {
+  width: 100%;
+
+  animation: progressFill 6.5s
+    linear forwards;
+}
+
+
+@keyframes progressFill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+/* Hover */
+
+.about-progress-item:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   SUBTLE BLUE LIGHT
+   ========================================================= */
+
+.about-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: -180px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 119, 255, 0.22);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-hero {
+    min-height: 700px;
+  }
+
+
+  .about-hero-content {
+    margin-left: 45px;
+
+    width: calc(100% - 90px);
+  }
+
+
+  .about-hero-content-item h1 {
+    font-size: clamp(45px, 8vw, 72px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .about-hero-content-item p {
+    max-width: 650px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-hero {
+    min-height: 720px;
+
+    height: 100svh;
+  }
+
+
+  .about-hero-content {
+    width: calc(100% - 40px);
+
+    margin-left: 20px;
+
+    padding-top: 35px;
+
+    justify-content: center;
+  }
+
+
+  .about-hero-content-slider {
+    margin-top: 22px;
+
+    min-height: 500px;
+  }
+
+
+  .about-hero-eyebrow {
+    padding: 8px 13px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  .about-hero-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+
+  .about-hero-content-item h1 {
+    font-size: clamp(40px, 12vw, 58px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2.5px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .about-hero-content-item p {
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    margin-bottom: 23px;
+  }
+
+
+  .about-hero-tags {
+    gap: 8px;
+  }
+
+
+  .about-hero-tags span {
+    min-height: 39px;
+
+    padding: 0 14px;
+
+    font-size: 11px;
+  }
+
+
+  /* Connect button */
+
+  .about-hero-actions {
+    margin-top: 27px;
+  }
+
+
+  .about-connect-btn {
+    min-width: 175px;
+
+    min-height: 51px;
+
+    padding: 0 19px;
+
+    font-size: 13px;
+  }
+
+
+  /* Progress indicators */
+
+  .about-hero-progress {
+    bottom: 20px;
+
+    gap: 8px;
+
+    padding: 11px 13px;
+  }
+
+
+  .about-progress-item {
+    width: 28px;
+
+    height: 4px;
+  }
+
+
+  .about-progress-item.active {
+    width: 65px;
+  }
+
+
+  .about-hero-image-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 12, 26, 0.88),
+        rgba(3, 12, 26, 0.48)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(3, 12, 26, 0.65),
+        transparent
+      );
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-hero-content-item h1 {
+    font-size: 38px;
+  }
+
+
+  .about-hero-content-item p {
+    font-size: 14px;
+  }
+
+
+  .about-hero-tags span {
+    min-height: 36px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+
+
+  .about-connect-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-hero-slider,
+  .about-hero-content-item,
+  .about-hero-eyebrow,
+  .about-hero-dot,
+  .about-progress-item.active span,
+  .about-hero-actions,
+  .about-hero-content-item h1,
+  .about-hero-content-item p,
+  .about-hero-tags {
+    animation: none;
+    transition: none;
+  }
+
+  .about-hero-slide {
+    transform: scale(1.02);
+  }
+}

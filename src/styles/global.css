@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import './variables.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--tw-paper);
+  color: var(--tw-ink);
+  font-family: var(--tw-font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--tw-font-display);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img, video { max-width: 100%; display: block; }
+
+.tw-container {
+  width: 100%;
+  max-width: var(--tw-container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.tw-section {
+  padding: var(--tw-section-pad) 0;
+}
+
+.tw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tw-blue);
+}
+
+.tw-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tw-gradient);
+}
+
+/* ---------- scroll reveal (see Reveal.tsx) ----------
+   Default state is fully visible with no transform, so if JS
+   fails to load the page is never blank. The animated version
+   only applies when the browser allows motion AND JS has
+   marked the element as pending. */
+.tw-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tw-reveal[data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .tw-reveal[data-reveal="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--tw-dur-slow) var(--tw-ease),
+                transform var(--tw-dur-slow) var(--tw-ease);
+  }
+}
+
+/* ---------- hero entrance (see Hero.tsx) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .tw-hero-enter {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: tw-hero-in var(--tw-dur-slow) var(--tw-ease) forwards;
+  }
+  @keyframes tw-hero-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+::selection { background: rgba(47, 111, 237, 0.22); }

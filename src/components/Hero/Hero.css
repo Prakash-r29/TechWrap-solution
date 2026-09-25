@@ -1,0 +1,1754 @@
+/* =========================================================
+   TECHWRAP HERO — LIGHT BLUE / WHITE REFERENCE DESIGN
+========================================================= */
+
+.tw-hero {
+  position: relative;
+  min-height: 760px;
+  padding: clamp(7rem, 13vw, 10.5rem) 0 6rem;
+  overflow: hidden;
+  isolation: isolate;
+
+  /*
+    Reference-inspired background:
+    soft white + very light blue gradient.
+  */
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(59, 130, 246, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 78% 28%,
+      rgba(14, 165, 233, 0.10),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(96, 165, 250, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #dce8ff 0%,
+      #eef5ff 35%,
+      #ffffff 62%,
+      #eaf4ff 100%
+    );
+
+  color: #0b1737;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND FIELD
+========================================================= */
+
+.tw-hero__field {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+
+  /*
+    Subtle grid similar to reference image.
+  */
+  background-image:
+    linear-gradient(
+      rgba(59, 130, 246, 0.085) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.085) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 78%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 78%,
+      transparent 100%
+    );
+
+  animation:
+    twHeroGridMove
+    30s
+    linear
+    infinite;
+}
+
+
+@keyframes twHeroGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   HERO AMBIENT LIGHT
+========================================================= */
+
+.tw-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  left: -260px;
+  top: 0;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.14),
+      rgba(96, 165, 250, 0.07) 38%,
+      transparent 72%
+    );
+
+  filter: blur(18px);
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  animation:
+    twHeroAmbientLeft
+    10s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.tw-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  right: -250px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(6, 182, 212, 0.13),
+      rgba(59, 130, 246, 0.06) 40%,
+      transparent 72%
+    );
+
+  filter: blur(18px);
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  animation:
+    twHeroAmbientRight
+    11s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+@keyframes twHeroAmbientLeft {
+
+  from {
+    transform:
+      translate3d(0, -20px, 0)
+      scale(0.95);
+  }
+
+  to {
+    transform:
+      translate3d(35px, 25px, 0)
+      scale(1.08);
+  }
+
+}
+
+
+@keyframes twHeroAmbientRight {
+
+  from {
+    transform:
+      translate3d(0, 20px, 0)
+      scale(0.95);
+  }
+
+  to {
+    transform:
+      translate3d(-35px, -25px, 0)
+      scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.tw-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.tw-hero__grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(420px, 0.95fr);
+
+  gap: clamp(3rem, 6vw, 6rem);
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.tw-hero__copy {
+  position: relative;
+
+  max-width: 680px;
+
+  animation:
+    twHeroCopyReveal
+    0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+@keyframes twHeroCopyReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   OPTIONAL HERO LABEL
+========================================================= */
+
+.tw-hero__copy .ai-section-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 12px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.tw-hero__copy .ai-section-label span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #0ea5e9;
+
+  box-shadow:
+    0 0 14px
+    rgba(14, 165, 233, 0.55);
+
+  animation:
+    twHeroDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes twHeroDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.55);
+    opacity: 0.55;
+  }
+
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.tw-hero__copy h1 {
+
+  max-width: 760px;
+
+  margin:
+    0 0
+    1.4rem;
+
+  /*
+    Dark navy like the reference.
+  */
+  color: #0a1738;
+
+  font-size:
+    clamp(
+      3rem,
+      5.5vw,
+      5.5rem
+    );
+
+  font-weight: 800;
+
+  line-height: 1.02;
+
+  letter-spacing: -4px;
+}
+
+
+/* =========================================================
+   ANIMATED GRADIENT TEXT
+========================================================= */
+
+.tw-hero__accent {
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb 0%,
+      #0ea5e9 35%,
+      #06b6d4 70%,
+      #2563eb 100%
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    twHeroGradientText
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes twHeroGradientText {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 250% center;
+  }
+
+}
+
+
+/* =========================================================
+   HERO LEAD
+========================================================= */
+
+.tw-hero__lead {
+
+  max-width: 600px;
+
+  margin: 0;
+
+  /*
+    Changed from light text to readable slate
+    for the light background.
+  */
+  color: #64748b;
+
+  font-size: clamp(
+    1rem,
+    1.3vw,
+    1.15rem
+  );
+
+  line-height: 1.8;
+
+  letter-spacing: -0.1px;
+}
+
+
+/* =========================================================
+   CTA AREA
+========================================================= */
+
+.tw-hero__ctas {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0.9rem;
+
+  margin-top: 2.2rem;
+}
+
+
+/* =========================================================
+   CTA BUTTON BASE
+========================================================= */
+
+.tw-hero__ctas a,
+.tw-hero__ctas button {
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding:
+    0.8rem
+    1.35rem;
+
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   PRIMARY CTA
+========================================================= */
+
+.tw-hero__ctas a:first-child,
+.tw-hero__ctas button:first-child {
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.22);
+}
+
+
+.tw-hero__ctas a:first-child::before,
+.tw-hero__ctas button:first-child::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  left: -100%;
+
+  width: 70%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.35),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 0.7s ease;
+}
+
+
+.tw-hero__ctas a:first-child:hover::before,
+.tw-hero__ctas button:first-child:hover::before {
+
+  left: 140%;
+}
+
+
+.tw-hero__ctas a:first-child:hover,
+.tw-hero__ctas button:first-child:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 18px 42px
+    rgba(37, 99, 235, 0.32);
+}
+
+
+/* =========================================================
+   SECONDARY CTA
+========================================================= */
+
+.tw-hero__ctas a:nth-child(2),
+.tw-hero__ctas button:nth-child(2) {
+
+  /*
+    Light glass button for the reference-style background.
+  */
+  color: #1e3a5f;
+
+  border:
+    1px solid
+    rgba(100, 116, 139, 0.22);
+
+  background:
+    rgba(255, 255, 255, 0.58);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+.tw-hero__ctas a:nth-child(2):hover,
+.tw-hero__ctas button:nth-child(2):hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(37, 99, 235, 0.35);
+
+  background:
+    rgba(255,255,255,0.82);
+
+  box-shadow:
+    0 16px 35px
+    rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   PROOF / STATS
+========================================================= */
+
+.tw-hero__proof {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 2.8rem;
+
+  margin-top: 3.2rem;
+}
+
+
+.tw-hero__proof-item {
+  position: relative;
+}
+
+
+.tw-hero__proof strong {
+
+  display: block;
+
+  margin-bottom: 4px;
+
+  /*
+    Dark navy for light background.
+  */
+  color: #0a1738;
+
+  font-family:
+    var(--tw-font-display),
+    Inter,
+    sans-serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.tw-hero__proof span {
+
+  display: block;
+
+  color: #64748b;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* Vertical separators */
+
+.tw-hero__proof-item:not(:last-child)::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  right: -1.45rem;
+
+  width: 1px;
+
+  height: 32px;
+
+  background:
+    rgba(100, 116, 139, 0.22);
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.tw-hero__visual {
+
+  position: relative;
+
+  min-width: 0;
+
+  animation:
+    twHeroVisualReveal
+    1s
+    0.15s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+@keyframes twHeroVisualReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(45px)
+      scale(0.97);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   VISUAL GLOW
+========================================================= */
+
+.tw-hero__glow {
+
+  position: absolute;
+
+  inset: -15%;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      from 180deg,
+      rgba(37, 99, 235, 0.42),
+      rgba(6, 182, 212, 0.48),
+      rgba(14, 165, 233, 0.38),
+      rgba(37, 99, 235, 0.42)
+    );
+
+  opacity: 0.24;
+
+  filter: blur(65px);
+
+  animation:
+    twHeroGlowRotate
+    12s
+    linear
+    infinite;
+}
+
+
+@keyframes twHeroGlowRotate {
+
+  from {
+
+    transform:
+      rotate(0deg)
+      scale(0.95);
+
+  }
+
+  to {
+
+    transform:
+      rotate(360deg)
+      scale(1.05);
+
+  }
+
+}
+
+
+/* =========================================================
+   MAIN VISUAL PANEL
+   Kept dark like the reference image.
+========================================================= */
+
+.tw-hero__panel {
+
+  position: relative;
+
+  z-index: 2;
+
+  padding: 1.35rem;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.16);
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(11, 24, 51, 0.98),
+      rgba(18, 36, 70, 0.97)
+    );
+
+  box-shadow:
+    0 35px 90px
+    rgba(15, 23, 42, 0.22),
+
+    0 0 0 1px
+    rgba(37, 99, 235, 0.08);
+
+  backdrop-filter:
+    blur(25px);
+
+  animation:
+    twHeroPanelFloat
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes twHeroPanelFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-8px);
+
+  }
+
+}
+
+
+/* =========================================================
+   PANEL LIGHT EFFECT
+========================================================= */
+
+.tw-hero__panel::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(6,182,212,0.8),
+      rgba(37,99,235,0.8),
+      transparent
+    );
+
+  opacity: 0.9;
+}
+
+
+.tw-hero__panel::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -130px;
+  bottom: -130px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(6,182,212,0.12);
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PANEL TOP DOTS
+========================================================= */
+
+.tw-hero__panel-dots {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 1.2rem;
+}
+
+
+.tw-hero__panel-dots span {
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 0 10px
+    rgba(255,255,255,0.04);
+}
+
+
+.tw-hero__panel-dots span:first-child {
+
+  background:
+    rgba(255,255,255,0.45);
+}
+
+
+/* =========================================================
+   PANEL ROW
+========================================================= */
+
+.tw-hero__row {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  min-height: 62px;
+
+  padding:
+    0.85rem
+    1rem;
+
+  margin-bottom: 0.7rem;
+
+  overflow: hidden;
+
+  color: #eaf1ff;
+
+  font-size: 0.86rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.075),
+      rgba(255,255,255,0.035)
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.tw-hero__row::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(6,182,212,0.06),
+      transparent
+    );
+
+  transform:
+    translateX(-100%);
+
+  transition:
+    transform 0.7s ease;
+}
+
+
+.tw-hero__row:hover {
+
+  transform:
+    translateX(5px);
+
+  border-color:
+    rgba(6,182,212,0.22);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.045)
+    );
+}
+
+
+.tw-hero__row:hover::before {
+
+  transform:
+    translateX(100%);
+}
+
+
+/* =========================================================
+   STATUS TAGS
+========================================================= */
+
+.tw-hero__tag {
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    0.28rem
+    0.62rem;
+
+  border-radius: 999px;
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+}
+
+
+.tw-hero__tag--done {
+
+  background:
+    rgba(46,204,113,0.14);
+
+  color:
+    #59e0a0;
+
+  border:
+    1px solid
+    rgba(46,204,113,0.12);
+}
+
+
+.tw-hero__tag--live {
+
+  background:
+    rgba(6,182,212,0.14);
+
+  color:
+    #22d3ee;
+
+  border:
+    1px solid
+    rgba(6,182,212,0.15);
+
+  animation:
+    twLivePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes twLivePulse {
+
+  0%,
+  100% {
+
+    box-shadow:
+      0 0 0
+      rgba(6,182,212,0);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 0 18px
+      rgba(6,182,212,0.18);
+
+  }
+
+}
+
+
+.tw-hero__tag--queued {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color:
+    #c7d3e8;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.06);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.tw-hero__bar {
+
+  position: relative;
+
+  height: 6px;
+
+  margin:
+    0.45rem
+    0
+    0.95rem;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.07);
+}
+
+
+.tw-hero__bar span {
+
+  position: relative;
+
+  display: block;
+
+  height: 100%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(6,182,212,0.3);
+
+  animation:
+    twProgressGlow
+    3s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+@keyframes twProgressGlow {
+
+  from {
+
+    filter:
+      brightness(0.9);
+
+  }
+
+  to {
+
+    filter:
+      brightness(1.25);
+
+  }
+
+}
+
+
+/* =========================================================
+   PANEL FLOATING ORB
+========================================================= */
+
+.tw-hero__visual::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 85px;
+  height: 85px;
+
+  right: -28px;
+  top: -32px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37,99,235,0.75),
+      rgba(6,182,212,0.65)
+    );
+
+  filter:
+    blur(1px);
+
+  opacity: 0.7;
+
+  box-shadow:
+    0 0 45px
+    rgba(6,182,212,0.25);
+
+  animation:
+    twHeroOrb
+    6s
+    ease-in-out
+    infinite
+    alternate;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+@keyframes twHeroOrb {
+
+  from {
+
+    transform:
+      translateY(0)
+      scale(0.9);
+
+  }
+
+  to {
+
+    transform:
+      translateY(18px)
+      scale(1.05);
+
+  }
+
+}
+
+
+/* =========================================================
+   HERO BOTTOM FADE
+========================================================= */
+
+.tw-hero__visual::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 80px;
+
+  left: 50%;
+  bottom: -40px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(37,99,235,0.10);
+
+  filter:
+    blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.tw-hero__scroll {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transform:
+    translateX(-50%);
+
+  opacity: 0.75;
+
+  animation:
+    twScrollFloat
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+.tw-hero__scroll::after {
+
+  content: "";
+
+  width: 1px;
+  height: 28px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #2563eb,
+      transparent
+    );
+}
+
+
+@keyframes twScrollFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateX(-50%)
+      translateY(7px);
+
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .tw-hero {
+    min-height: auto;
+  }
+
+  .tw-hero__grid {
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(360px, 0.9fr);
+
+    gap: 3rem;
+  }
+
+  .tw-hero__copy h1 {
+
+    font-size:
+      clamp(
+        2.8rem,
+        5vw,
+        4.5rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 940px
+========================================================= */
+
+@media (max-width: 940px) {
+
+  .tw-hero {
+
+    padding:
+      7.5rem
+      0
+      5rem;
+  }
+
+  .tw-hero__grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 3.5rem;
+  }
+
+  .tw-hero__copy {
+
+    max-width: 760px;
+
+    text-align: center;
+
+    margin: 0 auto;
+  }
+
+  .tw-hero__copy h1 {
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tw-hero__lead {
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tw-hero__ctas {
+
+    justify-content: center;
+  }
+
+  .tw-hero__proof {
+
+    justify-content: center;
+  }
+
+  .tw-hero__visual {
+
+    order: 2;
+
+    width: min(
+      100%,
+      680px
+    );
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .tw-hero {
+
+    min-height: auto;
+
+    padding:
+      6.5rem
+      0
+      4.5rem;
+  }
+
+
+  .tw-hero__copy h1 {
+
+    font-size: 2.7rem;
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+  }
+
+
+  .tw-hero__lead {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+  }
+
+
+  .tw-hero__ctas {
+
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+
+  .tw-hero__ctas a,
+  .tw-hero__ctas button {
+
+    width: 100%;
+  }
+
+
+  .tw-hero__proof {
+
+    gap: 1.6rem;
+
+    justify-content:
+      space-around;
+  }
+
+
+  .tw-hero__proof-item {
+
+    min-width: 80px;
+
+    text-align: center;
+  }
+
+
+  .tw-hero__proof-item:not(:last-child)::after {
+
+    display: none;
+  }
+
+
+  .tw-hero__proof strong {
+
+    font-size: 1.3rem;
+  }
+
+
+  .tw-hero__proof span {
+
+    font-size: 0.68rem;
+  }
+
+
+  .tw-hero__panel {
+
+    padding: 1rem;
+
+    border-radius: 20px;
+  }
+
+
+  .tw-hero__row {
+
+    min-height: 58px;
+
+    padding:
+      0.7rem
+      0.75rem;
+
+    font-size: 0.76rem;
+  }
+
+
+  .tw-hero__tag {
+
+    font-size: 0.58rem;
+
+    padding:
+      0.22rem
+      0.48rem;
+  }
+
+
+  .tw-hero__visual::before {
+
+    width: 55px;
+    height: 55px;
+
+    right: -10px;
+    top: -20px;
+  }
+
+
+  .tw-hero__scroll {
+
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .tw-hero__copy h1 {
+
+    font-size: 2.35rem;
+
+    letter-spacing: -2px;
+  }
+
+  .tw-hero__proof {
+
+    gap: 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-hero__field,
+  .tw-hero::before,
+  .tw-hero::after,
+  .tw-hero__copy,
+  .tw-hero__visual,
+  .tw-hero__panel,
+  .tw-hero__glow,
+  .tw-hero__visual::before,
+  .tw-hero__copy .ai-section-label span,
+  .tw-hero__accent,
+  .tw-hero__tag--live,
+  .tw-hero__bar span,
+  .tw-hero__scroll {
+
+    animation: none !important;
+  }
+
+  .tw-hero__copy,
+  .tw-hero__visual {
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.tw-hero a:focus-visible,
+.tw-hero button:focus-visible {
+
+  outline:
+    3px solid
+    rgba(37,99,235,0.35);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.tw-hero__field,
+.tw-hero::before,
+.tw-hero::after,
+.tw-hero__glow,
+.tw-hero__panel,
+.tw-hero__visual::before {
+
+  will-change: transform;
+}
+
+
+

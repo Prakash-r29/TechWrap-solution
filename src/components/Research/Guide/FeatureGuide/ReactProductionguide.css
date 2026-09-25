@@ -1,0 +1,1399 @@
+/* =========================================================
+   TECHWRAP — REACT PRODUCTION GUIDE
+========================================================= */
+
+.tw-production-guide {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  padding:
+    28px 24px 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7faff 45%,
+      #ffffff 100%
+    );
+
+  color: #101b33;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.tw-production-guide-grid {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -4;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 52px 52px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+
+  animation:
+    twProductionGridMove 25s linear infinite;
+}
+
+
+@keyframes twProductionGridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(52px);
+  }
+}
+
+
+/* =========================================================
+   GLOWS
+========================================================= */
+
+.tw-production-guide-glow {
+  position: fixed;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+
+.tw-production-guide-glow-one {
+  left: -260px;
+  top: 160px;
+
+  background:
+    rgba(22, 119, 255, 0.08);
+
+  animation:
+    twProductionGlowOne 11s ease-in-out infinite;
+}
+
+
+.tw-production-guide-glow-two {
+  right: -250px;
+  top: 55%;
+
+  background:
+    rgba(0, 174, 239, 0.06);
+
+  animation:
+    twProductionGlowTwo 13s ease-in-out infinite;
+}
+
+
+@keyframes twProductionGlowOne {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(70px, 35px);
+  }
+}
+
+
+@keyframes twProductionGlowTwo {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-65px, -35px);
+  }
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.tw-production-guide-dot {
+  position: fixed;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 18px
+    rgba(22, 119, 255, 0.6);
+
+  pointer-events: none;
+}
+
+
+.tw-production-guide-dot-one {
+  top: 19%;
+  left: 9%;
+
+  animation:
+    twProductionDot 5s ease-in-out infinite;
+}
+
+
+.tw-production-guide-dot-two {
+  top: 45%;
+  right: 7%;
+
+  width: 6px;
+  height: 6px;
+
+  animation:
+    twProductionDot 6s 1s ease-in-out infinite;
+}
+
+
+@keyframes twProductionDot {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-13px);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.tw-production-guide-top {
+  width:
+    min(1080px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    8px 0 25px;
+}
+
+
+.tw-production-guide-back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #7185a2;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.tw-production-guide-back span {
+  color: #1677ff;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.tw-production-guide-back:hover {
+  color: #1677ff;
+
+  transform:
+    translateX(-3px);
+}
+
+
+.tw-production-guide-back:hover span {
+  transform:
+    translateX(-4px);
+}
+
+
+.tw-production-guide-time {
+  padding:
+    8px 13px;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color: #8293aa;
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tw-production-guide-hero {
+  width:
+    min(980px, 100%);
+
+  margin:
+    75px auto 120px;
+
+  text-align: center;
+
+  animation:
+    twProductionHero 0.9s ease both;
+}
+
+
+@keyframes twProductionHero {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.tw-production-guide-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #1677ff;
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.17em;
+}
+
+
+.tw-production-guide-eyebrow span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 14px
+    rgba(22, 119, 255, 0.7);
+
+  animation:
+    twProductionPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes twProductionPulse {
+
+  0%,
+  100% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.tw-production-guide-icon {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin:
+    28px auto;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.17);
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eef7ff,
+      #e4f0ff
+    );
+
+  color: #1677ff;
+
+  font-size: 20px;
+
+  font-weight: 850;
+
+  box-shadow:
+    0 20px 50px
+    rgba(22, 119, 255, 0.1);
+
+  animation:
+    twProductionIcon 4s ease-in-out infinite;
+}
+
+
+@keyframes twProductionIcon {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+
+  50% {
+    transform:
+      translateY(-6px)
+      rotate(3deg);
+  }
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.tw-production-guide-hero h1 {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  color: #0b1834;
+
+  font-size:
+    clamp(45px, 7vw, 82px);
+
+  line-height: 0.99;
+
+  font-weight: 850;
+
+  letter-spacing: -0.065em;
+}
+
+
+.tw-production-guide-hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #08a9dd,
+      #1677ff,
+      #08a9dd
+    );
+
+  background-size: 200% auto;
+
+  color: transparent;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation:
+    twProductionGradient 5s ease-in-out infinite;
+}
+
+
+@keyframes twProductionGradient {
+
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+
+.tw-production-guide-hero > p {
+  max-width: 700px;
+
+  margin:
+    28px auto 0;
+
+  color: #6d829f;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   STACK
+========================================================= */
+
+.tw-production-guide-stack {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 27px;
+}
+
+
+.tw-production-guide-stack span {
+  padding:
+    8px 12px;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.85);
+
+  color: #607795;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.tw-production-guide-stack span:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(22, 119, 255, 0.3);
+
+  color: #1677ff;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.tw-production-guide-content {
+  width:
+    min(960px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.tw-production-guide-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #1677ff;
+
+  font-size: 10px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.tw-production-guide-intro {
+  padding:
+    65px 0;
+
+  border-top:
+    1px solid
+    #dfe8f2;
+
+  border-bottom:
+    1px solid
+    #dfe8f2;
+}
+
+
+.tw-production-guide-intro h2,
+.tw-production-guide-section-heading h2,
+.tw-production-guide-tech h2,
+.tw-production-guide-checklist h2 {
+  margin: 0;
+
+  color: #172a45;
+
+  font-size:
+    clamp(32px, 4vw, 46px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.045em;
+}
+
+
+.tw-production-guide-intro h2 span,
+.tw-production-guide-section-heading h2 span,
+.tw-production-guide-tech h2 span,
+.tw-production-guide-checklist h2 span {
+  color: #1677ff;
+}
+
+
+.tw-production-guide-intro p {
+  max-width: 790px;
+
+  margin:
+    22px 0 0;
+
+  color: #6d829f;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.tw-production-guide-section {
+  padding:
+    100px 0;
+}
+
+
+.tw-production-guide-section-heading {
+  max-width: 620px;
+
+  margin-bottom: 45px;
+}
+
+
+.tw-production-guide-topics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 1px;
+
+  border:
+    1px solid
+    #dfe7f0;
+
+  background: #dfe7f0;
+}
+
+
+.tw-production-guide-topics article {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 18px;
+
+  min-height: 180px;
+
+  padding: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.tw-production-guide-topics article:hover {
+  background:
+    #f7fbff;
+
+  transform:
+    translateY(-4px);
+
+  z-index: 2;
+}
+
+
+.tw-production-guide-topics article > span {
+  color: #1677ff;
+
+  font-size: 11px;
+
+  font-weight: 850;
+}
+
+
+.tw-production-guide-topics h3 {
+  margin:
+    0 0 10px;
+
+  color: #172a45;
+
+  font-size: 19px;
+
+  font-weight: 800;
+}
+
+
+.tw-production-guide-topics p {
+  margin: 0;
+
+  color: #7185a2;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.tw-production-guide-tech {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+  padding:
+    80px 0;
+
+  border-top:
+    1px solid
+    #dfe7f0;
+
+  border-bottom:
+    1px solid
+    #dfe7f0;
+}
+
+
+.tw-production-guide-tech p {
+  max-width: 430px;
+
+  margin:
+    20px 0 0;
+
+  color: #7185a2;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.tw-production-guide-tech-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+
+.tw-production-guide-tech-list div {
+  padding:
+    18px;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.tw-production-guide-tech-list div:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(22, 119, 255, 0.3);
+
+  box-shadow:
+    0 15px 35px
+    rgba(24, 66, 115, 0.07);
+}
+
+
+.tw-production-guide-tech-list strong {
+  display: block;
+
+  color: #172a45;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+.tw-production-guide-tech-list span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #8293aa;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.tw-production-guide-workflow {
+  padding:
+    105px 0;
+}
+
+
+.tw-production-guide-section-heading p {
+  max-width: 600px;
+
+  margin:
+    18px 0 0;
+
+  color: #7185a2;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.tw-production-guide-flow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 12px;
+
+  margin-top: 48px;
+}
+
+
+.tw-production-guide-flow article {
+  position: relative;
+
+  min-height: 205px;
+
+  padding: 22px;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.85);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.tw-production-guide-flow article:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(22, 119, 255, 0.3);
+
+  box-shadow:
+    0 20px 45px
+    rgba(24, 66, 115, 0.07);
+}
+
+
+.tw-production-guide-flow article > div {
+  color: #1677ff;
+
+  font-size: 10px;
+
+  font-weight: 850;
+}
+
+
+.tw-production-guide-flow h3 {
+  margin:
+    38px 0 10px;
+
+  color: #172a45;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+
+.tw-production-guide-flow p {
+  margin: 0;
+
+  color: #788ba2;
+
+  font-size: 10.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+.tw-production-guide-checklist {
+  display: grid;
+
+  grid-template-columns:
+    0.85fr 1.15fr;
+
+  gap: 70px;
+
+  padding:
+    75px 0;
+
+  border-top:
+    1px solid
+    #dfe7f0;
+}
+
+
+.tw-production-check-items {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+
+.tw-production-check-items div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding:
+    16px 0;
+
+  border-bottom:
+    1px solid
+    #e5ebf2;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.tw-production-check-items div:hover {
+  transform:
+    translateX(5px);
+}
+
+
+.tw-production-check-items span {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #eef6ff;
+
+  color: #1677ff;
+
+  font-size: 12px;
+
+  font-weight: 850;
+}
+
+
+.tw-production-check-items p {
+  margin: 0;
+
+  color: #536b88;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.tw-production-guide-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 60px;
+
+  padding:
+    85px 40px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff,
+      #eef7ff
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(24, 66, 115, 0.07);
+}
+
+
+.tw-production-guide-cta-glow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(22, 119, 255, 0.08);
+
+  filter:
+    blur(80px);
+
+  pointer-events: none;
+}
+
+
+.tw-production-guide-cta h2 {
+  position: relative;
+
+  margin: 0;
+
+  color: #101b33;
+
+  font-size:
+    clamp(34px, 5vw, 52px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.05em;
+}
+
+
+.tw-production-guide-cta h2 span {
+  color: #1677ff;
+}
+
+
+.tw-production-guide-cta p {
+  position: relative;
+
+  max-width: 540px;
+
+  margin:
+    18px auto 28px;
+
+  color: #7185a2;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.tw-production-guide-cta-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    13px 18px;
+
+  border-radius: 9px;
+
+  background: #1677ff;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 12px 30px
+    rgba(22, 119, 255, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.tw-production-guide-cta-button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(22, 119, 255, 0.28);
+}
+
+
+.tw-production-guide-cta-button span {
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tw-production-guide-cta-button:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.tw-production-guide-bottom {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid
+    #dfe7f0;
+}
+
+
+.tw-production-guide-bottom a {
+  display: block;
+
+  min-height: 75px;
+
+  padding:
+    17px 20px;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color: #172a45;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.tw-production-guide-bottom a:last-child {
+  text-align: right;
+}
+
+
+.tw-production-guide-bottom a:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(22, 119, 255, 0.3);
+}
+
+
+.tw-production-guide-bottom small {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1677ff;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.13em;
+}
+
+
+.tw-production-guide-bottom strong {
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .tw-production-guide-tech,
+  .tw-production-guide-checklist {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .tw-production-guide-flow {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .tw-production-guide {
+    padding:
+      20px 18px 70px;
+  }
+
+  .tw-production-guide-time {
+    display: none;
+  }
+
+  .tw-production-guide-hero {
+    margin:
+      60px auto 80px;
+  }
+
+  .tw-production-guide-hero h1 {
+    font-size: 43px;
+  }
+
+  .tw-production-guide-hero > p {
+    font-size: 14px;
+  }
+
+  .tw-production-guide-intro {
+    padding:
+      45px 0;
+  }
+
+  .tw-production-guide-section {
+    padding:
+      70px 0;
+  }
+
+  .tw-production-guide-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-production-guide-tech {
+    padding:
+      55px 0;
+  }
+
+  .tw-production-guide-tech-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-production-guide-workflow {
+    padding:
+      70px 0;
+  }
+
+  .tw-production-guide-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-production-guide-checklist {
+    padding:
+      55px 0;
+  }
+
+  .tw-production-guide-cta {
+    padding:
+      60px 22px;
+  }
+
+  .tw-production-guide-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-production-guide-bottom a:last-child {
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-production-guide *,
+  .tw-production-guide {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

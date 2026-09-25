@@ -1,0 +1,2573 @@
+/* =========================================================
+   TECHWRAP — FINAL CTA
+   HERO-STYLE DESIGN
+   Inspired by TechWrap Hero Section
+
+   IMPORTANT:
+   - Outer CTA CARD removed
+   - Full-width hero treatment
+   - Existing JSX class names preserved
+   - Existing dashboard / buttons preserved
+   - Two CTA buttons remain side-by-side
+========================================================= */
+
+
+/* =========================================================
+   ROOT SECTION
+========================================================= */
+
+.tw-final-cta-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding: clamp(70px, 9vw, 125px) 0;
+
+  background:
+    radial-gradient(
+      circle at 12% 42%,
+      rgba(91, 139, 255, 0.17),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(38, 151, 255, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 94% 82%,
+      rgba(18, 194, 220, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #f3f8ff 45%,
+      #edf7ff 100%
+    );
+
+  isolation: isolate;
+}
+
+
+.tw-final-cta-section .tw-container {
+  position: relative;
+
+  width: min(100% - 40px, 1600px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MAIN CTA
+   OUTER CARD REMOVED
+========================================================= */
+
+.tw-final-cta {
+  position: relative;
+
+  width: 100%;
+  min-height: 650px;
+
+  display: block;
+
+  padding: clamp(35px, 5vw, 70px) 0;
+
+  overflow: visible;
+
+  isolation: isolate;
+
+  /*
+    IMPORTANT:
+    No border
+    No border-radius
+    No card background
+    No outer shadow
+  */
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Remove card hover */
+
+.tw-final-cta:hover {
+  transform: none;
+
+  border-color: transparent;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.tw-final-cta__grid {
+  position: absolute;
+
+  inset: -10px -5vw;
+
+  z-index: -5;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(78, 104, 145, 0.075) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(78, 104, 145, 0.075) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+
+  animation:
+    twFinalCTAGrid 28s linear infinite;
+}
+
+
+@keyframes twFinalCTAGrid {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 48px 48px;
+  }
+
+}
+
+
+/* =========================================================
+   AMBIENT HERO GLOWS
+========================================================= */
+
+.tw-final-cta__glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+
+  z-index: -4;
+
+  animation:
+    twFinalCTAGlow 10s ease-in-out infinite alternate;
+}
+
+
+.tw-final-cta__glow--one {
+  width: 620px;
+  height: 620px;
+
+  left: -300px;
+  top: -240px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(66, 117, 255, 0.22),
+      rgba(66, 117, 255, 0.08) 38%,
+      transparent 72%
+    );
+}
+
+
+.tw-final-cta__glow--two {
+  width: 600px;
+  height: 600px;
+
+  right: -300px;
+  bottom: -260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 190, 224, 0.22),
+      rgba(0, 190, 224, 0.07) 40%,
+      transparent 72%
+    );
+
+  animation-delay: -3s;
+}
+
+
+@keyframes twFinalCTAGlow {
+
+  from {
+    transform:
+      translate3d(0, -12px, 0)
+      scale(0.96);
+  }
+
+  to {
+    transform:
+      translate3d(0, 18px, 0)
+      scale(1.06);
+  }
+
+}
+
+
+/* =========================================================
+   HERO SCAN LINE
+========================================================= */
+
+.tw-final-cta__scanline {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: -10%;
+
+  height: 1px;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(38, 145, 255, 0.55),
+      rgba(0, 193, 224, 0.55),
+      transparent
+    );
+
+  box-shadow:
+    0 0 22px rgba(38, 145, 255, 0.2);
+
+  opacity: 0;
+
+  animation:
+    twFinalCTAScan 9s ease-in-out infinite;
+}
+
+
+@keyframes twFinalCTAScan {
+
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.42;
+  }
+
+  65% {
+    opacity: 0.2;
+  }
+
+  92% {
+    top: 110%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TOP STATUS
+========================================================= */
+
+.tw-final-cta__status {
+  position: absolute;
+
+  top: 10px;
+  right: 0;
+
+  z-index: 20;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(30, 64, 175, 0.12);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  color: rgba(31, 50, 84, 0.65);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 8px 30px rgba(37, 99, 235, 0.07);
+}
+
+
+.tw-final-cta__status-dot {
+  width: 8px;
+  height: 8px;
+
+  flex: none;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.09),
+    0 0 15px rgba(34, 197, 94, 0.5);
+
+  animation:
+    twFinalCTAStatus 2s ease-in-out infinite;
+}
+
+
+@keyframes twFinalCTAStatus {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.72);
+    opacity: 0.65;
+  }
+
+}
+
+
+/* =========================================================
+   TWO-COLUMN HERO LAYOUT
+========================================================= */
+
+.tw-final-cta__layout {
+  position: relative;
+
+  z-index: 3;
+
+  min-height: 560px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  align-items: center;
+
+  gap: clamp(45px, 6vw, 105px);
+}
+
+
+/* =========================================================
+   LEFT HERO CONTENT
+========================================================= */
+
+.tw-final-cta__content {
+  position: relative;
+
+  z-index: 8;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.tw-final-cta__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  color: #2874ee;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing: 1.45px;
+
+  text-transform: uppercase;
+}
+
+
+.tw-final-cta__eyebrow-dot {
+  width: 8px;
+  height: 8px;
+
+  flex: none;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1688ff,
+      #12bfe0
+    );
+
+  box-shadow:
+    0 0 15px rgba(42, 150, 255, 0.65);
+
+  animation:
+    twFinalCTADot 2.4s ease-in-out infinite;
+}
+
+
+@keyframes twFinalCTADot {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
+
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   HERO STYLE
+========================================================= */
+
+.tw-final-cta h2 {
+  position: relative;
+
+  z-index: 8;
+
+  margin: 0;
+
+  max-width: 760px;
+
+  color: #091633;
+
+  font-size:
+    clamp(
+      3.7rem,
+      6vw,
+      6.6rem
+    );
+
+  line-height: 0.94;
+
+  font-weight: 900;
+
+  letter-spacing: -5px;
+
+  text-wrap: balance;
+}
+
+
+/* Highlight */
+
+.tw-final-cta h2 span {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #167ff2 0%,
+      #119fe9 46%,
+      #08bfe0 100%
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+
+  filter:
+    drop-shadow(
+      0 7px 18px rgba(14, 165, 233, 0.11)
+    );
+}
+
+
+/* =========================================================
+   ACCENT LINE
+========================================================= */
+
+.tw-final-cta__accent {
+  width: 96px;
+
+  height: 4px;
+
+  margin:
+    28px
+    0
+    23px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #237df2,
+      #159fe8,
+      #10c7dc
+    );
+
+  box-shadow:
+    0 0 22px rgba(14, 165, 233, 0.22);
+
+  transform-origin: left center;
+
+  animation:
+    twFinalCTAAccent 4s ease-in-out infinite;
+}
+
+
+@keyframes twFinalCTAAccent {
+
+  0%,
+  100% {
+    transform:
+      scaleX(0.78);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      scaleX(1.15);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.tw-final-cta__content p {
+  max-width: 650px;
+
+  margin:
+    0
+    0
+    30px;
+
+  color: #617491;
+
+  font-size:
+    clamp(
+      1rem,
+      1.35vw,
+      1.18rem
+    );
+
+  line-height: 1.75;
+
+  letter-spacing: 0.02px;
+}
+
+
+/* =========================================================
+   CTA BUTTONS
+   ALWAYS SIDE-BY-SIDE
+========================================================= */
+
+.tw-final-cta__ctas {
+  position: relative;
+
+  z-index: 15;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: stretch;
+
+  gap: 13px;
+
+  width: 100%;
+
+  max-width: 600px;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.tw-final-cta__button {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 58px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 0 21px;
+
+  border-radius: 15px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.tw-final-cta__button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: -120%;
+
+  width: 65%;
+
+  transform: skewX(-18deg);
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+
+  transition:
+    left 0.7s ease;
+}
+
+
+.tw-final-cta__button:hover::before {
+  left: 150%;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.tw-final-cta__button--primary {
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  background:
+    linear-gradient(
+      105deg,
+      #2379ef 0%,
+      #168eea 48%,
+      #08b9dd 100%
+    );
+
+  box-shadow:
+    0 14px 32px
+    rgba(37, 99, 235, 0.2),
+
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.22);
+}
+
+
+.tw-final-cta__button--primary:hover {
+  box-shadow:
+    0 20px 45px
+    rgba(37, 99, 235, 0.28),
+
+    0 0 30px
+    rgba(14, 165, 233, 0.13),
+
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.tw-final-cta__button--secondary {
+  color: #142340;
+
+  border:
+    1px solid
+    rgba(104, 128, 162, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.045),
+
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.85);
+}
+
+
+.tw-final-cta__button--secondary:hover {
+  border-color:
+    rgba(37, 99, 235, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 15px 35px
+    rgba(37, 99, 235, 0.1),
+
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 1);
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.tw-final-cta__button:hover {
+  transform:
+    translateY(-4px);
+}
+
+
+.tw-final-cta__button:active {
+  transform:
+    translateY(-1px)
+    scale(0.99);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.tw-final-cta__arrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: none;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.35s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.tw-final-cta__button:hover
+.tw-final-cta__arrow {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   TRUST LINE
+========================================================= */
+
+.tw-final-cta__trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color:
+    rgba(74, 96, 128, 0.62);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+.tw-final-cta__trust-line {
+  width: 28px;
+
+  height: 1px;
+
+  flex: none;
+
+  background:
+    rgba(37, 99, 235, 0.35);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL AREA
+========================================================= */
+
+.tw-final-cta__visual {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  perspective: 1400px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   DARK HERO PRODUCT VISUAL
+========================================================= */
+
+.tw-final-cta__dashboard {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      100%,
+      670px
+    );
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.22);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #14284e 0%,
+      #0d1f40 52%,
+      #102e50 100%
+    );
+
+  box-shadow:
+    0 35px 75px
+    rgba(15, 23, 42, 0.24),
+
+    0 0 70px
+    rgba(31, 111, 235, 0.13),
+
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.09);
+
+  overflow: hidden;
+
+  transform:
+    rotateY(-4deg)
+    rotateX(2deg);
+
+  animation:
+    twFinalCTADashboard
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes twFinalCTADashboard {
+
+  0%,
+  100% {
+    transform:
+      rotateY(-4deg)
+      rotateX(2deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotateY(0deg)
+      rotateX(0deg)
+      translateY(-9px);
+  }
+
+}
+
+
+/* =========================================================
+   DASHBOARD TOP BAR
+========================================================= */
+
+.tw-final-cta__window-bar {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding:
+    0
+    19px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.12);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.tw-final-cta__window-dots {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.tw-final-cta__window-dots i {
+  width: 8px;
+
+  height: 8px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background:
+    rgba(148, 163, 184, 0.55);
+}
+
+
+.tw-final-cta__window-label {
+  flex: 1;
+
+  color:
+    rgba(203, 213, 225, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.tw-final-cta__live {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    5px
+    9px;
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.18);
+
+  border-radius: 999px;
+
+  color: #6ee7b7;
+
+  background:
+    rgba(34, 197, 94, 0.08);
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.tw-final-cta__live span {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #34d399;
+
+  box-shadow:
+    0 0 9px
+    rgba(52, 211, 153, 0.75);
+
+  animation:
+    twFinalCTALive
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes twFinalCTALive {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+}
+
+
+/* =========================================================
+   DASHBOARD BODY
+========================================================= */
+
+.tw-final-cta__dashboard-body {
+  padding: 27px;
+}
+
+
+.tw-final-cta__dashboard-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.tw-final-cta__dashboard-heading span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color:
+    rgba(148, 163, 184, 0.62);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.tw-final-cta__dashboard-heading strong {
+  color: #eef5ff;
+
+  font-size: 18px;
+
+  font-weight: 750;
+}
+
+
+.tw-final-cta__progress-value {
+  color: #5eead4;
+
+  font-size: 19px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.tw-final-cta__progress {
+  height: 6px;
+
+  margin:
+    17px
+    0
+    20px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(148, 163, 184, 0.13);
+}
+
+
+.tw-final-cta__progress span {
+  display: block;
+
+  width: 92%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3182f6,
+      #0ed1df
+    );
+
+  box-shadow:
+    0 0 16px
+    rgba(14, 165, 233, 0.35);
+
+  animation:
+    twFinalCTAProgress
+    3.5s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+@keyframes twFinalCTAProgress {
+
+  from {
+    width: 86%;
+  }
+
+  to {
+    width: 94%;
+  }
+
+}
+
+
+/* =========================================================
+   PIPELINE
+========================================================= */
+
+.tw-final-cta__steps {
+  display: grid;
+
+  gap: 10px;
+}
+
+
+.tw-final-cta__step {
+  min-height: 65px;
+
+  display: grid;
+
+  grid-template-columns:
+    34px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    11px
+    13px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.tw-final-cta__step:hover {
+  transform:
+    translateX(4px);
+
+  border-color:
+    rgba(96, 165, 250, 0.22);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+}
+
+
+.tw-final-cta__step--active {
+  border-color:
+    rgba(14, 165, 233, 0.28);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(37, 99, 235, 0.14),
+      rgba(6, 182, 212, 0.09)
+    );
+
+  box-shadow:
+    inset
+    0 0 25px
+    rgba(14, 165, 233, 0.035);
+}
+
+
+.tw-final-cta__step-icon {
+  width: 32px;
+
+  height: 32px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #9cc8ff;
+
+  background:
+    rgba(59, 130, 246, 0.12);
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+.tw-final-cta__step--done
+.tw-final-cta__step-icon {
+  color: #6ee7b7;
+
+  background:
+    rgba(34, 197, 94, 0.1);
+}
+
+
+.tw-final-cta__step strong,
+.tw-final-cta__step small {
+  display: block;
+}
+
+
+.tw-final-cta__step strong {
+  color:
+    rgba(239, 246, 255, 0.92);
+
+  font-size: 12px;
+
+  font-weight: 750;
+}
+
+
+.tw-final-cta__step small {
+  margin-top: 3px;
+
+  color:
+    rgba(148, 163, 184, 0.56);
+
+  font-size: 9px;
+}
+
+
+.tw-final-cta__step > span {
+  padding:
+    5px
+    8px;
+
+  border-radius: 999px;
+
+  color:
+    rgba(191, 219, 254, 0.72);
+
+  background:
+    rgba(59, 130, 246, 0.09);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+
+.tw-final-cta__step--done > span {
+  color: #6ee7b7;
+
+  background:
+    rgba(34, 197, 94, 0.08);
+}
+
+
+.tw-final-cta__step--active > span {
+  color: #67e8f9;
+
+  background:
+    rgba(6, 182, 212, 0.09);
+}
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.tw-final-cta__metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+
+.tw-final-cta__metrics > div {
+  padding:
+    11px
+    12px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.08);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.tw-final-cta__metrics span,
+.tw-final-cta__metrics strong {
+  display: block;
+}
+
+
+.tw-final-cta__metrics span {
+  color:
+    rgba(148, 163, 184, 0.48);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.tw-final-cta__metrics strong {
+  margin-top: 4px;
+
+  color: #dcecff;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ORBIT SYSTEM
+========================================================= */
+
+.tw-final-cta__orbit {
+  position: absolute;
+
+  z-index: 1;
+
+  border:
+    1px solid
+    rgba(37, 130, 240, 0.15);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation:
+    twFinalCTAOrbit
+    12s
+    linear
+    infinite;
+}
+
+
+.tw-final-cta__orbit--one {
+  width: 500px;
+
+  height: 500px;
+
+  right: -20px;
+
+  top: -5px;
+}
+
+
+.tw-final-cta__orbit--two {
+  width: 375px;
+
+  height: 375px;
+
+  right: 42px;
+
+  top: 58px;
+
+  animation-duration: 9s;
+
+  animation-direction: reverse;
+}
+
+
+.tw-final-cta__orbit--three {
+  width: 250px;
+
+  height: 250px;
+
+  right: 105px;
+
+  top: 120px;
+
+  animation-duration: 7s;
+}
+
+
+@keyframes twFinalCTAOrbit {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   ORBIT DOTS
+========================================================= */
+
+.tw-final-cta__orb {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #308cff,
+      #19c7df
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(72, 167, 255, 0.8);
+
+  animation:
+    twFinalCTAOrb
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.tw-final-cta__orb--one {
+  right: 35px;
+
+  top: 80px;
+}
+
+
+.tw-final-cta__orb--two {
+  right: 330px;
+
+  top: 405px;
+
+  width: 8px;
+
+  height: 8px;
+
+  animation-delay: -1.6s;
+}
+
+
+.tw-final-cta__orb--three {
+  right: 90px;
+
+  top: 345px;
+
+  width: 7px;
+
+  height: 7px;
+
+  animation-delay: -3s;
+}
+
+
+@keyframes twFinalCTAOrb {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      scale(1.18);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.tw-final-cta__floating-card {
+  position: absolute;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    11px
+    14px;
+
+  border:
+    1px solid
+    rgba(120, 150, 190, 0.18);
+
+  border-radius: 14px;
+
+  background:
+    rgba(17, 38, 72, 0.9);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(0, 0, 0, 0.15);
+
+  animation:
+    twFinalCTAFloating
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+
+.tw-final-cta__floating-card--top {
+  top: 28px;
+
+  right: -5px;
+}
+
+
+.tw-final-cta__floating-card--bottom {
+  bottom: 20px;
+
+  left: -4px;
+
+  animation-delay: -2.5s;
+}
+
+
+.tw-final-cta__floating-card small,
+.tw-final-cta__floating-card strong {
+  display: block;
+}
+
+
+.tw-final-cta__floating-card small {
+  color:
+    rgba(148, 163, 184, 0.58);
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.tw-final-cta__floating-card strong {
+  margin-top: 3px;
+
+  color: #e6f1ff;
+
+  font-size: 10px;
+}
+
+
+.tw-final-cta__floating-icon,
+.tw-final-cta__floating-check {
+  width: 29px;
+
+  height: 29px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #8fd2ff;
+
+  background:
+    rgba(59, 130, 246, 0.14);
+
+  font-size: 13px;
+}
+
+
+.tw-final-cta__floating-check {
+  color: #6ee7b7;
+
+  background:
+    rgba(34, 197, 94, 0.1);
+}
+
+
+@keyframes twFinalCTAFloating {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-9px);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .tw-final-cta-section .tw-container {
+    width:
+      min(
+        100% - 36px,
+        1200px
+      );
+  }
+
+
+  .tw-final-cta {
+    padding:
+      55px
+      0;
+  }
+
+
+  .tw-final-cta__layout {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(430px, 1.1fr);
+
+    gap: 42px;
+  }
+
+
+  .tw-final-cta h2 {
+    font-size:
+      clamp(
+        3.2rem,
+        5.7vw,
+        5.3rem
+      );
+
+    letter-spacing: -4px;
+  }
+
+
+  .tw-final-cta__visual {
+    min-height: 450px;
+  }
+
+
+  .tw-final-cta__dashboard {
+    width:
+      min(
+        100%,
+        600px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .tw-final-cta-section {
+    padding:
+      60px
+      0;
+  }
+
+
+  .tw-final-cta {
+    min-height: auto;
+
+    padding:
+      60px
+      0
+      40px;
+  }
+
+
+  .tw-final-cta__status {
+    top: 0;
+  }
+
+
+  .tw-final-cta__layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(340px, 0.95fr);
+
+    gap: 32px;
+  }
+
+
+  .tw-final-cta h2 {
+    font-size:
+      clamp(
+        2.9rem,
+        6vw,
+        4.5rem
+      );
+
+    letter-spacing: -3.5px;
+  }
+
+
+  .tw-final-cta__content p {
+    font-size: 0.98rem;
+  }
+
+
+  .tw-final-cta__visual {
+    min-height: 400px;
+  }
+
+
+  .tw-final-cta__dashboard-body {
+    padding: 20px;
+  }
+
+
+  .tw-final-cta__step {
+    min-height: 58px;
+  }
+
+
+  .tw-final-cta__floating-card--top {
+    right: -4px;
+  }
+
+
+  .tw-final-cta__floating-card--bottom {
+    left: -4px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   Buttons remain SIDE-BY-SIDE
+========================================================= */
+
+@media (max-width: 820px) {
+
+  .tw-final-cta-section {
+    padding:
+      55px
+      0;
+  }
+
+
+  .tw-final-cta-section .tw-container {
+    width:
+      min(
+        100% - 30px,
+        700px
+      );
+  }
+
+
+  .tw-final-cta {
+    padding:
+      65px
+      0
+      30px;
+  }
+
+
+  .tw-final-cta__status {
+    top: 0;
+
+    right: 0;
+  }
+
+
+  .tw-final-cta__layout {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 55px;
+  }
+
+
+  .tw-final-cta__content {
+    max-width: none;
+
+    text-align: center;
+  }
+
+
+  .tw-final-cta__eyebrow {
+    justify-content: center;
+  }
+
+
+  .tw-final-cta h2 {
+    max-width: 680px;
+
+    margin:
+      0
+      auto;
+
+    font-size:
+      clamp(
+        2.8rem,
+        9vw,
+        4.6rem
+      );
+
+    line-height: 0.97;
+
+    letter-spacing: -3px;
+  }
+
+
+  .tw-final-cta__accent {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .tw-final-cta__content p {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .tw-final-cta__ctas {
+    margin-left: auto;
+
+    margin-right: auto;
+
+    max-width: 620px;
+  }
+
+
+  .tw-final-cta__trust {
+    justify-content: center;
+  }
+
+
+  .tw-final-cta__visual {
+    min-height: 400px;
+  }
+
+
+  .tw-final-cta__dashboard {
+    width:
+      min(
+        100%,
+        620px
+      );
+
+    transform: none;
+
+    animation:
+      twFinalCTADashboardMobile
+      7s
+      ease-in-out
+      infinite;
+  }
+
+
+  @keyframes twFinalCTADashboardMobile {
+
+    0%,
+    100% {
+      transform:
+        translateY(0);
+    }
+
+    50% {
+      transform:
+        translateY(-7px);
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .tw-final-cta-section {
+    padding:
+      42px
+      0;
+  }
+
+
+  .tw-final-cta-section .tw-container {
+    width:
+      calc(
+        100% - 24px
+      );
+  }
+
+
+  .tw-final-cta {
+    width: 100%;
+
+    padding:
+      58px
+      0
+      20px;
+  }
+
+
+  .tw-final-cta__status {
+    top: 0;
+
+    right: 0;
+
+    padding:
+      7px
+      10px;
+  }
+
+
+  .tw-final-cta__status span:last-child {
+    display: none;
+  }
+
+
+  .tw-final-cta__eyebrow {
+    gap: 7px;
+
+    font-size: 8.5px;
+
+    letter-spacing: 0.95px;
+  }
+
+
+  .tw-final-cta__eyebrow-dot {
+    width: 7px;
+
+    height: 7px;
+  }
+
+
+  .tw-final-cta h2 {
+    font-size:
+      clamp(
+        2.3rem,
+        12.5vw,
+        3.6rem
+      );
+
+    line-height: 0.99;
+
+    letter-spacing: -2.4px;
+  }
+
+
+  .tw-final-cta__accent {
+    width: 76px;
+
+    height: 3px;
+
+    margin-top: 20px;
+
+    margin-bottom: 17px;
+  }
+
+
+  .tw-final-cta__content p {
+    margin-bottom: 22px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+  }
+
+
+  /*
+    IMPORTANT:
+    TWO BUTTONS STAY SIDE-BY-SIDE
+  */
+
+  .tw-final-cta__ctas {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 7px;
+
+    width: 100%;
+  }
+
+
+  .tw-final-cta__button {
+    min-height: 49px;
+
+    padding:
+      0
+      7px;
+
+    border-radius: 13px;
+
+    font-size: 9.5px;
+
+    gap: 5px;
+  }
+
+
+  .tw-final-cta__arrow {
+    font-size: 14px;
+  }
+
+
+  .tw-final-cta__trust {
+    margin-top: 16px;
+
+    font-size: 7.5px;
+
+    text-align: center;
+  }
+
+
+  .tw-final-cta__trust-line {
+    display: none;
+  }
+
+
+  .tw-final-cta__visual {
+    min-height: 330px;
+  }
+
+
+  .tw-final-cta__dashboard {
+    width: 100%;
+
+    border-radius: 18px;
+  }
+
+
+  .tw-final-cta__window-bar {
+    min-height: 44px;
+
+    padding:
+      0
+      11px;
+  }
+
+
+  .tw-final-cta__window-label {
+    display: none;
+  }
+
+
+  .tw-final-cta__dashboard-body {
+    padding: 14px;
+  }
+
+
+  .tw-final-cta__dashboard-heading strong {
+    font-size: 14px;
+  }
+
+
+  .tw-final-cta__progress-value {
+    font-size: 16px;
+  }
+
+
+  .tw-final-cta__progress {
+    margin:
+      13px
+      0
+      14px;
+  }
+
+
+  .tw-final-cta__steps {
+    gap: 7px;
+  }
+
+
+  .tw-final-cta__step {
+    min-height: 53px;
+
+    grid-template-columns:
+      27px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 7px;
+
+    padding: 7px;
+  }
+
+
+  .tw-final-cta__step-icon {
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .tw-final-cta__step strong {
+    font-size: 9px;
+  }
+
+
+  .tw-final-cta__step small {
+    font-size: 7px;
+  }
+
+
+  .tw-final-cta__step > span {
+    padding:
+      4px
+      6px;
+
+    font-size: 6.5px;
+  }
+
+
+  .tw-final-cta__metrics {
+    display: none;
+  }
+
+
+  /* ORBITS */
+
+  .tw-final-cta__orbit--one {
+    width: 330px;
+
+    height: 330px;
+
+    right: -70px;
+
+    top: 10px;
+  }
+
+
+  .tw-final-cta__orbit--two {
+    width: 245px;
+
+    height: 245px;
+
+    right: -28px;
+
+    top: 52px;
+  }
+
+
+  .tw-final-cta__orbit--three {
+    width: 165px;
+
+    height: 165px;
+
+    right: 12px;
+
+    top: 92px;
+  }
+
+
+  /* FLOATING CARDS */
+
+  .tw-final-cta__floating-card {
+    padding:
+      8px
+      10px;
+
+    border-radius: 11px;
+  }
+
+
+  .tw-final-cta__floating-card--top {
+    top: -5px;
+
+    right: -2px;
+  }
+
+
+  .tw-final-cta__floating-card--bottom {
+    bottom: -5px;
+
+    left: -2px;
+  }
+
+
+  .tw-final-cta__floating-card strong {
+    font-size: 8px;
+  }
+
+
+  .tw-final-cta__floating-card small {
+    font-size: 6px;
+  }
+
+
+  .tw-final-cta__floating-icon,
+  .tw-final-cta__floating-check {
+    width: 25px;
+
+    height: 25px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .tw-final-cta-section .tw-container {
+    width:
+      calc(
+        100% - 18px
+      );
+  }
+
+
+  .tw-final-cta {
+    padding-left: 0;
+
+    padding-right: 0;
+  }
+
+
+  .tw-final-cta h2 {
+    font-size: 2.25rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .tw-final-cta__button {
+    min-height: 47px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+
+    font-size: 8.5px;
+
+    gap: 4px;
+  }
+
+
+  .tw-final-cta__arrow {
+    font-size: 13px;
+  }
+
+
+  .tw-final-cta__visual {
+    min-height: 300px;
+  }
+
+
+  .tw-final-cta__dashboard-body {
+    padding: 11px;
+  }
+
+
+  .tw-final-cta__step {
+    grid-template-columns:
+      25px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 5px;
+  }
+
+
+  .tw-final-cta__step-icon {
+    width: 25px;
+
+    height: 25px;
+  }
+
+
+  .tw-final-cta__step strong {
+    font-size: 8px;
+  }
+
+
+  .tw-final-cta__step small {
+    font-size: 6.5px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.tw-final-cta__button:focus-visible {
+  outline:
+    2px solid
+    #159fe8;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-final-cta,
+  .tw-final-cta__grid,
+  .tw-final-cta__glow,
+  .tw-final-cta__scanline,
+  .tw-final-cta__status-dot,
+  .tw-final-cta__eyebrow-dot,
+  .tw-final-cta__accent,
+  .tw-final-cta__dashboard,
+  .tw-final-cta__progress span,
+  .tw-final-cta__orb,
+  .tw-final-cta__orbit,
+  .tw-final-cta__floating-card,
+  .tw-final-cta__live span {
+    animation: none !important;
+  }
+
+
+  .tw-final-cta,
+  .tw-final-cta__button,
+  .tw-final-cta__arrow,
+  .tw-final-cta__step {
+    transition: none !important;
+  }
+
+
+  .tw-final-cta:hover,
+  .tw-final-cta__button:hover,
+  .tw-final-cta__step:hover {
+    transform: none !important;
+  }
+
+
+  .tw-final-cta__button::before {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.tw-final-cta,
+.tw-final-cta::before,
+.tw-final-cta::after,
+.tw-final-cta__grid,
+.tw-final-cta__glow,
+.tw-final-cta__scanline,
+.tw-final-cta__dashboard,
+.tw-final-cta__orb,
+.tw-final-cta__orbit,
+.tw-final-cta__floating-card,
+.tw-final-cta__button {
+  will-change: transform;
+}

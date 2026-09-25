@@ -1,0 +1,1431 @@
+/* =========================================================
+   DEVOPS WORKFLOW
+========================================================= */
+
+.devops-workflow-section {
+  position: relative;
+  padding: 130px 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(37, 99, 235, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(6, 182, 212, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fbff 55%,
+      #f3fbff 100%
+    );
+
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.devops-workflow-grid {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  animation:
+    devopsGridMove
+    25s
+    linear
+    infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes devopsGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.devops-workflow-glow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.12;
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    devopsGlowFloat
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.devops-glow-one {
+  left: -220px;
+  top: 10%;
+
+  background: #2563eb;
+}
+
+
+.devops-glow-two {
+  right: -220px;
+  bottom: 5%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes devopsGlowFloat {
+
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.devops-workflow-heading {
+  max-width: 780px;
+
+  margin:
+    0 auto
+    75px;
+
+  text-align: center;
+}
+
+
+.devops-section-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.devops-section-label span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.8);
+
+  animation:
+    devopsLabelPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes devopsLabelPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.devops-workflow-heading h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+.devops-workflow-heading h2 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #0ea5e9,
+      #2563eb
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    devopsHeadingGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes devopsHeadingGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.devops-workflow-heading p {
+
+  max-width: 650px;
+
+  margin:
+    24px auto
+    0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PIPELINE AREA
+========================================================= */
+
+.devops-pipeline {
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    20px
+    0
+    10px;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.devops-steps {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(125px, 1fr));
+
+  gap: 16px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STEP
+========================================================= */
+
+.devops-step {
+
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding:
+    0
+    6px;
+
+  opacity: 0;
+
+  animation:
+    devopsStepReveal
+    0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  animation-delay:
+    var(--step-delay);
+
+}
+
+
+/* =========================================================
+   STEP REVEAL
+========================================================= */
+
+@keyframes devopsStepReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.devops-step-number {
+
+  height: 20px;
+
+  margin-bottom: 12px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.devops-step-icon {
+
+  position: relative;
+
+  width: 68px;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+
+  border:
+    1px solid
+    rgba(
+      37,
+      99,
+      235,
+      0.18
+    );
+
+  box-shadow:
+    0 12px 35px
+    rgba(
+      15,
+      23,
+      42,
+      0.08
+    );
+
+  z-index: 5;
+
+  transition:
+    transform 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   ICON INNER
+========================================================= */
+
+.devops-icon-inner {
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        37,
+        99,
+        235,
+        0.08
+      ),
+      rgba(
+        6,
+        182,
+        212,
+        0.08
+      )
+    );
+
+  color: #2563eb;
+
+  font-size: 20px;
+
+  transition:
+    transform 0.4s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =========================================================
+   ICON RING
+========================================================= */
+
+.devops-icon-ring {
+
+  position: absolute;
+
+  inset: -8px;
+
+  border-radius: 25px;
+
+  border:
+    1px solid
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  opacity: 0;
+
+  transform: scale(0.75);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER ICON
+========================================================= */
+
+.devops-step:hover .devops-step-icon {
+
+  transform:
+    translateY(-8px)
+    scale(1.08);
+
+  border-color:
+    rgba(
+      37,
+      99,
+      235,
+      0.45
+    );
+
+  box-shadow:
+    0 20px 45px
+    rgba(
+      37,
+      99,
+      235,
+      0.16
+    ),
+    0 0 35px
+    rgba(
+      6,
+      182,
+      212,
+      0.08
+    );
+}
+
+
+.devops-step:hover .devops-icon-inner {
+
+  transform:
+    rotate(-5deg)
+    scale(1.05);
+
+  color: #0891b2;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        37,
+        99,
+        235,
+        0.14
+      ),
+      rgba(
+        6,
+        182,
+        212,
+        0.14
+      )
+    );
+}
+
+
+.devops-step:hover .devops-icon-ring {
+
+  opacity: 1;
+
+  transform: scale(1);
+
+  animation:
+    devopsRingPulse
+    1.5s
+    ease-out
+    infinite;
+}
+
+
+@keyframes devopsRingPulse {
+
+  0% {
+
+    box-shadow:
+      0 0 0 0
+      rgba(
+        37,
+        99,
+        235,
+        0.18
+      );
+
+  }
+
+  100% {
+
+    box-shadow:
+      0 0 0 13px
+      rgba(
+        37,
+        99,
+        235,
+        0
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   STEP CONTENT CARD
+========================================================= */
+
+.devops-step-content {
+
+  width: 100%;
+
+  min-height: 145px;
+
+  margin-top: 22px;
+
+  padding:
+    18px
+    12px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  border:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.16
+    );
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   STEP TITLE
+========================================================= */
+
+.devops-step-content h3 {
+
+  margin:
+    0 0
+    8px;
+
+  color: #0b1833;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.devops-step-content p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CONTENT HOVER
+========================================================= */
+
+.devops-step:hover .devops-step-content {
+
+  transform:
+    translateY(-6px);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.98
+    );
+
+  border-color:
+    rgba(
+      37,
+      99,
+      235,
+      0.25
+    );
+
+  box-shadow:
+    0 20px 45px
+    rgba(
+      15,
+      23,
+      42,
+      0.09
+    ),
+    0 0 25px
+    rgba(
+      37,
+      99,
+      235,
+      0.05
+    );
+}
+
+
+.devops-step:hover .devops-step-number {
+
+  transform:
+    translateY(-3px);
+
+  color: #0891b2;
+}
+
+
+/* =========================================================
+   ACTIVE INDICATOR
+========================================================= */
+
+.devops-step-indicator {
+
+  width: 0;
+
+  height: 3px;
+
+  margin-top: 13px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  transition:
+    width 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.devops-step:hover
+.devops-step-indicator {
+
+  width: 45px;
+}
+
+
+/* =========================================================
+   PIPELINE LINE
+========================================================= */
+
+.devops-pipeline-line {
+
+  position: absolute;
+
+  left: 8%;
+
+  right: 8%;
+
+  top: 86px;
+
+  height: 3px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ANIMATED LINE
+========================================================= */
+
+.devops-pipeline-progress {
+
+  position: absolute;
+
+  inset: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4,
+      #2563eb
+    );
+
+  background-size: 200% 100%;
+
+  opacity: 0.5;
+
+  animation:
+    devopsLineFlow
+    4s
+    linear
+    infinite;
+}
+
+
+@keyframes devopsLineFlow {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* =========================================================
+   MOVING BLUE DOT
+========================================================= */
+
+.devops-moving-dot {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      37,
+      99,
+      235,
+      0.10
+    ),
+    0 0 20px
+    rgba(
+      37,
+      99,
+      235,
+      0.9
+    ),
+    0 0 40px
+    rgba(
+      6,
+      182,
+      212,
+      0.6
+    );
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  z-index: 10;
+
+  animation:
+    devopsDotTravel
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes devopsDotTravel {
+
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   BOTTOM STATUS
+========================================================= */
+
+.devops-workflow-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 55px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+
+.devops-status-dot {
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px
+    rgba(
+      34,
+      197,
+      94,
+      0.65
+    );
+
+  animation:
+    devopsStatusPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes devopsStatusPulse {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform: scale(0.6);
+
+    opacity: 0.55;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .devops-steps {
+
+    grid-template-columns:
+      repeat(4, minmax(150px, 1fr));
+
+    gap: 20px;
+
+  }
+
+
+  .devops-pipeline-line,
+  .devops-moving-dot {
+
+    display: none;
+
+  }
+
+
+  .devops-step-content {
+
+    min-height: 135px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .devops-workflow-section {
+
+    padding:
+      90px
+      0;
+
+  }
+
+
+  .devops-workflow-heading {
+
+    margin-bottom: 45px;
+
+  }
+
+
+  .devops-workflow-heading h2 {
+
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+
+  }
+
+
+  .devops-workflow-heading p {
+
+    font-size: 14px;
+
+  }
+
+
+  .devops-pipeline {
+
+    padding: 0;
+
+  }
+
+
+  /* Vertical timeline */
+
+  .devops-steps {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+  }
+
+
+  .devops-steps::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 35px;
+
+    bottom: 35px;
+
+    left: 40px;
+
+    width: 2px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        #2563eb,
+        #06b6d4
+      );
+
+    opacity: 0.2;
+
+  }
+
+
+  .devops-step {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      35px
+      65px
+      1fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+      14px;
+
+    text-align: left;
+
+    border-radius: 18px;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.8
+      );
+
+    border:
+      1px solid
+      rgba(
+        148,
+        163,
+        184,
+        0.15
+      );
+
+    box-shadow:
+      0 10px 30px
+      rgba(
+        15,
+        23,
+        42,
+        0.04
+      );
+
+  }
+
+
+  .devops-step-number {
+
+    margin: 0;
+
+    height: auto;
+
+    text-align: center;
+
+  }
+
+
+  .devops-step-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+  }
+
+
+  .devops-icon-inner {
+
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 17px;
+
+  }
+
+
+  .devops-step-content {
+
+    min-height: auto;
+
+    margin: 0;
+
+    padding:
+      5px
+      0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+  }
+
+
+  .devops-step:hover
+  .devops-step-content {
+
+    transform: none;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+  }
+
+
+  .devops-step-indicator {
+
+    display: none;
+
+  }
+
+
+  .devops-pipeline-line,
+  .devops-moving-dot {
+
+    display: none;
+
+  }
+
+
+  .devops-workflow-bottom {
+
+    margin-top: 40px;
+
+    padding:
+      0
+      15px;
+
+    text-align: center;
+
+    line-height: 1.6;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .devops-workflow-heading h2 {
+
+    font-size: 2.3rem;
+
+  }
+
+
+  .devops-step {
+
+    grid-template-columns:
+      30px
+      58px
+      1fr;
+
+    gap: 8px;
+
+    padding: 11px;
+
+  }
+
+
+  .devops-step-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 15px;
+
+  }
+
+
+  .devops-icon-inner {
+
+    width: 38px;
+
+    height: 38px;
+
+    font-size: 15px;
+
+  }
+
+
+  .devops-step-content h3 {
+
+    font-size: 15px;
+
+  }
+
+
+  .devops-step-content p {
+
+    font-size: 10px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .devops-workflow-grid,
+  .devops-workflow-glow,
+  .devops-section-label span,
+  .devops-workflow-heading h2 span,
+  .devops-pipeline-progress,
+  .devops-moving-dot,
+  .devops-step,
+  .devops-status-dot,
+  .devops-icon-ring {
+
+    animation: none !important;
+
+  }
+
+}

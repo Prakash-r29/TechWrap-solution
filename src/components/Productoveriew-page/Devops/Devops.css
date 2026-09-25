@@ -1,0 +1,1612 @@
+/* =========================================================
+   DEVOPS HERO
+========================================================= */
+
+.devops-hero {
+
+  position: relative;
+
+  min-height: 760px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 120px 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 8% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 70%,
+      rgba(6, 182, 212, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fbff 55%,
+      #f1fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.devops-hero-grid {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 75%,
+      transparent 100%
+    );
+
+  animation:
+    devopsGridMove
+    30s
+    linear
+    infinite;
+}
+
+
+@keyframes devopsGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.devops-hero-glow {
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.13;
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    devopsGlowFloat
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.devops-glow-one {
+
+  left: -230px;
+
+  top: 15%;
+
+  background: #2563eb;
+}
+
+
+.devops-glow-two {
+
+  right: -220px;
+
+  bottom: 5%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes devopsGlowFloat {
+
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING DOTS
+========================================================= */
+
+.devops-floating-dot {
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 18px
+    rgba(37, 99, 235, 0.8);
+
+  animation:
+    devopsDotFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+.dot-one {
+
+  top: 18%;
+
+  left: 7%;
+}
+
+
+.dot-two {
+
+  top: 35%;
+
+  right: 8%;
+
+  animation-delay: 2s;
+}
+
+
+.dot-three {
+
+  bottom: 18%;
+
+  left: 42%;
+
+  animation-delay: 4s;
+}
+
+
+@keyframes devopsDotFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-25px)
+      scale(1.3);
+
+  }
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.devops-hero-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 650px;
+
+  animation:
+    devopsContentReveal
+    0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes devopsContentReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.devops-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+.devops-label-dot {
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.8);
+
+  animation:
+    devopsLabelPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes devopsLabelPulse {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform: scale(0.55);
+
+    opacity: 0.5;
+
+  }
+
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.devops-hero-content h1 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      3.2rem,
+      6vw,
+      5.7rem
+    );
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+}
+
+
+.devops-hero-content h1 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4 0%,
+      #0ea5e9 45%,
+      #2563eb 100%
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    devopsHeadingGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes devopsHeadingGradient {
+
+  0% {
+
+    background-position: 0% center;
+
+  }
+
+  100% {
+
+    background-position: 200% center;
+
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.devops-hero-content > p {
+
+  max-width: 590px;
+
+  margin:
+    28px 0
+    0;
+
+  color: #64748b;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.devops-hero-buttons {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 35px;
+}
+
+
+.devops-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 50px;
+
+  padding:
+    0 20px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* Primary */
+
+.devops-btn-primary {
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.3);
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.20);
+}
+
+
+.devops-btn-primary:hover {
+
+  color: white;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(37, 99, 235, 0.30);
+}
+
+
+.devops-btn-primary svg {
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.devops-btn-primary:hover svg {
+
+  transform:
+    translateX(5px);
+}
+
+
+/* Secondary */
+
+.devops-btn-secondary {
+
+  color: #2563eb;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.20);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+.devops-btn-secondary:hover {
+
+  color: #2563eb;
+
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(37, 99, 235, 0.05);
+
+  border-color:
+    rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   TRUST ITEMS
+========================================================= */
+
+.devops-trust {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 28px;
+}
+
+
+.devops-trust div {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.devops-trust svg {
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   PIPELINE WRAPPER
+========================================================= */
+
+.devops-pipeline-wrapper {
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 15px;
+
+  animation:
+    pipelineReveal
+    1s
+    0.15s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+@keyframes pipelineReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateX(45px)
+      scale(0.96);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   DASHBOARD WINDOW
+========================================================= */
+
+.devops-window {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(245, 250, 255, 0.92)
+    );
+
+  backdrop-filter:
+    blur(25px);
+
+  box-shadow:
+    0 35px 90px
+    rgba(15, 23, 42, 0.12),
+
+    0 0 60px
+    rgba(37, 99, 235, 0.07);
+}
+
+
+/* =========================================================
+   WINDOW HEADER
+========================================================= */
+
+.devops-window-header {
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    0 20px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.16);
+}
+
+
+.devops-window-dots {
+
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.devops-window-dots span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+}
+
+
+.devops-window-title {
+
+  margin-left: 20px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.devops-status {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: auto;
+
+  padding:
+    6px 9px;
+
+  border-radius: 50px;
+
+  color: #16a34a;
+
+  background:
+    rgba(34, 197, 94, 0.07);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.devops-status span {
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px
+    rgba(34, 197, 94, 0.7);
+
+  animation:
+    statusPulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+}
+
+
+/* =========================================================
+   PIPELINE
+========================================================= */
+
+.devops-pipeline {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  align-items: start;
+
+  padding:
+    60px 28px
+    45px;
+}
+
+
+/* =========================================================
+   CONNECTING LINE
+========================================================= */
+
+.pipeline-line {
+
+  position: absolute;
+
+  top: 86px;
+
+  left: 8%;
+
+  right: 8%;
+
+  height: 2px;
+
+  background:
+    rgba(148, 163, 184, 0.25);
+
+  z-index: 0;
+}
+
+
+/* Animated progress */
+
+.pipeline-progress {
+
+  position: absolute;
+
+  top: 86px;
+
+  left: 8%;
+
+  width: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.5);
+
+  z-index: 1;
+
+  animation:
+    pipelineProgress
+    6s
+    linear
+    infinite;
+}
+
+
+@keyframes pipelineProgress {
+
+  0% {
+    width: 0%;
+  }
+
+  75% {
+    width: 84%;
+  }
+
+  100% {
+    width: 84%;
+  }
+
+}
+
+
+/* =========================================================
+   PIPELINE STEP
+========================================================= */
+
+.pipeline-step {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   PIPELINE ICON
+========================================================= */
+
+.pipeline-icon {
+
+  position: relative;
+
+  width: 54px;
+
+  height: 54px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  color: #2563eb;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f0f7ff
+    );
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.pipeline-step:hover
+.pipeline-icon {
+
+  transform:
+    translateY(-7px)
+    scale(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================================================
+   ICON PULSE
+========================================================= */
+
+.pipeline-pulse {
+
+  position: absolute;
+
+  inset: -7px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.25);
+
+  opacity: 0;
+
+  animation:
+    pipelinePulse
+    3s
+    ease-out
+    infinite;
+}
+
+
+.pipeline-step-2
+.pipeline-pulse {
+  animation-delay: 0.5s;
+}
+
+.pipeline-step-3
+.pipeline-pulse {
+  animation-delay: 1s;
+}
+
+.pipeline-step-4
+.pipeline-pulse {
+  animation-delay: 1.5s;
+}
+
+.pipeline-step-5
+.pipeline-pulse {
+  animation-delay: 2s;
+}
+
+.pipeline-step-6
+.pipeline-pulse {
+  animation-delay: 2.5s;
+}
+
+
+@keyframes pipelinePulse {
+
+  0% {
+
+    transform: scale(0.85);
+
+    opacity: 0.7;
+
+  }
+
+  100% {
+
+    transform: scale(1.35);
+
+    opacity: 0;
+
+  }
+
+}
+
+
+/* =========================================================
+   PIPELINE INFO
+========================================================= */
+
+.pipeline-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 16px;
+}
+
+
+.pipeline-number {
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 4px;
+}
+
+
+.pipeline-info strong {
+
+  color: #0b1833;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+
+.pipeline-info small {
+
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   DASHBOARD FOOTER
+========================================================= */
+
+.devops-dashboard-footer {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  padding:
+    18px 22px;
+
+  border-top:
+    1px solid
+    rgba(148, 163, 184, 0.14);
+
+  background:
+    rgba(248, 250, 252, 0.7);
+}
+
+
+.devops-dashboard-footer > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.devops-dashboard-footer small {
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.devops-dashboard-footer strong {
+
+  color: #0b1833;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+.deployment-status {
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  color: #16a34a;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+.deployment-status span {
+
+  width: 6px;
+  height: 6px;
+
+  margin-bottom: 3px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 9px
+    rgba(34, 197, 94, 0.6);
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.devops-floating-card {
+
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    12px 15px;
+
+  border-radius: 13px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  backdrop-filter:
+    blur(15px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(15, 23, 42, 0.10);
+
+  z-index: 5;
+
+  animation:
+    floatingCard
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.floating-card-one {
+
+  left: -15px;
+
+  bottom: 80px;
+}
+
+
+.floating-card-two {
+
+  right: -15px;
+
+  top: 110px;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes floatingCard {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-10px);
+
+  }
+
+}
+
+
+.floating-icon {
+
+  width: 31px;
+
+  height: 31px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #2563eb;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+}
+
+
+.devops-floating-card small {
+
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.devops-floating-card strong {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color: #0b1833;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MINI CHART
+========================================================= */
+
+.floating-chart {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 3px;
+
+  width: 32px;
+
+  height: 28px;
+}
+
+
+.floating-chart span {
+
+  width: 5px;
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      to top,
+      #2563eb,
+      #38bdf8
+    );
+
+  animation:
+    chartAnimation
+    1.5s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.floating-chart span:nth-child(1) {
+  height: 40%;
+}
+
+.floating-chart span:nth-child(2) {
+  height: 65%;
+  animation-delay: 0.15s;
+}
+
+.floating-chart span:nth-child(3) {
+  height: 50%;
+  animation-delay: 0.3s;
+}
+
+.floating-chart span:nth-child(4) {
+  height: 85%;
+  animation-delay: 0.45s;
+}
+
+.floating-chart span:nth-child(5) {
+  height: 100%;
+  animation-delay: 0.6s;
+}
+
+
+@keyframes chartAnimation {
+
+  from {
+    opacity: 0.5;
+    transform: scaleY(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .devops-pipeline {
+
+    padding:
+      55px 18px
+      40px;
+  }
+
+  .pipeline-info strong {
+
+    font-size: 9px;
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  .devops-hero {
+
+    min-height: auto;
+
+    padding:
+      100px 0;
+  }
+
+  .devops-hero-content {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .devops-hero-content > p {
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .devops-hero-buttons {
+
+    justify-content: center;
+  }
+
+  .devops-trust {
+
+    justify-content: center;
+  }
+
+  .devops-pipeline-wrapper {
+
+    max-width: 700px;
+
+    margin:
+      20px auto
+      0;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .devops-pipeline {
+
+    overflow-x: auto;
+
+    grid-template-columns:
+      repeat(6, 100px);
+
+    justify-content: start;
+
+    min-width: 700px;
+  }
+
+  .devops-window {
+
+    overflow-x: auto;
+  }
+
+  .devops-dashboard-footer {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .deployment-status {
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .devops-hero {
+
+    padding:
+      85px 0;
+  }
+
+  .devops-hero-content h1 {
+
+    font-size: 3rem;
+
+    letter-spacing: -2.5px;
+  }
+
+  .devops-hero-content > p {
+
+    font-size: 14px;
+  }
+
+  .devops-hero-buttons {
+
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .devops-btn {
+
+    width: 100%;
+  }
+
+  .devops-trust {
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .devops-pipeline-wrapper {
+
+    padding: 5px;
+  }
+
+  .devops-window {
+
+    border-radius: 18px;
+  }
+
+  .devops-window-header {
+
+    padding:
+      0 14px;
+  }
+
+  .devops-floating-card {
+
+    display: none;
+  }
+
+  .devops-dashboard-footer {
+
+    padding:
+      15px;
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .devops-hero-grid,
+  .devops-hero-glow,
+  .devops-floating-dot,
+  .devops-label-dot,
+  .devops-hero-content,
+  .devops-pipeline-wrapper,
+  .pipeline-progress,
+  .pipeline-pulse,
+  .devops-floating-card,
+  .floating-chart span,
+  .devops-status span,
+  .devops-hero-content h1 span {
+
+    animation: none !important;
+  }
+
+}

@@ -1,0 +1,490 @@
+/* =========================================================
+   TECHWRAP LANGUAGE SELECTOR
+========================================================= */
+
+.tw-language {
+  position: relative;
+  z-index: 1000;
+  font-family: inherit;
+}
+
+/* =========================================================
+   TRIGGER
+========================================================= */
+
+.tw-language-trigger {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  height: 40px;
+  padding: 0 12px;
+
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+
+  color: #172033;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tw-language-trigger:hover {
+  background: #ffffff;
+  border-color: rgba(22, 119, 255, 0.25);
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.08),
+    0 0 0 3px rgba(22, 119, 255, 0.04);
+
+  transform: translateY(-1px);
+}
+
+.tw-language-trigger-active {
+  background: #ffffff;
+  border-color: rgba(22, 119, 255, 0.3);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.1),
+    0 0 0 3px rgba(22, 119, 255, 0.05);
+}
+
+.tw-language-code {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.tw-language-chevron {
+  transition: transform 0.25s ease;
+}
+
+.tw-language-chevron-open {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.tw-language-panel {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 430px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(248, 251, 255, 0.97)
+    );
+
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.16),
+    0 8px 25px rgba(15, 23, 42, 0.07);
+
+  backdrop-filter: blur(25px);
+
+  animation: twLanguagePanelIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes twLanguagePanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.tw-language-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 20px 20px 16px;
+
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.tw-language-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tw-language-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(22, 119, 255, 0.08);
+  color: #1677ff;
+}
+
+.tw-language-panel-header h3 {
+  margin: 0 0 3px;
+
+  color: #111827;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tw-language-panel-header p {
+  margin: 0;
+
+  color: #7b8494;
+
+  font-size: 11px;
+}
+
+.tw-language-close {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #7b8494;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.tw-language-close:hover {
+  background: #f1f5f9;
+  color: #111827;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.tw-language-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 14px 16px;
+
+  height: 42px;
+  padding: 0 13px;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 11px;
+
+  background: #f8fafc;
+
+  color: #8b95a5;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tw-language-search:focus-within {
+  background: #ffffff;
+  border-color: rgba(22, 119, 255, 0.35);
+
+  box-shadow:
+    0 0 0 3px rgba(22, 119, 255, 0.06);
+}
+
+.tw-language-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.tw-language-search input::placeholder {
+  color: #9ba4b3;
+}
+
+/* =========================================================
+   LANGUAGE LIST
+========================================================= */
+
+.tw-language-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5px;
+
+  max-height: 310px;
+
+  padding: 0 12px 12px;
+
+  overflow-y: auto;
+}
+
+.tw-language-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tw-language-list::-webkit-scrollbar-thumb {
+  background: #dce3ed;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   LANGUAGE OPTION
+========================================================= */
+
+.tw-language-option {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 55px;
+
+  padding: 8px 9px;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
+  background: transparent;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tw-language-option:hover {
+  background: #f5f8fc;
+  border-color: rgba(22, 119, 255, 0.08);
+
+  transform: translateX(2px);
+}
+
+.tw-language-option-active {
+  background: rgba(22, 119, 255, 0.07);
+  border-color: rgba(22, 119, 255, 0.13);
+}
+
+.tw-language-flag {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font-size: 17px;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.tw-language-name {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  margin-left: 9px;
+}
+
+.tw-language-name strong {
+  color: #1a2435;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.tw-language-name small {
+  margin-top: 2px;
+
+  color: #8993a3;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.tw-language-check {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+  color: #ffffff;
+
+  animation: twCheckIn 0.2s ease;
+}
+
+@keyframes twCheckIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.tw-language-empty {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 120px;
+
+  color: #9aa3b2;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.tw-language-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 11px 16px;
+
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+
+  background: rgba(248, 250, 252, 0.7);
+
+  color: #9aa3b2;
+
+  font-size: 10px;
+}
+
+.tw-language-status {
+  color: #1677ff;
+  font-weight: 650;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .tw-language-panel {
+    position: fixed;
+
+    top: 70px;
+    left: 14px;
+    right: 14px;
+
+    width: auto;
+
+    max-height: calc(100vh - 90px);
+
+    border-radius: 18px;
+  }
+
+  .tw-language-list {
+    grid-template-columns: 1fr;
+
+    max-height: 48vh;
+  }
+
+  .tw-language-option {
+    min-height: 54px;
+  }
+
+  .tw-language-panel-header {
+    padding: 17px;
+  }
+
+  .tw-language-footer {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .tw-language-code {
+    display: none;
+  }
+
+  .tw-language-trigger {
+    width: 40px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,1253 @@
+/* =========================================================
+   TECHWRAP WHATSAPP AI
+   FIXED CHAT + FIXED WHATSAPP BUTTON
+========================================================= */
+
+
+/* =========================================================
+   PAGE HORIZONTAL OVERFLOW PROTECTION
+========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+   FIXED POSITION — DESKTOP
+========================================================= */
+
+.whatsapp-button {
+  position: fixed;
+
+  left: 28px;
+  bottom: 28px;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  background: linear-gradient(
+    135deg,
+    #25d366,
+    #128c7e
+  );
+
+  box-shadow:
+    0 10px 30px rgba(18, 140, 126, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.18);
+
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  /* Prevent button from participating in page layout */
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON HOVER
+   NO UP / DOWN MOVEMENT
+========================================================= */
+
+.whatsapp-button:hover {
+  transform: none;
+
+  box-shadow:
+    0 10px 30px rgba(18, 140, 126, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   OPEN STATE
+   NO MOVEMENT
+========================================================= */
+
+.whatsapp-button-open {
+  transform: none;
+}
+
+
+/* =========================================================
+   WHATSAPP ICON
+========================================================= */
+
+.whatsapp-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+.whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: #ffffff;
+}
+
+
+/* =========================================================
+   WHATSAPP PULSE
+========================================================= */
+
+.whatsapp-pulse {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(37, 211, 102, 0.6);
+
+  animation: whatsappPulse 2.2s infinite;
+
+  pointer-events: none;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.whatsapp-tooltip {
+  position: absolute;
+
+  left: 76px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    translateX(-8px);
+
+  white-space: nowrap;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  background: rgba(12, 18, 35, 0.96);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  pointer-events: none;
+}
+
+.whatsapp-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  left: -6px;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  background: rgba(12, 18, 35, 0.96);
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+   FIXED POSITION
+   DOES NOT MOVE WITH PAGE
+========================================================= */
+
+.tw-whatsapp-chat {
+  position: fixed;
+
+  left: 28px;
+  bottom: 98px;
+
+  width: 390px;
+
+  /*
+    Fixed height instead of viewport-dependent height.
+    This prevents the chat card from moving/resizing
+    when messages are added.
+  */
+  height: 520px;
+  min-height: 520px;
+  max-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #efeae2;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  z-index: 9998;
+
+  /*
+    Only fade in.
+    No translateY or scale movement.
+  */
+  animation: chatOpen 0.2s ease;
+
+  max-width: calc(100vw - 56px);
+
+  /*
+    Prevent flex children from changing
+    the total chat height.
+  */
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CHAT OPEN ANIMATION
+   FADE ONLY
+========================================================= */
+
+@keyframes chatOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   HEADER
+   FIXED INSIDE CHAT
+========================================================= */
+
+.tw-chat-header {
+  min-height: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 15px;
+
+  background: linear-gradient(
+    135deg,
+    #10213f,
+    #162d54
+  );
+
+  color: #ffffff;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CHAT PROFILE
+========================================================= */
+
+.tw-chat-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.tw-chat-avatar {
+  position: relative;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.tw-online-dot {
+  position: absolute;
+
+  right: 1px;
+  bottom: 2px;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  border: 2px solid #10213f;
+}
+
+.tw-chat-profile h3 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.tw-chat-profile span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.tw-header-actions {
+  display: flex;
+
+  gap: 4px;
+}
+
+.tw-header-button {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tw-header-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CHAT BODY
+   ONLY THIS AREA SCROLLS
+========================================================= */
+
+.tw-chat-body {
+  flex: 1;
+
+  /*
+    Critical:
+    Allows the body to shrink inside the fixed-height
+    chat window and scroll internally.
+  */
+  min-height: 0;
+
+  max-height: none;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 13px 12px 16px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.35),
+      transparent 28%
+    ),
+    #efeae2;
+
+  scrollbar-width: thin;
+
+  /*
+    Prevent scroll chaining from affecting the page.
+  */
+  overscroll-behavior: contain;
+
+  /*
+    Smooth internal scrolling only.
+  */
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   CHAT BODY SCROLLBAR
+========================================================= */
+
+.tw-chat-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tw-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tw-chat-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+
+  border-radius: 20px;
+}
+
+.tw-chat-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.tw-chat-date {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 12px;
+}
+
+.tw-chat-date span {
+  padding: 5px 11px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #667781;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
+
+.tw-message-row {
+  display: flex;
+
+  width: 100%;
+
+  margin-bottom: 7px;
+
+  flex-shrink: 0;
+}
+
+.tw-bot-row {
+  justify-content: flex-start;
+}
+
+.tw-user-row {
+  justify-content: flex-end;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.tw-message {
+  position: relative;
+
+  max-width: 82%;
+
+  padding: 8px 10px 6px;
+
+  border-radius: 9px;
+
+  font-size: 12.5px;
+
+  line-height: 1.48;
+
+  color: #263238;
+
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.08);
+
+  flex-shrink: 0;
+}
+
+.tw-bot-message {
+  background: #ffffff;
+
+  border-top-left-radius: 3px;
+}
+
+.tw-user-message {
+  background: #d9fdd3;
+
+  border-top-right-radius: 3px;
+}
+
+.tw-bot-name {
+  margin-bottom: 3px;
+
+  color: #128c7e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.tw-message-text {
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+}
+
+.tw-message-time {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 3px;
+
+  color: #87928b;
+
+  font-size: 8px;
+}
+
+.tw-read {
+  color: #53bdeb;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.tw-typing-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 11px 13px;
+}
+
+.tw-typing-message span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #87928b;
+
+  animation: typing 1.2s infinite;
+}
+
+.tw-typing-message span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.tw-typing-message span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateY(-4px);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.tw-options {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin: 8px 4px 12px;
+
+  flex-shrink: 0;
+}
+
+.tw-options button {
+  padding: 8px 11px;
+
+  border: 1px solid rgba(18, 140, 126, 0.28);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #128c7e;
+
+  font-size: 10.5px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tw-options button:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(18, 140, 126, 0.12);
+}
+
+
+/* =========================================================
+   FINAL CONTACT CARD
+========================================================= */
+
+.tw-lead-action {
+  margin: 9px 4px;
+
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.86);
+
+  border: 1px solid rgba(18, 140, 126, 0.15);
+
+  box-shadow:
+    0 5px 18px rgba(18, 140, 126, 0.06);
+
+  flex-shrink: 0;
+}
+
+.tw-lead-summary {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-bottom: 11px;
+}
+
+.tw-lead-summary strong {
+  color: #128c7e;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.tw-lead-summary span {
+  color: #667781;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   WHATSAPP SEND BUTTON
+========================================================= */
+
+.tw-send-whatsapp {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #25d366,
+    #128c7e
+  );
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(18, 140, 126, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tw-send-whatsapp:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(18, 140, 126, 0.3);
+}
+
+.tw-small-whatsapp-icon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+}
+
+.tw-small-whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: #ffffff;
+}
+
+
+/* =========================================================
+   INPUT AREA
+   FIXED AT BOTTOM OF CHAT
+========================================================= */
+
+.tw-chat-input-area {
+  min-height: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  background: #f0f2f5;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.tw-chat-input-area input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  color: #263238;
+
+  font-size: 12px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.tw-chat-input-area input::placeholder {
+  color: #87928b;
+}
+
+
+/* =========================================================
+   INPUT BUTTONS
+========================================================= */
+
+.tw-emoji-button,
+.tw-send-button {
+  width: 37px;
+  height: 37px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.tw-emoji-button {
+  background: transparent;
+
+  color: #667781;
+
+  font-size: 18px;
+}
+
+.tw-send-button {
+  background: #128c7e;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.tw-send-button:hover {
+  transform: scale(1.07);
+
+  background: #075e54;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* -----------------------------------------
+     FIXED WHATSAPP BUTTON
+  ----------------------------------------- */
+
+  .whatsapp-button {
+    position: fixed;
+
+    left: 18px;
+    bottom: 18px;
+
+    width: 56px;
+    height: 56px;
+
+    transform: none;
+  }
+
+  .whatsapp-button:hover,
+  .whatsapp-button-open {
+    transform: none;
+  }
+
+  .whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-pulse {
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     FIXED CHAT WINDOW
+  ----------------------------------------- */
+
+  .tw-whatsapp-chat {
+    position: fixed;
+
+    left: 18px;
+    bottom: 88px;
+
+    width: calc(100vw - 36px);
+
+    /*
+      Fixed height.
+      It will not change when messages increase.
+    */
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
+
+    border-radius: 18px;
+
+    max-width: calc(100vw - 36px);
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .tw-chat-header {
+    height: 62px;
+    min-height: 62px;
+  }
+
+
+  /* -----------------------------------------
+     BODY
+  ----------------------------------------- */
+
+  .tw-chat-body {
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    overscroll-behavior: contain;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  /* -----------------------------------------
+     FIXED WHATSAPP BUTTON
+  ----------------------------------------- */
+
+  .whatsapp-button {
+    position: fixed;
+
+    left: 15px;
+    bottom: 15px;
+
+    width: 52px;
+    height: 52px;
+
+    transform: none;
+  }
+
+  .whatsapp-button:hover,
+  .whatsapp-button-open {
+    transform: none;
+  }
+
+  .whatsapp-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .whatsapp-pulse {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  /* -----------------------------------------
+     FIXED CHAT
+  ----------------------------------------- */
+
+  .tw-whatsapp-chat {
+    position: fixed;
+
+    left: 10px;
+    bottom: 76px;
+
+    width: calc(100vw - 20px);
+
+    /*
+      Fixed mobile height.
+      No automatic viewport resizing.
+    */
+    height: 540px;
+    min-height: 540px;
+    max-height: 540px;
+
+    border-radius: 16px;
+
+    max-width: calc(100vw - 20px);
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .tw-chat-header {
+    height: 62px;
+    min-height: 62px;
+
+    padding: 9px 12px;
+  }
+
+
+  /* -----------------------------------------
+     CHAT BODY
+  ----------------------------------------- */
+
+  .tw-chat-body {
+    padding-left: 9px;
+    padding-right: 9px;
+
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    overscroll-behavior: contain;
+  }
+
+
+  /* -----------------------------------------
+     MESSAGE
+  ----------------------------------------- */
+
+  .tw-message {
+    max-width: 88%;
+
+    font-size: 12px;
+  }
+
+
+  /* -----------------------------------------
+     OPTIONS
+  ----------------------------------------- */
+
+  .tw-options button {
+    font-size: 10px;
+
+    padding: 8px 10px;
+  }
+
+
+  /* -----------------------------------------
+     LEAD ACTION
+  ----------------------------------------- */
+
+  .tw-lead-action {
+    padding: 12px;
+  }
+
+
+  /* -----------------------------------------
+     INPUT
+  ----------------------------------------- */
+
+  .tw-chat-input-area {
+    height: 58px;
+    min-height: 58px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL HEIGHT SCREENS
+   KEEP CHAT FIXED
+========================================================= */
+
+@media (
+  max-height: 700px
+) and (
+  min-width: 481px
+) {
+
+  .tw-whatsapp-chat {
+    position: fixed;
+
+    bottom: 88px;
+
+    /*
+      Keep a fixed size.
+      The message area handles scrolling.
+    */
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+
+  .tw-chat-header {
+    height: 62px;
+    min-height: 62px;
+  }
+
+
+  .tw-chat-input-area {
+    height: 54px;
+    min-height: 54px;
+  }
+
+
+  .tw-chat-input-area input {
+    height: 37px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE HEIGHT
+   KEEP CHAT FIXED WITHOUT PAGE MOVEMENT
+========================================================= */
+
+@media (
+  max-height: 700px
+) and (
+  max-width: 480px
+) {
+
+  .tw-whatsapp-chat {
+    position: fixed;
+
+    left: 10px;
+    bottom: 68px;
+
+    width: calc(100vw - 20px);
+
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+
+    max-width: calc(100vw - 20px);
+  }
+
+  .tw-chat-header {
+    height: 58px;
+    min-height: 58px;
+  }
+
+  .tw-chat-input-area {
+    height: 54px;
+    min-height: 54px;
+  }
+
+  .tw-chat-input-area input {
+    height: 37px;
+  }
+}

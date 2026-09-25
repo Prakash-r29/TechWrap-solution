@@ -1,0 +1,2117 @@
+/* =========================================================
+   TECHWRAP — PRODUCT OVERVIEW
+   Premium SaaS Product Hero
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.product-overview-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.overview-hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(37, 99, 235, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(6, 182, 212, 0.06),
+      transparent 25%
+    ),
+    #f8fbff;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.overview-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 64px 64px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.55),
+    transparent
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.55),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   HERO GLOWS
+========================================================= */
+
+.hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  opacity: 0.5;
+}
+
+
+.hero-glow-one {
+  width: 420px;
+  height: 420px;
+
+  top: 5%;
+  right: 8%;
+
+  background: rgba(37, 99, 235, 0.11);
+
+  animation: heroGlowFloat 8s ease-in-out infinite;
+}
+
+
+.hero-glow-two {
+  width: 300px;
+  height: 300px;
+
+  bottom: 5%;
+  left: 2%;
+
+  background: rgba(6, 182, 212, 0.08);
+
+  animation: heroGlowFloat 10s ease-in-out infinite reverse;
+}
+
+
+@keyframes heroGlowFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(20px, -18px, 0);
+  }
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.overview-hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.hero-badge {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 19px;
+
+  margin-bottom: 32px;
+
+  border: 1px solid rgba(59, 130, 246, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(239, 246, 255, 0.72);
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 25px rgba(37, 99, 235, 0.06);
+
+  animation: badgeAppear 0.8s ease both;
+}
+
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #5ed9ed;
+
+  box-shadow:
+    0 0 0 5px rgba(94, 217, 237, 0.12),
+    0 0 14px rgba(94, 217, 237, 0.65);
+
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes badgeAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.overview-title {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #071936;
+
+  font-size: clamp(
+    62px,
+    6.5vw,
+    104px
+  );
+
+  line-height: 0.92;
+
+  font-weight: 800;
+
+  letter-spacing: -0.065em;
+
+  animation: titleReveal 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+.overview-title span {
+  display: block;
+
+  background: linear-gradient(
+    90deg,
+    #2674ed 0%,
+    #2977ef 45%,
+    #08a7d5 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-size: 180% auto;
+
+  animation:
+    titleGradient 6s ease-in-out infinite;
+}
+
+
+@keyframes titleReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes titleGradient {
+
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.overview-description {
+  max-width: 720px;
+
+  margin-top: 42px;
+  margin-bottom: 0;
+
+  color: #607493;
+
+  font-size: 19px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+
+  letter-spacing: -0.01em;
+
+  animation: descriptionReveal 1s
+    0.15s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+@keyframes descriptionReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   HERO CTA BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 38px;
+
+  flex-wrap: wrap;
+
+  animation: buttonsReveal 1s
+    0.25s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+@keyframes buttonsReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   GET STARTED
+========================================================= */
+
+.overview-primary-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  height: 56px;
+
+  padding: 0 10px 0 24px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb 0%,
+      #1685ee 48%,
+      #06b6d4 100%
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(
+    255,
+    255,
+    255,
+    0.18
+  );
+
+  box-shadow:
+    0 10px 30px
+      rgba(37, 99, 235, 0.22),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.28);
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+.overview-primary-btn .btn-text {
+  position: relative;
+
+  z-index: 3;
+
+  white-space: nowrap;
+}
+
+
+.overview-primary-btn .btn-arrow {
+  position: relative;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  margin-left: 13px;
+
+  border-radius: 10px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.16
+  );
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON SHINE
+========================================================= */
+
+.overview-primary-btn .btn-shine {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 55%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255, 255, 255, 0.38),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.65s ease;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON HOVER
+========================================================= */
+
+.overview-primary-btn:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transform: translateY(-4px);
+
+  filter: saturate(1.08);
+
+  box-shadow:
+    0 18px 42px
+      rgba(37, 99, 235, 0.32),
+    0 0 0 1px
+      rgba(59, 130, 246, 0.15),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.35);
+}
+
+
+.overview-primary-btn:hover .btn-arrow {
+  transform: translateX(5px);
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.24
+  );
+}
+
+
+.overview-primary-btn:hover .btn-shine {
+  left: 150%;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON ACTIVE
+========================================================= */
+
+.overview-primary-btn:active {
+  transform: translateY(-1px) scale(0.98);
+
+  box-shadow:
+    0 8px 18px
+      rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   EXPLORE INTEGRATIONS
+========================================================= */
+
+.overview-secondary-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 220px;
+  height: 56px;
+
+  padding: 0 22px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  border: 1px solid
+    rgba(148, 163, 184, 0.22);
+
+  color: #172033;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 25px
+      rgba(15, 23, 42, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.overview-secondary-btn .btn-text {
+  position: relative;
+
+  z-index: 2;
+
+  white-space: nowrap;
+}
+
+
+.overview-secondary-btn .btn-arrow {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  margin-left: 10px;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   SECONDARY BACKGROUND EFFECT
+========================================================= */
+
+.overview-secondary-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(37, 99, 235, 0.06),
+      rgba(6, 182, 212, 0.08)
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   SECONDARY HOVER
+========================================================= */
+
+.overview-secondary-btn:hover {
+  color: #1d4ed8;
+
+  text-decoration: none;
+
+  transform: translateY(-4px);
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border-color:
+    rgba(37, 99, 235, 0.28);
+
+  box-shadow:
+    0 15px 35px
+      rgba(37, 99, 235, 0.12),
+    0 0 0 4px
+      rgba(37, 99, 235, 0.04);
+}
+
+
+.overview-secondary-btn:hover::before {
+  opacity: 1;
+}
+
+
+.overview-secondary-btn:hover .btn-arrow {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* =========================================================
+   SECONDARY ACTIVE
+========================================================= */
+
+.overview-secondary-btn:active {
+  transform:
+    translateY(-1px)
+    scale(0.98);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.overview-primary-btn:focus-visible,
+.overview-secondary-btn:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(37, 99, 235, 0.18),
+    0 12px 30px
+      rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   DASHBOARD WRAPPER
+========================================================= */
+
+.dashboard-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  margin-left: auto;
+
+  perspective: 1200px;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT DASHBOARD
+========================================================= */
+
+.product-dashboard {
+  position: relative;
+
+  width: 100%;
+
+  padding: 22px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.86);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.18);
+
+  box-shadow:
+    0 30px 80px
+      rgba(15, 23, 42, 0.12),
+    0 10px 30px
+      rgba(37, 99, 235, 0.06);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  transform:
+    perspective(1200px)
+    rotateY(-3deg)
+    rotateX(1deg);
+
+  animation:
+    dashboardFloat 7s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+}
+
+
+.dashboard-wrapper:hover
+.product-dashboard {
+  transform:
+    perspective(1200px)
+    rotateY(0deg)
+    rotateX(0deg)
+    translateY(-5px);
+
+  box-shadow:
+    0 38px 90px
+      rgba(15, 23, 42, 0.15),
+    0 15px 35px
+      rgba(37, 99, 235, 0.08);
+}
+
+
+@keyframes dashboardFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(1200px)
+      rotateY(-3deg)
+      rotateX(1deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(1200px)
+      rotateY(-2deg)
+      rotateX(1deg)
+      translateY(-8px);
+  }
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.12);
+}
+
+
+.dashboard-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.dashboard-logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 7px 18px
+      rgba(37, 99, 235, 0.2);
+}
+
+
+.dashboard-brand strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  line-height: 1.3;
+}
+
+
+.dashboard-brand small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+
+.dashboard-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(16, 185, 129, 0.08);
+
+  color: #059669;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.dashboard-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #10b981;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(16, 185, 129, 0.08);
+
+  animation:
+    livePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes livePulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+/* =========================================================
+   DASHBOARD METRICS
+========================================================= */
+
+.dashboard-metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+.metric-card {
+  padding: 14px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(248, 250, 252, 0.8);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.metric-card:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(239, 246, 255, 0.8);
+}
+
+
+.metric-card small {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+
+.metric-card strong {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #172033;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+.metric-card span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #10b981;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CHART CONTAINER
+========================================================= */
+
+.chart-container {
+  margin-top: 18px;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(248, 250, 252, 0.62);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+}
+
+
+.chart-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.chart-heading small {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+
+.chart-heading h5 {
+  margin: 4px 0 0;
+
+  color: #172033;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.chart-heading button {
+  border: 0;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.chart {
+  position: relative;
+
+  height: 150px;
+
+  margin-top: 12px;
+}
+
+
+.chart-lines {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+
+.chart-lines span {
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    rgba(148, 163, 184, 0.1);
+}
+
+
+.growth-chart {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   CHART MONTHS
+========================================================= */
+
+.chart-months {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   DASHBOARD BOTTOM
+========================================================= */
+
+.dashboard-bottom {
+  margin-top: 18px;
+}
+
+
+.integration-status {
+  padding: 16px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(248, 250, 252, 0.65);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.1);
+}
+
+
+.section-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+
+.section-title span {
+  color: #334155;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.section-title small {
+  color: #2563eb;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   INTEGRATION ROW
+========================================================= */
+
+.integration-row {
+  display: grid;
+
+  grid-template-columns:
+    28px 1fr auto;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 0;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.08);
+}
+
+
+.integration-row:last-child {
+  border-bottom: 0;
+}
+
+
+.integration-row > span:nth-child(2) {
+  color: #475569;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+.integration-row b {
+  color: #10b981;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INTEGRATION LOGOS
+========================================================= */
+
+.integration-logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.stripe {
+  background:
+    rgba(99, 102, 241, 0.1);
+
+  color: #6366f1;
+}
+
+
+.github {
+  background:
+    rgba(15, 23, 42, 0.07);
+
+  color: #172033;
+}
+
+
+.slack {
+  background:
+    rgba(236, 72, 153, 0.08);
+
+  color: #db2777;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+  position: absolute;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 13px 15px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.15);
+
+  box-shadow:
+    0 20px 45px
+      rgba(15, 23, 42, 0.12);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+
+.floating-card:hover {
+  box-shadow:
+    0 25px 55px
+      rgba(15, 23, 42, 0.16);
+
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   API CARD
+========================================================= */
+
+.api-card {
+  top: 8%;
+
+  left: -50px;
+
+  animation:
+    floatingApi 5s ease-in-out infinite;
+}
+
+
+@keyframes floatingApi {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.floating-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(245, 158, 11, 0.1);
+
+  font-size: 17px;
+}
+
+
+.api-card small,
+.deployment-card small {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+.api-card strong {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  margin-right: 7px;
+
+  color: #172033;
+
+  font-size: 14px;
+}
+
+
+.growth {
+  color: #10b981;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DEPLOYMENT CARD
+========================================================= */
+
+.deployment-card {
+  right: -40px;
+
+  bottom: 22%;
+
+  min-width: 190px;
+
+  animation:
+    floatingDeployment 6s
+    1s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes floatingDeployment {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+.deployment-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(16, 185, 129, 0.1);
+
+  color: #10b981;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+
+.deployment-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #172033;
+
+  font-size: 12px;
+}
+
+
+.deployment-time {
+  margin-left: auto;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   USERS CARD
+========================================================= */
+
+.users-card {
+  right: 6%;
+
+  top: -45px;
+
+  animation:
+    floatingUsers 5.5s
+    0.5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes floatingUsers {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+
+.user-stack {
+  display: flex;
+
+  align-items: center;
+}
+
+
+.user-stack span {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+
+  margin-left: -5px;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+.user-stack span:first-child {
+  margin-left: 0;
+}
+
+
+.users-card strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 13px;
+}
+
+
+.users-card small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — LARGE TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .overview-title {
+    font-size: clamp(
+      56px,
+      6vw,
+      82px
+    );
+  }
+
+
+  .overview-description {
+    max-width: 620px;
+
+    font-size: 18px;
+  }
+
+
+  .dashboard-wrapper {
+    max-width: 560px;
+  }
+
+
+  .api-card {
+    left: -25px;
+  }
+
+
+  .deployment-card {
+    right: -20px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .overview-hero {
+    padding-top: 90px;
+    padding-bottom: 80px;
+  }
+
+
+  .overview-title {
+    max-width: 700px;
+
+    font-size:
+      clamp(54px, 9vw, 78px);
+  }
+
+
+  .overview-description {
+    max-width: 680px;
+
+    margin-top: 32px;
+
+    font-size: 18px;
+  }
+
+
+  .hero-buttons {
+    margin-top: 32px;
+  }
+
+
+  .dashboard-wrapper {
+    max-width: 650px;
+
+    margin:
+      40px auto 0;
+  }
+
+
+  .api-card {
+    left: -10px;
+  }
+
+
+  .deployment-card {
+    right: -10px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .overview-hero {
+    min-height: auto;
+
+    padding-top: 100px;
+    padding-bottom: 65px;
+  }
+
+
+  .overview-grid {
+    background-size: 45px 45px;
+  }
+
+
+  .hero-badge {
+    margin-bottom: 25px;
+
+    padding: 9px 15px;
+
+    font-size: 11px;
+  }
+
+
+  .overview-title {
+    font-size:
+      clamp(48px, 14vw, 68px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+  }
+
+
+  .overview-description {
+    margin-top: 27px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    margin-top: 28px;
+  }
+
+
+  .overview-primary-btn,
+  .overview-secondary-btn {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 54px;
+  }
+
+
+  .dashboard-wrapper {
+    width: calc(100% - 20px);
+
+    margin:
+      65px auto 0;
+  }
+
+
+  .product-dashboard {
+    padding: 15px;
+
+    border-radius: 19px;
+
+    transform: none;
+
+    animation: none;
+  }
+
+
+  .dashboard-metrics {
+    gap: 6px;
+  }
+
+
+  .metric-card {
+    padding: 10px;
+  }
+
+
+  .metric-card strong {
+    font-size: 16px;
+  }
+
+
+  .chart-container {
+    padding: 13px;
+  }
+
+
+  .chart {
+    height: 125px;
+  }
+
+
+  .floating-card {
+    transform: scale(0.82);
+  }
+
+
+  .api-card {
+    top: -45px;
+
+    left: -28px;
+  }
+
+
+  .users-card {
+    top: -42px;
+
+    right: -25px;
+  }
+
+
+  .deployment-card {
+    right: -25px;
+
+    bottom: 15%;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .overview-hero {
+    padding-top: 90px;
+  }
+
+
+  .hero-badge {
+    letter-spacing: 0.09em;
+  }
+
+
+  .overview-title {
+    font-size:
+      clamp(43px, 13vw, 58px);
+  }
+
+
+  .overview-description {
+    font-size: 15px;
+  }
+
+
+  .dashboard-wrapper {
+    width: 100%;
+
+    margin-top: 65px;
+  }
+
+
+  .product-dashboard {
+    padding: 12px;
+
+    border-radius: 17px;
+  }
+
+
+  .dashboard-logo {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+  }
+
+
+  .dashboard-brand strong {
+    font-size: 12px;
+  }
+
+
+  .dashboard-brand small {
+    font-size: 8px;
+  }
+
+
+  .dashboard-status {
+    padding: 5px 8px;
+
+    font-size: 9px;
+  }
+
+
+  .dashboard-metrics {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 5px;
+  }
+
+
+  .metric-card {
+    padding: 8px;
+
+    border-radius: 9px;
+  }
+
+
+  .metric-card small {
+    font-size: 7px;
+  }
+
+
+  .metric-card strong {
+    margin-top: 4px;
+
+    font-size: 13px;
+  }
+
+
+  .metric-card span {
+    font-size: 7px;
+  }
+
+
+  .chart-container {
+    margin-top: 10px;
+
+    padding: 10px;
+
+    border-radius: 12px;
+  }
+
+
+  .chart {
+    height: 105px;
+  }
+
+
+  .chart-heading h5 {
+    font-size: 12px;
+  }
+
+
+  .chart-heading button {
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+
+  .integration-status {
+    padding: 11px;
+
+    border-radius: 11px;
+  }
+
+
+  .integration-row {
+    grid-template-columns:
+      25px 1fr auto;
+
+    gap: 7px;
+  }
+
+
+  .integration-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .integration-row > span:nth-child(2) {
+    font-size: 9px;
+  }
+
+
+  .integration-row b {
+    font-size: 7px;
+  }
+
+
+  .floating-card {
+    transform: scale(0.7);
+
+    transform-origin: center;
+  }
+
+
+  .api-card {
+    left: -45px;
+  }
+
+
+  .users-card {
+    right: -45px;
+  }
+
+
+  .deployment-card {
+    right: -45px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .overview-title {
+    font-size: 42px;
+  }
+
+
+  .overview-description {
+    font-size: 14px;
+  }
+
+
+  .dashboard-wrapper {
+    margin-top: 58px;
+  }
+
+
+  .floating-card {
+    transform: scale(0.6);
+  }
+
+
+  .api-card {
+    left: -55px;
+  }
+
+
+  .users-card {
+    right: -55px;
+  }
+
+
+  .deployment-card {
+    right: -55px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-glow,
+  .hero-badge,
+  .badge-dot,
+  .overview-title,
+  .overview-title span,
+  .overview-description,
+  .hero-buttons,
+  .product-dashboard,
+  .dashboard-status span,
+  .floating-card {
+    animation: none !important;
+  }
+
+
+  .overview-primary-btn,
+  .overview-secondary-btn,
+  .overview-primary-btn .btn-arrow,
+  .overview-secondary-btn .btn-arrow,
+  .overview-primary-btn .btn-shine,
+  .metric-card,
+  .floating-card {
+    transition: none !important;
+  }
+
+}

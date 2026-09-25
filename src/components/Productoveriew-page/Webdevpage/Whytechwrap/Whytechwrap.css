@@ -1,0 +1,1182 @@
+/* =========================================================
+   WHY TECHWRAP
+========================================================= */
+
+.why-techwrap {
+  position: relative;
+  padding: 140px 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 5% 50%,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(6, 182, 212, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fbff 55%,
+      #f2fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.why-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      black 70%,
+      transparent
+    );
+
+  animation: whyGridMove 25s linear infinite;
+}
+
+
+@keyframes whyGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.why-glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  opacity: 0.16;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    whyGlowMove
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.why-glow-one {
+  left: -180px;
+  top: 20%;
+
+  background: #2563eb;
+}
+
+
+.why-glow-two {
+  right: -180px;
+  bottom: 10%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes whyGlowMove {
+
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.why-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT INTRO
+========================================================= */
+
+.why-intro {
+
+  position: relative;
+
+  max-width: 560px;
+}
+
+
+.why-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.why-label span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 14px
+    rgba(37, 99, 235, 0.7);
+
+  animation:
+    whyDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes whyDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.55);
+    opacity: 0.55;
+  }
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.why-intro h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      4.6rem
+    );
+
+  line-height: 1.02;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+}
+
+
+.why-intro h2 span {
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #0ea5e9,
+      #2563eb
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    whyGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes whyGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.why-intro > p {
+
+  max-width: 500px;
+
+  margin: 28px 0 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.why-cta {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 30px;
+
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 30px
+    rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.why-cta span {
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.why-cta:hover {
+
+  color: white;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(37, 99, 235, 0.30);
+}
+
+
+.why-cta:hover span {
+
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================================
+   CENTER VISUAL
+========================================================= */
+
+.why-visual {
+
+  position: relative;
+
+  width: 330px;
+  height: 330px;
+
+  margin: 70px auto 0;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.why-orbit {
+
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.14);
+
+  border-radius: 50%;
+}
+
+
+.orbit-one {
+
+  width: 240px;
+  height: 240px;
+
+  animation:
+    orbitRotate
+    15s
+    linear
+    infinite;
+}
+
+
+.orbit-two {
+
+  width: 320px;
+  height: 320px;
+
+  border-color:
+    rgba(6, 182, 212, 0.12);
+
+  animation:
+    orbitRotateReverse
+    20s
+    linear
+    infinite;
+}
+
+
+@keyframes orbitRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes orbitRotateReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.why-core {
+
+  position: relative;
+
+  z-index: 3;
+
+  width: 145px;
+  height: 145px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.90);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 20px 60px
+    rgba(15, 23, 42, 0.10),
+
+    0 0 50px
+    rgba(37, 99, 235, 0.10);
+
+  animation:
+    coreFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes coreFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+.core-dot {
+
+  width: 10px;
+  height: 10px;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #06b6d4,
+      #2563eb
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(37, 99, 235, 0.7);
+
+  animation:
+    corePulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes corePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+}
+
+
+.why-core strong {
+
+  color: #0b1833;
+
+  font-size: 15px;
+
+  letter-spacing: 1px;
+}
+
+
+.why-core small {
+
+  margin-top: 6px;
+
+  color: #64748b;
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.why-floating {
+
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  padding: 10px 14px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.18);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(15, 23, 42, 0.08);
+
+  animation:
+    floatingCard
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+.why-floating span {
+
+  color: #2563eb;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+
+.why-floating small {
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+.floating-one {
+
+  top: 15px;
+  right: 0;
+
+  animation-delay: 0s;
+}
+
+
+.floating-two {
+
+  left: 0;
+  top: 120px;
+
+  animation-delay: 1s;
+}
+
+
+.floating-three {
+
+  right: 20px;
+  bottom: 15px;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes floatingCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* =========================================================
+   RIGHT FEATURE LIST
+========================================================= */
+
+.why-list {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   CONNECTING LINE
+========================================================= */
+
+.why-line {
+
+  position: absolute;
+
+  left: 30px;
+
+  top: 30px;
+
+  bottom: 30px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(37, 99, 235, 0),
+      rgba(37, 99, 235, 0.25),
+      rgba(6, 182, 212, 0.25),
+      rgba(37, 99, 235, 0)
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.why-item {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    60px
+    52px
+    1fr
+    30px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 105px;
+
+  padding: 18px 22px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.16);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 10px 35px
+    rgba(15, 23, 42, 0.045);
+
+  opacity: 0;
+
+  transform:
+    translateX(35px);
+
+  animation:
+    whyItemReveal
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  animation-delay:
+    var(--why-delay);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+@keyframes whyItemReveal {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   FEATURE HOVER
+========================================================= */
+
+.why-item:hover {
+
+  transform:
+    translateX(8px);
+
+  border-color:
+    rgba(37, 99, 235, 0.28);
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.08),
+
+    0 0 35px
+    rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.why-number {
+
+  color:
+    rgba(37, 99, 235, 0.65);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.why-icon {
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.16);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(239, 246, 255, 0.85)
+    );
+
+  color: #2563eb;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  box-shadow:
+    inset 0 0 20px
+    rgba(37, 99, 235, 0.03);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.why-item:hover .why-icon {
+
+  transform:
+    rotate(-6deg)
+    scale(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ecfeff
+    );
+
+  box-shadow:
+    0 0 25px
+    rgba(37, 99, 235, 0.14);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.why-content h3 {
+
+  margin: 0 0 6px;
+
+  color: #0b1833;
+
+  font-size: 18px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.4px;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.why-item:hover .why-content h3 {
+
+  color: #2563eb;
+}
+
+
+.why-content p {
+
+  margin: 0;
+
+  max-width: 480px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.why-arrow {
+
+  color: #94a3b8;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.why-item:hover .why-arrow {
+
+  color: #2563eb;
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .why-layout {
+
+    gap: 55px;
+  }
+
+  .why-item {
+
+    grid-template-columns:
+      45px
+      48px
+      1fr
+      20px;
+
+    gap: 12px;
+
+    padding: 16px;
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  .why-techwrap {
+
+    padding: 100px 0;
+  }
+
+  .why-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .why-intro {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+  }
+
+  .why-intro > p {
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .why-visual {
+
+    margin-top: 55px;
+  }
+
+  .why-list {
+
+    max-width: 750px;
+
+    width: 100%;
+
+    margin: auto;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .why-techwrap {
+
+    padding: 85px 0;
+  }
+
+  .why-intro h2 {
+
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+  }
+
+  .why-intro > p {
+
+    font-size: 14px;
+  }
+
+  .why-visual {
+
+    width: 280px;
+    height: 280px;
+
+    margin-top: 45px;
+  }
+
+  .orbit-one {
+
+    width: 205px;
+    height: 205px;
+  }
+
+  .orbit-two {
+
+    width: 270px;
+    height: 270px;
+  }
+
+  .why-core {
+
+    width: 125px;
+    height: 125px;
+  }
+
+  .why-item {
+
+    grid-template-columns:
+      42px
+      45px
+      1fr;
+
+    gap: 10px;
+
+    min-height: 100px;
+
+    padding: 15px;
+  }
+
+  .why-arrow {
+
+    display: none;
+  }
+
+  .why-number {
+
+    font-size: 10px;
+  }
+
+  .why-icon {
+
+    width: 45px;
+    height: 45px;
+
+    font-size: 17px;
+  }
+
+  .why-content h3 {
+
+    font-size: 16px;
+  }
+
+  .why-content p {
+
+    font-size: 12px;
+  }
+
+  .why-line {
+
+    left: 21px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .why-grid,
+  .why-glow,
+  .why-label span,
+  .why-intro h2 span,
+  .why-orbit,
+  .why-core,
+  .why-floating,
+  .why-item {
+
+    animation: none !important;
+  }
+
+  .why-item {
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+}

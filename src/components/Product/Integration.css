@@ -1,0 +1,402 @@
+.integrations-page {
+  animation:
+    integrationsEnter .7s ease both;
+}
+
+@keyframes integrationsEnter {
+
+  from {
+    opacity: 0;
+    transform: scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* CONTENT */
+
+.integration-label {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.integration-content h3 {
+  margin-bottom: 20px;
+
+  font-size: clamp(35px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.integration-content h3 span {
+  color: #2563eb;
+}
+
+.integration-content > p {
+  color: #64748b;
+
+  line-height: 1.8;
+}
+
+
+/* FEATURES */
+
+.integration-features {
+  margin-top: 35px;
+}
+
+.integration-feature {
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.integration-feature > span {
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.integration-feature h5 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.integration-feature p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* NETWORK */
+
+.integration-network {
+  position: relative;
+
+  width: 100%;
+
+  height: 500px;
+
+  max-width: 620px;
+
+  margin: auto;
+}
+
+
+/* HUB */
+
+.integration-hub {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 145px;
+  height: 145px;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 20px 60px
+    rgba(37, 99, 235, .18);
+
+  z-index: 5;
+}
+
+.hub-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 800;
+
+  font-size: 20px;
+}
+
+.integration-hub strong {
+  margin-top: 7px;
+
+  font-size: 14px;
+}
+
+.integration-hub small {
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+
+/* PULSE */
+
+.hub-pulse {
+  position: absolute;
+
+  width: 175px;
+  height: 175px;
+
+  border: 1px solid
+    rgba(37, 99, 235, .25);
+
+  border-radius: 50%;
+
+  animation:
+    hubPulse 2.5s infinite;
+}
+
+@keyframes hubPulse {
+
+  0% {
+    transform: scale(.8);
+    opacity: .8;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+
+}
+
+
+/* NODES */
+
+.integration-node {
+  position: absolute;
+
+  width: 100px;
+
+  text-align: center;
+
+  z-index: 6;
+
+  animation:
+    nodeFloat 4s ease-in-out infinite;
+}
+
+.integration-node div {
+  width: 58px;
+  height: 58px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  color: #2563eb;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, .08);
+
+  transition: all .3s ease;
+}
+
+.integration-node:hover div {
+  transform: scale(1.15);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 15px 35px
+    rgba(37, 99, 235, .2);
+}
+
+.integration-node span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* POSITIONS */
+
+.crm-node {
+  top: 7%;
+  left: 8%;
+}
+
+.payment-node {
+  top: 7%;
+  right: 8%;
+}
+
+.database-node {
+  bottom: 7%;
+  left: 8%;
+}
+
+.analytics-node {
+  bottom: 7%;
+  right: 8%;
+}
+
+
+/* LINES */
+
+.network-line {
+  position: absolute;
+
+  width: 250px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #93c5fd,
+      #2563eb,
+      transparent
+    );
+
+  transform-origin: left;
+
+  animation:
+    dataFlow 2s infinite;
+
+  opacity: .7;
+}
+
+.line-1 {
+  top: 30%;
+  left: 25%;
+
+  transform: rotate(30deg);
+}
+
+.line-2 {
+  top: 30%;
+  right: 25%;
+
+  transform:
+    rotate(150deg);
+}
+
+.line-3 {
+  bottom: 30%;
+  left: 25%;
+
+  transform:
+    rotate(-30deg);
+}
+
+.line-4 {
+  bottom: 30%;
+  right: 25%;
+
+  transform:
+    rotate(-150deg);
+}
+
+@keyframes dataFlow {
+
+  0% {
+    opacity: .25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .25;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+  .integration-network {
+    height: 400px;
+  }
+
+  .integration-hub {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hub-pulse {
+    width: 145px;
+    height: 145px;
+  }
+
+  .integration-node div {
+    width: 48px;
+    height: 48px;
+  }
+
+}

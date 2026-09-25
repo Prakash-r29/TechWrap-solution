@@ -1,0 +1,1353 @@
+/* =========================================================
+   TECHWRAP DOCUMENTATION CATEGORIES
+========================================================= */
+
+.tw-doc-categories {
+  position: relative;
+
+  width: 100%;
+
+  padding: 125px 24px 110px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7faff 48%,
+      #ffffff 100%
+    );
+
+  color: #182840;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.tw-doc-categories-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    48px 48px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 95%
+    );
+
+  animation:
+    twCategoryGridMove 22s linear infinite;
+}
+
+
+@keyframes twCategoryGridMove {
+
+  0% {
+    transform:
+      translateY(0);
+  }
+
+  100% {
+    transform:
+      translateY(48px);
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.tw-doc-category-glow {
+  position: absolute;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+}
+
+
+.tw-doc-category-glow-left {
+  width: 420px;
+  height: 420px;
+
+  top: 150px;
+  left: -220px;
+
+  background:
+    rgba(22, 119, 255, 0.08);
+
+  animation:
+    twCategoryGlowLeft 9s ease-in-out infinite;
+}
+
+
+.tw-doc-category-glow-right {
+  width: 390px;
+  height: 390px;
+
+  right: -190px;
+  bottom: 100px;
+
+  background:
+    rgba(66, 99, 235, 0.07);
+
+  animation:
+    twCategoryGlowRight 10s ease-in-out infinite;
+}
+
+
+@keyframes twCategoryGlowLeft {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(70px, 30px)
+      scale(1.15);
+  }
+
+}
+
+
+@keyframes twCategoryGlowRight {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-60px, -40px)
+      scale(1.12);
+  }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.tw-doc-category-header {
+  position: relative;
+
+  width:
+    min(760px, 100%);
+
+  margin:
+    0 auto 65px;
+
+  text-align:
+    center;
+
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.tw-doc-categories-visible
+.tw-doc-category-header {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.tw-doc-category-eyebrow {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  margin-bottom:
+    20px;
+
+  color:
+    #1677ff;
+
+  font-size:
+    10px;
+
+  font-weight:
+    850;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.tw-category-eyebrow-line {
+  width:
+    28px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #1677ff
+    );
+}
+
+
+.tw-category-eyebrow-line:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.tw-doc-category-header h2 {
+  margin:
+    0;
+
+  color:
+    #101b33;
+
+  font-size:
+    clamp(38px, 5vw, 57px);
+
+  line-height:
+    1.03;
+
+  font-weight:
+    820;
+
+  letter-spacing:
+    -0.05em;
+}
+
+
+.tw-doc-category-header h2 span {
+  display:
+    block;
+
+  color:
+    transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4263eb,
+      #1677ff
+    );
+
+  background-size:
+    200% auto;
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  animation:
+    twCategoryGradient 5s linear infinite;
+}
+
+
+@keyframes twCategoryGradient {
+
+  from {
+    background-position:
+      0% center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.tw-doc-category-header p {
+  max-width:
+    650px;
+
+  margin:
+    22px auto 0;
+
+  color:
+    #7185a2;
+
+  font-size:
+    15px;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.tw-doc-category-grid {
+  position:
+    relative;
+
+  width:
+    min(1180px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    20px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.tw-doc-category-card {
+  position:
+    relative;
+
+  min-height:
+    420px;
+
+  padding:
+    28px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  overflow:
+    hidden;
+
+  cursor:
+    pointer;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius:
+    20px;
+
+  background:
+    rgba(255, 255, 255, 0.91);
+
+  box-shadow:
+    0 14px 45px
+    rgba(24, 66, 115, 0.055);
+
+  opacity:
+    0;
+
+  transform:
+    translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.tw-doc-categories-visible
+.tw-doc-category-card {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   CARD TOP GLOW
+========================================================= */
+
+.tw-doc-category-card::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    12%;
+
+  width:
+    76%;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 119, 255, 0.55),
+      transparent
+    );
+
+  transition:
+    width 0.4s ease,
+    opacity 0.4s ease;
+}
+
+
+.tw-doc-category-card:hover::before {
+  width:
+    90%;
+
+  left:
+    5%;
+}
+
+
+/* =========================================================
+   CARD RADIAL GLOW
+========================================================= */
+
+.tw-doc-category-card::after {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    220px;
+
+  height:
+    220px;
+
+  top:
+    -150px;
+
+  right:
+    -140px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(22, 119, 255, 0.09);
+
+  filter:
+    blur(35px);
+
+  transition:
+    transform 0.55s ease;
+}
+
+
+.tw-doc-category-card:hover::after {
+  transform:
+    scale(1.8);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.tw-doc-category-card:hover {
+  transform:
+    translateY(-9px);
+
+  border-color:
+    rgba(22, 119, 255, 0.32);
+
+  box-shadow:
+    0 24px 65px
+    rgba(24, 66, 115, 0.11);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.tw-doc-card-top {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+}
+
+
+.tw-doc-card-number {
+  color:
+    #9aaabd;
+
+  font-size:
+    10px;
+
+  font-weight:
+    850;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.tw-doc-card-icon {
+  position:
+    relative;
+
+  width:
+    47px;
+
+  height:
+    47px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.14);
+
+  border-radius:
+    12px;
+
+  background:
+    #f1f7ff;
+
+  color:
+    #1677ff;
+
+  font-size:
+    16px;
+
+  font-weight:
+    800;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.tw-doc-category-card:hover
+.tw-doc-card-icon {
+  transform:
+    rotate(8deg)
+    scale(1.1);
+
+  background:
+    #e7f1ff;
+
+  box-shadow:
+    0 10px 25px
+    rgba(22, 119, 255, 0.14);
+}
+
+
+.tw-doc-card-icon span {
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tw-doc-category-card:hover
+.tw-doc-card-icon span {
+  transform:
+    scale(1.15);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.tw-doc-card-content {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  flex:
+    1;
+}
+
+
+.tw-doc-card-content h3 {
+  margin:
+    48px 0 12px;
+
+  color:
+    #101b33;
+
+  font-size:
+    21px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.025em;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.tw-doc-category-card:hover
+.tw-doc-card-content h3 {
+  color:
+    #1677ff;
+}
+
+
+.tw-doc-card-content > p {
+  max-width:
+    320px;
+
+  margin:
+    0;
+
+  color:
+    #7185a2;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.tw-doc-card-topics {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    7px;
+
+  margin-top:
+    23px;
+}
+
+
+.tw-doc-card-topics button {
+  width:
+    fit-content;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    #687d99;
+
+  font-family:
+    inherit;
+
+  font-size:
+    10.5px;
+
+  font-weight:
+    650;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.tw-doc-card-topics button:hover {
+  color:
+    #1677ff;
+
+  transform:
+    translateX(4px);
+}
+
+
+.tw-topic-check {
+  width:
+    17px;
+
+  height:
+    17px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    #dbe5f0;
+
+  border-radius:
+    5px;
+
+  color:
+    #8ca0b8;
+
+  font-size:
+    12px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.tw-doc-card-topics button:hover
+.tw-topic-check {
+  color:
+    #1677ff;
+
+  border-color:
+    rgba(22, 119, 255, 0.25);
+
+  background:
+    #edf5ff;
+}
+
+
+.tw-doc-card-topics
+.tw-doc-topic-active
+.tw-topic-check {
+  color:
+    #ffffff;
+
+  border-color:
+    #1677ff;
+
+  background:
+    #1677ff;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.tw-doc-card-footer {
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    24px;
+
+  padding-top:
+    20px;
+
+  border-top:
+    1px solid
+    #edf2f7;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.tw-doc-explore-btn {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    #172a45;
+
+  font-family:
+    inherit;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.tw-doc-explore-arrow {
+  color:
+    #1677ff;
+
+  font-size:
+    17px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.tw-doc-explore-btn:hover {
+  color:
+    #1677ff;
+}
+
+
+.tw-doc-explore-btn:hover
+.tw-doc-explore-arrow {
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================================
+   CORNER ARROW
+========================================================= */
+
+.tw-doc-card-arrow {
+  width:
+    30px;
+
+  height:
+    30px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius:
+    8px;
+
+  color:
+    #8da0b7;
+
+  font-size:
+    13px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.tw-doc-category-card:hover
+.tw-doc-card-arrow {
+  color:
+    #1677ff;
+
+  border-color:
+    rgba(22, 119, 255, 0.25);
+
+  background:
+    #edf5ff;
+
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =========================================================
+   CARD SHINE
+========================================================= */
+
+.tw-doc-card-shine {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    -120%;
+
+  width:
+    60%;
+
+  height:
+    100%;
+
+  z-index:
+    1;
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 255, 255, 0.42),
+      transparent
+    );
+
+  transform:
+    skewX(-15deg);
+
+  transition:
+    left 0.8s ease;
+}
+
+
+.tw-doc-category-card:hover
+.tw-doc-card-shine {
+  left:
+    140%;
+}
+
+
+/* =========================================================
+   CATEGORY ACCENTS
+========================================================= */
+
+/* Development */
+
+.tw-doc-category-indigo
+.tw-doc-card-icon {
+  color:
+    #4263eb;
+
+  background:
+    #f0f2ff;
+}
+
+
+/* Integrations */
+
+.tw-doc-category-cyan
+.tw-doc-card-icon {
+  color:
+    #168aad;
+
+  background:
+    #edfaff;
+}
+
+
+/* AI */
+
+.tw-doc-category-purple
+.tw-doc-card-icon {
+  color:
+    #7157d9;
+
+  background:
+    #f5f1ff;
+}
+
+
+/* Deployment */
+
+.tw-doc-category-green
+.tw-doc-card-icon {
+  color:
+    #21865a;
+
+  background:
+    #eefaf4;
+}
+
+
+/* Security */
+
+.tw-doc-category-orange
+.tw-doc-card-icon {
+  color:
+    #c87822;
+
+  background:
+    #fff7ed;
+}
+
+
+/* =========================================================
+   BOTTOM NOTE
+========================================================= */
+
+.tw-doc-category-note {
+  position:
+    relative;
+
+  width:
+    min(720px, 100%);
+
+  margin:
+    55px auto 0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    9px;
+
+  text-align:
+    center;
+}
+
+
+.tw-doc-category-note p {
+  margin:
+    0;
+
+  color:
+    #91a0b3;
+
+  font-size:
+    10px;
+
+  line-height:
+    1.6;
+}
+
+
+.tw-doc-note-dot {
+  width:
+    6px;
+
+  height:
+    6px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    #1677ff;
+
+  box-shadow:
+    0 0 12px
+    rgba(22, 119, 255, 0.7);
+
+  animation:
+    twDocNotePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes twDocNotePulse {
+
+  0%,
+  100% {
+    transform:
+      scale(0.8);
+
+    opacity:
+      0.5;
+  }
+
+  50% {
+    transform:
+      scale(1.15);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .tw-doc-category-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .tw-doc-categories {
+    padding:
+      90px 18px 80px;
+  }
+
+
+  .tw-doc-category-header {
+    margin-bottom:
+      45px;
+  }
+
+
+  .tw-doc-category-header h2 {
+    font-size:
+      38px;
+  }
+
+
+  .tw-doc-category-header p {
+    font-size:
+      13px;
+  }
+
+
+  .tw-doc-category-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      16px;
+  }
+
+
+  .tw-doc-category-card {
+    min-height:
+      390px;
+
+    padding:
+      25px;
+  }
+
+
+  .tw-doc-card-content h3 {
+    margin-top:
+      40px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .tw-doc-category-header h2 {
+    font-size:
+      33px;
+  }
+
+
+  .tw-doc-category-card {
+    min-height:
+      400px;
+
+    padding:
+      22px;
+  }
+
+
+  .tw-doc-card-content h3 {
+    font-size:
+      19px;
+  }
+
+
+  .tw-doc-card-content > p {
+    font-size:
+      12px;
+  }
+
+
+  .tw-doc-category-note {
+    align-items:
+      flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-doc-categories *,
+  .tw-doc-categories *::before,
+  .tw-doc-categories *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+}

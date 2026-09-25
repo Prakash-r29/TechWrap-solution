@@ -1,0 +1,1352 @@
+/* =========================================================
+   TECHNOLOGY DETAILS PAGE
+========================================================= */
+
+.technology-details-page {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 45%,
+    #f8fafc 100%
+  );
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   Matched with PlatformCapabilityDetails design
+========================================================= */
+
+.technology-details-back {
+  position: fixed;
+  top: 105px;
+  left: 24px;
+  z-index: 100;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 52px;
+  padding: 6px 15px 6px 7px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.86);
+
+  color: #0b1b3a;
+
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.10),
+    0 4px 12px rgba(37, 99, 235, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.technology-details-back:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(37, 99, 235, 0.35);
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.15),
+    0 8px 25px rgba(37, 99, 235, 0.10);
+}
+
+.technology-details-back:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.technology-details-back:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.14),
+    0 20px 45px rgba(15, 23, 42, 0.13);
+}
+
+
+/* =========================================================
+   BACK ICON
+========================================================= */
+
+.technology-back-arrow {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #1769ff,
+    #168cff 55%,
+    #06b6d4
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 9px 20px rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.technology-details-back:hover .technology-back-arrow {
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   BACK ARROW
+========================================================= */
+
+.technology-back-arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    transparent 55%
+  );
+
+  pointer-events: none;
+}
+
+.technology-back-arrow {
+  font-size: 19px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BACK CONTENT
+========================================================= */
+
+.technology-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.1;
+}
+
+.technology-back-content small {
+  margin-bottom: 4px;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+}
+
+.technology-back-content strong {
+  color: #1e293b;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BACK BUTTON SHINE
+========================================================= */
+
+.technology-details-back::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -130%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(37, 99, 235, 0.08),
+    rgba(6, 182, 212, 0.12),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.75s ease;
+
+  pointer-events: none;
+}
+
+.technology-details-back:hover::before {
+  left: 150%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.technology-details-hero {
+  position: relative;
+
+  min-height: 820px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 130px 0 110px;
+
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(37, 99, 235, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(6, 182, 212, 0.08),
+      transparent 32%
+    );
+}
+
+.technology-details-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.5;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+}
+
+.technology-details-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.technology-details-glow-one {
+  top: -180px;
+  left: -150px;
+
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.technology-details-glow-two {
+  right: -180px;
+  bottom: -180px;
+
+  background: rgba(6, 182, 212, 0.12);
+}
+
+
+/* =========================================================
+   HERO LAYOUT
+========================================================= */
+
+.technology-details-hero-layout {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 0.9fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.technology-details-hero-content {
+  animation:
+    technologyHeroContent
+    0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes technologyHeroContent {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.technology-details-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.technology-details-label span {
+  width: 30px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4
+  );
+}
+
+.technology-details-number {
+  margin-bottom: 15px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.technology-details-hero h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(56px, 6vw, 88px);
+
+  line-height: 0.98;
+
+  font-weight: 850;
+
+  letter-spacing: -0.055em;
+}
+
+.technology-details-hero h1 span {
+  color: #2563eb;
+}
+
+.technology-details-hero-content > p {
+  max-width: 650px;
+
+  margin: 30px 0 35px;
+
+  color: #64748b;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.technology-details-primary {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  min-height: 54px;
+
+  padding: 0 23px;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.22);
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.technology-details-primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.65s ease;
+}
+
+.technology-details-primary:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.3);
+}
+
+.technology-details-primary:hover::before {
+  left: 140%;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.technology-details-visual {
+  position: relative;
+
+  animation:
+    technologyHeroVisual
+    1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.15s
+    both;
+}
+
+@keyframes technologyHeroVisual {
+  from {
+    opacity: 0;
+    transform: translateX(45px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.technology-details-image-glow {
+  position: absolute;
+  inset: -30px;
+
+  border-radius: 35px;
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.2),
+    transparent 65%
+  );
+
+  filter: blur(35px);
+}
+
+.technology-details-image-card {
+  position: relative;
+
+  min-height: 510px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 35px 80px rgba(15, 23, 42, 0.17);
+
+  transform: rotate(1.5deg);
+
+  transition: transform 0.5s ease;
+}
+
+.technology-details-image-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.technology-details-image-card img {
+  width: 100%;
+  height: 510px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.technology-details-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(2, 6, 23, 0.75),
+    rgba(2, 6, 23, 0.04) 60%
+  );
+}
+
+.technology-details-image-content {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #ffffff;
+}
+
+.technology-details-image-content span {
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.7;
+}
+
+.technology-details-image-content strong {
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.technology-details-floating-stat {
+  position: absolute;
+
+  right: -25px;
+  bottom: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 130px;
+
+  padding: 19px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.14);
+
+  animation:
+    floatingTechnologyStat
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes floatingTechnologyStat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.technology-details-floating-stat strong {
+  color: #2563eb;
+
+  font-size: 28px;
+  font-weight: 850;
+}
+
+.technology-details-floating-stat small {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.technology-details-overview {
+  padding: 110px 0;
+
+  background: #ffffff;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.technology-details-overview-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 0.85fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.technology-section-label {
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.technology-details-overview h2 {
+  margin: 18px 0 0;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+}
+
+.technology-details-overview h2 strong {
+  color: #2563eb;
+}
+
+.technology-details-overview p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   STACK SECTION
+========================================================= */
+
+.technology-stack-solutions {
+  padding: 120px 0;
+}
+
+.technology-stack-heading {
+  max-width: 750px;
+
+  margin-bottom: 80px;
+}
+
+.technology-stack-heading > span {
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.technology-stack-heading h2 {
+  margin: 18px 0 0;
+
+  color: #0f172a;
+
+  font-size: clamp(42px, 5vw, 68px);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.045em;
+}
+
+.technology-stack-heading h2 strong {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   DETAIL LIST
+========================================================= */
+
+.technology-stack-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 130px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.technology-detail-section {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.9fr);
+
+  gap: 85px;
+
+  align-items: center;
+
+  scroll-margin-top: 35px;
+}
+
+.technology-detail-reverse {
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1fr);
+}
+
+.technology-detail-reverse .technology-detail-visual {
+  order: 2;
+}
+
+.technology-detail-reverse .technology-detail-content {
+  order: 1;
+}
+
+
+/* =========================================================
+   DETAIL IMAGE
+========================================================= */
+
+.technology-detail-visual {
+  position: relative;
+}
+
+.technology-detail-image {
+  position: relative;
+
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.12);
+}
+
+.technology-detail-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.technology-detail-section:hover
+.technology-detail-image img {
+  transform: scale(1.05);
+}
+
+.technology-detail-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.05),
+    rgba(15, 23, 42, 0.45)
+  );
+}
+
+.technology-detail-index {
+  position: absolute;
+
+  top: 25px;
+  left: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 15px;
+
+  color: #ffffff;
+
+  background: rgba(15, 23, 42, 0.3);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DETAIL STAT
+========================================================= */
+
+.technology-detail-stat {
+  position: absolute;
+
+  right: -25px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 135px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.13);
+}
+
+.technology-detail-stat strong {
+  color: #2563eb;
+
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.technology-detail-stat small {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
+
+.technology-detail-content {
+  max-width: 650px;
+}
+
+.technology-detail-small-index {
+  margin-bottom: 15px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.technology-detail-eyebrow {
+  margin-bottom: 14px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.technology-detail-content h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(40px, 4vw, 58px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+.technology-detail-description {
+  margin: 25px 0 30px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.technology-capabilities {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 32px;
+}
+
+.technology-capability {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px;
+
+  border: 1px solid rgba(148, 163, 184, 0.18);
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+}
+
+.technology-capability span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 7px;
+
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.technology-capability strong {
+  color: #475569;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+========================================================= */
+
+.technology-detail-technologies {
+  margin-bottom: 32px;
+}
+
+.technology-detail-technologies > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.technology-detail-technologies > div {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.technology-detail-technologies > div span {
+  padding: 9px 13px;
+
+  border: 1px solid rgba(37, 99, 235, 0.15);
+
+  border-radius: 9px;
+
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.technology-details-final {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 120px 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(37, 99, 235, 0.15),
+      transparent 40%
+    ),
+    #0f172a;
+}
+
+.technology-final-content {
+  max-width: 780px;
+
+  margin: 0 auto;
+}
+
+.technology-final-content > span {
+  color: #60a5fa;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.17em;
+}
+
+.technology-final-content h2 {
+  margin: 20px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(45px, 5vw, 70px);
+
+  line-height: 1.02;
+
+  letter-spacing: -0.045em;
+}
+
+.technology-final-content h2 strong {
+  color: #60a5fa;
+}
+
+.technology-final-content p {
+  max-width: 620px;
+
+  margin: 0 auto 30px;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .technology-details-back {
+    top: 90px;
+    left: 18px;
+  }
+
+  .technology-details-hero-layout {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .technology-details-visual {
+    max-width: 700px;
+  }
+
+  .technology-details-overview-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .technology-detail-section,
+  .technology-detail-reverse {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .technology-detail-reverse
+  .technology-detail-visual {
+    order: 1;
+  }
+
+  .technology-detail-reverse
+  .technology-detail-content {
+    order: 2;
+  }
+
+  .technology-detail-content {
+    max-width: 750px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .technology-details-back {
+    top: 78px;
+    left: 12px;
+
+    min-height: 45px;
+
+    padding: 5px 11px 5px 6px;
+
+    gap: 8px;
+
+    border-radius: 13px;
+  }
+
+  .technology-back-arrow {
+    width: 33px;
+    height: 33px;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+  }
+
+  .technology-back-content small {
+    font-size: 6px;
+  }
+
+  .technology-back-content strong {
+    font-size: 10px;
+  }
+
+  .technology-details-hero {
+    min-height: auto;
+
+    padding: 130px 0 80px;
+  }
+
+  .technology-details-hero h1 {
+    font-size: 55px;
+  }
+
+  .technology-details-hero-content > p {
+    font-size: 16px;
+  }
+
+  .technology-details-image-card {
+    min-height: 400px;
+
+    transform: none;
+  }
+
+  .technology-details-image-card img {
+    height: 400px;
+  }
+
+  .technology-details-floating-stat {
+    right: 15px;
+    bottom: 20px;
+  }
+
+  .technology-details-overview {
+    padding: 80px 0;
+  }
+
+  .technology-stack-solutions {
+    padding: 85px 0;
+  }
+
+  .technology-stack-heading {
+    margin-bottom: 55px;
+  }
+
+  .technology-detail-image {
+    height: 400px;
+  }
+
+  .technology-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-details-final {
+    padding: 90px 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .technology-details-back {
+    top: 70px;
+    left: 10px;
+
+    transform: scale(0.92);
+
+    transform-origin: left center;
+  }
+
+  .technology-details-back:hover {
+    transform: scale(0.92) translateY(-3px);
+  }
+
+  .technology-back-content strong {
+    font-size: 10px;
+  }
+
+  .technology-details-hero {
+    padding: 110px 0 60px;
+  }
+
+  .technology-details-hero h1 {
+    font-size: 44px;
+  }
+
+  .technology-details-image-card,
+  .technology-details-image-card img {
+    height: 340px;
+  }
+
+  .technology-details-floating-stat {
+    min-width: 110px;
+  }
+
+  .technology-detail-image {
+    height: 330px;
+  }
+
+  .technology-detail-stat {
+    right: 12px;
+    bottom: 15px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}

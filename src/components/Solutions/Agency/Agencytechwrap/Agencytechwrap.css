@@ -1,0 +1,1361 @@
+
+/* =========================================================
+   AGENCY PROVIDES
+========================================================= */
+
+.agency-provides {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 115px 0 120px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(49, 115, 245, 0.07),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7faff 100%
+    );
+
+  color: #1c2b43;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.agency-provides-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(47, 88, 145, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(47, 88, 145, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.agency-provides-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(130px);
+
+  pointer-events: none;
+}
+
+.agency-provides-glow-one {
+  top: 10%;
+  left: -260px;
+
+  background:
+    rgba(41, 112, 245, 0.08);
+}
+
+.agency-provides-glow-two {
+  right: -260px;
+  bottom: 5%;
+
+  background:
+    rgba(63, 99, 235, 0.07);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.agency-provides-header {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.agency-provides-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 24px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #d2deed;
+
+  border-radius: 50px;
+
+  background:
+    rgba(249, 251, 255, 0.9);
+
+  color: #62748d;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+.provides-label-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #2479f3;
+
+  box-shadow:
+    0 0 13px rgba(36, 121, 243, 0.8);
+
+  animation:
+    providesPulse 1.8s infinite;
+}
+
+
+.provides-live {
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #eaf2ff;
+
+  color: #3976df;
+
+  font-size: 7px;
+
+  letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.agency-provides-header h2 {
+  margin: 0;
+
+  color: #17263e;
+
+  font-size:
+    clamp(42px, 5vw, 65px);
+
+  line-height: 1.08;
+
+  font-weight: 850;
+
+  letter-spacing: -2.8px;
+}
+
+
+.agency-provides-header h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5267ee,
+      #247bf0,
+      #0da8e8,
+      #5267ee
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    providesGradient 5s linear infinite;
+}
+
+
+.agency-provides-header p {
+  max-width: 680px;
+
+  margin: 23px auto 0;
+
+  color: #697b94;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SYSTEM CONTAINER
+========================================================= */
+
+.agency-provides-system {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  padding: 28px;
+
+  border: 1px solid #d3dfef;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.97),
+      rgba(245,249,255,.96)
+    );
+
+  box-shadow:
+    0 30px 75px rgba(40, 76, 125, 0.11);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   SYSTEM HEADER
+========================================================= */
+
+.provides-system-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 5px 18px;
+
+  border-bottom: 1px solid #e1e8f2;
+}
+
+
+.system-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #536883;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+
+.system-status {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #267cf5;
+
+  box-shadow:
+    0 0 13px rgba(38,124,245,.8);
+
+  animation:
+    providesPulse 1.8s infinite;
+}
+
+
+.system-live {
+  padding: 7px 9px;
+
+  border-radius: 6px;
+
+  background: #edf4ff;
+
+  color: #3676df;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   MAIN FLOW
+========================================================= */
+
+.provides-flow {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  padding: 48px 25px 55px;
+}
+
+
+/* Horizontal line */
+
+.flow-line {
+  position: absolute;
+
+  top: 70px;
+
+  left: 7%;
+
+  width: 86%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #a9c3e7 8%,
+      #8db1e5 50%,
+      #a9c3e7 92%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   PARTICLE
+========================================================= */
+
+.flow-particle {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 66px;
+
+  left: 8%;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #1680ff;
+
+  box-shadow:
+    0 0 10px #1680ff,
+    0 0 25px rgba(22,128,255,.9),
+    0 0 45px rgba(22,128,255,.45);
+
+  animation:
+    particleTravel 5s linear infinite;
+}
+
+
+/* =========================================================
+   FLOW STAGE
+========================================================= */
+
+.flow-stage {
+  position: relative;
+
+  z-index: 3;
+
+  width: 120px;
+
+  text-align: center;
+}
+
+
+.flow-node {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 12px;
+
+  border: 1px solid #c8d9ef;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f2f6ff,
+      #e3edff
+    );
+
+  box-shadow:
+    0 8px 25px rgba(52, 95, 160, .09);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+
+.flow-stage:hover .flow-node {
+  transform:
+    translateY(-6px)
+    scale(1.05);
+
+  border-color:
+    #8eafe3;
+
+  box-shadow:
+    0 12px 30px rgba(47,102,205,.17);
+}
+
+
+.flow-node-icon {
+  color: #3e70e9;
+
+  font-size: 19px;
+
+  font-weight: 900;
+}
+
+
+.flow-stage-name {
+  display: block;
+
+  color: #2c3e58;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: .7px;
+}
+
+
+.flow-stage small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #7c8da4;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTIVE STAGE
+========================================================= */
+
+.active-stage .flow-node {
+  border-color: #8db4f1;
+
+  box-shadow:
+    0 0 0 5px rgba(55,116,236,.05),
+    0 10px 30px rgba(46,104,220,.15);
+
+  animation:
+    activeNode 2s ease-in-out infinite;
+}
+
+
+.delivery-stage .flow-node {
+  background:
+    linear-gradient(
+      135deg,
+      #edf8ff,
+      #dff2ff
+    );
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.flow-arrow {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 14px;
+
+  color: #7594bd;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  animation:
+    arrowPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.capabilities-wrapper {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   CAPABILITY ROW
+========================================================= */
+
+.capability-row {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 165px;
+
+  padding: 23px;
+
+  gap: 16px;
+
+  border: 1px solid #d4e0ee;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.8);
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
+}
+
+
+.capability-row::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 70%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #3b82f6,
+      transparent
+    );
+
+  transition:
+    left .7s ease;
+}
+
+
+.capability-row:hover::before {
+  left: 130%;
+}
+
+
+.capability-row:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    #a8c3e8;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 18px 35px rgba(43,81,130,.11);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.capability-number {
+  align-self: flex-start;
+
+  color: #9aaabd;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.capability-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 49px;
+  height: 49px;
+
+  border: 1px solid #ccdcf1;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef4ff,
+      #e1ecff
+    );
+
+  color: #3d73e8;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 7px 20px rgba(49,102,194,.09);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.capability-content {
+  flex: 1;
+}
+
+
+.capability-content h3 {
+  margin: 0;
+
+  color: #253650;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 850;
+}
+
+
+.capability-content p {
+  margin: 8px 0 12px;
+
+  color: #71839a;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECH TAGS
+========================================================= */
+
+.capability-tech {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+
+.capability-tech span {
+  padding: 5px 8px;
+
+  border: 1px solid #d8e3ef;
+
+  border-radius: 5px;
+
+  background: #f5f8fc;
+
+  color: #637791;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  transition:
+    color .25s ease,
+    background .25s ease;
+}
+
+
+.capability-row:hover .capability-tech span {
+  color: #3971d8;
+
+  background: #eef5ff;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.capability-arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #d6e2ef;
+
+  border-radius: 50%;
+
+  color: #6481a6;
+
+  font-size: 16px;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    color .3s ease;
+}
+
+
+.capability-row:hover .capability-arrow {
+  transform:
+    translateX(5px);
+
+  background: #edf4ff;
+
+  color: #2d72e8;
+
+  border-color: #abc4e8;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.provides-bottom {
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #dfe7f0;
+}
+
+
+.provides-bottom-content {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+}
+
+
+.bottom-dot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #267cf5;
+
+  box-shadow:
+    0 0 14px rgba(38,124,245,.75);
+
+  animation:
+    providesPulse 1.8s infinite;
+}
+
+
+.provides-bottom p {
+  margin: 0;
+
+  color: #71839a;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+.provides-bottom strong {
+  color: #273952;
+}
+
+
+/* =========================================================
+   START A PARTNERSHIP BUTTON
+========================================================= */
+
+.provides-partnership-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-left: 15px;
+
+  padding: 11px 16px;
+
+  border: 1px solid transparent;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5368ee,
+      #2779ed
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  box-shadow:
+    0 10px 25px rgba(49,94,221,.2);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+}
+
+
+.provides-partnership-button:hover {
+  color: #ffffff;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 15px 30px rgba(49,94,221,.3);
+}
+
+
+.provides-partnership-button span {
+  font-size: 15px;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.provides-partnership-button:hover span {
+  transform:
+    translateX(3px);
+}
+
+
+.provides-partnership-button:focus-visible {
+  outline:
+    3px solid rgba(39,121,237,.22);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes particleTravel {
+
+  0% {
+    left: 8%;
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 92%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes activeNode {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(55,116,236,.05),
+      0 10px 30px rgba(46,104,220,.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px rgba(55,116,236,.025),
+      0 12px 35px rgba(46,104,220,.22);
+  }
+}
+
+
+@keyframes arrowPulse {
+
+  0%,
+  100% {
+    opacity: .55;
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translateX(3px);
+  }
+}
+
+
+@keyframes providesPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(.65);
+
+    opacity: .55;
+  }
+}
+
+
+@keyframes providesGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 250% center;
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .agency-provides-system {
+    margin:
+      0 15px;
+  }
+
+
+  .provides-flow {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .agency-provides {
+    padding:
+      90px 0;
+  }
+
+
+  .agency-provides-header {
+    margin-bottom: 50px;
+  }
+
+
+  .agency-provides-header h2 {
+    font-size: 48px;
+  }
+
+
+  .provides-flow {
+    overflow-x: auto;
+
+    justify-content: flex-start;
+
+    gap: 20px;
+
+    padding:
+      45px 15px 50px;
+
+    scrollbar-width: none;
+  }
+
+
+  .provides-flow::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .flow-line {
+    width: 900px;
+
+    left: 40px;
+  }
+
+
+  .flow-particle {
+    animation:
+      particleTravelTablet 5s linear infinite;
+  }
+
+
+  .capabilities-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .agency-provides {
+    padding:
+      75px 0;
+  }
+
+
+  .agency-provides-header {
+    padding:
+      0 10px;
+
+    margin-bottom: 40px;
+  }
+
+
+  .agency-provides-label {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .agency-provides-header h2 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+  }
+
+
+  .agency-provides-header p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  .agency-provides-system {
+    margin: 0 10px;
+
+    padding: 17px;
+
+    border-radius: 17px;
+  }
+
+
+  .provides-system-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .system-title {
+    font-size: 9px;
+  }
+
+
+  .system-live {
+    font-size: 7px;
+  }
+
+
+  .provides-flow {
+    gap: 14px;
+
+    padding:
+      42px 5px 45px;
+  }
+
+
+  .flow-stage {
+    min-width: 95px;
+  }
+
+
+  .flow-node {
+    width: 43px;
+    height: 43px;
+  }
+
+
+  .flow-stage-name {
+    font-size: 10px;
+  }
+
+
+  .flow-stage small {
+    font-size: 7px;
+  }
+
+
+  .flow-arrow {
+    margin-top: 12px;
+
+    font-size: 16px;
+  }
+
+
+  .capability-row {
+    min-height: auto;
+
+    padding: 19px;
+
+    align-items: flex-start;
+  }
+
+
+  .capability-number {
+    font-size: 9px;
+  }
+
+
+  .capability-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+
+  .capability-content h3 {
+    font-size: 15px;
+  }
+
+
+  .capability-content p {
+    font-size: 12px;
+  }
+
+
+  .capability-arrow {
+    display: none;
+  }
+
+
+  .provides-bottom-content {
+    flex-wrap: wrap;
+
+    text-align: center;
+  }
+
+
+  .provides-bottom p {
+    width: 100%;
+
+    font-size: 12px;
+  }
+
+
+  .provides-partnership-button {
+    margin-left: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .agency-provides-header h2 {
+    font-size: 34px;
+  }
+
+
+  .agency-provides-system {
+    padding: 13px;
+  }
+
+
+  .capability-row {
+    gap: 10px;
+
+    padding: 15px;
+  }
+
+
+  .capability-number {
+    display: none;
+  }
+
+
+  .capability-icon {
+    width: 39px;
+    height: 39px;
+
+    font-size: 15px;
+  }
+
+
+  .capability-content h3 {
+    font-size: 14px;
+  }
+
+
+  .capability-content p {
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+
+  .capability-tech span {
+    font-size: 7px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+  }
+
+}
+

@@ -1,0 +1,48 @@
+.tw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform var(--tw-dur-fast) var(--tw-ease),
+              box-shadow var(--tw-dur-fast) var(--tw-ease),
+              background var(--tw-dur-fast) var(--tw-ease);
+}
+
+.tw-btn--primary {
+  background: var(--tw-gradient);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(47, 111, 237, 0.28);
+}
+.tw-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(47, 111, 237, 0.36);
+}
+
+.tw-btn--secondary {
+  background: transparent;
+  color: var(--tw-ink);
+  border-color: var(--tw-line-strong);
+}
+.tw-btn--secondary:hover {
+  border-color: var(--tw-ink);
+  transform: translateY(-2px);
+}
+
+.tw-btn--on-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.tw-btn--on-dark:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-btn:hover { transform: none; }
+}

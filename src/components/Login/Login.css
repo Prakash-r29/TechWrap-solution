@@ -1,0 +1,3459 @@
+/* =========================================================
+   TECHWRAP LOGIN
+   WHITE + BLUE SAAS LOGIN EXPERIENCE
+========================================================= */
+
+
+/* =========================================================
+   LOGIN SECTION
+========================================================= */
+
+.login-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(37, 99, 235, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 82%,
+      rgba(59, 130, 246, 0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f4f8ff 0%,
+      #ffffff 48%,
+      #f3f7ff 100%
+    );
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.login-background {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.login-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 58px 58px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0, 0, 0, 0.55) 55%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND ORBS
+========================================================= */
+
+.login-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(2px);
+
+  opacity: 0.7;
+
+  animation:
+    loginOrbFloat
+    9s
+    ease-in-out
+    infinite;
+}
+
+
+.login-orb-one {
+  width: 260px;
+  height: 260px;
+
+  top: -90px;
+  left: -80px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.16),
+      rgba(37, 99, 235, 0)
+    );
+}
+
+
+.login-orb-two {
+  width: 330px;
+  height: 330px;
+
+  right: -130px;
+  bottom: -130px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.14),
+      rgba(59, 130, 246, 0)
+    );
+
+  animation-delay: -3s;
+}
+
+
+.login-orb-three {
+  width: 150px;
+  height: 150px;
+
+  top: 23%;
+  right: 13%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(96, 165, 250, 0.11),
+      rgba(96, 165, 250, 0)
+    );
+
+  animation-delay: -6s;
+}
+
+
+@keyframes loginOrbFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        0,
+        -18px,
+        0
+      );
+  }
+}
+
+
+/* =========================================================
+   FLOATING SQUARES
+========================================================= */
+
+.login-floating-square {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.10);
+
+  background:
+    rgba(255, 255, 255, 0.28);
+
+  backdrop-filter: blur(4px);
+
+  transform: rotate(18deg);
+
+  animation:
+    floatingSquare
+    10s
+    ease-in-out
+    infinite;
+}
+
+
+.square-one {
+  width: 52px;
+  height: 52px;
+
+  left: 9%;
+  top: 24%;
+}
+
+
+.square-two {
+  width: 35px;
+  height: 35px;
+
+  right: 12%;
+  top: 28%;
+
+  animation-delay: -4s;
+}
+
+
+.square-three {
+  width: 26px;
+  height: 26px;
+
+  left: 18%;
+  bottom: 15%;
+
+  animation-delay: -7s;
+}
+
+
+@keyframes floatingSquare {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(18deg);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -15px, 0)
+      rotate(28deg);
+  }
+}
+
+
+/* =========================================================
+   LOGIN CONTAINER
+========================================================= */
+
+.login-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 470px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    38px
+    40px
+    30px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(216, 225, 237, 0.95);
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 30px 80px
+    rgba(20, 50, 100, 0.12),
+    0 8px 28px
+    rgba(37, 99, 235, 0.05);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow: hidden;
+
+  animation:
+    loginCardReveal
+    0.75s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+
+@keyframes loginCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   CARD ACCENT
+========================================================= */
+
+.login-card-accent {
+  position: absolute;
+
+  top: 0;
+  left: 11%;
+
+  width: 78%;
+  height: 3px;
+
+  border-radius:
+    0 0 20px 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #2563eb 30%,
+      #60a5fa 70%,
+      transparent
+    );
+
+  animation:
+    accentGlow
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes accentGlow {
+
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+  text-align: center;
+
+  margin-bottom: 29px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.login-logo {
+  width: 48px;
+  height: 48px;
+
+  margin:
+    0 auto 13px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #155eef,
+      #3b82f6
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.23);
+
+  animation:
+    logoFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+.login-logo span {
+  width: 4px;
+
+  display: block;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+}
+
+
+.login-logo span:nth-child(1) {
+  height: 15px;
+}
+
+
+.login-logo span:nth-child(2) {
+  height: 27px;
+}
+
+
+.login-logo span:nth-child(3) {
+  height: 19px;
+}
+
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-3px);
+  }
+}
+
+
+/* =========================================================
+   SECURITY PILL
+========================================================= */
+
+.login-security-pill {
+  width: fit-content;
+
+  margin:
+    0 auto 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    5px 9px;
+
+  border:
+    1px solid
+    #dbeafe;
+
+  border-radius: 999px;
+
+  background:
+    #f7faff;
+
+  color:
+    #4772a8;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-transform: uppercase;
+}
+
+
+.security-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #2563eb;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.08);
+
+  animation:
+    securityPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes securityPulse {
+
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   BRAND TITLE
+========================================================= */
+
+.brand-title {
+  margin: 0;
+
+  color:
+    #16355f;
+
+  font-size: 30px;
+
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.login-subtitle {
+  max-width: 310px;
+
+  margin:
+    9px auto 0;
+
+  color:
+    #8290a4;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.login-error {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 21px;
+
+  padding:
+    12px 14px;
+
+  border:
+    1px solid
+    #ffd2d2;
+
+  border-radius: 11px;
+
+  background:
+    #fff8f8;
+
+  color:
+    #c53b3b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  animation:
+    errorReveal
+    0.35s
+    ease
+    both;
+}
+
+
+@keyframes errorReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.login-error-icon {
+  width: 20px;
+  height: 20px;
+
+  flex:
+    0 0 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #ffe8e8;
+
+  color:
+    #d23d3d;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+.login-error p {
+  margin:
+    1px 0 0;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.login-field {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.login-field > label,
+.password-label-row label {
+  display: block;
+
+  margin: 0;
+
+  padding-bottom: 10px;
+
+  color:
+    #314c70;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+
+.password-label-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.password-label-row label {
+  padding-bottom: 10px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.login-input-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.login-input {
+  width: 100%;
+
+  height: 54px;
+
+  box-sizing: border-box;
+
+  padding:
+    14px
+    44px
+    14px
+    43px;
+
+  border:
+    1px solid
+    #d8e2ee;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background:
+    #fbfdff;
+
+  color:
+    #243b5c;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+.login-input::placeholder {
+  color:
+    #a0adbd;
+
+  font-size: 13px;
+}
+
+
+.login-input:hover {
+  border-color:
+    #bfd0e6;
+
+  background:
+    #ffffff;
+}
+
+
+.login-input:focus {
+  border-color:
+    #5b8fe3;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.09),
+    0 7px 20px
+    rgba(37, 99, 235, 0.05);
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.login-input-icon {
+  position: absolute;
+
+  left: 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color:
+    #7f94ad;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.login-input-wrapper:focus-within
+.login-input-icon {
+  color:
+    #2563eb;
+
+  transform:
+    scale(1.04);
+}
+
+
+.login-input-icon svg {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   INPUT CHECK
+========================================================= */
+
+.input-check {
+  position: absolute;
+
+  right: 14px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #eaf8f0;
+
+  color:
+    #159b5d;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  animation:
+    checkReveal
+    0.25s
+    ease
+    both;
+}
+
+
+@keyframes checkReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.password-input {
+  padding-right:
+    48px;
+}
+
+
+.password-toggle {
+  position: absolute;
+
+  right: 11px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background:
+    transparent;
+
+  color:
+    #8193aa;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.password-toggle:hover {
+  background:
+    #f0f5fc;
+
+  color:
+    #2563eb;
+
+  transform:
+    scale(1.04);
+}
+
+
+.password-toggle:disabled {
+  opacity:
+    0.5;
+
+  cursor:
+    not-allowed;
+}
+
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-button {
+  position: relative;
+
+  width: 100%;
+  height: 52px;
+
+  margin-top: 3px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #155eef,
+      #2563eb 55%,
+      #3b82f6
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 24px
+    rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+
+.login-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -90%;
+
+  width: 55%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.23),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.6s ease;
+}
+
+
+.login-button:hover::before {
+  left: 125%;
+}
+
+
+.login-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(37, 99, 235, 0.26);
+
+  filter:
+    brightness(1.03);
+}
+
+
+.login-button:active {
+  transform:
+    translateY(0);
+}
+
+
+.login-button:disabled {
+  opacity:
+    0.72;
+
+  cursor:
+    not-allowed;
+
+  transform:
+    none;
+}
+
+
+.login-button-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+.login-arrow {
+  font-size: 18px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.login-button:hover
+.login-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+.login-spinner {
+  width: 14px;
+  height: 14px;
+
+  border:
+    2px solid
+    rgba(255,255,255,0.35);
+
+  border-top-color:
+    #ffffff;
+
+  border-radius: 50%;
+
+  animation:
+    loginSpinner
+    0.7s
+    linear
+    infinite;
+}
+
+
+@keyframes loginSpinner {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.register-bottom {
+  margin:
+    19px 0 0;
+
+  color:
+    #8794a7;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+.signup-link {
+  margin-left: 4px;
+
+  color:
+    #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+.signup-link:hover {
+  color:
+    #1d4ed8;
+
+  text-decoration:
+    underline;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.login-secure-note {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 16px;
+
+  padding-top: 13px;
+
+  border-top:
+    1px solid
+    #edf1f6;
+
+  color:
+    #9aa6b6;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+.secure-lock {
+  color:
+    #2563eb;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   SUCCESS PAGE
+========================================================= */
+
+.login-success-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    35px 20px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 13% 17%,
+      rgba(37, 99, 235, 0.14),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(59, 130, 246, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f3f7ff 0%,
+      #ffffff 50%,
+      #f2f7ff 100%
+    );
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  animation:
+    successPageEnter
+    0.5s
+    ease
+    both;
+}
+
+
+@keyframes successPageEnter {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   SUCCESS BACKGROUND
+========================================================= */
+
+.login-success-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+.success-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    58px 58px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 10%,
+      rgba(0,0,0,0.65) 60%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   SUCCESS ORBS
+========================================================= */
+
+.success-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter:
+    blur(1px);
+
+  animation:
+    successOrbFloat
+    10s
+    ease-in-out
+    infinite;
+}
+
+
+.success-orb-one {
+  width: 340px;
+  height: 340px;
+
+  top: -155px;
+  left: -130px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.15),
+      transparent 70%
+    );
+}
+
+
+.success-orb-two {
+  width: 390px;
+  height: 390px;
+
+  right: -170px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.14),
+      transparent 70%
+    );
+
+  animation-delay:
+    -4s;
+}
+
+
+.success-orb-three {
+  width: 180px;
+  height: 180px;
+
+  top: 18%;
+  right: 16%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(96, 165, 250, 0.10),
+      transparent 70%
+    );
+
+  animation-delay:
+    -7s;
+}
+
+
+@keyframes successOrbFloat {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0,0,0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(0,-17px,0)
+      scale(1.03);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS FLOATING SHAPES
+========================================================= */
+
+.success-floating-shape {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.11);
+
+  background:
+    rgba(255,255,255,0.32);
+
+  backdrop-filter:
+    blur(5px);
+
+  transform:
+    rotate(18deg);
+
+  animation:
+    successShapeFloat
+    9s
+    ease-in-out
+    infinite;
+}
+
+
+.success-shape-one {
+  width: 58px;
+  height: 58px;
+
+  left: 9%;
+  top: 25%;
+}
+
+
+.success-shape-two {
+  width: 36px;
+  height: 36px;
+
+  right: 11%;
+  top: 29%;
+
+  animation-delay:
+    -3s;
+}
+
+
+@keyframes successShapeFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(18deg);
+  }
+
+  50% {
+    transform:
+      translateY(-18px)
+      rotate(30deg);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS PARTICLES
+========================================================= */
+
+.success-particle {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.25);
+
+  box-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.18);
+
+  animation:
+    successParticleFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+.success-particle-one {
+  left: 24%;
+  top: 20%;
+}
+
+
+.success-particle-two {
+  left: 14%;
+  bottom: 27%;
+
+  width: 4px;
+  height: 4px;
+
+  animation-delay:
+    -1s;
+}
+
+
+.success-particle-three {
+  right: 24%;
+  top: 18%;
+
+  width: 4px;
+  height: 4px;
+
+  animation-delay:
+    -2s;
+}
+
+
+.success-particle-four {
+  right: 17%;
+  bottom: 24%;
+
+  width: 6px;
+  height: 6px;
+
+  animation-delay:
+    -3s;
+}
+
+
+.success-particle-five {
+  left: 30%;
+  bottom: 17%;
+
+  width: 3px;
+  height: 3px;
+
+  animation-delay:
+    -4s;
+}
+
+
+.success-particle-six {
+  right: 32%;
+  top: 27%;
+
+  width: 3px;
+  height: 3px;
+
+  animation-delay:
+    -5s;
+}
+
+
+@keyframes successParticleFloat {
+
+  0%,
+  100% {
+    opacity: 0.35;
+
+    transform:
+      translate3d(0,0,0)
+      scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate3d(
+        0,
+        -15px,
+        0
+      )
+      scale(1.25);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS CONTAINER
+========================================================= */
+
+.login-success-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+========================================================= */
+
+.login-success-card {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    34px
+    38px
+    28px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(214, 226, 241, 0.95);
+
+  border-radius:
+    24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.985),
+      rgba(248,251,255,0.98)
+    );
+
+  box-shadow:
+    0 35px 90px
+    rgba(17, 49, 94, 0.13),
+    0 12px 32px
+    rgba(37, 99, 235, 0.07);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  text-align: center;
+
+  animation:
+    successCardEnter
+    0.7s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+
+@keyframes successCardEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS CARD TOP ACCENT
+========================================================= */
+
+.success-card-accent {
+  position: absolute;
+
+  top: 0;
+  left: 9%;
+
+  width: 82%;
+
+  height: 3px;
+
+  border-radius:
+    0 0 20px 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #155eef 23%,
+      #60a5fa 50%,
+      #2563eb 77%,
+      transparent
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(37, 99, 235, 0.25);
+
+  animation:
+    successAccentPulse
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes successAccentPulse {
+
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   SUCCESS HEADER
+========================================================= */
+
+.success-header {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SUCCESS BADGE
+========================================================= */
+
+.success-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 17px;
+
+  padding:
+    7px
+    12px;
+
+  border:
+    1px solid
+    #d9e7fb;
+
+  border-radius: 999px;
+
+  background:
+    rgba(247,250,255,0.95);
+
+  color:
+    #5276a3;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.45px;
+
+  text-transform:
+    uppercase;
+
+  animation:
+    successBadgeEnter
+    0.55s
+    0.18s
+    ease
+    both;
+}
+
+
+@keyframes successBadgeEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.success-badge-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #2563eb;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.08);
+
+  animation:
+    successBadgeDot
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes successBadgeDot {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.success-icon {
+  position: relative;
+
+  width: 72px;
+  height: 72px;
+
+  margin:
+    0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #155eef,
+      #2563eb 60%,
+      #3b82f6
+    );
+
+  box-shadow:
+    0 15px 34px
+    rgba(37, 99, 235, 0.25),
+    inset 0 1px 0
+    rgba(255,255,255,0.24);
+
+  animation:
+    successIconPop
+    0.7s
+    0.12s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+
+@keyframes successIconPop {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.45)
+      rotate(-14deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0);
+  }
+}
+
+
+/* =========================================================
+   ICON RINGS
+========================================================= */
+
+.success-icon-ring,
+.success-icon-ring-two {
+  position: absolute;
+
+  inset: -7px;
+
+  border:
+    1px solid
+    rgba(37,99,235,0.22);
+
+  border-radius: 50%;
+
+  animation:
+    successRingPulse
+    2.2s
+    ease-out
+    infinite;
+}
+
+
+.success-icon-ring-two {
+  inset: -13px;
+
+  opacity: 0.6;
+
+  animation-delay:
+    0.5s;
+}
+
+
+@keyframes successRingPulse {
+
+  0% {
+    opacity: 0.65;
+
+    transform:
+      scale(0.88);
+  }
+
+  70% {
+    opacity: 0;
+
+    transform:
+      scale(1.18);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(1.18);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS CHECK
+========================================================= */
+
+.success-check {
+  position: relative;
+
+  z-index: 3;
+
+  color:
+    #ffffff;
+
+  font-size:
+    33px;
+
+  font-weight:
+    800;
+
+  line-height:
+    1;
+
+  animation:
+    checkDraw
+    0.5s
+    0.5s
+    ease
+    both;
+}
+
+
+@keyframes checkDraw {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.35)
+      rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0);
+  }
+}
+
+
+/* =========================================================
+   SUCCESS BRAND
+========================================================= */
+
+.success-brand {
+  margin: 0;
+
+  color:
+    #163d6d;
+
+  font-size:
+    31px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.8px;
+
+  line-height:
+    1.2;
+}
+
+
+/* =========================================================
+   SUCCESS EYEBROW
+========================================================= */
+
+.success-eyebrow {
+  margin:
+    7px 0 0;
+
+  color:
+    #8a98ab;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.55;
+}
+
+
+/* =========================================================
+   SUCCESS ROLE
+========================================================= */
+
+.success-role {
+  width: fit-content;
+
+  min-width: 170px;
+
+  margin:
+    17px auto 20px;
+
+  padding:
+    8px
+    14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border:
+    1px solid
+    #dce8f7;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f6f9ff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 6px 16px
+    rgba(37,99,235,0.04);
+
+  animation:
+    roleReveal
+    0.5s
+    0.28s
+    ease
+    both;
+}
+
+
+@keyframes roleReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.success-role-label {
+  color:
+    #8191a6;
+
+  font-size:
+    9.5px;
+
+  font-weight:
+    600;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.25px;
+}
+
+
+.success-role-divider {
+  width: 1px;
+  height: 13px;
+
+  background:
+    #d9e3ef;
+}
+
+
+.success-role strong {
+  color:
+    #2563eb;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+}
+
+
+/* =========================================================
+   SUCCESS CONTENT
+========================================================= */
+
+.success-content {
+  margin-bottom: 20px;
+
+  animation:
+    contentReveal
+    0.5s
+    0.32s
+    ease
+    both;
+}
+
+
+@keyframes contentReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.success-content h2 {
+  margin: 0;
+
+  color:
+    #284b71;
+
+  font-size:
+    23px;
+
+  font-weight:
+    750;
+
+  line-height:
+    1.3;
+}
+
+
+.success-message {
+  margin:
+    7px 0 0;
+
+  color:
+    #7e8ea2;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   DASHBOARD STATUS
+========================================================= */
+
+.dashboard-status {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding:
+    15px;
+
+  border:
+    1px solid
+    #dfe9f6;
+
+  border-radius:
+    13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(246,249,255,0.98),
+      rgba(251,253,255,0.98)
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,0.8);
+
+  text-align:
+    left;
+
+  animation:
+    statusReveal
+    0.55s
+    0.38s
+    ease
+    both;
+}
+
+
+@keyframes statusReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(9px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.dashboard-status::before {
+  content:
+    "";
+
+  position: absolute;
+
+  left: 0;
+  top: 13px;
+  bottom: 13px;
+
+  width: 2px;
+
+  border-radius:
+    0 5px 5px 0;
+
+  background:
+    #2563eb;
+
+  box-shadow:
+    0 0 10px
+    rgba(37,99,235,0.18);
+}
+
+
+/* =========================================================
+   STATUS ICON
+========================================================= */
+
+.status-icon {
+  width: 37px;
+  height: 37px;
+
+  flex:
+    0 0 37px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eaf1ff,
+      #f1f6ff
+    );
+
+  color:
+    #2563eb;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,0.8);
+}
+
+
+.status-gear {
+  display: block;
+
+  font-size:
+    18px;
+
+  line-height:
+    1;
+
+  animation:
+    successGearRotate
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes successGearRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   STATUS CONTENT
+========================================================= */
+
+.status-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.status-title-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 5px;
+}
+
+
+.status-content strong {
+  color:
+    #345676;
+
+  font-size:
+    13px;
+
+  font-weight:
+    750;
+
+  line-height:
+    1.4;
+}
+
+
+.status-live {
+  flex:
+    0 0 auto;
+
+  padding:
+    4px 7px;
+
+  border-radius:
+    999px;
+
+  background:
+    #eaf2ff;
+
+  color:
+    #3f72ba;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.35px;
+}
+
+
+.status-content p {
+  margin: 0;
+
+  color:
+    #8492a4;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   THANK YOU
+========================================================= */
+
+.success-thanks {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin:
+    18px 0 20px;
+}
+
+
+.success-thanks p {
+  flex:
+    0 0 auto;
+
+  max-width:
+    275px;
+
+  margin: 0;
+
+  color:
+    #8996a7;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.55;
+
+  text-align:
+    center;
+}
+
+
+.thanks-line {
+  flex:
+    1 1 auto;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #e3ebf5
+    );
+}
+
+
+.thanks-line:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #e3ebf5,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BACK TO HOME BUTTON
+========================================================= */
+
+.success-back-button {
+  position: relative;
+
+  width: 100%;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  overflow: hidden;
+
+  border:
+    0;
+
+  border-radius:
+    11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #155eef,
+      #2563eb 55%,
+      #3b82f6
+    );
+
+  color:
+    #ffffff;
+
+  font-family:
+    inherit;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 11px 25px
+    rgba(37,99,235,0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+
+  animation:
+    buttonReveal
+    0.5s
+    0.48s
+    ease
+    both;
+}
+
+
+@keyframes buttonReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+.success-back-button::before {
+  content:
+    "";
+
+  position: absolute;
+
+  left:
+    -95%;
+
+  top:
+    0;
+
+  width:
+    55%;
+
+  height:
+    100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.24),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.6s ease;
+}
+
+
+.success-back-button:hover::before {
+  left:
+    130%;
+}
+
+
+.success-back-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 15px 32px
+    rgba(37,99,235,0.27);
+
+  filter:
+    brightness(1.03);
+}
+
+
+.success-back-button:active {
+  transform:
+    translateY(0);
+}
+
+
+.button-label {
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+
+.button-arrow {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  font-size:
+    18px;
+
+  line-height:
+    1;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.success-back-button:hover
+.button-arrow {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   SUCCESS FOOTER
+========================================================= */
+
+.success-footer {
+  margin:
+    14px 0 0;
+
+  color:
+    #a1adbc;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    0.15px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.login-success-page
+button:focus-visible,
+.login-success-page
+a:focus-visible {
+  outline:
+    2px solid
+    rgba(37,99,235,0.45);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .login-section {
+    align-items: center;
+
+    padding:
+      30px
+      18px;
+  }
+
+
+  .login-container {
+    max-width:
+      460px;
+  }
+
+
+  .login-card {
+    padding:
+      35px
+      30px
+      28px;
+
+    border-radius:
+      20px;
+  }
+
+
+  .brand-title {
+    font-size:
+      28px;
+  }
+
+
+  .login-subtitle {
+    font-size:
+      13px;
+  }
+
+
+  .login-background
+  .login-floating-square {
+    opacity:
+      0.55;
+  }
+
+
+  .login-success-page {
+    padding:
+      30px
+      18px;
+  }
+
+
+  .login-success-container {
+    max-width:
+      460px;
+  }
+
+
+  .login-success-card {
+    padding:
+      33px
+      30px
+      27px;
+  }
+
+
+  .success-brand {
+    font-size:
+      29px;
+  }
+
+
+  .success-content h2 {
+    font-size:
+      22px;
+  }
+
+
+  .status-content strong {
+    font-size:
+      12px;
+  }
+
+
+  .status-content p {
+    font-size:
+      10.5px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .login-section {
+    padding:
+      20px
+      12px;
+  }
+
+
+  .login-card {
+    padding:
+      32px
+      20px
+      25px;
+
+    border-radius:
+      18px;
+  }
+
+
+  .login-header {
+    margin-bottom:
+      25px;
+  }
+
+
+  .login-logo {
+    width:
+      44px;
+
+    height:
+      44px;
+
+    border-radius:
+      12px;
+  }
+
+
+  .brand-title {
+    font-size:
+      25px;
+  }
+
+
+  .login-subtitle {
+    max-width:
+      275px;
+
+    font-size:
+      12px;
+  }
+
+
+  .login-security-pill {
+    font-size:
+      10px;
+  }
+
+
+  .login-field {
+    margin-bottom:
+      18px;
+  }
+
+
+  .login-field > label,
+  .password-label-row label {
+    padding-bottom:
+      9px;
+
+    font-size:
+      13px;
+  }
+
+
+  .login-input {
+    height:
+      51px;
+
+    padding:
+      13px
+      42px
+      13px
+      41px;
+
+    font-size:
+      13px;
+  }
+
+
+  .login-input::placeholder {
+    font-size:
+      12px;
+  }
+
+
+  .password-input {
+    padding-right:
+      45px;
+  }
+
+
+  .login-button {
+    height:
+      50px;
+
+    font-size:
+      13px;
+  }
+
+
+  .register-bottom {
+    font-size:
+      11px;
+  }
+
+
+  .signup-link {
+    font-size:
+      11px;
+  }
+
+
+  .login-secure-note {
+    font-size:
+      9px;
+  }
+
+
+  .login-success-page {
+    padding:
+      20px
+      12px;
+  }
+
+
+  .login-success-card {
+    padding:
+      29px
+      20px
+      23px;
+
+    border-radius:
+      19px;
+  }
+
+
+  .success-badge {
+    font-size:
+      8.5px;
+
+    padding:
+      6px
+      10px;
+  }
+
+
+  .success-icon {
+    width:
+      62px;
+
+    height:
+      62px;
+  }
+
+
+  .success-check {
+    font-size:
+      28px;
+  }
+
+
+  .success-brand {
+    font-size:
+      27px;
+  }
+
+
+  .success-eyebrow {
+    font-size:
+      10px;
+  }
+
+
+  .success-role {
+    margin:
+      15px auto 18px;
+
+    min-width:
+      155px;
+  }
+
+
+  .success-content h2 {
+    font-size:
+      20px;
+  }
+
+
+  .success-message {
+    font-size:
+      11px;
+  }
+
+
+  .dashboard-status {
+    padding:
+      13px;
+  }
+
+
+  .status-icon {
+    width:
+      33px;
+
+    height:
+      33px;
+
+    flex-basis:
+      33px;
+  }
+
+
+  .status-gear {
+    font-size:
+      17px;
+  }
+
+
+  .status-content strong {
+    font-size:
+      11px;
+  }
+
+
+  .status-content p {
+    font-size:
+      10px;
+  }
+
+
+  .status-live {
+    font-size:
+      8px;
+  }
+
+
+  .success-thanks p {
+    font-size:
+      10px;
+  }
+
+
+  .success-back-button {
+    height:
+      48px;
+
+    font-size:
+      12px;
+  }
+
+
+  .success-footer {
+    font-size:
+      8.5px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .login-section {
+    padding:
+      15px
+      9px;
+  }
+
+
+  .login-card {
+    padding:
+      28px
+      16px
+      22px;
+  }
+
+
+  .brand-title {
+    font-size:
+      23px;
+  }
+
+
+  .login-subtitle {
+    font-size:
+      11px;
+  }
+
+
+  .login-security-pill {
+    font-size:
+      9px;
+  }
+
+
+  .login-field > label,
+  .password-label-row label {
+    font-size:
+      12px;
+  }
+
+
+  .login-input {
+    height:
+      49px;
+
+    font-size:
+      12px;
+  }
+
+
+  .login-input::placeholder {
+    font-size:
+      11px;
+  }
+
+
+  .login-button {
+    height:
+      48px;
+
+    font-size:
+      12px;
+  }
+
+
+  .register-bottom {
+    font-size:
+      10px;
+  }
+
+
+  .signup-link {
+    font-size:
+      10px;
+  }
+
+
+  .login-secure-note {
+    font-size:
+      8.5px;
+  }
+
+
+  .login-success-page {
+    padding:
+      15px
+      9px;
+  }
+
+
+  .login-success-card {
+    padding:
+      25px
+      15px
+      20px;
+  }
+
+
+  .success-badge {
+    font-size:
+      7.5px;
+
+    letter-spacing:
+      0.25px;
+  }
+
+
+  .success-icon {
+    width:
+      58px;
+
+    height:
+      58px;
+  }
+
+
+  .success-check {
+    font-size:
+      26px;
+  }
+
+
+  .success-brand {
+    font-size:
+      24px;
+  }
+
+
+  .success-eyebrow {
+    font-size:
+      9px;
+  }
+
+
+  .success-role {
+    min-width:
+      145px;
+
+    gap:
+      6px;
+  }
+
+
+  .success-role-label {
+    font-size:
+      8px;
+  }
+
+
+  .success-role strong {
+    font-size:
+      10px;
+  }
+
+
+  .success-content h2 {
+    font-size:
+      18px;
+  }
+
+
+  .success-message {
+    font-size:
+      10px;
+  }
+
+
+  .dashboard-status {
+    gap:
+      8px;
+  }
+
+
+  .status-content strong {
+    font-size:
+      10px;
+  }
+
+
+  .status-content p {
+    font-size:
+      9px;
+  }
+
+
+  .status-live {
+    font-size:
+      7px;
+  }
+
+
+  .success-thanks p {
+    font-size:
+      9px;
+  }
+
+
+  .success-back-button {
+    font-size:
+      11px;
+  }
+
+
+  .success-footer {
+    font-size:
+      8px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .login-section *,
+  .login-section *::before,
+  .login-section *::after,
+
+  .login-success-page *,
+  .login-success-page *::before,
+  .login-success-page *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

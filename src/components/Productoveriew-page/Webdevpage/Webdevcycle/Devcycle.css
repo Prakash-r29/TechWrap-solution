@@ -1,0 +1,1064 @@
+/* =========================================================
+   DEVELOPMENT PROCESS
+========================================================= */
+
+.development-process {
+  position: relative;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 5% 40%,
+      rgba(37, 99, 235, 0.09),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(6, 182, 212, 0.09),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbff 55%,
+      #f2fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.process-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.04) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      black 75%,
+      transparent
+    );
+
+  animation:
+    processGridMove
+    30s
+    linear
+    infinite;
+}
+
+
+@keyframes processGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.process-glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  opacity: 0.15;
+
+  animation:
+    processGlowMove
+    8s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.process-glow-one {
+
+  left: -180px;
+
+  top: 35%;
+
+  background: #2563eb;
+}
+
+
+.process-glow-two {
+
+  right: -180px;
+
+  bottom: 20%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes processGlowMove {
+
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.process-heading {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin: 0 auto 90px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.process-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.process-label span {
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.7);
+
+  animation:
+    processDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes processDotPulse {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+
+    transform: scale(0.6);
+
+    opacity: 0.5;
+  }
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.process-heading h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      4.4rem
+    );
+
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+/* =========================================================
+   PRODUCTION TEXT
+   NORMAL BOLD TEXT
+========================================================= */
+
+.process-heading h2 span {
+
+  color: #0b1833;
+
+  font-weight: 800;
+
+  background: none;
+
+  background-size: auto;
+
+  -webkit-background-clip: initial;
+
+  background-clip: initial;
+
+  -webkit-text-fill-color: #0b1833;
+
+  animation: none;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.process-heading p {
+
+  max-width: 650px;
+
+  margin: 25px auto 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.process-timeline {
+
+  position: relative;
+
+  width: 100%;
+
+  padding-top: 20px;
+}
+
+
+/* =========================================================
+   PROCESS LINE
+========================================================= */
+
+.process-line {
+
+  position: absolute;
+
+  top: 48px;
+
+  left: 7%;
+
+  right: 7%;
+
+  height: 2px;
+
+  background:
+    rgba(148, 163, 184, 0.25);
+
+  z-index: 1;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   ANIMATED PROGRESS
+========================================================= */
+
+.process-line-progress {
+
+  width: 100%;
+
+  height: 100%;
+
+  transform-origin: left;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.3);
+
+  animation:
+    processProgress
+    3s
+    ease
+    forwards;
+}
+
+
+@keyframes processProgress {
+
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.process-steps {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STEP
+========================================================= */
+
+.process-step {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+
+  animation:
+    processStepReveal
+    0.7s
+    ease
+    forwards;
+
+  animation-delay:
+    var(--process-delay);
+}
+
+
+@keyframes processStepReveal {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   NUMBER WRAPPER
+========================================================= */
+
+.process-number-wrapper {
+
+  position: relative;
+
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   OUTER RING
+========================================================= */
+
+.process-number-wrapper::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.08);
+
+  transition:
+    all 0.4s ease;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.process-number {
+
+  position: relative;
+
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border:
+    2px solid
+    #2563eb;
+
+  color: #2563eb;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(37, 99, 235, 0.06),
+
+    0 10px 25px
+    rgba(37, 99, 235, 0.12);
+
+  transition:
+    transform 0.4s ease,
+
+    box-shadow 0.4s ease,
+
+    background 0.4s ease;
+}
+
+
+/* =========================================================
+   NUMBER LABEL
+========================================================= */
+
+.process-step-number {
+
+  position: absolute;
+
+  bottom: -17px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  padding: 2px 6px;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.process-icon {
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  color: #2563eb;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   STEP HOVER
+========================================================= */
+
+.process-step:hover
+.process-number {
+
+  transform:
+    scale(1.12);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #eff6ff
+    );
+
+  box-shadow:
+    0 0 0 7px
+    rgba(37, 99, 235, 0.07),
+
+    0 0 35px
+    rgba(37, 99, 235, 0.25);
+}
+
+
+.process-step:hover
+.process-number-wrapper::before {
+
+  transform: scale(1.18);
+
+  border-color:
+    rgba(37, 99, 235, 0.35);
+}
+
+
+.process-step:hover
+.process-icon {
+
+  transform:
+    scale(1.15)
+    rotate(-5deg);
+}
+
+
+/* =========================================================
+   PROCESS CARD
+========================================================= */
+
+.process-card {
+
+  width: 100%;
+
+  min-height: 185px;
+
+  padding: 22px 18px;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 10px 35px
+    rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.4s ease,
+
+    border-color 0.4s ease,
+
+    box-shadow 0.4s ease,
+
+    background 0.4s ease;
+}
+
+
+/* =========================================================
+   STEP LABEL
+========================================================= */
+
+.process-card-number {
+
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.process-card h3 {
+
+  margin: 0 0 10px;
+
+  color: #0b1833;
+
+  font-size: 18px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.process-card p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.process-step:hover
+.process-card {
+
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(37, 99, 235, 0.30);
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 20px 45px
+    rgba(15, 23, 42, 0.08),
+
+    0 0 35px
+    rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   CARD BLUE LINE
+========================================================= */
+
+.process-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 50%;
+
+  width: 0;
+
+  height: 2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  border-radius: 10px;
+
+  transition:
+    width 0.4s ease;
+}
+
+
+.process-step:hover
+.process-card::after {
+
+  width: 55%;
+}
+
+
+/* =========================================================
+   ACTIVE GLOW
+========================================================= */
+
+.process-step::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 20px;
+
+  width: 70px;
+
+  height: 70px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  filter: blur(25px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+
+.process-step:hover::before {
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .process-steps {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    row-gap: 45px;
+  }
+
+
+  .process-line {
+
+    display: none;
+  }
+
+
+  .process-card {
+
+    min-height: 175px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .development-process {
+
+    padding: 90px 0;
+  }
+
+
+  .process-heading {
+
+    margin-bottom: 60px;
+  }
+
+
+  .process-heading h2 {
+
+    font-size: 2.7rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .process-heading p {
+
+    font-size: 14px;
+  }
+
+
+  .process-steps {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+
+  .process-step {
+
+    display: grid;
+
+    grid-template-columns:
+      65px 1fr;
+
+    gap: 20px;
+
+    align-items: start;
+
+    text-align: left;
+  }
+
+
+  .process-number-wrapper {
+
+    margin: 0;
+
+    width: 58px;
+
+    height: 58px;
+  }
+
+
+  .process-card {
+
+    min-height: auto;
+
+    padding: 22px;
+
+    text-align: left;
+  }
+
+
+  .process-card::after {
+
+    left: 0;
+
+    transform: none;
+  }
+
+
+  .process-step:hover
+  .process-card::after {
+
+    width: 45%;
+  }
+
+
+  /* Vertical connecting line */
+
+  .process-step:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 58px;
+
+    left: 28px;
+
+    width: 2px;
+
+    height:
+      calc(100% + 25px);
+
+    background:
+      linear-gradient(
+        to bottom,
+        #2563eb,
+        rgba(37, 99, 235, 0.08)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .process-heading h2 {
+
+    font-size: 2.3rem;
+  }
+
+
+  .process-step {
+
+    grid-template-columns:
+      55px 1fr;
+
+    gap: 15px;
+  }
+
+
+  .process-number-wrapper,
+  .process-number {
+
+    width: 50px;
+
+    height: 50px;
+  }
+
+
+  .process-icon {
+
+    font-size: 16px;
+  }
+
+
+  .process-step:not(:last-child)::after {
+
+    left: 24px;
+  }
+
+
+  .process-card h3 {
+
+    font-size: 17px;
+  }
+
+
+  .process-card p {
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process-grid,
+  .process-glow,
+  .process-label span,
+  .process-line-progress,
+  .process-step {
+
+    animation: none !important;
+  }
+
+}

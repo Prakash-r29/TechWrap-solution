@@ -1,0 +1,913 @@
+/* =========================================================
+   TECHWRAP
+   SEAMLESS STACK INTEGRATION
+   REFERENCE IMAGE STYLE
+   ========================================================= */
+
+.stack-integration {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 90px 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   SUBTLE TECHWRAP GRID
+   ========================================================= */
+
+.stack-integration::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(30, 64, 175, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(30, 64, 175, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 44px 44px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.25)
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SOFT BLUE GLOW
+   ========================================================= */
+
+.stack-integration::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 500px;
+
+  top: 50%;
+  right: 8%;
+
+  transform: translateY(-50%);
+
+  background: radial-gradient(
+    ellipse,
+    rgba(59, 130, 246, 0.08),
+    transparent 68%
+  );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.stack-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1420px, 90%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(390px, 0.72fr)
+    minmax(650px, 1.28fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.stack-info {
+  max-width: 590px;
+
+  padding-left: 0;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.stack-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  color: #647791;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.stack-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2385f5;
+
+  box-shadow:
+    0 0 8px rgba(35, 133, 245, 0.65),
+    0 0 18px rgba(35, 133, 245, 0.25);
+
+  animation: techDot 2s ease-in-out infinite;
+}
+
+
+@keyframes techDot {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.stack-info h2 {
+  margin: 0 0 28px;
+
+  color: #1b2940;
+
+  font-size: clamp(44px, 4.3vw, 62px);
+
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+.stack-info h2 strong {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #247ff0 0%,
+      #416cf2 55%,
+      #5361e9 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.stack-info > p {
+  max-width: 590px;
+
+  margin: 0 0 32px;
+
+  color: #626b77;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.stack-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 19px;
+
+  margin-bottom: 30px;
+}
+
+
+.stack-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.stack-feature span {
+  flex-shrink: 0;
+
+  color: #147cf3;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+.stack-feature p {
+  margin: 0;
+
+  color: #26344b;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 450;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.stack-tech-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.stack-tech-tags span {
+  padding: 6px 11px;
+
+  border: 1px solid #dce5f1;
+
+  border-radius: 20px;
+
+  background: #f8fbff;
+
+  color: #647995;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+
+.stack-tech-tags span:hover {
+  border-color: #a9c9f4;
+
+  background: #eef6ff;
+
+  color: #247ff0;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CODE WINDOW
+   ========================================================= */
+
+.code-window {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  height: 650px;
+
+  overflow: hidden;
+
+  border: 1px solid #26354d;
+
+  border-radius: 12px;
+
+  background: #10182b;
+
+  box-shadow:
+    0 28px 70px rgba(20, 39, 67, 0.17),
+    0 8px 25px rgba(20, 39, 67, 0.08);
+}
+
+
+/* =========================================================
+   CODE HEADER
+   ========================================================= */
+
+.code-header {
+  position: relative;
+
+  height: 88px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #303d54;
+
+  background: #202b3e;
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.code-tabs {
+  display: flex;
+
+  align-items: center;
+}
+
+
+.code-tab {
+  height: 43px;
+
+  padding: 0 14px;
+
+  border: 1px solid #68768b;
+
+  background: transparent;
+
+  color: #e7ebf2;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.code-tab:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+
+.code-tab:last-child {
+  margin-left: -1px;
+
+  border-radius: 0 5px 5px 0;
+}
+
+
+.code-tab:hover {
+  background: rgba(59, 130, 246, 0.12);
+
+  border-color: #8ea1ba;
+}
+
+
+.code-tab.active {
+  position: relative;
+  z-index: 2;
+
+  border-color: #087cff;
+
+  background: #087cff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 20px rgba(8, 124, 255, 0.15);
+}
+
+
+/* =========================================================
+   COPY BUTTON
+   ========================================================= */
+
+.copy-button {
+  height: 43px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e3e8ef;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #f1f4f8;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CODE BODY
+   ========================================================= */
+
+.code-body {
+  position: relative;
+
+  height: calc(100% - 88px);
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  padding: 34px 35px 45px;
+
+  background: #10182b;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+.code-body pre {
+  margin: 0;
+
+  padding: 0;
+
+  white-space: pre;
+
+  animation: codeAppear 0.35s ease;
+}
+
+
+.code-body code {
+  display: block;
+
+  color: #d9e0eb;
+
+  font-family:
+    "SFMono-Regular",
+    "Cascadia Code",
+    "Roboto Mono",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  letter-spacing: 0.1px;
+
+  tab-size: 2;
+}
+
+
+@keyframes codeAppear {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   LANGUAGE LABEL
+   ========================================================= */
+
+.code-language {
+  position: absolute;
+
+  top: 15px;
+  right: 25px;
+
+  color: #53627a;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.code-body::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+
+.code-body::-webkit-scrollbar-track {
+  background: #10182b;
+}
+
+
+.code-body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background: #34425a;
+}
+
+
+.code-body::-webkit-scrollbar-thumb:hover {
+  background: #50627e;
+}
+
+
+/* =========================================================
+   BLUE PARTICLE
+   ========================================================= */
+
+.stack-integration .stack-container::after {
+  content: "";
+
+  position: absolute;
+
+  left: 27%;
+
+  bottom: -18px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #1683ff;
+
+  box-shadow:
+    0 0 8px #1683ff,
+    0 0 18px rgba(22, 131, 255, 0.7),
+    0 0 35px rgba(22, 131, 255, 0.35);
+
+  animation: floatingParticle 3s ease-in-out infinite;
+}
+
+
+@keyframes floatingParticle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translateY(-18px);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .stack-container {
+    grid-template-columns:
+      minmax(320px, 0.7fr)
+      minmax(560px, 1.3fr);
+
+    gap: 45px;
+  }
+
+  .stack-info h2 {
+    font-size: 48px;
+  }
+
+  .stack-info > p {
+    font-size: 16px;
+  }
+
+  .code-window {
+    height: 600px;
+  }
+
+  .code-body code {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .stack-integration {
+    padding: 90px 0;
+  }
+
+  .stack-container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .stack-info {
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+  }
+
+  .stack-info > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stack-features {
+    align-items: flex-start;
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stack-tech-tags {
+    justify-content: center;
+  }
+
+  .code-window {
+    height: 620px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .stack-integration {
+    min-height: auto;
+
+    padding: 75px 0 90px;
+  }
+
+  .stack-container {
+    width: 92%;
+
+    gap: 45px;
+  }
+
+  .stack-info h2 {
+    margin-bottom: 22px;
+
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+  .stack-info > p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .stack-feature p {
+    font-size: 15px;
+  }
+
+  .code-window {
+    height: 550px;
+
+    border-radius: 10px;
+  }
+
+  .code-header {
+    height: 75px;
+
+    padding: 0 12px;
+  }
+
+  .code-tab {
+    height: 40px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .copy-button {
+    height: 40px;
+
+    padding: 0 11px;
+
+    font-size: 12px;
+  }
+
+  .code-body {
+    height: calc(100% - 75px);
+
+    padding: 28px 20px 35px;
+  }
+
+  .code-body code {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .code-language {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .stack-integration {
+    padding: 65px 0 75px;
+  }
+
+  .stack-info h2 {
+    font-size: 36px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .stack-info > p {
+    font-size: 14px;
+  }
+
+  .stack-eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 1.6px;
+  }
+
+  .stack-feature p {
+    font-size: 14px;
+  }
+
+  .code-window {
+    height: 500px;
+  }
+
+  .code-header {
+    height: auto;
+
+    min-height: 70px;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 12px;
+  }
+
+  .code-tabs {
+    max-width: calc(100% - 65px);
+  }
+
+  .code-tab {
+    height: 37px;
+
+    padding: 0 8px;
+
+    font-size: 10px;
+  }
+
+  .copy-button {
+    height: 37px;
+
+    font-size: 10px;
+  }
+
+  .code-body {
+    height: calc(100% - 70px);
+
+    padding: 25px 15px;
+  }
+
+  .code-body code {
+    font-size: 9.5px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .stack-eyebrow::before,
+  .stack-integration .stack-container::after,
+  .code-body pre {
+    animation: none;
+  }
+}

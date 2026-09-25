@@ -1,0 +1,1025 @@
+/* =========================================================
+   TECHWRAP — OUR PEOPLE
+   ========================================================= */
+
+.people-section {
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0 120px;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(22, 119, 255, 0.06),
+      transparent 30%
+    ),
+    #f8fafc;
+  color: #17233b;
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.people-bg-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  opacity: 0.08;
+  animation: peopleGlow 9s ease-in-out infinite;
+}
+
+.people-bg-glow-one {
+  top: -250px;
+  left: -180px;
+  background: #1677ff;
+}
+
+.people-bg-glow-two {
+  right: -220px;
+  bottom: -150px;
+  background: #2563eb;
+  animation-delay: -4s;
+}
+
+@keyframes peopleGlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(30px, 35px, 0);
+  }
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.people-header {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto 65px;
+  text-align: center;
+  animation: peopleHeaderReveal 0.8s ease both;
+}
+
+@keyframes peopleHeaderReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.people-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+
+  border: 1px solid #d8e5f5;
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #53708f;
+
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    0 8px 25px rgba(30, 70, 120, 0.05);
+
+  backdrop-filter: blur(10px);
+}
+
+.people-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 0 5px rgba(22, 119, 255, 0.08),
+    0 0 18px rgba(22, 119, 255, 0.6);
+
+  animation: peopleDotPulse 2s infinite;
+}
+
+@keyframes peopleDotPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(22, 119, 255, 0.08),
+      0 0 15px rgba(22, 119, 255, 0.5);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px rgba(22, 119, 255, 0.03),
+      0 0 25px rgba(22, 119, 255, 0.75);
+  }
+}
+
+.people-header h2 {
+  margin: 24px 0 18px;
+
+  font-size: clamp(44px, 5.5vw, 72px);
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+
+  color: #17233b;
+}
+
+.people-header h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4775ee,
+      #2563eb
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.people-header p {
+  max-width: 720px;
+  margin: auto;
+
+  color: #6c809b;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   TEAM GRID
+   ========================================================= */
+
+.people-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.people-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid #dce7f4;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 15px 45px rgba(29, 67, 110, 0.07),
+    0 3px 10px rgba(29, 67, 110, 0.035);
+
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+
+  animation: cardAppear 0.7s ease both;
+}
+
+.people-card:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.people-card:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.people-card:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.people-card:hover {
+  transform: translateY(-9px);
+
+  border-color: #bfd5f2;
+
+  box-shadow:
+    0 28px 65px rgba(25, 73, 125, 0.13),
+    0 8px 20px rgba(25, 73, 125, 0.05);
+}
+
+/* =========================================================
+   REVEALED CARDS
+   ========================================================= */
+
+.people-card-revealed {
+  opacity: 0;
+
+  animation:
+    peopleRevealCard 0.75s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+
+  animation-delay: var(--reveal-delay);
+}
+
+@keyframes peopleRevealCard {
+  from {
+    opacity: 0;
+    transform:
+      translateY(60px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.people-image-wrapper {
+  position: relative;
+
+  height: 330px;
+
+  overflow: hidden;
+
+  background: #dfeaf7;
+}
+
+.people-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.9s
+    cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.6s ease;
+}
+
+.people-card:hover .people-image {
+  transform: scale(1.07);
+
+  filter:
+    saturate(1.08)
+    contrast(1.02);
+}
+
+/* =========================================================
+   IMAGE GRADIENT
+   ========================================================= */
+
+.people-image-gradient {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 15, 30, 0.15),
+      transparent 45%,
+      rgba(4, 14, 28, 0.72)
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.people-number {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+
+  background: rgba(5, 18, 36, 0.4);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   FLOATING BADGE
+   ========================================================= */
+
+.people-floating-badge {
+  position: absolute;
+
+  left: 18px;
+  top: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+
+  background: rgba(5, 18, 36, 0.42);
+
+  backdrop-filter: blur(12px);
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #4da3ff;
+
+  box-shadow:
+    0 0 10px rgba(77, 163, 255, 0.9);
+}
+
+/* =========================================================
+   HOVER PROFILE
+   ========================================================= */
+
+.people-hover-profile {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+
+  background: rgba(5, 18, 36, 0.5);
+
+  backdrop-filter: blur(14px);
+
+  transform: translateY(18px);
+
+  opacity: 0;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.people-card:hover .people-hover-profile {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-mini-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #1677ff;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.people-hover-profile strong {
+  display: block;
+
+  color: white;
+
+  font-size: 12px;
+}
+
+.people-hover-profile span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.people-card-content {
+  padding: 23px 22px 25px;
+}
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.people-card-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+.people-card-heading h3 {
+  margin: 0 0 5px;
+
+  color: #1b2d47;
+
+  font-size: 20px;
+  font-weight: 850;
+
+  letter-spacing: -0.5px;
+}
+
+.people-card-heading span {
+  color: #7387a1;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.people-arrow {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #dce7f4;
+  border-radius: 10px;
+
+  background: #f7faff;
+
+  color: #1677ff;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.people-card:hover .people-arrow {
+  transform: translate(3px, -3px);
+
+  background: #eaf3ff;
+}
+
+/* =========================================================
+   EXPERTISE
+   ========================================================= */
+
+.people-expertise {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 17px;
+}
+
+.people-expertise span {
+  padding: 6px 9px;
+
+  border: 1px solid #dbe7f5;
+  border-radius: 7px;
+
+  background: #f7faff;
+
+  color: #54708f;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.people-card:hover .people-expertise span {
+  border-color: #c7dbf5;
+  background: #edf5ff;
+}
+
+.people-expertise span:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   INFORMATION ROW
+   ========================================================= */
+
+.people-info,
+.people-worklife {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-top: 19px;
+}
+
+.people-info-icon,
+.worklife-icon {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #eaf3ff;
+
+  color: #1677ff;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.worklife-icon {
+  background: #eef8f3;
+  color: #2a9d68;
+}
+
+.people-info small,
+.people-worklife small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #8799b0;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.people-info p,
+.people-worklife p {
+  margin: 0;
+
+  color: #4e6581;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   SEE MORE ACTION
+   ========================================================= */
+
+.people-action {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 55px;
+}
+
+.people-see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  min-height: 55px;
+
+  padding: 0 25px;
+
+  border: 1px solid #cddded;
+  border-radius: 13px;
+
+  background: white;
+
+  color: #243a57;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(30, 70, 120, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.people-see-more:hover {
+  transform: translateY(-3px);
+
+  border-color: #9ec3ef;
+
+  background: #f7fbff;
+
+  box-shadow:
+    0 16px 35px rgba(30, 80, 140, 0.1);
+}
+
+.people-button-arrow {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #1677ff;
+
+  color: white;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+.people-see-more:hover .people-button-arrow {
+  transform: translateY(3px);
+}
+
+.people-see-more.is-expanded:hover .people-button-arrow {
+  transform: translateY(-3px);
+}
+
+.people-action-note {
+  margin: 12px 0 0;
+
+  color: #8999ad;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CULTURE STRIP
+   ========================================================= */
+
+.people-culture {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 85px;
+  padding: 28px 30px;
+
+  border: 1px solid #dce7f4;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(244, 249, 255, 0.9)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(30, 70, 120, 0.05);
+}
+
+.culture-line {
+  position: absolute;
+
+  top: 0;
+  left: 30px;
+
+  width: 100px;
+  height: 2px;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 15px rgba(22, 119, 255, 0.4);
+}
+
+.culture-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.culture-icon {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #1677ff;
+
+  color: white;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  box-shadow:
+    0 10px 25px rgba(22, 119, 255, 0.2);
+}
+
+.culture-content span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7f91a8;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.culture-content strong {
+  display: block;
+
+  color: #2b405c;
+
+  font-size: 14px;
+}
+
+.culture-stats {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.culture-stats div {
+  text-align: center;
+}
+
+.culture-stats strong {
+  display: block;
+
+  color: #1677ff;
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.culture-stats span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8395aa;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .people-section {
+    padding: 100px 0;
+  }
+
+  .people-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .people-image-wrapper {
+    height: 310px;
+  }
+
+  .people-culture {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .culture-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .people-section {
+    padding: 80px 0;
+  }
+
+  .people-header {
+    margin-bottom: 45px;
+    padding: 0 15px;
+  }
+
+  .people-header h2 {
+    font-size: clamp(39px, 11vw, 55px);
+    letter-spacing: -2px;
+  }
+
+  .people-header p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .people-image-wrapper {
+    height: 350px;
+  }
+
+  /*
+    Always show profile information
+    on touch devices.
+  */
+  .people-hover-profile {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .people-culture {
+    padding: 23px 20px;
+    margin-top: 60px;
+  }
+
+  .culture-content {
+    align-items: flex-start;
+  }
+
+  .culture-content strong {
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .people-section {
+    padding: 70px 0;
+  }
+
+  .people-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .people-header h2 {
+    font-size: 40px;
+  }
+
+  .people-card-content {
+    padding: 20px;
+  }
+
+  .people-image-wrapper {
+    height: 320px;
+  }
+
+  .culture-stats {
+    gap: 15px;
+  }
+
+  .culture-stats strong {
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .people-bg-glow,
+  .people-eyebrow-dot,
+  .people-card,
+  .people-card-revealed {
+    animation: none !important;
+  }
+
+  .people-card-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  .people-image,
+  .people-hover-profile,
+  .people-card,
+  .people-arrow,
+  .people-see-more {
+    transition: none;
+  }
+}

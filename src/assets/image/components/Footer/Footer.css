@@ -1,0 +1,144 @@
+.footer{
+    background:#f8fafc;
+    padding-top:100px;
+}
+
+/* CTA Card */
+
+.footer-card{
+
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+
+    border-radius:35px;
+
+    padding:70px;
+
+    color:white;
+
+    margin-bottom:80px;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.15);
+
+}
+
+.footer-badge{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-card h2{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.footer-card h2 span{
+
+    color:#60a5fa;
+
+}
+
+.footer-card p{
+
+    color:#cbd5e1;
+
+    margin-top:20px;
+
+    max-width:650px;
+
+}
+
+/* Links */
+
+.footer h5{
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.footer a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#64748b;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:#2563eb;
+
+    padding-left:8px;
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid #e5e7eb;
+
+    padding:30px 0;
+
+}
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:#64748b;
+
+}
+
+.social-links a{
+
+    width:45px;
+
+    height:45px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:white;
+
+    margin-left:12px;
+
+    color:#1e3a8a;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-5px);
+
+    background:#2563eb;
+
+    color:white;
+
+}

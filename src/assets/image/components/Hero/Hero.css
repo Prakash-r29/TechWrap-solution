@@ -1,0 +1,159 @@
+.hero-section {
+    padding: 120px 0;
+    background: radial-gradient(
+        circle at top,
+        #dbeafe 0%,
+        #eef6ff 45%,
+        #f8fbff 75%,
+        #ffffff 100%
+    );
+}
+/* Background Glow */
+
+.hero-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(
+    circle,
+    rgba(0,132,255,.18),
+    transparent 70%);
+
+    right:-180px;
+    top:150px;
+
+    filter:blur(30px);
+}
+
+/* Badge */
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border:1px solid #d7dee7;
+
+    border-radius:40px;
+
+    background:#fff;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    color:#55657d;
+
+    margin-bottom:30px;
+}
+
+/* Heading */
+
+.hero-title{
+
+    font-size:72px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+}
+
+/* Paragraph */
+
+.hero-description{
+
+    font-size:24px;
+
+    color:#5b677d;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin-bottom:40px;
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+
+    padding:16px 38px;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    font-weight:600;
+}
+
+.work-btn{
+
+    padding:16px 38px;
+
+    border-radius:40px;
+
+    font-size:20px;
+}
+
+/* Image */
+
+.hero-image{
+
+    width:40%;
+
+    border-radius:10px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.hero-section{
+
+padding-top:70px;
+
+text-align:center;
+
+}
+
+.hero-title{
+
+font-size:48px;
+
+}
+
+.hero-description{
+
+font-size:20px;
+
+margin:auto;
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+}

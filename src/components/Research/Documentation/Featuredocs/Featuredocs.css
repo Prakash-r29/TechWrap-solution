@@ -1,0 +1,1209 @@
+/* =========================================================
+   TECHWRAP — FEATURED DOCUMENTATION
+========================================================= */
+
+.tw-featured-docs {
+  position: relative;
+
+  width: 100%;
+
+  padding: 125px 24px 110px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbff 48%,
+      #ffffff 100%
+    );
+
+  color: #172a45;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.tw-featured-docs-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 119, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0, 0, 0, 0.7) 45%,
+      transparent 100%
+    );
+
+  animation:
+    twFeaturedGridMove 24s linear infinite;
+}
+
+
+@keyframes twFeaturedGridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.tw-featured-docs-glow {
+  position: absolute;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+}
+
+
+.tw-featured-docs-glow-one {
+  width: 460px;
+  height: 460px;
+
+  left: -260px;
+  top: 180px;
+
+  background:
+    rgba(22, 119, 255, 0.075);
+
+  animation:
+    twFeaturedGlowOne 9s ease-in-out infinite;
+}
+
+
+.tw-featured-docs-glow-two {
+  width: 420px;
+  height: 420px;
+
+  right: -250px;
+  bottom: 80px;
+
+  background:
+    rgba(66, 99, 235, 0.065);
+
+  animation:
+    twFeaturedGlowTwo 11s ease-in-out infinite;
+}
+
+
+@keyframes twFeaturedGlowOne {
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(80px, -20px)
+      scale(1.12);
+  }
+}
+
+
+@keyframes twFeaturedGlowTwo {
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-70px, 35px)
+      scale(1.14);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.tw-featured-docs-header {
+  width:
+    min(760px, 100%);
+
+  margin:
+    0 auto 62px;
+
+  text-align:
+    center;
+
+  opacity: 0;
+
+  transform:
+    translateY(32px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.tw-featured-docs-visible
+.tw-featured-docs-header {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.tw-featured-docs-eyebrow {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  margin-bottom:
+    19px;
+
+  color:
+    #1677ff;
+
+  font-size:
+    10px;
+
+  font-weight:
+    850;
+
+  letter-spacing:
+    0.16em;
+}
+
+
+.tw-featured-docs-eyebrow span {
+  width:
+    27px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #1677ff
+    );
+}
+
+
+.tw-featured-docs-eyebrow span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.tw-featured-docs-header h2 {
+  margin:
+    0;
+
+  color:
+    #101b33;
+
+  font-size:
+    clamp(39px, 5vw, 56px);
+
+  line-height:
+    1.04;
+
+  font-weight:
+    820;
+
+  letter-spacing:
+    -0.052em;
+}
+
+
+.tw-featured-docs-header h2 strong {
+  display:
+    block;
+
+  color:
+    transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4263eb,
+      #1677ff
+    );
+
+  background-size:
+    200% auto;
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  animation:
+    twFeaturedTextGradient 5s linear infinite;
+}
+
+
+@keyframes twFeaturedTextGradient {
+  from {
+    background-position:
+      0% center;
+  }
+
+  to {
+    background-position:
+      200% center;
+  }
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.tw-featured-docs-header p {
+  max-width:
+    650px;
+
+  margin:
+    22px auto 0;
+
+  color:
+    #7185a2;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================================
+   DOCUMENTATION LIST
+========================================================= */
+
+.tw-featured-docs-list {
+  position:
+    relative;
+
+  width:
+    min(1120px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    16px;
+}
+
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
+
+.tw-featured-doc-panel {
+  position:
+    relative;
+
+  min-height:
+    190px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    58px
+    68px
+    minmax(0, 1fr)
+    190px;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
+
+  padding:
+    29px 31px;
+
+  overflow:
+    hidden;
+
+  cursor:
+    pointer;
+
+  border:
+    1px solid
+    #dce6f2;
+
+  border-radius:
+    18px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 12px 38px
+    rgba(29, 65, 108, 0.045);
+
+  opacity:
+    0;
+
+  transform:
+    translateY(32px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.tw-featured-docs-visible
+.tw-featured-doc-panel {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.tw-featured-doc-panel:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(22, 119, 255, 0.32);
+
+  box-shadow:
+    0 24px 65px
+    rgba(24, 66, 115, 0.105);
+}
+
+
+/* =========================================================
+   TOP BLUE LINE
+========================================================= */
+
+.tw-featured-doc-panel::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    8%;
+
+  width:
+    84%;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 119, 255, 0.45),
+      transparent
+    );
+
+  opacity:
+    0.45;
+
+  transition:
+    opacity 0.35s ease,
+    width 0.35s ease,
+    left 0.35s ease;
+}
+
+
+.tw-featured-doc-panel:hover::before {
+  left:
+    4%;
+
+  width:
+    92%;
+
+  opacity:
+    1;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.tw-featured-doc-number {
+  align-self:
+    start;
+
+  padding-top:
+    4px;
+
+  color:
+    #a0aec0;
+
+  font-size:
+    10px;
+
+  font-weight:
+    850;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.tw-featured-doc-icon {
+  position:
+    relative;
+
+  width:
+    58px;
+
+  height:
+    58px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.15);
+
+  border-radius:
+    15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f2f7ff,
+      #e9f2ff
+    );
+
+  color:
+    #1677ff;
+
+  font-size:
+    17px;
+
+  font-weight:
+    800;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    background 0.45s ease;
+}
+
+
+.tw-featured-doc-panel:hover
+.tw-featured-doc-icon {
+  transform:
+    rotate(7deg)
+    scale(1.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      #eaf3ff,
+      #dcecff
+    );
+
+  box-shadow:
+    0 12px 28px
+    rgba(22, 119, 255, 0.14);
+}
+
+
+/* Icon inner ring */
+
+.tw-featured-doc-icon::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    6px;
+
+  border:
+    1px solid
+    rgba(22, 119, 255, 0.1);
+
+  border-radius:
+    10px;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.tw-featured-doc-panel:hover
+.tw-featured-doc-icon::before {
+  transform:
+    rotate(-12deg);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.tw-featured-doc-content {
+  min-width:
+    0;
+}
+
+
+.tw-featured-doc-category {
+  margin-bottom:
+    9px;
+
+  color:
+    #1677ff;
+
+  font-size:
+    9px;
+
+  font-weight:
+    850;
+
+  letter-spacing:
+    0.15em;
+}
+
+
+.tw-featured-doc-content h3 {
+  margin:
+    0 0 9px;
+
+  color:
+    #152943;
+
+  font-size:
+    21px;
+
+  line-height:
+    1.3;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.025em;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.tw-featured-doc-panel:hover
+.tw-featured-doc-content h3 {
+  color:
+    #1677ff;
+}
+
+
+.tw-featured-doc-content p {
+  max-width:
+    650px;
+
+  margin:
+    0;
+
+  color:
+    #7487a0;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.tw-featured-doc-action {
+  min-height:
+    100%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    space-between;
+
+  padding:
+    2px 0;
+}
+
+
+.tw-featured-doc-time {
+  color:
+    #9aa9bb;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.tw-featured-doc-action button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  background:
+    transparent;
+
+  color:
+    #172a45;
+
+  font-family:
+    inherit;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+  white-space:
+    nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.tw-featured-doc-action button:hover {
+  color:
+    #1677ff;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.tw-featured-doc-arrow {
+  display:
+    inline-block;
+
+  color:
+    #1677ff;
+
+  font-size:
+    18px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.tw-featured-doc-action button:hover
+.tw-featured-doc-arrow {
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================================
+   HOVER SHINE
+========================================================= */
+
+.tw-featured-doc-shine {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    -100%;
+
+  width:
+    45%;
+
+  height:
+    100%;
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent,
+      rgba(255, 255, 255, 0.42),
+      transparent
+    );
+
+  transform:
+    skewX(-18deg);
+
+  transition:
+    left 0.85s ease;
+}
+
+
+.tw-featured-doc-panel:hover
+.tw-featured-doc-shine {
+  left:
+    135%;
+}
+
+
+/* =========================================================
+   HOVER ACCENT LINE
+========================================================= */
+
+.tw-featured-doc-hover-line {
+  position:
+    absolute;
+
+  left:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    0;
+
+  height:
+    2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1677ff,
+      #4263eb
+    );
+
+  border-radius:
+    0 3px 0 0;
+
+  transition:
+    width 0.45s ease;
+}
+
+
+.tw-featured-doc-panel:hover
+.tw-featured-doc-hover-line {
+  width:
+    32%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.tw-featured-docs-footer {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  margin-top:
+    42px;
+
+  color:
+    #9aa8ba;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    0.01em;
+}
+
+
+.tw-featured-footer-dot {
+  width:
+    6px;
+
+  height:
+    6px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    #1677ff;
+
+  box-shadow:
+    0 0 12px
+    rgba(22, 119, 255, 0.65);
+
+  animation:
+    twFeaturedDotPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes twFeaturedDotPulse {
+  0%,
+  100% {
+    transform:
+      scale(0.75);
+
+    opacity:
+      0.55;
+  }
+
+  50% {
+    transform:
+      scale(1.15);
+
+    opacity:
+      1;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .tw-featured-doc-panel {
+    grid-template-columns:
+      45px
+      58px
+      minmax(0, 1fr);
+
+    gap:
+      18px;
+  }
+
+
+  .tw-featured-doc-action {
+    grid-column:
+      3;
+
+    min-height:
+      auto;
+
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    justify-content:
+      space-between;
+
+    margin-top:
+      12px;
+
+    padding-top:
+      16px;
+
+    border-top:
+      1px solid #edf2f7;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .tw-featured-docs {
+    padding:
+      90px 17px 80px;
+  }
+
+
+  .tw-featured-docs-header {
+    margin-bottom:
+      45px;
+  }
+
+
+  .tw-featured-docs-header h2 {
+    font-size:
+      37px;
+  }
+
+
+  .tw-featured-docs-header p {
+    font-size:
+      13px;
+  }
+
+
+  .tw-featured-doc-panel {
+    min-height:
+      auto;
+
+    grid-template-columns:
+      42px
+      54px
+      minmax(0, 1fr);
+
+    gap:
+      14px;
+
+    padding:
+      24px 20px;
+  }
+
+
+  .tw-featured-doc-number {
+    font-size:
+      9px;
+  }
+
+
+  .tw-featured-doc-icon {
+    width:
+      50px;
+
+    height:
+      50px;
+
+    border-radius:
+      13px;
+
+    font-size:
+      15px;
+  }
+
+
+  .tw-featured-doc-content h3 {
+    font-size:
+      18px;
+  }
+
+
+  .tw-featured-doc-content p {
+    font-size:
+      11px;
+  }
+
+
+  .tw-featured-doc-action {
+    grid-column:
+      1 / -1;
+
+    margin-top:
+      5px;
+  }
+
+
+  .tw-featured-docs-footer {
+    text-align:
+      center;
+
+    line-height:
+      1.6;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .tw-featured-docs-header h2 {
+    font-size:
+      32px;
+  }
+
+
+  .tw-featured-doc-panel {
+    grid-template-columns:
+      38px
+      50px
+      minmax(0, 1fr);
+
+    gap:
+      11px;
+
+    padding:
+      21px 17px;
+  }
+
+
+  .tw-featured-doc-icon {
+    width:
+      46px;
+
+    height:
+      46px;
+  }
+
+
+  .tw-featured-doc-content h3 {
+    font-size:
+      16px;
+  }
+
+
+  .tw-featured-doc-content p {
+    font-size:
+      10.5px;
+  }
+
+
+  .tw-featured-doc-category {
+    font-size:
+      8px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-featured-docs *,
+  .tw-featured-docs *::before,
+  .tw-featured-docs *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+}

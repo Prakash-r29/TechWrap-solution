@@ -1,0 +1,42 @@
+/* ==========================================================
+   Design tokens — TechWrap Solution
+   Premium SaaS palette: near-black ink, restrained blue/cyan
+   accent used sparingly (not as decoration everywhere).
+   ========================================================== */
+:root {
+  /* brand */
+  --tw-ink: #0B0F1A;
+  --tw-navy: #0A1830;
+  --tw-blue: #2F6FED;
+  --tw-cyan: #00D4FF;
+  --tw-gradient: linear-gradient(90deg, var(--tw-blue), var(--tw-cyan));
+
+  /* neutrals */
+  --tw-paper: #FFFFFF;
+  --tw-paper-soft: #F7F9FC;
+  --tw-line: rgba(11, 15, 26, 0.08);
+  --tw-line-strong: rgba(11, 15, 26, 0.14);
+  --tw-muted: #5B6472;
+  --tw-muted-2: #8B93A3;
+
+  /* type */
+  --tw-font-display: 'Sora', 'Inter', sans-serif;
+  --tw-font-body: 'Inter', sans-serif;
+
+  /* radii / shadow */
+  --tw-radius-lg: 22px;
+  --tw-radius-md: 14px;
+  --tw-radius-sm: 8px;
+  --tw-shadow-soft: 0 20px 60px rgba(10, 24, 48, 0.08);
+  --tw-shadow-strong: 0 30px 80px rgba(10, 24, 48, 0.22);
+
+  /* motion */
+  --tw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --tw-dur-fast: 200ms;
+  --tw-dur-med: 420ms;
+  --tw-dur-slow: 700ms;
+
+  /* layout */
+  --tw-container: 1200px;
+  --tw-section-pad: clamp(4rem, 8vw, 7.5rem);
+}

@@ -1,0 +1,1386 @@
+/* =========================================================
+   SECURITY & RELIABILITY SECTION
+========================================================= */
+
+.security-section {
+
+  position: relative;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(37, 99, 235, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(6, 182, 212, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fcff 55%,
+      #f1fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.security-grid {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -4;
+
+  background-image:
+
+    linear-gradient(
+      rgba(15, 23, 42, 0.028) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.028) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  animation:
+    securityGridMove
+    25s
+    linear
+    infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes securityGridMove {
+
+  from {
+    background-position:
+      0 0;
+  }
+
+  to {
+    background-position:
+      55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.security-glow {
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.12;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  animation:
+    securityGlowFloat
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.security-glow-one {
+
+  left: -220px;
+
+  top: 15%;
+
+  background: #2563eb;
+}
+
+
+.security-glow-two {
+
+  right: -220px;
+
+  bottom: 10%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes securityGlowFloat {
+
+  from {
+
+    transform:
+      translateY(-25px);
+
+  }
+
+  to {
+
+    transform:
+      translateY(25px);
+
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING ORBS
+========================================================= */
+
+.security-orb {
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.8);
+
+  opacity: 0.65;
+
+  animation:
+    securityOrbFloat
+    7s
+    ease-in-out
+    infinite;
+
+  pointer-events: none;
+}
+
+
+.security-orb-one {
+
+  top: 18%;
+
+  left: 9%;
+}
+
+
+.security-orb-two {
+
+  right: 10%;
+
+  bottom: 20%;
+
+  animation-delay: 2s;
+
+  background: #06b6d4;
+
+  box-shadow:
+    0 0 15px
+    rgba(6, 182, 212, 0.8);
+}
+
+
+@keyframes securityOrbFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-25px)
+      scale(1.35);
+
+  }
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.security-heading {
+
+  max-width: 800px;
+
+  margin:
+    0 auto
+    75px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.security-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.security-label-dot {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.8);
+
+  animation:
+    securityLabelPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes securityLabelPulse {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform: scale(0.55);
+
+    opacity: 0.5;
+
+  }
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.security-heading h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      4.6rem
+    );
+
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+.security-heading h2 span {
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #0ea5e9,
+      #2563eb
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    securityGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes securityGradient {
+
+  0% {
+
+    background-position:
+      0% center;
+
+  }
+
+  100% {
+
+    background-position:
+      200% center;
+
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.security-heading p {
+
+  max-width: 650px;
+
+  margin:
+    25px auto
+    0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.security-features {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SECURITY CARD
+========================================================= */
+
+.security-card {
+
+  position: relative;
+
+  min-height: 365px;
+
+  overflow: hidden;
+
+  padding:
+    25px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.17
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    0 15px 45px
+    rgba(
+      15,
+      23,
+      42,
+      0.055
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(35px);
+
+  animation:
+    securityCardReveal
+    0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  animation-delay:
+    var(--security-delay);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+
+@keyframes securityCardReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(40px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.security-card:hover {
+
+  transform:
+    translateY(-12px);
+
+  border-color:
+    rgba(
+      37,
+      99,
+      235,
+      0.28
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.96
+    );
+
+  box-shadow:
+
+    0 30px 70px
+    rgba(
+      15,
+      23,
+      42,
+      0.10
+    ),
+
+    0 0 40px
+    rgba(
+      37,
+      99,
+      235,
+      0.07
+    );
+}
+
+
+/* =========================================================
+   CARD SCAN LINE
+========================================================= */
+
+.security-card-scan {
+
+  position: absolute;
+
+  left: 0;
+
+  top: -100%;
+
+  width: 100%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #38bdf8,
+      #2563eb,
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(
+      37,
+      99,
+      235,
+      0.7
+    );
+
+  opacity: 0;
+}
+
+
+.security-card:hover
+.security-card-scan {
+
+  opacity: 1;
+
+  animation:
+    securityScan
+    2.2s
+    linear
+    infinite;
+}
+
+
+@keyframes securityScan {
+
+  from {
+
+    top: 0%;
+
+  }
+
+  to {
+
+    top: 100%;
+
+  }
+
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.security-card-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+
+.security-number {
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.security-status {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    6px
+    9px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.06
+    );
+
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+
+.security-status span {
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      34,
+      197,
+      94,
+      0.8
+    );
+
+  animation:
+    securityStatusPulse
+    1.7s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes securityStatusPulse {
+
+  0%,
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    opacity: 0.45;
+
+    transform: scale(0.65);
+
+  }
+
+}
+
+
+/* =========================================================
+   ICON WRAPPER
+========================================================= */
+
+.security-icon-wrap {
+
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.security-icon {
+
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 22px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(
+        37,
+        99,
+        235,
+        0.09
+      ),
+      rgba(
+        6,
+        182,
+        212,
+        0.10
+      )
+    );
+
+  border:
+    1px solid
+    rgba(
+      37,
+      99,
+      235,
+      0.15
+    );
+
+  font-size: 28px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(
+      37,
+      99,
+      235,
+      0.08
+    );
+
+  transition:
+    transform 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.4s ease;
+}
+
+
+.security-card:hover
+.security-icon {
+
+  transform:
+    rotate(-7deg)
+    scale(1.1);
+
+  box-shadow:
+
+    0 18px 40px
+    rgba(
+      37,
+      99,
+      235,
+      0.15
+    ),
+
+    0 0 25px
+    rgba(
+      6,
+      182,
+      212,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   ICON RING
+========================================================= */
+
+.security-icon-ring {
+
+  position: absolute;
+
+  inset: -8px;
+
+  border-radius: 27px;
+
+  border:
+    1px solid
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  opacity: 0;
+
+  transform:
+    scale(0.75);
+
+  pointer-events: none;
+}
+
+
+.security-card:hover
+.security-icon-ring {
+
+  opacity: 1;
+
+  transform:
+    scale(1);
+
+  animation:
+    securityRingPulse
+    1.6s
+    ease-out
+    infinite;
+}
+
+
+@keyframes securityRingPulse {
+
+  0% {
+
+    box-shadow:
+      0 0 0 0
+      rgba(
+        37,
+        99,
+        235,
+        0.18
+      );
+
+  }
+
+  100% {
+
+    box-shadow:
+      0 0 0 13px
+      rgba(
+        37,
+        99,
+        235,
+        0
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.security-card-content h3 {
+
+  margin:
+    0 0
+    12px;
+
+  color: #0b1833;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.security-card-content p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BOTTOM BLUE LINE
+========================================================= */
+
+.security-card-line {
+
+  position: absolute;
+
+  left: 25px;
+
+  bottom: 20px;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4
+    );
+
+  transition:
+    width 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.security-card:hover
+.security-card-line {
+
+  width: 55px;
+
+}
+
+
+/* =========================================================
+   CARD CORNER GLOW
+========================================================= */
+
+.security-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  filter: blur(45px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.5s ease;
+}
+
+
+.security-card:hover::after {
+
+  opacity: 1;
+
+}
+
+
+/* =========================================================
+   SECURITY STATUS BAR
+========================================================= */
+
+.security-status-bar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 30px;
+
+  padding:
+    18px
+    22px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.15
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  backdrop-filter:
+    blur(15px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+}
+
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.security-live {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.security-live-dot {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px
+    rgba(
+      34,
+      197,
+      94,
+      0.8
+    );
+
+  animation:
+    securityLivePulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes securityLivePulse {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform: scale(0.6);
+
+    opacity: 0.5;
+
+  }
+
+}
+
+
+/* =========================================================
+   STATUS ITEMS
+========================================================= */
+
+.security-status-items {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.security-status-items span {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.security-status-items b {
+
+  color: #22c55e;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .security-features {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 18px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .security-section {
+
+    padding:
+      90px
+      0;
+
+  }
+
+
+  .security-heading {
+
+    margin-bottom: 50px;
+
+  }
+
+
+  .security-heading h2 {
+
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+
+  }
+
+
+  .security-heading p {
+
+    font-size: 14px;
+
+  }
+
+
+  .security-features {
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+  }
+
+
+  .security-card {
+
+    min-height: 330px;
+
+  }
+
+
+  .security-status-bar {
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    align-items: flex-start;
+
+  }
+
+
+  .security-status-items {
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .security-heading h2 {
+
+    font-size: 2.3rem;
+
+  }
+
+
+  .security-card {
+
+    min-height: 310px;
+
+    padding: 22px;
+
+  }
+
+
+  .security-status-items {
+
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+  }
+
+
+  .security-card-content h3 {
+
+    font-size: 19px;
+
+  }
+
+
+  .security-card-content p {
+
+    font-size: 12px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .security-grid,
+  .security-glow,
+  .security-orb,
+  .security-label-dot,
+  .security-heading h2 span,
+  .security-card,
+  .security-card-scan,
+  .security-icon-ring,
+  .security-status span,
+  .security-live-dot {
+
+    animation: none !important;
+
+  }
+
+}

@@ -1,0 +1,3191 @@
+/* =========================================================
+   TECHWRAP — NEW BLOG HERO
+   Clean Engineering / SaaS Editorial Design
+========================================================= */
+
+.tw-new-blog-hero {
+  --tw-blue: #1769ff;
+  --tw-blue-dark: #075be8;
+  --tw-navy: #111a2d;
+  --tw-text: #26364e;
+  --tw-muted: #71819a;
+  --tw-border: #dfe6ef;
+
+  position: relative;
+
+  min-height: 820px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfcff 58%,
+      #f7faff 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.tw-new-blog-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  opacity: .48;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        17,
+        34,
+        58,
+        .035
+      ) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        17,
+        34,
+        58,
+        .035
+      ) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    52px 52px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 72%,
+      transparent 100%
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.tw-new-blog-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.tw-new-blog-glow-left {
+  width:
+    320px;
+
+  height:
+    320px;
+
+  left:
+    -180px;
+
+  bottom:
+    40px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        23,
+        105,
+        255,
+        .075
+      ),
+      transparent 72%
+    );
+
+  animation:
+    twNewGlowFloat
+    9s
+    ease-in-out
+    infinite;
+}
+
+.tw-new-blog-glow-right {
+  width:
+    380px;
+
+  height:
+    380px;
+
+  right:
+    -180px;
+
+  top:
+    50px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        23,
+        105,
+        255,
+        .065
+      ),
+      transparent 72%
+    );
+
+  animation:
+    twNewGlowFloat
+    10s
+    ease-in-out
+    infinite
+    reverse;
+}
+
+@keyframes twNewGlowFloat {
+
+  0%,
+  100% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translate3d(
+        15px,
+        -18px,
+        0
+      );
+  }
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.tw-new-blog-container {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  width:
+    min(
+      1400px,
+      calc(
+        100% - 64px
+      )
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    34px 0 0;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.tw-new-blog-topbar {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+}
+
+.tw-new-blog-status {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    9px 14px;
+
+  border:
+    1px solid
+    rgba(
+      23,
+      105,
+      255,
+      .13
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .82
+    );
+
+  backdrop-filter:
+    blur(14px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      16,
+      24,
+      40,
+      .035
+    );
+
+  color:
+    #677792;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .12em;
+
+  animation:
+    twNewFadeDown
+    .7s
+    ease
+    both;
+}
+
+.tw-new-status-dot {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #3bd58c;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      59,
+      213,
+      140,
+      .08
+    );
+
+  animation:
+    twNewPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+.tw-new-blog-status i {
+  width:
+    1px;
+
+  height:
+    13px;
+
+  background:
+    #dce2ec;
+}
+
+.tw-new-blog-topline {
+  color:
+    #a0aabd;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .12em;
+}
+
+@keyframes twNewPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px
+      rgba(
+        59,
+        213,
+        140,
+        .08
+      );
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px
+      rgba(
+        59,
+        213,
+        140,
+        .02
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MAIN HERO
+========================================================= */
+
+.tw-new-blog-main {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      480px,
+      1fr
+    );
+
+  align-items:
+    center;
+
+  gap:
+    55px;
+
+  padding:
+    60px 0 48px;
+}
+
+
+/* =========================================================
+   LEFT COPY
+========================================================= */
+
+.tw-new-blog-copy {
+  position:
+    relative;
+
+  z-index:
+    10;
+
+  min-width:
+    0;
+
+  animation:
+    twNewFadeUp
+    .8s
+    .08s
+    ease
+    both;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.tw-new-blog-eyebrow {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  margin-bottom:
+    19px;
+
+  color:
+    var(--tw-blue);
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .15em;
+}
+
+.tw-new-eyebrow-dot {
+  width:
+    6px;
+
+  height:
+    6px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--tw-blue);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      23,
+      105,
+      255,
+      .07
+    );
+}
+
+.tw-new-blog-eyebrow div {
+  width:
+    34px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--tw-blue),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.tw-new-blog-title {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  max-width:
+    700px;
+
+  margin:
+    0;
+
+  color:
+    var(--tw-navy);
+
+  font-size:
+    clamp(
+      56px,
+      5.4vw,
+      78px
+    );
+
+  line-height:
+    .97;
+
+  letter-spacing:
+    -.06em;
+
+  font-weight:
+    760;
+}
+
+.tw-new-blog-title > span {
+  display:
+    block;
+}
+
+.tw-new-title-blue {
+  color:
+    var(--tw-blue);
+}
+
+
+/* =========================================================
+   TITLE ANIMATION
+========================================================= */
+
+.tw-new-blog-title > span:nth-child(1) {
+  animation:
+    twNewTitleIn
+    .7s
+    .12s
+    ease
+    both;
+}
+
+.tw-new-blog-title > span:nth-child(2) {
+  animation:
+    twNewTitleIn
+    .7s
+    .2s
+    ease
+    both;
+}
+
+.tw-new-blog-title > span:nth-child(3) {
+  animation:
+    twNewTitleIn
+    .7s
+    .28s
+    ease
+    both;
+}
+
+@keyframes twNewTitleIn {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(
+        18px
+      );
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateY(
+        0
+      );
+  }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.tw-new-blog-description {
+  max-width:
+    610px;
+
+  margin:
+    25px 0 27px;
+
+  color:
+    var(--tw-muted);
+
+  font-size:
+    16px;
+
+  line-height:
+    1.72;
+
+  animation:
+    twNewFadeUp
+    .8s
+    .34s
+    ease
+    both;
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.tw-new-blog-topics {
+  animation:
+    twNewFadeUp
+    .8s
+    .42s
+    ease
+    both;
+}
+
+.tw-new-topic-label {
+  margin-bottom:
+    10px;
+
+  color:
+    #8795aa;
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .15em;
+}
+
+.tw-new-topic-list {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    7px;
+
+  max-width:
+    720px;
+}
+
+
+/* =========================================================
+   TOPIC CHIP
+========================================================= */
+
+.tw-new-topic-chip {
+  position:
+    relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  min-height:
+    37px;
+
+  padding:
+    8px 12px;
+
+  border:
+    1px solid
+    #e0e6ef;
+
+  border-radius:
+    9px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .84
+    );
+
+  color:
+    #60708a;
+
+  font-family:
+    inherit;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 3px 10px
+    rgba(
+      16,
+      24,
+      40,
+      .025
+    );
+
+  transition:
+    transform .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.tw-new-topic-chip:hover {
+  color:
+    var(--tw-blue);
+
+  border-color:
+    rgba(
+      23,
+      105,
+      255,
+      .3
+    );
+
+  background:
+    #ffffff;
+
+  transform:
+    translateY(
+      -2px
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      23,
+      105,
+      255,
+      .08
+    );
+}
+
+.tw-new-topic-chip.active {
+  color:
+    #ffffff;
+
+  border-color:
+    var(--tw-blue);
+
+  background:
+    linear-gradient(
+      135deg,
+      #1769ff,
+      #075be8
+    );
+
+  box-shadow:
+    0 9px 22px
+    rgba(
+      23,
+      105,
+      255,
+      .18
+    );
+}
+
+.tw-new-topic-icon {
+  font-size:
+    10px;
+}
+
+.tw-new-topic-active {
+  width:
+    5px;
+
+  height:
+    5px;
+
+  border-radius:
+    50%;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      255,
+      255,
+      .1
+    );
+}
+
+
+/* =========================================================
+   ENGINEERING SIGNAL
+========================================================= */
+
+.tw-new-blog-signal {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  margin-top:
+    27px;
+
+  color:
+    #8d9aad;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .08em;
+
+  animation:
+    twNewFadeUp
+    .8s
+    .5s
+    ease
+    both;
+}
+
+.tw-new-signal-line {
+  width:
+    28px;
+
+  height:
+    1px;
+
+  background:
+    #cfd8e4;
+}
+
+.tw-new-signal-arrow {
+  color:
+    var(--tw-blue);
+
+  font-size:
+    12px;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.tw-new-blog-visual {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    520px;
+
+  min-width:
+    0;
+
+  isolation:
+    isolate;
+
+  animation:
+    twNewVisualIn
+    .9s
+    .2s
+    ease
+    both;
+}
+
+@keyframes twNewVisualIn {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateX(
+        28px
+      )
+      scale(
+        .97
+      );
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateX(
+        0
+      )
+      scale(
+        1
+      );
+  }
+
+}
+
+
+/* =========================================================
+   VISUAL ORB
+========================================================= */
+
+.tw-new-visual-orb {
+  position:
+    absolute;
+
+  z-index:
+    0;
+
+  width:
+    470px;
+
+  height:
+    470px;
+
+  top:
+    -8px;
+
+  right:
+    -80px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        23,
+        105,
+        255,
+        .11
+      ) 0%,
+      rgba(
+        23,
+        105,
+        255,
+        .055
+      ) 44%,
+      transparent 73%
+    );
+
+  animation:
+    twNewOrbFloat
+    8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes twNewOrbFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(
+        0,
+        0
+      )
+      scale(
+        1
+      );
+  }
+
+  50% {
+    transform:
+      translate(
+        -10px,
+        12px
+      )
+      scale(
+        1.045
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MAIN ENGINEERING CARD
+========================================================= */
+
+.tw-new-engineering-card {
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  width:
+    min(
+      590px,
+      100%
+    );
+
+  min-height:
+    405px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      210,
+      220,
+      234,
+      .95
+    );
+
+  border-radius:
+    21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        255,
+        255,
+        255,
+        .98
+      ),
+      rgba(
+        247,
+        250,
+        254,
+        .96
+      )
+    );
+
+  box-shadow:
+    0 35px 80px
+    rgba(
+      20,
+      40,
+      75,
+      .1
+    ),
+    0 8px 24px
+    rgba(
+      20,
+      40,
+      75,
+      .04
+    );
+
+  transform:
+    perspective(
+      1300px
+    )
+    rotateY(
+      -3deg
+    )
+    rotateX(
+      1deg
+    );
+
+  transition:
+    transform .55s ease,
+    box-shadow .55s ease;
+}
+
+.tw-new-engineering-card:hover {
+  transform:
+    perspective(
+      1300px
+    )
+    rotateY(
+      -1deg
+    )
+    rotateX(
+      0
+    )
+    translateY(
+      -7px
+    );
+
+  box-shadow:
+    0 45px 100px
+    rgba(
+      20,
+      40,
+      75,
+      .14
+    );
+}
+
+
+/* =========================================================
+   WINDOW HEADER
+========================================================= */
+
+.tw-new-card-header {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  height:
+    49px;
+
+  padding:
+    0 17px;
+
+  border-bottom:
+    1px solid
+    #e6ebf2;
+
+  background:
+    rgba(
+      250,
+      251,
+      253,
+      .94
+    );
+}
+
+.tw-new-window-dots {
+  display:
+    flex;
+
+  gap:
+    5px;
+}
+
+.tw-new-window-dots span {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    #d2dbe7;
+}
+
+.tw-new-window-title {
+  margin-left:
+    14px;
+
+  color:
+    #8a98ad;
+
+  font-family:
+    monospace;
+
+  font-size:
+    9px;
+}
+
+.tw-new-live {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  margin-left:
+    auto;
+
+  color:
+    #27a96f;
+
+  font-family:
+    monospace;
+
+  font-size:
+    7px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+}
+
+.tw-new-live span {
+  width:
+    5px;
+
+  height:
+    5px;
+
+  border-radius:
+    50%;
+
+  background:
+    #27a96f;
+
+  animation:
+    twNewLive
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes twNewLive {
+
+  0%,
+  100% {
+    opacity:
+      1;
+  }
+
+  50% {
+    opacity:
+      .4;
+  }
+
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.tw-new-card-body {
+  padding:
+    25px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.tw-new-card-label {
+  color:
+    var(--tw-blue);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .14em;
+}
+
+.tw-new-card-heading {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  margin-top:
+    9px;
+
+  color:
+    #27354c;
+
+  font-size:
+    19px;
+
+  line-height:
+    1.25;
+
+  font-weight:
+    650;
+
+  letter-spacing:
+    -.025em;
+}
+
+.tw-new-card-heading strong {
+  color:
+    var(--tw-navy);
+
+  font-weight:
+    760;
+}
+
+
+/* =========================================================
+   ARCHITECTURE FLOW
+========================================================= */
+
+.tw-new-architecture-flow {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  margin:
+    28px 0 23px;
+}
+
+.tw-new-flow-node {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  min-width:
+    125px;
+
+  padding:
+    9px 10px;
+
+  border:
+    1px solid
+    #e0e6ef;
+
+  border-radius:
+    11px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 6px 18px
+    rgba(
+      20,
+      35,
+      60,
+      .035
+    );
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.tw-new-flow-node:hover {
+  transform:
+    translateY(
+      -3px
+    );
+
+  border-color:
+    rgba(
+      23,
+      105,
+      255,
+      .3
+    );
+
+  box-shadow:
+    0 10px 24px
+    rgba(
+      23,
+      105,
+      255,
+      .07
+    );
+}
+
+.tw-new-flow-node.active {
+  border-color:
+    rgba(
+      23,
+      105,
+      255,
+      .28
+    );
+
+  box-shadow:
+    0 9px 23px
+    rgba(
+      23,
+      105,
+      255,
+      .08
+    );
+}
+
+.tw-new-flow-icon {
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    29px;
+
+  height:
+    29px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    8px;
+
+  background:
+    #edf4ff;
+
+  color:
+    var(--tw-blue);
+
+  font-family:
+    monospace;
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+}
+
+.tw-new-flow-node div {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+.tw-new-flow-node strong {
+  color:
+    #2b3950;
+
+  font-size:
+    9px;
+}
+
+.tw-new-flow-node small {
+  margin-top:
+    2px;
+
+  color:
+    #93a0b4;
+
+  font-size:
+    7px;
+}
+
+.tw-new-flow-arrow {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    48px;
+
+  color:
+    #a3afbf;
+
+  font-size:
+    13px;
+}
+
+.tw-new-flow-arrow span {
+  position:
+    absolute;
+
+  left:
+    0;
+
+  width:
+    100%;
+
+  height:
+    1px;
+
+  background:
+    #d8e0eb;
+}
+
+
+/* =========================================================
+   AI BLOCK
+========================================================= */
+
+.tw-new-ai-block {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  padding:
+    12px 13px;
+
+  border:
+    1px solid
+    rgba(
+      23,
+      105,
+      255,
+      .14
+    );
+
+  border-radius:
+    11px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #f0f6ff,
+      #fafcff
+    );
+}
+
+.tw-new-ai-icon {
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    30px;
+
+  height:
+    30px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    8px;
+
+  background:
+    var(--tw-blue);
+
+  color:
+    #ffffff;
+
+  font-size:
+    13px;
+
+  box-shadow:
+    0 6px 15px
+    rgba(
+      23,
+      105,
+      255,
+      .18
+    );
+}
+
+.tw-new-ai-text {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+.tw-new-ai-text strong {
+  color:
+    #28364d;
+
+  font-size:
+    9px;
+}
+
+.tw-new-ai-text span {
+  margin-top:
+    3px;
+
+  color:
+    #7e8ca4;
+
+  font-size:
+    7px;
+}
+
+.tw-new-ai-pulse {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  margin-left:
+    auto;
+
+  border-radius:
+    50%;
+
+  background:
+    #29ad77;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      41,
+      173,
+      119,
+      .08
+    );
+}
+
+
+/* =========================================================
+   CARD METRICS
+========================================================= */
+
+.tw-new-card-metrics {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:
+    8px;
+
+  margin-top:
+    15px;
+}
+
+.tw-new-card-metrics > div {
+  padding:
+    9px 10px;
+
+  border:
+    1px solid
+    #e7ebf2;
+
+  border-radius:
+    9px;
+
+  background:
+    #fcfdff;
+}
+
+.tw-new-card-metrics small {
+  display:
+    block;
+
+  color:
+    #9aa6b8;
+
+  font-size:
+    6px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+}
+
+.tw-new-card-metrics strong {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  color:
+    #50617b;
+
+  font-family:
+    monospace;
+
+  font-size:
+    7px;
+}
+
+
+/* =========================================================
+   FLOATING BADGES
+========================================================= */
+
+.tw-new-floating-badge {
+  position:
+    absolute;
+
+  z-index:
+    8;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid
+    rgba(
+      215,
+      224,
+      237,
+      .95
+    );
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .95
+    );
+
+  backdrop-filter:
+    blur(14px);
+
+  color:
+    #53627b;
+
+  font-size:
+    9px;
+
+  font-weight:
+    750;
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      25,
+      45,
+      80,
+      .08
+    );
+
+  animation:
+    twNewBadgeFloat
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+.tw-new-floating-badge span {
+  color:
+    var(--tw-blue);
+
+  font-size:
+    12px;
+}
+
+.tw-new-badge-react {
+  top:
+    39px;
+
+  left:
+    -6px;
+}
+
+.tw-new-badge-java {
+  top:
+    66px;
+
+  right:
+    -6px;
+
+  animation-delay:
+    -1s;
+}
+
+.tw-new-badge-ai {
+  bottom:
+    82px;
+
+  left:
+    -6px;
+
+  animation-delay:
+    -2s;
+}
+
+.tw-new-badge-cloud {
+  bottom:
+    47px;
+
+  right:
+    0;
+
+  animation-delay:
+    -3s;
+}
+
+@keyframes twNewBadgeFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translateY(
+        -8px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   VISUAL METRIC
+========================================================= */
+
+.tw-new-visual-metric {
+  position:
+    absolute;
+
+  z-index:
+    10;
+
+  left:
+    50%;
+
+  bottom:
+    -7px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    #dfe6ef;
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .96
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      25,
+      45,
+      80,
+      .08
+    );
+
+  transform:
+    translateX(
+      -50%
+    );
+}
+
+.tw-new-metric-dot {
+  width:
+    7px;
+
+  height:
+    7px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--tw-blue);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      23,
+      105,
+      255,
+      .08
+    );
+}
+
+.tw-new-visual-metric > div {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+.tw-new-visual-metric small {
+  color:
+    #98a4b6;
+
+  font-size:
+    6px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+}
+
+.tw-new-visual-metric strong {
+  margin-top:
+    3px;
+
+  color:
+    #34435b;
+
+  font-family:
+    monospace;
+
+  font-size:
+    8px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY BAR
+========================================================= */
+
+.tw-new-tech-bar {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    28px;
+
+  padding:
+    20px 0 23px;
+
+  border-top:
+    1px solid
+    #e6ebf2;
+
+  animation:
+    twNewFadeUp
+    .8s
+    .6s
+    ease
+    both;
+}
+
+.tw-new-tech-label {
+  flex-shrink:
+    0;
+
+  color:
+    #9ca8b9;
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .12em;
+}
+
+.tw-new-tech-list {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    11px;
+
+  color:
+    #6c7b93;
+
+  font-size:
+    10px;
+
+  font-weight:
+    650;
+}
+
+.tw-new-tech-list i {
+  color:
+    #c2cad6;
+
+  font-style:
+    normal;
+}
+
+
+/* =========================================================
+   LAPTOP
+   1001px — 1300px
+========================================================= */
+
+@media (min-width: 1001px) and (max-width: 1300px) {
+
+  .tw-new-blog-container {
+    width:
+      calc(
+        100% - 50px
+      );
+  }
+
+  .tw-new-blog-main {
+    grid-template-columns:
+      minmax(
+        0,
+        .96fr
+      )
+      minmax(
+        430px,
+        1.04fr
+      );
+
+    gap:
+      32px;
+
+    padding:
+      52px 0 43px;
+  }
+
+  .tw-new-blog-title {
+    font-size:
+      clamp(
+        48px,
+        5.2vw,
+        66px
+      );
+  }
+
+  .tw-new-blog-description {
+    max-width:
+      540px;
+
+    font-size:
+      15px;
+  }
+
+  .tw-new-topic-chip {
+    min-height:
+      34px;
+
+    padding:
+      7px 10px;
+
+    font-size:
+      8px;
+  }
+
+  .tw-new-blog-visual {
+    min-height:
+      455px;
+  }
+
+  .tw-new-visual-orb {
+    width:
+      390px;
+
+    height:
+      390px;
+
+    right:
+      -95px;
+  }
+
+  .tw-new-engineering-card {
+    width:
+      100%;
+
+    max-width:
+      500px;
+
+    min-height:
+      350px;
+  }
+
+  .tw-new-card-body {
+    padding:
+      19px;
+  }
+
+  .tw-new-card-heading {
+    font-size:
+      17px;
+  }
+
+  .tw-new-flow-node {
+    min-width:
+      92px;
+
+    padding:
+      8px;
+  }
+
+  .tw-new-flow-arrow {
+    width:
+      28px;
+  }
+
+  .tw-new-card-metrics {
+    gap:
+      6px;
+  }
+
+  .tw-new-card-metrics > div {
+    padding:
+      8px;
+  }
+
+  .tw-new-floating-badge {
+    padding:
+      7px 9px;
+
+    font-size:
+      7px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   701px — 1000px
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+
+  .tw-new-blog-container {
+    width:
+      calc(
+        100% - 36px
+      );
+  }
+
+  .tw-new-blog-main {
+    grid-template-columns:
+      minmax(
+        0,
+        1fr
+      )
+      minmax(
+        315px,
+        .82fr
+      );
+
+    gap:
+      20px;
+
+    padding:
+      45px 0 38px;
+  }
+
+  .tw-new-blog-title {
+    font-size:
+      clamp(
+        40px,
+        5.7vw,
+        55px
+      );
+  }
+
+  .tw-new-blog-description {
+    font-size:
+      13px;
+  }
+
+  .tw-new-topic-list {
+    gap:
+      5px;
+  }
+
+  .tw-new-topic-chip {
+    min-height:
+      30px;
+
+    padding:
+      6px 8px;
+
+    font-size:
+      7px;
+  }
+
+  .tw-new-blog-visual {
+    min-height:
+      370px;
+  }
+
+  .tw-new-visual-orb {
+    width:
+      270px;
+
+    height:
+      270px;
+
+    right:
+      -80px;
+  }
+
+  .tw-new-engineering-card {
+    width:
+      100%;
+
+    min-height:
+      300px;
+
+    border-radius:
+      16px;
+  }
+
+  .tw-new-card-header {
+    height:
+      40px;
+
+    padding:
+      0 10px;
+  }
+
+  .tw-new-window-title {
+    font-size:
+      6px;
+  }
+
+  .tw-new-live {
+    font-size:
+      6px;
+  }
+
+  .tw-new-card-body {
+    padding:
+      11px;
+  }
+
+  .tw-new-card-label {
+    font-size:
+      6px;
+  }
+
+  .tw-new-card-heading {
+    font-size:
+      12px;
+  }
+
+  .tw-new-architecture-flow {
+    margin:
+      15px 0 13px;
+  }
+
+  .tw-new-flow-node {
+    min-width:
+      67px;
+
+    gap:
+      5px;
+
+    padding:
+      6px;
+  }
+
+  .tw-new-flow-icon {
+    width:
+      23px;
+
+    height:
+      23px;
+
+    font-size:
+      6px;
+  }
+
+  .tw-new-flow-node strong {
+    font-size:
+      6px;
+  }
+
+  .tw-new-flow-node small {
+    font-size:
+      5px;
+  }
+
+  .tw-new-flow-arrow {
+    width:
+      18px;
+
+    font-size:
+      9px;
+  }
+
+  .tw-new-ai-block {
+    padding:
+      7px;
+
+    gap:
+      6px;
+  }
+
+  .tw-new-ai-icon {
+    width:
+      22px;
+
+    height:
+      22px;
+
+    font-size:
+      9px;
+  }
+
+  .tw-new-ai-text strong {
+    font-size:
+      6px;
+  }
+
+  .tw-new-ai-text span {
+    font-size:
+      5px;
+  }
+
+  .tw-new-card-metrics {
+    gap:
+      4px;
+
+    margin-top:
+      8px;
+  }
+
+  .tw-new-card-metrics > div {
+    padding:
+      6px;
+  }
+
+  .tw-new-card-metrics small {
+    font-size:
+      4px;
+  }
+
+  .tw-new-card-metrics strong {
+    font-size:
+      5px;
+  }
+
+  .tw-new-floating-badge {
+    padding:
+      5px 7px;
+
+    font-size:
+      5.5px;
+  }
+
+  .tw-new-badge-react {
+    left:
+      -3px;
+  }
+
+  .tw-new-badge-java {
+    right:
+      -3px;
+  }
+
+  .tw-new-badge-ai {
+    left:
+      -3px;
+  }
+
+  .tw-new-badge-cloud {
+    right:
+      0;
+  }
+
+  .tw-new-visual-metric {
+    padding:
+      6px 8px;
+  }
+
+  .tw-new-visual-metric small {
+    font-size:
+      4px;
+  }
+
+  .tw-new-visual-metric strong {
+    font-size:
+      5px;
+  }
+
+  .tw-new-blog-topline {
+    display:
+      none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   BELOW 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .tw-new-blog-hero {
+    min-height:
+      auto;
+  }
+
+  .tw-new-blog-container {
+    width:
+      calc(
+        100% - 28px
+      );
+
+    padding-top:
+      22px;
+  }
+
+
+  /* -------------------------------------------------------
+     TOP BAR
+  ------------------------------------------------------- */
+
+  .tw-new-blog-topbar {
+    align-items:
+      flex-start;
+  }
+
+  .tw-new-blog-status {
+    padding:
+      7px 9px;
+
+    gap:
+      8px;
+
+    font-size:
+      6.5px;
+
+    letter-spacing:
+      .08em;
+  }
+
+  .tw-new-blog-status i {
+    height:
+      10px;
+  }
+
+  .tw-new-blog-topline {
+    display:
+      none;
+  }
+
+
+  /* -------------------------------------------------------
+     MAIN
+  ------------------------------------------------------- */
+
+  .tw-new-blog-main {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      30px;
+
+    padding:
+      36px 0 31px;
+  }
+
+
+  /* -------------------------------------------------------
+     COPY
+  ------------------------------------------------------- */
+
+  .tw-new-blog-eyebrow {
+    margin-bottom:
+      14px;
+
+    font-size:
+      7px;
+  }
+
+  .tw-new-blog-eyebrow div {
+    width:
+      23px;
+  }
+
+  .tw-new-blog-title {
+    max-width:
+      100%;
+
+    font-size:
+      clamp(
+        36px,
+        12vw,
+        51px
+      );
+
+    line-height:
+      1.01;
+
+    letter-spacing:
+      -.052em;
+  }
+
+  .tw-new-blog-description {
+    max-width:
+      100%;
+
+    margin:
+      18px 0 21px;
+
+    font-size:
+      13px;
+
+    line-height:
+      1.62;
+  }
+
+
+  /* -------------------------------------------------------
+     TOPICS
+  ------------------------------------------------------- */
+
+  .tw-new-topic-label {
+    margin-bottom:
+      8px;
+
+    font-size:
+      7px;
+  }
+
+  .tw-new-topic-list {
+    gap:
+      5px;
+  }
+
+  .tw-new-topic-chip {
+    min-height:
+      30px;
+
+    padding:
+      6px 8px;
+
+    font-size:
+      7px;
+
+    border-radius:
+      7px;
+  }
+
+  .tw-new-topic-icon {
+    font-size:
+      8px;
+  }
+
+
+  /* -------------------------------------------------------
+     SIGNAL
+  ------------------------------------------------------- */
+
+  .tw-new-blog-signal {
+    margin-top:
+      20px;
+
+    font-size:
+      6px;
+  }
+
+  .tw-new-signal-line {
+    width:
+      20px;
+  }
+
+  .tw-new-signal-arrow {
+    font-size:
+      9px;
+  }
+
+
+  /* -------------------------------------------------------
+     VISUAL
+  ------------------------------------------------------- */
+
+  .tw-new-blog-visual {
+    min-height:
+      355px;
+
+    width:
+      100%;
+  }
+
+
+  /* -------------------------------------------------------
+     ORB
+  ------------------------------------------------------- */
+
+  .tw-new-visual-orb {
+    width:
+      270px;
+
+    height:
+      270px;
+
+    right:
+      -105px;
+
+    top:
+      2px;
+
+    opacity:
+      .85;
+  }
+
+
+  /* -------------------------------------------------------
+     ENGINEERING CARD
+  ------------------------------------------------------- */
+
+  .tw-new-engineering-card {
+    width:
+      100%;
+
+    min-height:
+      315px;
+
+    border-radius:
+      15px;
+
+    transform:
+      none;
+  }
+
+  .tw-new-engineering-card:hover {
+    transform:
+      translateY(
+        -4px
+      );
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  .tw-new-card-header {
+    height:
+      40px;
+
+    padding:
+      0 10px;
+  }
+
+  .tw-new-window-dots {
+    gap:
+      4px;
+  }
+
+  .tw-new-window-dots span {
+    width:
+      6px;
+
+    height:
+      6px;
+  }
+
+  .tw-new-window-title {
+    margin-left:
+      8px;
+
+    font-size:
+      6.5px;
+  }
+
+  .tw-new-live {
+    font-size:
+      5.5px;
+  }
+
+
+  /* -------------------------------------------------------
+     BODY
+  ------------------------------------------------------- */
+
+  .tw-new-card-body {
+    padding:
+      11px;
+  }
+
+  .tw-new-card-label {
+    font-size:
+      6.5px;
+  }
+
+  .tw-new-card-heading {
+    font-size:
+      12px;
+
+    margin-top:
+      7px;
+  }
+
+
+  /* -------------------------------------------------------
+     FLOW
+  ------------------------------------------------------- */
+
+  .tw-new-architecture-flow {
+    margin:
+      17px -9% 13px;
+
+    transform:
+      scale(
+        .76
+      );
+  }
+
+  .tw-new-flow-node {
+    min-width:
+      73px;
+
+    gap:
+      5px;
+
+    padding:
+      7px 6px;
+  }
+
+  .tw-new-flow-icon {
+    width:
+      24px;
+
+    height:
+      24px;
+
+    font-size:
+      6px;
+  }
+
+  .tw-new-flow-node strong {
+    font-size:
+      7px;
+  }
+
+  .tw-new-flow-node small {
+    font-size:
+      5px;
+  }
+
+  .tw-new-flow-arrow {
+    width:
+      24px;
+
+    font-size:
+      9px;
+  }
+
+
+  /* -------------------------------------------------------
+     AI
+  ------------------------------------------------------- */
+
+  .tw-new-ai-block {
+    gap:
+      7px;
+
+    padding:
+      8px;
+  }
+
+  .tw-new-ai-icon {
+    width:
+      24px;
+
+    height:
+      24px;
+
+    font-size:
+      10px;
+  }
+
+  .tw-new-ai-text strong {
+    font-size:
+      6.5px;
+  }
+
+  .tw-new-ai-text span {
+    font-size:
+      5px;
+  }
+
+  .tw-new-ai-pulse {
+    width:
+      6px;
+
+    height:
+      6px;
+  }
+
+
+  /* -------------------------------------------------------
+     METRICS
+  ------------------------------------------------------- */
+
+  .tw-new-card-metrics {
+    gap:
+      4px;
+
+    margin-top:
+      9px;
+  }
+
+  .tw-new-card-metrics > div {
+    padding:
+      6px;
+  }
+
+  .tw-new-card-metrics small {
+    font-size:
+      4px;
+  }
+
+  .tw-new-card-metrics strong {
+    font-size:
+      5px;
+  }
+
+
+  /* -------------------------------------------------------
+     BADGES
+  ------------------------------------------------------- */
+
+  .tw-new-floating-badge {
+    padding:
+      5px 7px;
+
+    border-radius:
+      7px;
+
+    font-size:
+      6px;
+  }
+
+  .tw-new-floating-badge span {
+    font-size:
+      8px;
+  }
+
+  .tw-new-badge-react {
+    top:
+      2px;
+
+    left:
+      -3px;
+  }
+
+  .tw-new-badge-java {
+    top:
+      24px;
+
+    right:
+      -3px;
+  }
+
+  .tw-new-badge-ai {
+    bottom:
+      35px;
+
+    left:
+      -3px;
+  }
+
+  .tw-new-badge-cloud {
+    bottom:
+      17px;
+
+    right:
+      -3px;
+  }
+
+
+  /* -------------------------------------------------------
+     METRIC
+  ------------------------------------------------------- */
+
+  .tw-new-visual-metric {
+    bottom:
+      -5px;
+
+    padding:
+      7px 8px;
+
+    max-width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .tw-new-visual-metric small {
+    font-size:
+      4.5px;
+  }
+
+  .tw-new-visual-metric strong {
+    font-size:
+      5.5px;
+  }
+
+
+  /* -------------------------------------------------------
+     TECHNOLOGY BAR
+  ------------------------------------------------------- */
+
+  .tw-new-tech-bar {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      9px;
+
+    padding:
+      17px 0 22px;
+  }
+
+  .tw-new-tech-label {
+    font-size:
+      7px;
+  }
+
+  .tw-new-tech-list {
+    gap:
+      8px;
+
+    font-size:
+      7.5px;
+  }
+
+
+  /* -------------------------------------------------------
+     BACKGROUND
+  ------------------------------------------------------- */
+
+  .tw-new-blog-glow-right {
+    width:
+      260px;
+
+    height:
+      260px;
+
+    right:
+      -160px;
+
+    top:
+      400px;
+
+    opacity:
+      .5;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .tw-new-blog-container {
+    width:
+      calc(
+        100% - 22px
+      );
+  }
+
+  .tw-new-blog-main {
+    padding:
+      31px 0 26px;
+
+    gap:
+      25px;
+  }
+
+  .tw-new-blog-title {
+    font-size:
+      clamp(
+        33px,
+        11.5vw,
+        47px
+      );
+  }
+
+  .tw-new-blog-description {
+    font-size:
+      12px;
+  }
+
+  .tw-new-topic-chip {
+    min-height:
+      28px;
+
+    padding:
+      5px 7px;
+
+    font-size:
+      6.5px;
+  }
+
+  .tw-new-blog-visual {
+    min-height:
+      325px;
+  }
+
+  .tw-new-visual-orb {
+    width:
+      225px;
+
+    height:
+      225px;
+
+    right:
+      -85px;
+  }
+
+  .tw-new-engineering-card {
+    min-height:
+      290px;
+  }
+
+  .tw-new-card-body {
+    padding:
+      9px;
+  }
+
+  .tw-new-architecture-flow {
+    transform:
+      scale(
+        .67
+      );
+
+    margin:
+      14px -17% 11px;
+  }
+
+  .tw-new-flow-node {
+    min-width:
+      67px;
+  }
+
+  .tw-new-flow-arrow {
+    width:
+      18px;
+  }
+
+  .tw-new-card-metrics {
+    margin-top:
+      7px;
+  }
+
+  .tw-new-floating-badge {
+    padding:
+      4px 6px;
+
+    font-size:
+      5.5px;
+  }
+
+  .tw-new-visual-metric {
+    padding:
+      6px 7px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-new-blog-hero *,
+  .tw-new-blog-hero *::before,
+  .tw-new-blog-hero *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+}

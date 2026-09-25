@@ -1,0 +1,1049 @@
+/* =========================================================
+   WHY ENTERPRISES CHOOSE TECHWRAP
+========================================================= */
+
+.why-enterprises {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 120px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(49, 103, 220, 0.07),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f6f9ff 50%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.enterprise-bg-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(48, 93, 155, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(48, 93, 155, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.enterprise-glow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(130px);
+
+  pointer-events: none;
+}
+
+
+.enterprise-glow-one {
+  left: -250px;
+  top: 25%;
+
+  background:
+    rgba(47, 100, 220, 0.07);
+}
+
+
+.enterprise-glow-two {
+  right: -250px;
+  bottom: 15%;
+
+  background:
+    rgba(43, 123, 240, 0.08);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.enterprise-benefit-header {
+  position: relative;
+
+  max-width: 850px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+
+.enterprise-benefit-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #d4e0f0;
+
+  border-radius: 50px;
+
+  background: #f7faff;
+
+  color: #637590;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.enterprise-label-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #2475ff;
+
+  box-shadow:
+    0 0 12px rgba(36, 117, 255, 0.8);
+
+  animation:
+    enterpriseDotPulse 2s infinite;
+}
+
+
+.enterprise-label-line {
+  width: 25px;
+  height: 1px;
+
+  background: #c5d5ea;
+}
+
+
+.enterprise-benefit-header h2 {
+  margin: 0;
+
+  color: #17243a;
+
+  font-size:
+    clamp(40px, 5vw, 60px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -2.8px;
+}
+
+
+.enterprise-benefit-header h2 span {
+  display: inline;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5165ef,
+      #2475f0,
+      #09a9e8
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    enterpriseGradient 5s linear infinite;
+}
+
+
+.enterprise-benefit-header p {
+  max-width: 700px;
+
+  margin: 20px auto 0;
+
+  color: #687a93;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.enterprise-benefit-card {
+  position: relative;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #d5e0ef;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f5f8fd
+    );
+
+  box-shadow:
+    0 12px 35px rgba(39, 72, 120, 0.07);
+
+  opacity: 0;
+
+  animation:
+    enterpriseCardIn .7s ease forwards;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+
+.enterprise-benefit-card:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    #a8c2e7;
+
+  box-shadow:
+    0 25px 60px rgba(39, 75, 130, 0.14);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.enterprise-card-image {
+  position: relative;
+
+  height: 220px;
+
+  overflow: hidden;
+}
+
+
+.enterprise-card-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .8s cubic-bezier(.2,.8,.2,1),
+    filter .5s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-card-image img {
+  transform:
+    scale(1.09);
+
+  filter:
+    saturate(1.12);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.enterprise-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 25, 50, 0.08) 0%,
+      rgba(11, 31, 65, 0.18) 40%,
+      rgba(8, 23, 48, 0.78) 100%
+    );
+}
+
+
+/* =========================================================
+   IMAGE SCAN
+========================================================= */
+
+.enterprise-image-scan {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: -10%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(87, 151, 255, 0.95),
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(53, 126, 255, 0.8);
+
+  opacity: 0;
+
+  transition:
+    opacity .3s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-image-scan {
+  opacity: 1;
+
+  animation:
+    imageScan 2.5s linear infinite;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.enterprise-card-number {
+  position: absolute;
+
+  top: 17px;
+  right: 18px;
+
+  color: rgba(255,255,255,.92);
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.enterprise-card-icon {
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,.16);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  color: white;
+
+  font-size: 21px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+
+  transition:
+    transform .4s ease,
+    background .4s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-card-icon {
+  transform:
+    translateY(-5px)
+    rotate(-3deg);
+
+  background:
+    rgba(55,119,255,.32);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.enterprise-card-status {
+  position: absolute;
+
+  right: 18px;
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+  border-radius: 6px;
+
+  background:
+    rgba(10, 30, 60, .35);
+
+  backdrop-filter:
+    blur(8px);
+
+  color: rgba(255,255,255,.9);
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: .8px;
+}
+
+
+.enterprise-card-status span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #5ca2ff;
+
+  box-shadow:
+    0 0 8px #5ca2ff;
+
+  animation:
+    enterpriseDotPulse 1.8s infinite;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.enterprise-card-content {
+  position: relative;
+
+  padding: 24px 23px 22px;
+}
+
+
+.enterprise-card-title-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.enterprise-card-title-row h3 {
+  margin: 0;
+
+  color: #25344c;
+
+  font-size: 19px;
+
+  line-height: 1.3;
+
+  font-weight: 800;
+
+  letter-spacing: -.3px;
+}
+
+
+.enterprise-card-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #d5e1ef;
+
+  border-radius: 8px;
+
+  background: #f5f8fd;
+
+  color: #4a70d8;
+
+  font-size: 16px;
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-card-arrow {
+  transform:
+    translate(3px,-3px);
+
+  background:
+    #eaf1ff;
+}
+
+
+.enterprise-card-content > p {
+  min-height: 62px;
+
+  margin: 12px 0 18px;
+
+  color: #708198;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.enterprise-card-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.enterprise-card-tags span {
+  padding: 6px 9px;
+
+  border: 1px solid #d6e2f0;
+
+  border-radius: 6px;
+
+  background: #f5f8fc;
+
+  color: #61748f;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  transition:
+    border-color .3s ease,
+    background .3s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-card-tags span {
+  border-color:
+    #bfd1eb;
+
+  background:
+    #edf4ff;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.enterprise-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 22px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #e2e8f1;
+}
+
+
+.enterprise-card-bottom a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #386be2;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transition:
+    gap .3s ease,
+    color .3s ease;
+}
+
+
+.enterprise-card-bottom a:hover {
+  color: #1c57d3;
+
+  gap: 11px;
+}
+
+
+.enterprise-card-bottom a span {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.enterprise-card-progress {
+  width: 75px;
+  height: 3px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e0e7f1;
+}
+
+
+.enterprise-card-progress span {
+  display: block;
+
+  width: 30%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5368ef,
+      #2380ef
+    );
+
+  transition:
+    width .5s ease;
+}
+
+
+.enterprise-benefit-card:hover
+.enterprise-card-progress span {
+  width: 100%;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.enterprise-benefit-cta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-top: 55px;
+
+  padding: 21px 25px;
+
+  border: 1px solid #d4dfed;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f3f7fd
+    );
+
+  box-shadow:
+    0 12px 35px rgba(43,78,130,.06);
+}
+
+
+.enterprise-cta-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.enterprise-cta-pulse {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2877ef;
+
+  box-shadow:
+    0 0 14px rgba(40,119,239,.7);
+
+  animation:
+    enterpriseDotPulse 2s infinite;
+}
+
+
+.enterprise-cta-left strong {
+  display: block;
+
+  color: #2c3c55;
+
+  font-size: 13px;
+}
+
+
+.enterprise-cta-left p {
+  margin: 4px 0 0;
+
+  color: #7b8a9f;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TALK TO OUR EXPERTS BUTTON
+========================================================= */
+
+.enterprise-benefit-cta > a,
+.enterprise-expert-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5367ef,
+      #2477ed
+    );
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(52,89,225,.22);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.enterprise-benefit-cta > a:hover,
+.enterprise-expert-button:hover {
+  color: white;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 30px rgba(52,89,225,.3);
+}
+
+
+.enterprise-benefit-cta > a span,
+.enterprise-expert-button span {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes enterpriseCardIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes imageScan {
+
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+  }
+
+}
+
+
+@keyframes enterpriseDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(.65);
+
+    opacity: .55;
+  }
+
+}
+
+
+@keyframes enterpriseGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .why-enterprises {
+    padding: 100px 0;
+  }
+
+
+  .enterprise-card-image {
+    height: 210px;
+  }
+
+
+  .enterprise-benefit-header h2 {
+    font-size: 48px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .why-enterprises {
+    padding: 80px 0;
+  }
+
+
+  .enterprise-benefit-header {
+    margin-bottom: 40px;
+  }
+
+
+  .enterprise-benefit-header h2 {
+    font-size: 39px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .enterprise-benefit-header p {
+    font-size: 14px;
+  }
+
+
+  .enterprise-benefit-label {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .enterprise-label-line {
+    display: none;
+  }
+
+
+  .enterprise-card-image {
+    height: 225px;
+  }
+
+
+  .enterprise-card-title-row h3 {
+    font-size: 18px;
+  }
+
+
+  .enterprise-card-content > p {
+    min-height: auto;
+
+    font-size: 13px;
+  }
+
+
+  .enterprise-benefit-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .enterprise-benefit-cta > a,
+  .enterprise-expert-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .enterprise-benefit-header h2 {
+    font-size: 33px;
+  }
+
+
+  .enterprise-card-image {
+    height: 210px;
+  }
+
+
+  .enterprise-card-title-row h3 {
+    font-size: 17px;
+  }
+
+
+  .enterprise-card-content > p {
+    font-size: 12px;
+  }
+
+}

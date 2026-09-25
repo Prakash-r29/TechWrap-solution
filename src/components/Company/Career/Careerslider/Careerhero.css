@@ -1,0 +1,895 @@
+/* =========================================================
+   TECHWRAP CAREER HERO
+========================================================= */
+
+.career-hero {
+  position: relative;
+
+  width: 100%;
+  height: 720px;
+  min-height: 620px;
+
+  overflow: hidden;
+
+  background: #07101f;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.career-slider {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.career-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 1.1s ease,
+    visibility 1.1s ease;
+}
+
+
+.career-slide-active {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.career-slide-image {
+  position: absolute;
+
+  top: -3%;
+  left: -3%;
+
+  width: 106%;
+  height: 106%;
+
+  object-fit: cover;
+
+  transform: scale(1);
+
+  filter: saturate(0.85);
+}
+
+
+/*
+   Cinematic image movement
+*/
+
+.career-slide-active .career-slide-image {
+  animation: careerKenBurns 6s ease-out forwards;
+}
+
+
+@keyframes careerKenBurns {
+
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.career-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 12, 27, 0.95) 0%,
+      rgba(5, 15, 31, 0.82) 32%,
+      rgba(5, 15, 31, 0.52) 65%,
+      rgba(5, 15, 31, 0.32) 100%
+    );
+}
+
+
+/*
+   Bottom gradient
+*/
+
+.career-overlay::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 200px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(4, 12, 27, 0.85),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.career-content {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(1250px, 90%);
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  padding-top: 30px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.career-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 24px;
+
+  color: #70a9ff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  animation:
+    careerContentUp 0.8s ease both;
+}
+
+
+.career-eyebrow-dot {
+  width: 9px;
+  height: 9px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 0 5px rgba(22, 119, 255, 0.12),
+    0 0 22px rgba(22, 119, 255, 0.9);
+
+  animation:
+    careerDotPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes careerDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 5px rgba(22, 119, 255, 0.12),
+      0 0 22px rgba(22, 119, 255, 0.7);
+  }
+
+  50% {
+    transform: scale(1.3);
+
+    box-shadow:
+      0 0 0 8px rgba(22, 119, 255, 0.06),
+      0 0 32px rgba(22, 119, 255, 1);
+  }
+
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.career-content h1 {
+  max-width: 880px;
+
+  margin: 0 0 24px;
+
+  color: #ffffff;
+
+  font-size: clamp(48px, 6vw, 86px);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -3.5px;
+
+  text-wrap: balance;
+
+  animation:
+    careerContentUp 0.9s ease both;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.career-content p {
+  max-width: 700px;
+
+  margin: 0 0 28px;
+
+  color: rgba(255, 255, 255, 0.80);
+
+  font-size: 21px;
+
+  line-height: 1.65;
+
+  animation:
+    careerContentUp 1s 0.1s ease both;
+}
+
+
+/* =========================================================
+   TECHNOLOGY STACK
+========================================================= */
+
+.career-tech-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 34px;
+
+  animation:
+    careerContentUp 1s 0.2s ease both;
+}
+
+
+.career-tech-stack span {
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.23);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.career-tech-stack span:hover {
+  transform: translateY(-4px);
+
+  background: rgba(22, 119, 255, 0.20);
+
+  border-color: rgba(83, 157, 255, 0.75);
+}
+
+
+/* =========================================================
+   CTA GROUP
+========================================================= */
+
+.career-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  animation:
+    careerContentUp 1s 0.3s ease both;
+}
+
+
+/* =========================================================
+   APPLY NOW BUTTON
+========================================================= */
+
+.career-apply-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  min-width: 170px;
+
+  padding: 15px 18px 15px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 12px;
+
+  background: #1677ff;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(22, 119, 255, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/*
+   Button shine
+*/
+
+.career-apply-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+
+.career-apply-btn:hover::before {
+  left: 130%;
+}
+
+
+.career-apply-btn:hover {
+  transform: translateY(-4px);
+
+  background: #2782ff;
+
+  box-shadow:
+    0 18px 45px rgba(22, 119, 255, 0.50);
+}
+
+
+.career-apply-btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   APPLY ARROW
+========================================================= */
+
+.career-btn-arrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  font-size: 19px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.career-apply-btn:hover .career-btn-arrow {
+  transform: translate(4px, -4px);
+
+  background: rgba(255, 255, 255, 0.23);
+}
+
+
+/* =========================================================
+   EXPLORE MORE OUTLINE BUTTON
+========================================================= */
+
+.career-explore-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 175px;
+
+  padding: 15px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.60);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.career-explore-btn:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: #5a9dff;
+
+  box-shadow:
+    0 12px 35px rgba(22, 119, 255, 0.25);
+}
+
+
+.career-explore-btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EXPLORE ARROW
+========================================================= */
+
+.career-explore-arrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.career-explore-btn:hover .career-explore-arrow {
+  transform: translateY(4px);
+
+  background: rgba(22, 119, 255, 0.30);
+
+  border-color: rgba(90, 157, 255, 0.8);
+}
+
+
+/* =========================================================
+   BOTTOM PROGRESS
+========================================================= */
+
+.career-progress {
+  position: absolute;
+
+  left: 50%;
+  bottom: 30px;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  transform: translateX(-50%);
+}
+
+
+.career-progress-line {
+  display: block;
+
+  width: 28px;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.30);
+
+  transition:
+    width 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.career-progress-line.active {
+  width: 65px;
+
+  background: #3185ff;
+
+  box-shadow:
+    0 0 12px rgba(49, 133, 255, 0.9);
+}
+
+
+/* =========================================================
+   CONTENT ANIMATION
+========================================================= */
+
+@keyframes careerContentUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .career-hero {
+    height: 680px;
+  }
+
+
+  .career-content {
+    width: 88%;
+  }
+
+
+  .career-content h1 {
+    max-width: 720px;
+
+    font-size: clamp(46px, 7vw, 70px);
+  }
+
+
+  .career-content p {
+    max-width: 620px;
+
+    font-size: 19px;
+  }
+
+
+  .career-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(4, 12, 27, 0.94),
+        rgba(5, 15, 31, 0.62)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .career-hero {
+    height: 720px;
+
+    min-height: 680px;
+  }
+
+
+  .career-content {
+    width: 88%;
+
+    padding-top: 20px;
+  }
+
+
+  .career-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .career-content h1 {
+    max-width: 100%;
+
+    margin-bottom: 20px;
+
+    font-size: clamp(40px, 12vw, 58px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+  }
+
+
+  .career-content p {
+    max-width: 100%;
+
+    margin-bottom: 24px;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+  }
+
+
+  .career-tech-stack {
+    gap: 7px;
+
+    margin-bottom: 28px;
+  }
+
+
+  .career-tech-stack span {
+    padding: 7px 11px;
+
+    font-size: 12px;
+  }
+
+
+  /* Mobile CTA */
+
+  .career-actions {
+    width: 100%;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .career-apply-btn,
+  .career-explore-btn {
+    min-width: 155px;
+
+    padding: 13px 16px;
+
+    font-size: 15px;
+  }
+
+
+  .career-btn-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .career-explore-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+
+  /* Progress */
+
+  .career-progress {
+    bottom: 22px;
+  }
+
+
+  .career-progress-line {
+    width: 20px;
+  }
+
+
+  .career-progress-line.active {
+    width: 45px;
+  }
+
+
+  .career-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(4, 12, 27, 0.95),
+        rgba(5, 15, 31, 0.68)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .career-hero {
+    height: 750px;
+  }
+
+
+  .career-content {
+    width: 90%;
+  }
+
+
+  .career-content h1 {
+    font-size: 42px;
+
+    letter-spacing: -1.8px;
+  }
+
+
+  .career-content p {
+    font-size: 16px;
+  }
+
+
+  .career-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .career-apply-btn,
+  .career-explore-btn {
+    width: 100%;
+
+    max-width: 240px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .career-slide,
+  .career-slide-image,
+  .career-content h1,
+  .career-content p,
+  .career-tech-stack,
+  .career-actions,
+  .career-eyebrow,
+  .career-eyebrow-dot,
+  .career-apply-btn,
+  .career-explore-btn {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

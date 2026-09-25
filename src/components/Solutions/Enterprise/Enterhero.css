@@ -1,0 +1,3069 @@
+/* ============================================================
+   TECHWRAP ENTERPRISE HERO
+   LIGHT PRODUCT PLATFORM DESIGN
+   ============================================================ */
+
+.enterprise-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 115px 0 75px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 38%,
+      rgba(37, 99, 235, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 8% 65%,
+      rgba(6, 182, 212, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #f3f8ff 52%,
+      #ffffff 100%
+    );
+
+  color: #071a3a;
+}
+
+
+/* ============================================================
+   BACKGROUND GRID
+   ============================================================ */
+
+.enterprise-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+
+  background-image:
+    linear-gradient(
+      rgba(30, 93, 180, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(30, 93, 180, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 70%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   BACKGROUND GLOWS
+   ============================================================ */
+
+.enterprise-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.enterprise-glow-one {
+  width: 460px;
+  height: 460px;
+
+  top: 2%;
+  right: -80px;
+
+  background: rgba(37, 99, 235, 0.09);
+}
+
+.enterprise-glow-two {
+  width: 340px;
+  height: 340px;
+
+  bottom: 0;
+  left: -70px;
+
+  background: rgba(6, 182, 212, 0.08);
+}
+
+
+/* ============================================================
+   HERO ROW
+   ============================================================ */
+
+.enterprise-hero-row {
+  position: relative;
+  z-index: 2;
+
+  min-height: calc(100vh - 180px);
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   LEFT CONTENT
+   ============================================================ */
+
+.enterprise-content {
+  position: relative;
+  z-index: 5;
+
+  padding-right: 25px;
+}
+
+
+/* ============================================================
+   LABEL
+   ============================================================ */
+
+.enterprise-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 16px;
+  margin-bottom: 28px;
+
+  border: 1px solid rgba(37, 99, 235, 0.20);
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 8px 30px rgba(37, 99, 235, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(14px);
+
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+
+.enterprise-status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c7e8;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 199, 232, 0.10),
+    0 0 16px rgba(34, 199, 232, 0.55);
+
+  animation: enterpriseDotPulse 1.8s infinite;
+}
+
+
+.enterprise-live {
+  margin-left: 4px;
+  padding-left: 11px;
+
+  border-left: 1px solid rgba(37, 99, 235, 0.15);
+
+  color: #64748b;
+}
+
+
+/* ============================================================
+   MAIN HEADING
+   ============================================================ */
+
+.enterprise-content h1 {
+  max-width: 670px;
+
+  margin: 0;
+
+  color: #071a3a;
+
+  font-size: clamp(
+    58px,
+    6.2vw,
+    92px
+  );
+
+  line-height: 0.94;
+
+  font-weight: 850;
+
+  letter-spacing: -5px;
+}
+
+
+.enterprise-content h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #2563eb 0%,
+      #287fe8 45%,
+      #159fdf 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.enterprise-description {
+  max-width: 610px;
+
+  margin: 32px 0 34px;
+
+  color: #5c7395;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.enterprise-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+
+.enterprise-primary-btn,
+.enterprise-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  min-height: 52px;
+
+  padding: 0 22px;
+
+  border-radius: 13px;
+
+  text-decoration: none !important;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.enterprise-primary-btn {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #168fe0
+    );
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.20);
+}
+
+
+.enterprise-primary-btn span {
+  display: inline-flex;
+
+  font-size: 19px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.enterprise-primary-btn:hover {
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.30);
+}
+
+
+.enterprise-primary-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ============================================================
+   SECONDARY BUTTON
+   ============================================================ */
+
+.enterprise-secondary-btn {
+  color: #315071;
+
+  border: 1px solid rgba(37, 99, 235, 0.16);
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  scroll-margin-top: 0;
+  scroll-behavior: auto;
+
+  box-shadow:
+    0 8px 25px rgba(37, 99, 235, 0.05);
+}
+
+
+.enterprise-secondary-btn span {
+  display: inline-flex;
+
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.enterprise-secondary-btn:hover {
+  color: #2563eb;
+
+  border-color: rgba(37, 99, 235, 0.32);
+
+  background: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 35px rgba(37, 99, 235, 0.10);
+}
+
+
+.enterprise-secondary-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ============================================================
+   TRUST SECTION
+   ============================================================ */
+
+.enterprise-trust {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 48px;
+}
+
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.trust-item strong {
+  color: #0b2347;
+
+  font-size: 21px;
+  font-weight: 850;
+}
+
+
+.trust-item span {
+  color: #8092aa;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+.trust-divider {
+  width: 1px;
+  height: 35px;
+
+  background: rgba(15, 45, 85, 0.12);
+}
+
+
+/* ============================================================
+   DASHBOARD WRAPPER
+   ============================================================ */
+
+.enterprise-dashboard-wrap {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 650px;
+
+  margin-left: auto;
+
+  perspective: 1400px;
+}
+
+
+/* ============================================================
+   MAIN DASHBOARD
+   ============================================================ */
+
+.enterprise-dashboard {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 22px;
+
+  border: 1px solid rgba(37, 99, 235, 0.12);
+
+  border-radius: 27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(247, 251, 255, 0.97)
+    );
+
+  box-shadow:
+    0 35px 90px rgba(31, 72, 125, 0.13),
+    0 10px 35px rgba(37, 99, 235, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+
+  transform:
+    rotateY(-3deg)
+    rotateX(2deg);
+
+  transition:
+    transform 0.65s ease,
+    box-shadow 0.65s ease;
+}
+
+
+.enterprise-dashboard:hover {
+  transform:
+    rotateY(0deg)
+    rotateX(0deg)
+    translateY(-6px);
+
+  box-shadow:
+    0 45px 110px rgba(31, 72, 125, 0.16),
+    0 15px 45px rgba(37, 99, 235, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+
+/* ============================================================
+   DASHBOARD TOP GLOW
+   ============================================================ */
+
+.dashboard-glow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -150px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   DASHBOARD SCAN
+   ============================================================ */
+
+.dashboard-scan {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 35%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(37, 99, 235, 0.035),
+      transparent
+    );
+
+  transform: skewX(-15deg);
+
+  animation: dashboardScan 7s linear infinite;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   DASHBOARD BORDER BEAM
+   ============================================================ */
+
+.dashboard-border-beam {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 27px;
+
+  pointer-events: none;
+
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(37, 99, 235, 0.35),
+      transparent 60%
+    )
+    border-box;
+
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+
+  animation: borderBeam 5s linear infinite;
+}
+
+
+/* ============================================================
+   DASHBOARD HEADER
+   ============================================================ */
+
+.dashboard-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+
+.dashboard-title {
+  color: #10294c;
+
+  font-size: 11px;
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+}
+
+
+.dashboard-subtitle {
+  margin-top: 5px;
+
+  color: #8da0b8;
+
+  font-size: 9px;
+}
+
+
+.dashboard-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(34, 197, 94, 0.18);
+
+  border-radius: 20px;
+
+  color: #16a35a;
+
+  background: rgba(34, 197, 94, 0.06);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+
+.dashboard-live span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.55);
+
+  animation: enterpriseDotPulse 1.5s infinite;
+}
+
+
+/* ============================================================
+   METRICS
+   ============================================================ */
+
+.enterprise-metrics {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+
+.enterprise-metric {
+  padding: 14px;
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(245, 249, 255, 0.90)
+    );
+
+  box-shadow:
+    0 5px 20px rgba(37, 99, 235, 0.035);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.enterprise-metric:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(37, 99, 235, 0.18);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 28px rgba(37, 99, 235, 0.09);
+}
+
+
+.enterprise-metric > span {
+  color: #91a3ba;
+
+  font-size: 8px;
+
+  letter-spacing: 0.7px;
+}
+
+
+.enterprise-metric > div:not(.metric-progress) {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: space-between;
+
+  margin-top: 7px;
+}
+
+
+.enterprise-metric strong {
+  color: #10284b;
+
+  font-size: 20px;
+  font-weight: 850;
+}
+
+
+.enterprise-metric small {
+  color: #16b66a;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+
+.metric-progress {
+  overflow: hidden;
+
+  height: 3px;
+
+  margin-top: 10px;
+
+  border-radius: 10px;
+
+  background: rgba(37, 99, 235, 0.07);
+}
+
+
+.metric-progress span {
+  display: block;
+
+  width: 72%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #22c7e8
+    );
+
+  animation:
+    progressFlow 3s ease-in-out infinite alternate;
+}
+
+
+/* ============================================================
+   PERFORMANCE
+   ============================================================ */
+
+.enterprise-performance {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 12px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(37, 99, 235, 0.075);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(248, 251, 255, 0.94)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+.performance-heading {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+.performance-heading span:first-child {
+  color: #263f62;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+.performance-heading span:last-child {
+  color: #8da0b8;
+
+  font-size: 9px;
+}
+
+
+.performance-chart {
+  position: relative;
+
+  height: 105px;
+
+  overflow: hidden;
+}
+
+
+.chart-grid-line {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(45, 91, 145, 0.07);
+}
+
+
+.line-one {
+  top: 20%;
+}
+
+
+.line-two {
+  top: 50%;
+}
+
+
+.line-three {
+  top: 80%;
+}
+
+
+/* ============================================================
+   CHART AREA
+   ============================================================ */
+
+.chart-area {
+  position: absolute;
+
+  inset: auto 0 0;
+
+  height: 70%;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(37, 99, 235, 0.10),
+      transparent
+    );
+
+  clip-path: polygon(
+    0 85%,
+    10% 70%,
+    20% 76%,
+    30% 52%,
+    40% 60%,
+    50% 42%,
+    60% 48%,
+    70% 28%,
+    80% 35%,
+    90% 15%,
+    100% 20%,
+    100% 100%,
+    0 100%
+  );
+}
+
+
+.chart-scan-line {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background:
+    rgba(37, 99, 235, 0.35);
+
+  animation: chartScan 4s linear infinite;
+}
+
+
+.performance-svg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.performance-path {
+  fill: none;
+
+  stroke: #3b6ff0;
+
+  stroke-width: 2.5;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(37, 99, 235, 0.35)
+    );
+
+  stroke-dasharray: 700;
+
+  stroke-dashoffset: 700;
+
+  animation: chartDraw 3s ease forwards;
+}
+
+
+.performance-point {
+  fill: #2563eb;
+}
+
+
+.performance-point-glow {
+  fill: rgba(37, 99, 235, 0.15);
+
+  animation:
+    pointPulse 1.5s infinite;
+}
+
+
+/* ============================================================
+   SYSTEM ARCHITECTURE
+   CLEAN WHITE + BLUE TECHNOLOGY DESIGN
+   ============================================================ */
+
+.enterprise-architecture {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 12px;
+
+  padding: 16px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.12);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfdff 52%,
+      #f5faff 100%
+    );
+
+  box-shadow:
+    0 12px 32px
+    rgba(37, 99, 235, 0.055),
+    inset 0 1px 0
+    rgba(255, 255, 255, 1);
+}
+
+
+/* ============================================================
+   ARCHITECTURE HEADER
+   ============================================================ */
+
+.architecture-title {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  color: #3d659a;
+
+  font-size: 9px;
+  font-weight: 850;
+
+  letter-spacing: 1.4px;
+}
+
+
+.architecture-title > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.09),
+      rgba(37, 99, 235, 0.025)
+    );
+
+  color: #2563eb;
+
+  box-shadow:
+    0 5px 15px
+    rgba(37, 99, 235, 0.055);
+}
+
+
+.architecture-title > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.architecture-title small {
+  color: #90a3ba;
+
+  font-size: 7px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+
+.architecture-live {
+  margin-left: auto;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.12);
+
+  border-radius: 999px;
+
+  background:
+    rgba(37, 99, 235, 0.035);
+
+  color: #2563eb;
+
+  font-size: 7px;
+
+  letter-spacing: 0.7px;
+}
+
+
+.architecture-live i {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 8px
+    rgba(37, 99, 235, 0.55);
+
+  animation:
+    enterpriseDotPulse 1.3s infinite;
+}
+
+
+/* ============================================================
+   ARCHITECTURE MAP
+   WHITE TECHNOLOGY CANVAS
+   ============================================================ */
+
+.architecture-map {
+  position: relative;
+
+  height: 262px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.11);
+
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(37, 99, 235, 0.075),
+      transparent 33%
+    ),
+    radial-gradient(
+      circle at 20% 18%,
+      rgba(37, 99, 235, 0.045),
+      transparent 27%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfdff 55%,
+      #f5faff 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.95),
+    0 8px 25px
+    rgba(37, 99, 235, 0.035);
+
+  isolation: isolate;
+}
+
+
+/* ============================================================
+   MAP INNER LIGHT
+   ============================================================ */
+
+.architecture-map::before {
+  content: "";
+
+  position: absolute;
+
+  top: -70px;
+  left: 50%;
+
+  width: 350px;
+  height: 160px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(37, 99, 235, 0.10),
+      transparent 70%
+    );
+
+  filter: blur(22px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* ============================================================
+   MAP VIGNETTE
+   ============================================================ */
+
+.architecture-map::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 72%,
+      rgba(37, 99, 235, 0.025) 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ============================================================
+   ARCHITECTURE GRID
+   ============================================================ */
+
+.architecture-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.42;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.065) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.065) 1px,
+      transparent 1px
+    );
+
+  background-size: 26px 26px;
+
+  animation:
+    architectureGridMove 14s linear infinite;
+
+  z-index: 1;
+}
+
+
+/* ============================================================
+   ARCHITECTURE SCANNER
+   ============================================================ */
+
+.architecture-scanner {
+  position: absolute;
+
+  top: 0;
+  left: -25%;
+
+  width: 18%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(37, 99, 235, 0.015),
+      rgba(37, 99, 235, 0.085),
+      rgba(37, 99, 235, 0.015),
+      transparent
+    );
+
+  transform: skewX(-16deg);
+
+  animation:
+    architectureScanner 7s linear infinite;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* ============================================================
+   RADAR
+   ============================================================ */
+
+.architecture-radar {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 168px;
+  height: 168px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.09);
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  box-shadow:
+    0 0 0 26px
+    rgba(37, 99, 235, 0.015),
+    0 0 0 52px
+    rgba(37, 99, 235, 0.010);
+
+  animation:
+    radarPulse 5s ease-in-out infinite;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+.architecture-radar::before,
+.architecture-radar::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 25%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.065);
+
+  border-radius: 50%;
+}
+
+
+.architecture-radar::after {
+  inset: 42%;
+
+  border-color:
+    rgba(37, 99, 235, 0.11);
+}
+
+
+/* ============================================================
+   ENERGY RINGS
+   ============================================================ */
+
+.architecture-energy-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.13);
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+.ring-one {
+  width: 108px;
+  height: 108px;
+
+  animation:
+    energyRing 6s linear infinite;
+}
+
+
+.ring-two {
+  width: 144px;
+  height: 144px;
+
+  border-color:
+    rgba(37, 99, 235, 0.07);
+
+  animation:
+    energyRingReverse 8s linear infinite;
+}
+
+
+/* ============================================================
+   SVG FLOW
+   ============================================================ */
+
+.architecture-svg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  z-index: 4;
+}
+
+
+/* ============================================================
+   ARCHITECTURE FLOW PATHS
+   FORCE BLUE OVER SVG GRADIENT
+   ============================================================ */
+
+.architecture-path {
+  fill: none !important;
+
+  stroke: #2563eb !important;
+
+  stroke-width: 1.15;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  stroke-dasharray: 6 8;
+
+  opacity: 0.72;
+
+  animation:
+    architectureFlow 2.3s linear infinite;
+}
+
+
+.architecture-path-glow {
+  fill: none !important;
+
+  stroke: #2563eb !important;
+
+  stroke-width: 5;
+
+  stroke-linecap: round;
+
+  opacity: 0.13;
+
+  filter:
+    blur(4px);
+}
+
+
+/* All architecture AI flow lines stay blue */
+.architecture-ai-path {
+  stroke: #168fe0 !important;
+
+  opacity: 0.88;
+}
+
+
+/* ============================================================
+   CONNECTION DOTS
+   ============================================================ */
+
+.architecture-connection {
+  fill: #2563eb !important;
+
+  stroke: #ffffff;
+
+  stroke-width: 1;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(37, 99, 235, 0.48)
+    )
+    drop-shadow(
+      0 0 9px
+      rgba(37, 99, 235, 0.22)
+    );
+
+  animation:
+    connectionPulse 2s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   DATA PARTICLES
+   BLUE DOTS
+   ============================================================ */
+
+.data-particle {
+  fill: #2563eb !important;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(37, 99, 235, 0.70)
+    )
+    drop-shadow(
+      0 0 9px
+      rgba(37, 99, 235, 0.30)
+    );
+}
+
+
+.particle-reverse {
+  fill: #168fe0 !important;
+}
+
+
+/* ============================================================
+   ARCHITECTURE NODES
+   WHITE CARDS
+   ============================================================ */
+
+.architecture-node {
+  position: absolute;
+
+  z-index: 8;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 91px;
+  height: 39px;
+
+  padding: 5px 8px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.13);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fbff 100%
+    );
+
+  box-shadow:
+    0 8px 22px
+    rgba(37, 99, 235, 0.075),
+    inset 0 1px 0
+    rgba(255, 255, 255, 1);
+
+  backdrop-filter: blur(12px);
+
+  opacity: 0;
+
+  transform:
+    translateY(8px)
+    scale(0.96);
+
+  animation:
+    architectureNodeReveal
+    0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* ============================================================
+   NODE STAGGER
+   ============================================================ */
+
+.node-web {
+  animation-delay: 0.10s;
+}
+
+.node-api {
+  animation-delay: 0.18s;
+}
+
+.node-ai {
+  animation-delay: 0.26s;
+}
+
+.node-cloud {
+  animation-delay: 0.34s;
+}
+
+.node-security {
+  animation-delay: 0.42s;
+}
+
+.node-data {
+  animation-delay: 0.50s;
+}
+
+.node-analytics {
+  animation-delay: 0.58s;
+}
+
+
+/* ============================================================
+   NODE HOVER
+   ============================================================ */
+
+.architecture-node:hover {
+  z-index: 20;
+
+  border-color:
+    rgba(37, 99, 235, 0.34);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 24px
+    rgba(37, 99, 235, 0.10),
+    0 14px 30px
+    rgba(37, 99, 235, 0.10);
+
+  transform:
+    translateY(-4px)
+    scale(1.04);
+}
+
+
+/* ============================================================
+   NODE ICON
+   ============================================================ */
+
+.architecture-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  border-radius: 7px;
+
+  background:
+    rgba(37, 99, 235, 0.055);
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  box-shadow:
+    inset 0 0 15px
+    rgba(37, 99, 235, 0.025);
+}
+
+
+/* ============================================================
+   NODE CONTENT
+   ============================================================ */
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 2px;
+}
+
+
+.node-content > span {
+  color: #234062;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+}
+
+
+.node-content small {
+  color: #8aa0b9;
+
+  font-size: 6px;
+
+  letter-spacing: 0.45px;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   NODE STATUS DOT
+   BLUE
+   ============================================================ */
+
+.node-status {
+  width: 5px;
+  height: 5px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 8px
+    rgba(37, 99, 235, 0.65);
+
+  animation:
+    enterpriseDotPulse 1.5s infinite;
+}
+
+
+/* ============================================================
+   NODE POSITIONS
+   ============================================================ */
+
+.node-web {
+  top: 36px;
+  left: 5%;
+}
+
+
+.node-api {
+  top: 36px;
+  left: 30%;
+
+  transform:
+    translateX(-50%)
+    translateY(8px)
+    scale(0.96);
+}
+
+
+.node-ai {
+  top: 34px;
+  left: 50%;
+
+  min-width: 106px;
+  height: 43px;
+
+  transform:
+    translateX(-50%)
+    translateY(8px)
+    scale(0.96);
+}
+
+
+.node-cloud {
+  top: 36px;
+  right: 30%;
+
+  transform:
+    translateX(50%)
+    translateY(8px)
+    scale(0.96);
+}
+
+
+.node-security {
+  top: 36px;
+  right: 5%;
+}
+
+
+.node-data {
+  bottom: 20px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(8px)
+    scale(0.96);
+}
+
+
+.node-analytics {
+  bottom: 20px;
+  right: 5%;
+
+  transform:
+    translateY(8px)
+    scale(0.92);
+}
+
+
+/* ============================================================
+   NODE HOVER TRANSFORMS
+   ============================================================ */
+
+.node-api:hover,
+.node-ai:hover,
+.node-cloud:hover,
+.node-data:hover {
+  transform:
+    translateX(-50%)
+    translateY(-4px)
+    scale(1.04);
+}
+
+
+.node-cloud:hover {
+  transform:
+    translateX(50%)
+    translateY(-4px)
+    scale(1.04);
+}
+
+
+.node-web:hover,
+.node-security:hover,
+.node-analytics:hover {
+  transform:
+    translateY(-4px)
+    scale(1.04);
+}
+
+
+/* ============================================================
+   NODE PULSE
+   ============================================================ */
+
+.node-pulse {
+  position: absolute;
+
+  inset: -5px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  border-radius: 12px;
+
+  opacity: 0;
+
+  animation:
+    nodePulse 3s infinite;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   AI CORE
+   WHITE + BLUE FOCUS
+   ============================================================ */
+
+.node-ai {
+  border-color:
+    rgba(37, 99, 235, 0.28);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(37, 99, 235, 0.10),
+      transparent 65%
+    ),
+    #ffffff;
+
+  box-shadow:
+    0 0 25px
+    rgba(37, 99, 235, 0.10),
+    0 15px 35px
+    rgba(37, 99, 235, 0.11),
+    inset 0 0 25px
+    rgba(37, 99, 235, 0.025);
+}
+
+
+.node-ai .architecture-node-icon {
+  width: 28px;
+  height: 28px;
+
+  border-color:
+    rgba(37, 99, 235, 0.25);
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  color: #2563eb;
+
+  animation:
+    aiIconPulse 2s ease-in-out infinite;
+}
+
+
+.node-ai .node-content > span {
+  color: #163a67;
+}
+
+
+.node-ai .node-content small {
+  color: #7e9bbc;
+}
+
+
+/* ============================================================
+   AI RINGS
+   ============================================================ */
+
+.ai-core-ring {
+  position: absolute;
+
+  inset: -7px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.20);
+
+  border-radius: 12px;
+
+  animation:
+    aiRingPulse 2.8s infinite;
+
+  pointer-events: none;
+}
+
+
+.ring-two-ai {
+  inset: -13px;
+
+  border-color:
+    rgba(37, 99, 235, 0.11);
+
+  animation-delay: 0.8s;
+}
+
+
+/* ============================================================
+   AI LIVE INDICATOR
+   ============================================================ */
+
+.node-live-indicator {
+  position: absolute;
+
+  top: 4px;
+  right: 4px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 8px #2563eb,
+    0 0 16px rgba(37, 99, 235, 0.30);
+
+  animation:
+    enterpriseDotPulse 1s infinite;
+}
+
+
+/* ============================================================
+   ARCHITECTURE CORE LABEL
+   ============================================================ */
+
+.architecture-core-label {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  transform:
+    translate(-50%, -50%);
+
+  color: #7c96b2;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.1px;
+
+  pointer-events: none;
+}
+
+
+.architecture-core-label span {
+  width: 4px;
+  height: 4px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 9px
+    rgba(37, 99, 235, 0.55);
+
+  animation:
+    enterpriseDotPulse 1.6s infinite;
+}
+
+
+.architecture-core-label strong {
+  color: #55769d;
+
+  font-size: 6px;
+
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   ACTIVITY STATUS
+   ============================================================ */
+
+.architecture-activity {
+  position: absolute;
+
+  z-index: 12;
+
+  bottom: 7px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 10px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.12);
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(37, 99, 235, 0.07),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.95);
+
+  transform:
+    translateX(-50%);
+
+  white-space: nowrap;
+}
+
+
+.architecture-activity > span:not(.activity-signal) {
+  color: #7188a3;
+
+  font-size: 6px;
+
+  letter-spacing: 0.55px;
+}
+
+
+.architecture-activity strong {
+  color: #2563eb;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+
+.activity-signal {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 8px
+    rgba(37, 99, 235, 0.60);
+
+  animation:
+    enterpriseDotPulse 1s infinite;
+}
+
+
+/* ============================================================
+   DASHBOARD FOOTER
+   ============================================================ */
+
+.dashboard-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 14px;
+}
+
+
+.systems-operational,
+.infrastructure-status {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #8295ad;
+
+  font-size: 8px;
+}
+
+
+.systems-operational i,
+.infrastructure-status i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 7px rgba(34, 197, 94, 0.55);
+}
+
+
+/* ============================================================
+   FLOATING DASHBOARD ORBS
+   ============================================================ */
+
+.dashboard-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.dashboard-orb-one {
+  width: 8px;
+  height: 8px;
+
+  top: 15%;
+  right: -12px;
+
+  background: #2879ed;
+
+  box-shadow:
+    0 0 20px rgba(40, 121, 237, 0.45);
+
+  animation:
+    orbFloatOne 5s ease-in-out infinite;
+}
+
+
+.dashboard-orb-two {
+  width: 5px;
+  height: 5px;
+
+  left: -10px;
+  top: 45%;
+
+  background: #22c7e8;
+
+  box-shadow:
+    0 0 18px rgba(34, 199, 232, 0.45);
+
+  animation:
+    orbFloatTwo 4s ease-in-out infinite;
+}
+
+
+.dashboard-orb-three {
+  width: 6px;
+  height: 6px;
+
+  right: 10%;
+  bottom: -10px;
+
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.45);
+
+  animation:
+    orbFloatThree 6s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes enterpriseDotPulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+@keyframes dashboardScan {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+
+@keyframes borderBeam {
+  0% {
+    transform: translateX(-40%);
+  }
+
+  100% {
+    transform: translateX(40%);
+  }
+}
+
+
+@keyframes progressFlow {
+  from {
+    width: 58%;
+  }
+
+  to {
+    width: 88%;
+  }
+}
+
+
+@keyframes chartScan {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes chartDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes pointPulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+    transform-origin: center;
+  }
+}
+
+
+/* ============================================================
+   ARCHITECTURE ANIMATIONS
+   ============================================================ */
+
+@keyframes architectureGridMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 26px 26px;
+  }
+}
+
+
+@keyframes architectureScanner {
+  0% {
+    left: -25%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+
+@keyframes radarPulse {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.94);
+
+    opacity: 0.34;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.04);
+
+    opacity: 0.72;
+  }
+}
+
+
+@keyframes energyRing {
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.84)
+      rotate(0deg);
+
+    opacity: 0.12;
+  }
+
+  50% {
+    opacity: 0.42;
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08)
+      rotate(360deg);
+
+    opacity: 0.12;
+  }
+}
+
+
+@keyframes energyRingReverse {
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.04)
+      rotate(360deg);
+
+    opacity: 0.12;
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.88)
+      rotate(0deg);
+
+    opacity: 0.30;
+  }
+}
+
+
+@keyframes architectureFlow {
+  0% {
+    stroke-dashoffset: 28;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes connectionPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    r: 3;
+  }
+
+  50% {
+    opacity: 1;
+    r: 5;
+  }
+}
+
+
+@keyframes architectureNodeReveal {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes nodePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  40% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+
+@keyframes aiIconPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0
+      rgba(37, 99, 235, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px
+      rgba(37, 99, 235, 0.16);
+  }
+}
+
+
+@keyframes aiRingPulse {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 0.60;
+    transform: scale(1.04);
+  }
+}
+
+
+@keyframes orbFloatOne {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+
+@keyframes orbFloatTwo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+
+@keyframes orbFloatThree {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-30px, -20px);
+  }
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  .enterprise-content h1 {
+    font-size: 68px;
+
+    letter-spacing: -4px;
+  }
+
+  .enterprise-content {
+    padding-right: 10px;
+  }
+
+  .enterprise-dashboard {
+    transform:
+      rotateY(-2deg)
+      rotateX(1deg);
+  }
+
+}
+
+
+/* ============================================================
+   TABLET / SMALL DESKTOP
+   ============================================================ */
+
+@media (max-width: 991px) {
+
+  .enterprise-hero {
+    padding: 100px 0 70px;
+  }
+
+  .enterprise-hero-row {
+    min-height: auto;
+  }
+
+  .enterprise-content {
+    padding-right: 0;
+
+    margin-bottom: 60px;
+  }
+
+  .enterprise-content h1 {
+    max-width: 750px;
+
+    font-size:
+      clamp(
+        50px,
+        8vw,
+        70px
+      );
+
+    letter-spacing: -4px;
+  }
+
+  .enterprise-description {
+    max-width: 700px;
+  }
+
+  .enterprise-dashboard-wrap {
+    margin: auto;
+
+    max-width: 680px;
+  }
+
+  .enterprise-dashboard {
+    transform: none;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .enterprise-hero {
+    padding: 90px 0 50px;
+  }
+
+  .enterprise-content h1 {
+    font-size: 46px;
+
+    line-height: 0.98;
+
+    letter-spacing: -2.5px;
+  }
+
+  .enterprise-description {
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .enterprise-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .enterprise-primary-btn,
+  .enterprise-secondary-btn {
+    width: 100%;
+  }
+
+  .enterprise-trust {
+    gap: 15px;
+
+    margin-top: 40px;
+  }
+
+  .enterprise-dashboard {
+    padding: 14px;
+
+    border-radius: 19px;
+  }
+
+  .dashboard-border-beam {
+    border-radius: 19px;
+  }
+
+  .enterprise-metrics {
+    gap: 6px;
+  }
+
+  .enterprise-metric {
+    padding: 10px;
+  }
+
+  .enterprise-metric strong {
+    font-size: 15px;
+  }
+
+  .enterprise-metric small {
+    display: none;
+  }
+
+
+  /* ==========================================================
+     MOBILE SYSTEM ARCHITECTURE
+     ========================================================== */
+
+  .enterprise-architecture {
+    padding: 10px;
+
+    border-radius: 15px;
+  }
+
+  .architecture-map {
+    height: 230px;
+
+    border-radius: 12px;
+  }
+
+  .architecture-title {
+    gap: 7px;
+  }
+
+  .architecture-title > span {
+    width: 24px;
+    height: 24px;
+
+    font-size: 8px;
+  }
+
+  .architecture-live {
+    padding: 4px 7px;
+
+    font-size: 6px;
+  }
+
+  .architecture-node {
+    min-width: 72px;
+
+    height: 32px;
+
+    padding: 4px 5px;
+
+    gap: 4px;
+
+    border-radius: 8px;
+  }
+
+  .architecture-node-icon {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+  }
+
+  .node-content > span {
+    font-size: 6px;
+  }
+
+  .node-content small {
+    font-size: 5px;
+  }
+
+  .node-web {
+    left: 2%;
+
+    top: 37px;
+  }
+
+  .node-security {
+    right: 2%;
+
+    top: 37px;
+  }
+
+  .node-api {
+    left: 29%;
+
+    top: 37px;
+
+    transform:
+      translateX(-50%)
+      translateY(8px)
+      scale(0.92);
+  }
+
+  .node-cloud {
+    right: 29%;
+
+    top: 37px;
+
+    transform:
+      translateX(50%)
+      translateY(8px)
+      scale(0.92);
+  }
+
+  .node-ai {
+    min-width: 80px;
+
+    top: 36px;
+
+    height: 35px;
+
+    transform:
+      translateX(-50%)
+      translateY(8px)
+      scale(0.92);
+  }
+
+  .node-ai .architecture-node-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .node-data {
+    bottom: 27px;
+
+    transform:
+      translateX(-50%)
+      translateY(8px)
+      scale(0.92);
+  }
+
+  .node-analytics {
+    right: 2%;
+
+    bottom: 27px;
+
+    transform:
+      translateY(8px)
+      scale(0.82);
+  }
+
+  .architecture-core-label {
+    font-size: 5px;
+  }
+
+  .architecture-core-label strong {
+    font-size: 5px;
+  }
+
+  .architecture-activity {
+    padding: 4px 7px;
+
+    bottom: 5px;
+  }
+
+  .architecture-activity strong {
+    display: none;
+  }
+
+  .architecture-radar {
+    width: 145px;
+    height: 145px;
+  }
+
+  .ring-one {
+    width: 94px;
+    height: 94px;
+  }
+
+  .ring-two {
+    width: 126px;
+    height: 126px;
+  }
+
+  .dashboard-footer {
+    gap: 10px;
+  }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .enterprise-content h1 {
+    font-size: 39px;
+
+    letter-spacing: -2px;
+  }
+
+  .enterprise-label {
+    font-size: 9px;
+
+    padding: 8px 12px;
+  }
+
+  .enterprise-live {
+    display: none;
+  }
+
+  .enterprise-trust {
+    justify-content: space-between;
+  }
+
+  .trust-divider {
+    height: 25px;
+  }
+
+  .trust-item strong {
+    font-size: 18px;
+  }
+
+  .trust-item span {
+    font-size: 8px;
+  }
+
+  .dashboard-title {
+    font-size: 8px;
+  }
+
+  .dashboard-subtitle {
+    font-size: 8px;
+  }
+
+  .enterprise-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .enterprise-metric {
+    display: grid;
+
+    grid-template-columns:
+      1fr auto;
+
+    align-items: center;
+  }
+
+  .metric-progress {
+    grid-column: 1 / -1;
+  }
+
+
+  /* ==========================================================
+     SMALL MOBILE SYSTEM ARCHITECTURE
+     ========================================================== */
+
+  .architecture-title small {
+    display: none;
+  }
+
+  .architecture-live {
+    font-size: 6px;
+  }
+
+  .architecture-map {
+    height: 215px;
+  }
+
+  .architecture-node {
+    transform:
+      translateY(7px)
+      scale(0.82);
+  }
+
+  .node-api {
+    transform:
+      translateX(-50%)
+      translateY(7px)
+      scale(0.82);
+  }
+
+  .node-ai {
+    transform:
+      translateX(-50%)
+      translateY(7px)
+      scale(0.82);
+  }
+
+  .node-cloud {
+    transform:
+      translateX(50%)
+      translateY(7px)
+      scale(0.82);
+  }
+
+  .node-data {
+    transform:
+      translateX(-50%)
+      translateY(7px)
+      scale(0.82);
+  }
+
+  .node-analytics {
+    transform:
+      translateY(7px)
+      scale(0.74);
+  }
+
+  .architecture-activity {
+    bottom: 5px;
+  }
+
+}
+
+
+/* ============================================================
+   EXTRA SMALL DEVICES
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+  .enterprise-content h1 {
+    font-size: 34px;
+
+    letter-spacing: -1.7px;
+  }
+
+  .enterprise-description {
+    font-size: 14px;
+  }
+
+  .enterprise-dashboard {
+    padding: 11px;
+  }
+
+  .enterprise-metric strong {
+    font-size: 14px;
+  }
+
+  .architecture-map {
+    height: 200px;
+  }
+
+  .architecture-node {
+    transform:
+      translateY(6px)
+      scale(0.74);
+  }
+
+  .node-api {
+    transform:
+      translateX(-50%)
+      translateY(6px)
+      scale(0.74);
+  }
+
+  .node-ai {
+    transform:
+      translateX(-50%)
+      translateY(6px)
+      scale(0.74);
+  }
+
+  .node-cloud {
+    transform:
+      translateX(50%)
+      translateY(6px)
+      scale(0.74);
+  }
+
+  .node-data {
+    transform:
+      translateX(-50%)
+      translateY(6px)
+      scale(0.74);
+  }
+
+  .node-analytics {
+    transform:
+      translateY(6px)
+      scale(0.68);
+  }
+
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .enterprise-primary-btn,
+  .enterprise-secondary-btn,
+  .enterprise-dashboard,
+  .enterprise-metric,
+  .architecture-node {
+    transition: none;
+  }
+
+  .enterprise-grid,
+  .enterprise-status-dot,
+  .dashboard-scan,
+  .dashboard-border-beam,
+  .dashboard-live span,
+  .metric-progress span,
+  .chart-scan-line,
+  .performance-path,
+  .performance-point-glow,
+  .architecture-grid,
+  .architecture-scanner,
+  .architecture-radar,
+  .architecture-energy-ring,
+  .architecture-path,
+  .architecture-connection,
+  .data-particle,
+  .node-pulse,
+  .node-ai .architecture-node-icon,
+  .ai-core-ring,
+  .node-live-indicator,
+  .activity-signal,
+  .dashboard-orb {
+    animation: none !important;
+  }
+}

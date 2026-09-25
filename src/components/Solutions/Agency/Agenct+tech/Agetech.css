@@ -1,0 +1,656 @@
+/* ========================================================= AGENCY + TECHWRAP COLLABORATION ========================================================= */
+.agency-collaboration {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 125px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(45, 112, 241, 0.08), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9fe 100%);
+  color: #1b2a43;
+} /* ========================================================= BACKGROUND GRID ========================================================= */
+.collaboration-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(57, 93, 143, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 93, 143, 0.035) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  pointer-events: none;
+} /* ========================================================= GLOWS ========================================================= */
+.collaboration-glow {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  filter: blur(135px);
+  pointer-events: none;
+}
+.collaboration-glow-one {
+  top: 15%;
+  left: -280px;
+  background: rgba(35, 112, 245, 0.08);
+}
+.collaboration-glow-two {
+  right: -280px;
+  bottom: 8%;
+  background: rgba(61, 87, 236, 0.07);
+} /* ========================================================= HEADER ========================================================= */
+.collaboration-header {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto 65px;
+  text-align: center;
+} /* ========================================================= LABEL ========================================================= */
+.collaboration-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 24px;
+  padding: 9px 14px;
+  border: 1px solid #cfdded;
+  border-radius: 50px;
+  background: rgba(249, 251, 255, 0.95);
+  color: #60738d;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+.collaboration-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #247cf4;
+  box-shadow: 0 0 14px rgba(36, 124, 244, 0.8);
+  animation: collaborationPulse 1.8s infinite;
+}
+.collaboration-live {
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #eaf2ff;
+  color: #3974dd;
+  font-size: 7px;
+  letter-spacing: 0.8px;
+} /* ========================================================= HEADING ========================================================= */
+.collaboration-header h2 {
+  margin: 0;
+  color: #17263d;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.07;
+  font-weight: 850;
+  letter-spacing: -3px;
+}
+.collaboration-header h2 span {
+  display: block;
+  background: linear-gradient(100deg, #5567ee, #237af0, #0ca6e9, #5567ee);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: collaborationGradient 5s linear infinite;
+}
+.collaboration-header p {
+  max-width: 700px;
+  margin: 24px auto 0;
+  color: #687c96;
+  font-size: 17px;
+  line-height: 1.8;
+} /* ========================================================= SYSTEM ========================================================= */
+.collaboration-system {
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #cfdeef;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 255, 0.96));
+  box-shadow: 0 30px 80px rgba(38, 77, 128, 0.12);
+  backdrop-filter: blur(15px);
+} /* ========================================================= PARTNERS ========================================================= */
+.collaboration-partners {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dfe7f1;
+}
+.partner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: 1px solid #cfdded;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(52, 87, 133, 0.07);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.partner:hover {
+  transform: translateY(-4px);
+  border-color: #9ebce4;
+  box-shadow: 0 15px 35px rgba(44, 92, 164, 0.12);
+}
+.partner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #edf4ff, #dfeaff);
+  color: #3972e8;
+  font-size: 16px;
+  font-weight: 900;
+}
+.partner strong {
+  display: block;
+  color: #263750;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+}
+.partner span {
+  display: block;
+  margin-top: 4px;
+  color: #7a8ca3;
+  font-size: 10px;
+}
+.partner-connection {
+  position: relative;
+  text-align: center;
+  color: #7c8da4;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.connection-pulse {
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #277cf4;
+  box-shadow: 0 0 15px rgba(39, 124, 244, 0.8);
+  animation: collaborationPulse 1.6s infinite;
+} /* ========================================================= MAIN FLOW ========================================================= */
+.collaboration-flow {
+  display: grid;
+  grid-template-columns: 210px 1fr 210px;
+  gap: 30px;
+  padding: 45px 10px 30px;
+} /* ========================================================= SIDE COLUMNS ========================================================= */
+.collaboration-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.column-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #60738d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+.column-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #397cf1;
+  box-shadow: 0 0 12px rgba(57, 124, 241, 0.7);
+}
+.agency-column {
+  text-align: right;
+}
+.agency-column .column-heading {
+  justify-content: flex-end;
+}
+.agency-output,
+.techwrap-output {
+  padding: 20px;
+  border: 1px solid #cddded;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f9fbff, #eef5ff);
+  box-shadow: 0 10px 25px rgba(47, 87, 139, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.agency-output:hover,
+.techwrap-output:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(47, 87, 139, 0.12);
+}
+.agency-output span,
+.techwrap-output span {
+  display: block;
+  color: #334761;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+.agency-output small,
+.techwrap-output small {
+  display: block;
+  margin-top: 7px;
+  color: #7a8ca3;
+  font-size: 9px;
+  line-height: 1.5;
+} /* ========================================================= CENTER PIPELINE ========================================================= */
+.collaboration-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.center-line {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 35px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #9ab9e5 8%, #8db2e3 92%, transparent);
+} /* ========================================================= PARTICLES ========================================================= */
+.collaboration-particle {
+  position: absolute;
+  z-index: 5;
+  left: 31px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1680ff;
+  box-shadow:
+    0 0 10px #1680ff,
+    0 0 25px rgba(22, 128, 255, 0.85);
+  pointer-events: none;
+}
+.particle-one {
+  animation: collaborationParticleDown 4s linear infinite;
+}
+.particle-two {
+  animation: collaborationParticleDown 4s linear 2s infinite;
+} /* ========================================================= STEP ========================================================= */
+.collaboration-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 55px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+  padding: 14px 17px;
+  border: 1px solid #d1deed;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 25px rgba(49, 85, 133, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.collaboration-step:hover {
+  transform: translateX(6px);
+  border-color: #9dbbe2;
+  box-shadow: 0 14px 32px rgba(45, 94, 166, 0.12);
+}
+.collaboration-step.agency {
+  border-left: 3px solid #6c7ce8;
+}
+.collaboration-step.techwrap {
+  border-left: 3px solid #287df1;
+} /* ========================================================= STEP NUMBER ========================================================= */
+.step-number {
+  color: #9aabc0;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+} /* ========================================================= STEP ICON ========================================================= */
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #edf4ff, #dfebff);
+  color: #3975eb;
+  font-size: 15px;
+  box-shadow: 0 6px 18px rgba(48, 100, 193, 0.08);
+} /* ========================================================= STEP CONTENT ========================================================= */
+.step-content h3 {
+  margin: 0;
+  color: #273953;
+  font-size: 15px;
+  font-weight: 850;
+}
+.step-content p {
+  margin: 5px 0 0;
+  color: #71839b;
+  font-size: 11px;
+  line-height: 1.55;
+} /* ========================================================= STATUS ========================================================= */
+.step-status {
+  padding: 5px 7px;
+  border-radius: 5px;
+  background: #eef4fc;
+  color: #67809f;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+.techwrap .step-status {
+  background: #eaf3ff;
+  color: #3973dc;
+} /* ========================================================= TECHNOLOGY STACK ========================================================= */
+.collaboration-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #e1e8f1;
+  border-bottom: 1px solid #e1e8f1;
+}
+.collaboration-stack > span {
+  margin-right: 5px;
+  color: #8998aa;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.stack-item {
+  padding: 7px 10px;
+  border: 1px solid #d5e1ef;
+  border-radius: 6px;
+  background: #f7faff;
+  color: #647994;
+  font-size: 9px;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+.stack-item:hover {
+  transform: translateY(-3px);
+  color: #3173df;
+  border-color: #a8c2e5;
+  background: #edf4ff;
+} /* ========================================================= BOTTOM ========================================================= */
+.collaboration-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 25px;
+}
+.bottom-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bottom-status {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #267cf5;
+  box-shadow: 0 0 14px rgba(38, 124, 245, 0.75);
+  animation: collaborationPulse 1.8s infinite;
+}
+.bottom-message p {
+  margin: 0;
+  color: #71839b;
+  font-size: 13px;
+}
+.bottom-message strong {
+  color: #293b55;
+} /* ========================================================= START A PARTNERSHIP BUTTON Updated to match TSX <button> ========================================================= */
+.collaboration-partnership-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 13px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #5669ee, #277bf0);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 850;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0 10px 25px rgba(50, 91, 219, 0.22);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+} /* ========================================================= BUTTON HOVER ========================================================= */
+.collaboration-partnership-button:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(50, 91, 219, 0.32);
+  background: linear-gradient(135deg, #4f62e7, #1f70df);
+} /* ========================================================= BUTTON ARROW ========================================================= */
+.collaboration-partnership-button span {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.collaboration-partnership-button:hover span {
+  transform: translateX(4px);
+} /* ========================================================= BUTTON FOCUS ========================================================= */
+.collaboration-partnership-button:focus-visible {
+  outline: 3px solid rgba(39, 124, 240, 0.22);
+  outline-offset: 3px;
+} /* ========================================================= BUTTON ACTIVE ========================================================= */
+.collaboration-partnership-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(50, 91, 219, 0.24);
+} /* ========================================================= ANIMATIONS ========================================================= */
+@keyframes collaborationPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.65);
+    opacity: 0.55;
+  }
+}
+@keyframes collaborationParticleDown {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 94%;
+    opacity: 0;
+  }
+}
+@keyframes collaborationGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 250% center;
+  }
+} /* ========================================================= TABLET ========================================================= */
+@media (max-width: 991px) {
+  .agency-collaboration {
+    padding: 90px 0;
+  }
+  .collaboration-system {
+    margin: 0 15px;
+  }
+  .collaboration-flow {
+    grid-template-columns: 170px 1fr 170px;
+    gap: 18px;
+  }
+  .collaboration-step {
+    grid-template-columns: 35px 43px 1fr;
+    gap: 8px;
+  }
+  .step-status {
+    display: none;
+  }
+} /* ========================================================= MOBILE ========================================================= */
+@media (max-width: 767px) {
+  .agency-collaboration {
+    padding: 75px 0;
+  }
+  .collaboration-header {
+    padding: 0 12px;
+    margin-bottom: 40px;
+  }
+  .collaboration-header h2 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+  .collaboration-header p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .collaboration-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .collaboration-system {
+    margin: 0 10px;
+    padding: 17px;
+    border-radius: 18px;
+  }
+  .collaboration-partners {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .partner-connection {
+    order: 2;
+  }
+  .partner-techwrap {
+    order: 3;
+  }
+  .collaboration-flow {
+    grid-template-columns: 1fr;
+    padding: 35px 0 20px;
+    gap: 18px;
+  }
+  .collaboration-column {
+    display: none;
+  }
+  .collaboration-center {
+    gap: 10px;
+  }
+  .center-line {
+    left: 22px;
+  }
+  .collaboration-particle {
+    left: 18px;
+  }
+  .collaboration-step {
+    grid-template-columns: 32px 42px 1fr;
+    min-height: 78px;
+    padding: 12px;
+    gap: 8px;
+  }
+  .step-number {
+    font-size: 8px;
+  }
+  .step-icon {
+    width: 37px;
+    height: 37px;
+    font-size: 13px;
+  }
+  .step-content h3 {
+    font-size: 14px;
+  }
+  .step-content p {
+    font-size: 10px;
+  }
+  .collaboration-stack {
+    justify-content: flex-start;
+  }
+  .collaboration-stack > span {
+    width: 100%;
+  }
+  .collaboration-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bottom-message {
+    justify-content: center;
+  }
+  .bottom-message p {
+    font-size: 12px;
+  } /* Updated CTA for mobile */
+  .collaboration-partnership-button {
+    width: 100%;
+    max-width: 300px;
+    min-height: 50px;
+  }
+} /* ========================================================= SMALL MOBILE ========================================================= */
+@media (max-width: 480px) {
+  .collaboration-header h2 {
+    font-size: 34px;
+  }
+  .collaboration-system {
+    padding: 13px;
+  }
+  .partner {
+    padding: 13px;
+  }
+  .partner strong {
+    font-size: 11px;
+  }
+  .partner span {
+    font-size: 8px;
+  }
+  .collaboration-step {
+    min-height: 72px;
+  }
+  .step-content h3 {
+    font-size: 13px;
+  }
+  .step-content p {
+    font-size: 9px;
+  }
+  .stack-item {
+    font-size: 8px;
+  }
+  .collaboration-partnership-button {
+    max-width: 280px;
+    padding: 13px 18px;
+    font-size: 10px;
+  }
+} /* ========================================================= ACCESSIBILITY ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,835 @@
+/* =========================================================
+   WHY TECHWRAP FOR AI
+========================================================= */
+
+.ai-why-section {
+
+  position: relative;
+
+  padding: 130px 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 5% 20%,
+      rgba(37, 99, 235, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(6, 182, 212, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbff 55%,
+      #f3fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.ai-why-grid {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 75%,
+      transparent 100%
+    );
+
+  animation:
+    aiWhyGridMove
+    30s
+    linear
+    infinite;
+}
+
+
+@keyframes aiWhyGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.ai-why-glow {
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  opacity: 0.12;
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    aiWhyGlowFloat
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.ai-why-glow-one {
+
+  left: -180px;
+
+  top: 15%;
+
+  background: #2563eb;
+}
+
+
+.ai-why-glow-two {
+
+  right: -180px;
+
+  bottom: 10%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes aiWhyGlowFloat {
+
+  from {
+    transform: translateY(-25px);
+  }
+
+  to {
+    transform: translateY(25px);
+  }
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.ai-why-heading {
+
+  position: relative;
+
+  max-width: 800px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+
+/* Label */
+
+.ai-why-heading .ai-section-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.ai-why-heading .ai-section-label span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 14px
+    rgba(37, 99, 235, 0.75);
+
+  animation:
+    aiWhyDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes aiWhyDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.55);
+    opacity: 0.55;
+  }
+
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.ai-why-heading h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      4.6rem
+    );
+
+  line-height: 1.03;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+.ai-why-heading h2 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4 0%,
+      #0ea5e9 45%,
+      #2563eb 100%
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    aiWhyGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes aiWhyGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+/* Description */
+
+.ai-why-heading p {
+
+  max-width: 650px;
+
+  margin: 24px auto 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARDS GRID
+========================================================= */
+
+.ai-why-grid-cards {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   WHY CARD
+========================================================= */
+
+.ai-why-card {
+
+  position: relative;
+
+  min-height: 275px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.20);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(248, 251, 255, 0.88)
+    );
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 15px 45px
+    rgba(15, 23, 42, 0.055);
+
+  opacity: 0;
+
+  transform:
+    translateY(35px);
+
+  animation:
+    aiWhyCardReveal
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  transition:
+    transform 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Staggered animation */
+
+.ai-why-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.ai-why-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.ai-why-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.ai-why-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.ai-why-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.ai-why-card:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+
+@keyframes aiWhyCardReveal {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.ai-why-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(37, 99, 235, 0.32);
+
+  box-shadow:
+    0 28px 65px
+    rgba(15, 23, 42, 0.10),
+
+    0 0 40px
+    rgba(37, 99, 235, 0.07);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.ai-why-number {
+
+  position: absolute;
+
+  top: 25px;
+
+  right: 28px;
+
+  color:
+    rgba(37, 99, 235, 0.14);
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+.ai-why-card:hover
+.ai-why-number {
+
+  color:
+    rgba(37, 99, 235, 0.25);
+
+  transform:
+    translateY(-4px);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.ai-why-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 28px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.07),
+      rgba(6, 182, 212, 0.06)
+    );
+
+  color: #2563eb;
+
+  font-size: 25px;
+
+  box-shadow:
+    inset 0 0 20px
+    rgba(37, 99, 235, 0.025),
+
+    0 8px 25px
+    rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* Icon hover */
+
+.ai-why-card:hover
+.ai-why-icon {
+
+  transform:
+    rotate(-8deg)
+    scale(1.12);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.14),
+      rgba(6, 182, 212, 0.12)
+    );
+
+  box-shadow:
+    0 0 30px
+    rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.ai-why-content {
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.ai-why-content h3 {
+
+  margin:
+    0 0
+    12px;
+
+  color: #0b1833;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.ai-why-card:hover
+.ai-why-content h3 {
+
+  color: #2563eb;
+}
+
+
+.ai-why-content p {
+
+  max-width: 310px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BOTTOM BLUE LINE
+========================================================= */
+
+.ai-why-line {
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4,
+      transparent
+    );
+
+  transition:
+    width 0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.ai-why-card:hover
+.ai-why-line {
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.ai-why-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+
+  height: 180px;
+
+  right: -100px;
+
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  filter: blur(60px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.5s ease;
+}
+
+
+.ai-why-card:hover::after {
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TOP SHINE EFFECT
+========================================================= */
+
+.ai-why-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 70%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(37, 99, 235, 0.7),
+      transparent
+    );
+
+  transition:
+    left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+.ai-why-card:hover::before {
+
+  left: 130%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .ai-why-grid-cards {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .ai-why-section {
+
+    padding: 90px 0;
+  }
+
+
+  .ai-why-heading {
+
+    margin-bottom: 50px;
+  }
+
+
+  .ai-why-heading h2 {
+
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .ai-why-heading p {
+
+    font-size: 14px;
+  }
+
+
+  .ai-why-grid-cards {
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .ai-why-card {
+
+    min-height: 250px;
+
+    padding: 25px;
+  }
+
+
+  .ai-why-number {
+
+    font-size: 34px;
+
+    right: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ai-why-grid,
+  .ai-why-glow,
+  .ai-section-label span,
+  .ai-why-heading h2 span,
+  .ai-why-card {
+
+    animation: none !important;
+  }
+
+  .ai-why-card {
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+}

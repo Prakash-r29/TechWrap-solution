@@ -1,0 +1,1590 @@
+/* =========================================================
+   AI BUILD SECTION
+========================================================= */
+
+.ai-build-section {
+  position: relative;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(6, 182, 212, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbff 55%,
+      #f2fbff 100%
+    );
+
+  color: #0b1833;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.ai-bg-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  animation:
+    aiGridMove
+    25s
+    linear
+    infinite;
+}
+
+
+@keyframes aiGridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.ai-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  opacity: 0.12;
+
+  z-index: -2;
+
+  animation:
+    aiGlowFloat
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.ai-glow-one {
+  left: -220px;
+  top: 20%;
+
+  background: #2563eb;
+}
+
+
+.ai-glow-two {
+  right: -220px;
+  bottom: 20%;
+
+  background: #06b6d4;
+
+  animation-delay: 2s;
+}
+
+
+@keyframes aiGlowFloat {
+
+  from {
+    transform:
+      translateY(-30px);
+  }
+
+  to {
+    transform:
+      translateY(30px);
+  }
+
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.ai-particle {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 20px
+    rgba(37, 99, 235, 0.7);
+
+  animation:
+    aiParticleFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+.particle-one {
+  top: 15%;
+  left: 8%;
+}
+
+
+.particle-two {
+  top: 45%;
+  right: 10%;
+
+  animation-delay: 2s;
+}
+
+
+.particle-three {
+  bottom: 15%;
+  left: 18%;
+
+  animation-delay: 4s;
+}
+
+
+@keyframes aiParticleFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      scale(1.3);
+  }
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.ai-build-heading {
+
+  max-width: 850px;
+
+  margin:
+    0 auto
+    75px;
+
+  text-align: center;
+}
+
+
+.ai-section-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.ai-section-label span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 14px
+    rgba(37, 99, 235, 0.7);
+
+  animation:
+    aiDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes aiDotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.55);
+    opacity: 0.6;
+  }
+
+}
+
+
+.ai-build-heading h2 {
+
+  margin: 0;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      4.8rem
+    );
+
+  line-height: 1.02;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+.ai-build-heading h2 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #0ea5e9,
+      #2563eb
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    aiGradient
+    5s
+    linear
+    infinite;
+}
+
+
+@keyframes aiGradient {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+
+}
+
+
+.ai-build-heading p {
+
+  max-width: 680px;
+
+  margin:
+    25px auto
+    0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   AI PRODUCT GRID
+========================================================= */
+
+.ai-products-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   AI PRODUCT CARD
+========================================================= */
+
+.ai-product-card {
+
+  position: relative;
+
+  min-height: 470px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.20);
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 20px 60px
+    rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.5s ease,
+    border-color 0.4s ease;
+}
+
+
+.ai-product-card:hover {
+
+  transform:
+    translateY(-12px);
+
+  border-color:
+    rgba(37, 99, 235, 0.30);
+
+  box-shadow:
+    0 35px 80px
+    rgba(15, 23, 42, 0.12),
+
+    0 0 45px
+    rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.ai-card-image {
+
+  position: relative;
+
+  height: 210px;
+
+  overflow: hidden;
+}
+
+
+.ai-card-image img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    filter 0.5s ease;
+}
+
+
+.ai-product-card:hover
+.ai-card-image img {
+
+  transform:
+    scale(1.10);
+
+  filter:
+    saturate(1.15);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.ai-image-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(4, 17, 40, 0.02),
+      rgba(4, 17, 40, 0.58)
+    );
+}
+
+
+/* =========================================================
+   AI SCAN EFFECT
+========================================================= */
+
+.ai-scan-line {
+
+  position: absolute;
+
+  left: 0;
+
+  top: -20%;
+
+  width: 100%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #38bdf8,
+      #2563eb,
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.8);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+
+.ai-product-card:hover
+.ai-scan-line {
+
+  opacity: 1;
+
+  animation:
+    aiScan
+    2.5s
+    linear
+    infinite;
+}
+
+
+@keyframes aiScan {
+
+  from {
+    top: 0%;
+  }
+
+  to {
+    top: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.ai-card-content {
+
+  position: relative;
+
+  padding:
+    25px
+    26px
+    28px;
+
+  z-index: 2;
+}
+
+
+.ai-card-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.ai-card-icon {
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.18);
+
+  color: #2563eb;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+
+.ai-product-card:hover
+.ai-card-icon {
+
+  transform:
+    rotate(-7deg)
+    scale(1.1);
+
+  background:
+    #f8fbff;
+
+  box-shadow:
+    0 10px 30px
+    rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   CARD TAG
+========================================================= */
+
+.ai-card-tag {
+
+  padding:
+    6px 10px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.ai-card-content h3 {
+
+  margin:
+    0 0
+    11px;
+
+  color: #0b1833;
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+
+.ai-card-content p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD LINK
+========================================================= */
+
+.ai-card-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 22px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.ai-card-link span {
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.ai-card-link:hover {
+
+  color: #0891b2;
+}
+
+
+.ai-card-link:hover span {
+
+  transform:
+    translateX(7px);
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.ai-card-glow {
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  filter:
+    blur(60px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.5s ease;
+
+  pointer-events: none;
+}
+
+
+.ai-product-card:hover
+.ai-card-glow {
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   AI EVOLUTION CARD
+========================================================= */
+
+.ai-evolution-card {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    0.85fr
+    1.15fr;
+
+  gap: 45px;
+
+  margin-top: 35px;
+
+  padding: 32px;
+
+  min-height: 460px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.22);
+
+  /* WHITE TECHWRAP BACKGROUND */
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37, 99, 235, 0.06),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(6, 182, 212, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbff 55%,
+      #f2fbff 100%
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.5s ease,
+    border-color 0.4s ease;
+}
+
+
+.ai-evolution-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(37, 99, 235, 0.28);
+
+  box-shadow:
+    0 35px 90px
+    rgba(15, 23, 42, 0.12),
+
+    0 0 50px
+    rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   EVOLUTION CARD LIGHT GLOW
+========================================================= */
+
+.ai-evolution-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -180px;
+  left: -150px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.06);
+
+  filter:
+    blur(70px);
+
+  pointer-events: none;
+}
+
+
+.ai-evolution-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -150px;
+  bottom: -170px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(6, 182, 212, 0.07);
+
+  filter:
+    blur(70px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO CONTENT
+========================================================= */
+
+.ai-video-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    25px
+    20px;
+}
+
+
+.ai-video-content .ai-section-label {
+
+  color: #2563eb;
+}
+
+
+.ai-video-content .ai-section-label span {
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 15px
+    rgba(37, 99, 235, 0.55);
+}
+
+
+/* =========================================================
+   EVOLUTION HEADING
+========================================================= */
+
+.ai-video-content h2 {
+
+  margin:
+    0 0
+    22px;
+
+  color: #0b1833;
+
+  font-size:
+    clamp(
+      2.3rem,
+      4vw,
+      4rem
+    );
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+
+.ai-video-content h2 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #06b6d4,
+      #0ea5e9,
+      #2563eb
+    );
+
+  background-size:
+    200% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  animation:
+    aiGradient
+    5s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   EVOLUTION DESCRIPTION
+========================================================= */
+
+.ai-video-content p {
+
+  max-width: 480px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   VIDEO STATS
+========================================================= */
+
+.ai-video-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 32px;
+}
+
+
+.ai-video-stats div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding:
+    12px 10px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.20);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 6px 20px
+    rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.ai-video-stats div:hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(37, 99, 235, 0.25);
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.08);
+}
+
+
+.ai-video-stats strong {
+
+  color: #2563eb;
+
+  font-size: 15px;
+}
+
+
+.ai-video-stats span {
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   VIDEO WRAPPER
+========================================================= */
+
+.ai-video-wrapper {
+
+  position: relative;
+
+  min-height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.22);
+
+  background:
+    #eaf4ff;
+
+  box-shadow:
+    0 20px 50px
+    rgba(15, 23, 42, 0.10);
+
+  z-index: 2;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+.ai-evolution-card:hover
+.ai-video-wrapper {
+
+  transform:
+    scale(1.01);
+
+  box-shadow:
+    0 25px 60px
+    rgba(15, 23, 42, 0.14);
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.ai-video-wrapper video {
+
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 390px;
+
+  object-fit: cover;
+
+  display: block;
+
+  opacity: 0.92;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.ai-evolution-card:hover
+.ai-video-wrapper video {
+
+  transform:
+    scale(1.025);
+}
+
+
+/* =========================================================
+   VIDEO OVERLAY
+========================================================= */
+
+.ai-video-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 15, 40, 0.12),
+      rgba(14, 165, 233, 0.08),
+      rgba(37, 99, 235, 0.15)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO CENTER AI
+========================================================= */
+
+.ai-video-center {
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width: 90px;
+  height: 90px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.45);
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: #2563eb;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 0 45px
+    rgba(37, 99, 235, 0.20),
+
+    0 10px 30px
+    rgba(15, 23, 42, 0.12);
+}
+
+
+.ai-video-pulse {
+
+  position: absolute;
+
+  inset: -15px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.30);
+
+  animation:
+    aiVideoPulse
+    2s
+    ease-out
+    infinite;
+}
+
+
+@keyframes aiVideoPulse {
+
+  0% {
+
+    transform:
+      scale(0.8);
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      scale(1.35);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   VIDEO LABEL
+========================================================= */
+
+.ai-video-label {
+
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    8px 12px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(255, 255, 255, 0.90);
+
+  backdrop-filter:
+    blur(10px);
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.15);
+
+  color: #0b1833;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.10);
+}
+
+
+.live-dot {
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 10px
+    rgba(37, 99, 235, 0.8);
+
+  animation:
+    livePulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes livePulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+
+}
+
+
+/* =========================================================
+   EVOLUTION CARD BLUE BORDER EFFECT
+========================================================= */
+
+.ai-evolution-card .ai-video-wrapper::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(56, 189, 248, 0.20);
+
+  pointer-events: none;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .ai-products-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .ai-evolution-card {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 28px;
+  }
+
+
+  .ai-video-wrapper {
+
+    min-height: 350px;
+  }
+
+
+  .ai-video-wrapper video {
+
+    min-height: 350px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .ai-build-section {
+
+    padding: 90px 0;
+  }
+
+
+  .ai-build-heading {
+
+    margin-bottom: 50px;
+  }
+
+
+  .ai-build-heading h2 {
+
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+  }
+
+
+  .ai-build-heading p {
+
+    font-size: 14px;
+  }
+
+
+  .ai-products-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .ai-product-card {
+
+    min-height: 450px;
+  }
+
+
+  .ai-evolution-card {
+
+    padding: 18px;
+
+    border-radius: 22px;
+
+    gap: 20px;
+  }
+
+
+  .ai-video-content {
+
+    padding:
+      20px
+      10px;
+  }
+
+
+  .ai-video-content h2 {
+
+    font-size: 2.4rem;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .ai-video-content p {
+
+    font-size: 14px;
+  }
+
+
+  .ai-video-stats {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .ai-video-wrapper {
+
+    min-height: 280px;
+
+    border-radius: 18px;
+  }
+
+
+  .ai-video-wrapper video {
+
+    min-height: 280px;
+  }
+
+
+  .ai-video-center {
+
+    width: 70px;
+
+    height: 70px;
+
+    font-size: 16px;
+  }
+
+
+  .ai-video-label {
+
+    top: 12px;
+
+    left: 12px;
+
+    padding:
+      7px
+      10px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ai-bg-grid,
+  .ai-glow,
+  .ai-particle,
+  .ai-section-label span,
+  .ai-build-heading h2 span,
+  .ai-scan-line,
+  .ai-video-pulse,
+  .live-dot {
+
+    animation: none !important;
+  }
+
+
+  .ai-product-card,
+  .ai-evolution-card,
+  .ai-video-wrapper,
+  .ai-video-wrapper video {
+
+    transition: none !important;
+  }
+
+}

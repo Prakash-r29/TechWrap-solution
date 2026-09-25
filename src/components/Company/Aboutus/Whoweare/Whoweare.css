@@ -1,0 +1,1104 @@
+/* =========================================================
+   TECHWRAP — WHO WE ARE
+   ========================================================= */
+
+.who-we-are {
+  position: relative;
+  width: 100%;
+  padding: 140px 0;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37, 99, 235, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(37, 99, 235, 0.05),
+      transparent 32%
+    ),
+    #f8fafc;
+
+  color: #17233b;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.who-bg-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.35;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(30, 90, 160, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(30, 90, 160, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+
+/* =========================================================
+   GLOWS
+   ========================================================= */
+
+.who-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  opacity: 0.11;
+
+  animation: whoGlowFloat 9s ease-in-out infinite;
+}
+
+.who-glow-one {
+  top: 10%;
+  left: -220px;
+
+  background: #1677ff;
+}
+
+.who-glow-two {
+  right: -230px;
+  bottom: 10%;
+
+  background: #3b82f6;
+
+  animation-delay: -4s;
+}
+
+@keyframes whoGlowFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(25px, -30px, 0);
+  }
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.who-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1250px, calc(100% - 50px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.72fr)
+    minmax(0, 1.45fr);
+
+  gap: 100px;
+}
+
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.who-left {
+  position: relative;
+}
+
+.who-sticky {
+  position: sticky;
+
+  top: 120px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.who-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 15px;
+
+  border: 1px solid #d6e3f5;
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(12px);
+
+  color: #53708f;
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    0 8px 25px rgba(30, 70, 120, 0.05);
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.who-visible .who-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.who-label-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 0 5px rgba(22, 119, 255, 0.08),
+    0 0 18px rgba(22, 119, 255, 0.5);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+.who-left h2 {
+  margin: 27px 0 22px;
+
+  font-size: clamp(52px, 5.2vw, 78px);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+
+  color: #17233b;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease 0.12s,
+    transform 0.8s ease 0.12s;
+}
+
+.who-visible .who-left h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.who-left h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      100deg,
+      #1677ff,
+      #4775ee,
+      #2563eb
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   SHORT INTRO
+   ========================================================= */
+
+.who-short-text {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #6b7f99;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease 0.25s,
+    transform 0.8s ease 0.25s;
+}
+
+.who-visible .who-short-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.who-timeline {
+  position: relative;
+
+  margin-top: 55px;
+
+  padding-left: 38px;
+}
+
+.who-timeline-track {
+  position: absolute;
+
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+
+  width: 2px;
+
+  background: #dbe6f3;
+
+  border-radius: 10px;
+}
+
+.who-timeline-progress {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #1677ff,
+      #5790f4
+    );
+
+  box-shadow:
+    0 0 12px rgba(22, 119, 255, 0.35);
+
+  transition: height 0.15s linear;
+}
+
+.who-timeline-item {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-height: 55px;
+
+  margin-bottom: 22px;
+}
+
+.who-timeline-item > span {
+  position: absolute;
+
+  left: -38px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  border: 3px solid #e4edf8;
+
+  background: white;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.who-timeline-item.active > span {
+  border-color: #1677ff;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 0 0 6px rgba(22, 119, 255, 0.09);
+}
+
+.who-timeline-item strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #1677ff;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.who-timeline-item p {
+  margin: 0;
+
+  color: #70849e;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.who-right {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+   ========================================================= */
+
+.who-section-number {
+  margin-bottom: 24px;
+
+  color: #8aa0ba;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.who-introduction {
+  padding-bottom: 90px;
+
+  border-bottom: 1px solid #e0e9f4;
+}
+
+.who-introduction h3 {
+  max-width: 780px;
+
+  margin: 0 0 35px;
+
+  color: #1b2b43;
+
+  font-size: clamp(34px, 4vw, 55px);
+
+  line-height: 1.08;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 850;
+}
+
+.who-introduction h3 span {
+  display: block;
+
+  color: #2878ef;
+}
+
+
+/* =========================================================
+   LINE BY LINE REVEAL
+   ========================================================= */
+
+.who-line-reveal {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  overflow: hidden;
+}
+
+.who-line {
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(100%);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.who-visible .who-line {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.who-line span {
+  display: block;
+
+  color: #4d627d;
+
+  font-size: clamp(18px, 1.7vw, 23px);
+
+  line-height: 1.6;
+
+  font-weight: 550;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.who-description {
+  max-width: 750px;
+
+  margin: 30px 0 0;
+
+  color: #73859d;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.9s ease 0.7s,
+    transform 0.9s ease 0.7s;
+}
+
+.who-visible .who-description {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.who-tech-area {
+  padding: 90px 0;
+
+  border-bottom: 1px solid #e0e9f4;
+}
+
+.who-tech-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 32px;
+}
+
+.who-tech-heading h4 {
+  margin: 0;
+
+  color: #1b2b43;
+
+  font-size: clamp(29px, 3vw, 42px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 850;
+}
+
+.who-tech-heading h4 span {
+  display: block;
+
+  color: #2878ef;
+}
+
+.who-tech-heading p {
+  max-width: 240px;
+
+  margin: 0;
+
+  color: #8192a8;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.who-tech-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.who-tech-stack span {
+  padding: 12px 17px;
+
+  border: 1px solid #d8e4f2;
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #4e6683;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 5px 15px rgba(40, 75, 120, 0.04);
+
+  opacity: 0;
+
+  transform: translateY(18px) scale(0.96);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.who-visible .who-tech-stack span {
+  opacity: 1;
+
+  transform: translateY(0) scale(1);
+}
+
+.who-tech-stack span:hover {
+  border-color: #8cb8ee;
+
+  background: #f1f7ff;
+
+  transform: translateY(-4px) !important;
+
+  box-shadow:
+    0 10px 25px rgba(40, 100, 180, 0.09);
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.who-stat-area {
+  padding: 90px 0 70px;
+}
+
+.who-stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.who-stat-card {
+  position: relative;
+
+  min-height: 235px;
+
+  padding: 27px;
+
+  border: 1px solid #dce7f3;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(247, 250, 254, 0.9)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(31, 67, 110, 0.05);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.who-visible .who-stat-card {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.who-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -50px;
+  bottom: -55px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 119, 255, 0.06);
+
+  filter: blur(4px);
+
+  transition: transform 0.4s ease;
+}
+
+.who-stat-card:hover {
+  border-color: #b8d2ee;
+
+  box-shadow:
+    0 22px 50px rgba(31, 75, 125, 0.09);
+
+  transform: translateY(-6px);
+}
+
+.who-stat-card:hover::after {
+  transform: scale(1.5);
+}
+
+
+/* =========================================================
+   STAT TOP
+   ========================================================= */
+
+.who-stat-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.who-stat-index {
+  color: #9aacc1;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.who-stat-line {
+  width: 45px;
+
+  height: 1px;
+
+  background: #d9e5f1;
+}
+
+
+/* =========================================================
+   STAT NUMBER
+   ========================================================= */
+
+.who-stat-number {
+  color: #172a45;
+
+  font-size: clamp(42px, 4vw, 58px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 900;
+}
+
+.who-stat-number span {
+  margin-left: 3px;
+
+  color: #2878ef;
+
+  font-size: 30px;
+}
+
+.who-stat-card h5 {
+  margin: 12px 0 7px;
+
+  color: #334a67;
+
+  font-size: 15px;
+
+  font-weight: 850;
+}
+
+.who-stat-card p {
+  max-width: 250px;
+
+  margin: 0;
+
+  color: #8191a7;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+   ========================================================= */
+
+.who-bottom {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding: 30px;
+
+  border: 1px solid #dce7f3;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f9ff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 12px 35px rgba(35, 75, 120, 0.04);
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease 0.6s,
+    transform 0.8s ease 0.6s;
+}
+
+.who-visible .who-bottom {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.who-bottom-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: #1677ff;
+
+  box-shadow:
+    0 9px 22px rgba(22, 119, 255, 0.2);
+}
+
+.who-bottom-icon span {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.18);
+}
+
+.who-bottom-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #1677ff;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.who-bottom p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #5e738f;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .who-container {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .who-sticky {
+    position: relative;
+
+    top: auto;
+  }
+
+  .who-left h2 {
+    font-size: clamp(55px, 9vw, 75px);
+  }
+
+  .who-short-text {
+    max-width: 650px;
+  }
+
+  .who-timeline {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .who-we-are {
+    padding: 90px 0;
+  }
+
+  .who-container {
+    width: calc(100% - 34px);
+
+    gap: 55px;
+  }
+
+  .who-label {
+    font-size: 9px;
+
+    padding: 8px 12px;
+
+    letter-spacing: 1.1px;
+  }
+
+  .who-left h2 {
+    margin-top: 22px;
+
+    font-size: 52px;
+
+    letter-spacing: -3px;
+  }
+
+  .who-short-text {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .who-introduction {
+    padding-bottom: 65px;
+  }
+
+  .who-introduction h3 {
+    font-size: 34px;
+
+    letter-spacing: -1.7px;
+
+    margin-bottom: 27px;
+  }
+
+  .who-line span {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .who-description {
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .who-tech-area {
+    padding: 65px 0;
+  }
+
+  .who-tech-heading {
+    display: block;
+  }
+
+  .who-tech-heading h4 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+  }
+
+  .who-tech-heading p {
+    max-width: 100%;
+  }
+
+  .who-tech-stack span {
+    padding: 10px 13px;
+
+    font-size: 11px;
+  }
+
+  .who-stat-area {
+    padding: 65px 0 50px;
+  }
+
+  .who-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .who-stat-card {
+    min-height: 205px;
+
+    padding: 23px;
+  }
+
+  .who-stat-number {
+    font-size: 48px;
+  }
+
+  .who-bottom {
+    padding: 22px;
+
+    gap: 14px;
+  }
+
+  .who-bottom p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .who-glow,
+  .who-line,
+  .who-tech-stack span,
+  .who-stat-card,
+  .who-bottom,
+  .who-label,
+  .who-left h2,
+  .who-short-text,
+  .who-description {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+  .who-line,
+  .who-tech-stack span,
+  .who-stat-card,
+  .who-bottom,
+  .who-label,
+  .who-left h2,
+  .who-short-text,
+  .who-description {
+    opacity: 1;
+
+    transform: none;
+  }
+}
